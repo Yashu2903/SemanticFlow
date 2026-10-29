@@ -1,0 +1,19 @@
+executor:
+  concurrency: 4
+
+providers:
+  mock:
+    model: mock-deterministic-v1
+  jev:
+    api_url: https://api.typesafe.ai/v1/systemone
+    model: jev-latest
+    timeout_seconds: 30
+    max_retries: 2
+    backoff_seconds: 0.5
+
+# Leave rates null unless verified for the exact provider/model and run date.
+pricing:
+  id: null
+  input_per_million_usd: null
+  output_per_million_usd: null
+

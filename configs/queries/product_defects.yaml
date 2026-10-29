@@ -1,0 +1,17 @@
+query_id: product_defects
+workload_id: workload_b_product_defects
+dataset_path: data/processed/reviews_1000.parquet
+dataset_version: semceb_amazon_arts_crafts_sewing_sample_1000
+dataset_preparation_version: m1-v1
+sample_seed: 2026
+operation: and
+limit: 1000
+threshold: 0.5
+max_calls: 2000
+config_id: m1-product-defects-v1
+predicates:
+  - id: stopped_working
+    instructions: Does the customer say that the product stopped working or no longer functions?
+  - id: durability_problem
+    instructions: Does the customer describe a durability or premature wear problem?
+

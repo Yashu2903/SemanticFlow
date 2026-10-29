@@ -1,0 +1,19 @@
+query_id: product_quality
+workload_id: workload_a_product_quality
+dataset_path: data/processed/reviews_1000.parquet
+dataset_version: semceb_amazon_arts_crafts_sewing_sample_1000
+dataset_preparation_version: m1-v1
+sample_seed: 2026
+operation: and
+limit: 1000
+threshold: 0.5
+max_calls: 3000
+config_id: m1-product-quality-v1
+predicates:
+  - id: poor_quality
+    instructions: Does the customer report that the product has poor quality?
+  - id: product_defect
+    instructions: Does the customer describe a defect or malfunction in the product?
+  - id: dissatisfaction
+    instructions: Does the customer express dissatisfaction with the product or purchase?
+

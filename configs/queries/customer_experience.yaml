@@ -1,0 +1,19 @@
+query_id: customer_experience
+workload_id: workload_c_customer_experience
+dataset_path: data/processed/reviews_1000.parquet
+dataset_version: semceb_amazon_arts_crafts_sewing_sample_1000
+dataset_preparation_version: m1-v1
+sample_seed: 2026
+operation: and
+limit: 1000
+threshold: 0.5
+max_calls: 3000
+config_id: m1-customer-experience-v1
+predicates:
+  - id: negative_experience
+    instructions: Does the customer describe an overall negative experience with the purchase?
+  - id: shipping_packaging
+    instructions: Does the customer mention a problem with shipping, delivery, or packaging?
+  - id: purchase_dissatisfaction
+    instructions: Does the customer express dissatisfaction with the purchase?
+

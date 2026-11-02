@@ -10,6 +10,7 @@ import yaml
 from semanticflow.dataset.loader import load_dataset
 from semanticflow.executor.cache import RequestCache
 from semanticflow.executor.sequential import SequentialExecutor
+from semanticflow.metrics.collector import REPORT_SCHEMA_VERSION
 from semanticflow.metrics.evaluation import evaluate_labels
 from semanticflow.metrics.reporter import build_report
 from semanticflow.providers.base import InferenceProvider
@@ -90,6 +91,7 @@ async def run_query(
         model=provider.model_identifier,
         input_price_per_million=float(input_price) if input_price is not None else None,
         output_price_per_million=float(output_price) if output_price is not None else None,
+        pricing_metadata=pricing,
         quality=quality,
     )
     manifest = build_manifest(
@@ -105,7 +107,10 @@ async def run_query(
         timeout_seconds=timeout_seconds,
         max_retries=max_retries,
         completion_status=report["completion_status"],
+        incomplete_reason=report["incomplete_reason"],
+        report_schema_version=REPORT_SCHEMA_VERSION,
         pricing_id=pricing.get("id"),
+        pricing_configuration=pricing,
     )
     store.write_artifacts(
         run_dir, execution.matching_records, execution.traces, report, manifest

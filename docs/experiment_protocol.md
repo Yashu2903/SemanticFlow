@@ -24,11 +24,13 @@ old artifacts. Saved decisions are the durable evidence even when a provider ali
 
 ## Measurements
 
-Report initial/final records; stage inputs, passes, rejects, and selectivity; logical evaluations;
-provider calls; actual HTTP attempts; successful/failed attempts; retries; cache hits/misses; input,
-output, and total tokens; wall time; summed uncached inference latency; and completion status. Wall
-time and summed latency are different under concurrency. Calculate cost only from verified rates
-for the exact run configuration; otherwise store JSON `null`.
+Report initial/final records; stage inputs, passes, rejects, and observed selectivity; requested
+evaluations; completed decisions; budget-blocked evaluations; provider calls; actual HTTP attempts;
+successful/failed attempts; provider errors; retries; cache hits/misses; input, output, and total
+tokens; wall time; summed uncached inference latency; and completion status/reason. Selectivity is
+passes divided by completed decisions and is `null` when no decisions completed. Wall time and
+summed latency are different under concurrency. Calculate cost only from verified rates for the
+exact run configuration; otherwise store JSON `null`.
 
 ## Quality
 

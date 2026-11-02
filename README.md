@@ -79,7 +79,8 @@ produced stage counts `1000 -> 476 -> 234 -> 117`, 1,710 decisions/provider call
 four-artifact result directory. These deterministic mock outcomes validate plumbing, not semantic
 quality.
 
-Baseline caching is off by default. When enabled, it is memory-only and scoped to one run. Its key
+Baseline caching is off by default. Disabled caching performs no lookups, so both cache counters
+remain zero. When enabled, it is memory-only and scoped to one run. Its key
 includes provider/model, review text, predicate ID and instructions, question type, and inference
 parameters. Concurrent duplicates use one request. Reports keep logical evaluations, provider
 calls, attempts, and hits/misses distinct.
@@ -105,7 +106,8 @@ semanticflow --provider jev --query configs/queries/product_quality.yaml `
 ```
 
 If any row survives the first predicate, the next stage encounters the exhausted budget and the run
-is retained with `completion_status: incomplete`, empty completed matches, and diagnostic traces.
+is retained with `completion_status: incomplete`, `incomplete_reason: request_budget_exhausted`,
+empty completed matches, and separate budget diagnostics.
 
 The runner requires an explicit provider and each workload enforces `max_calls`. Retry attempts
 count against that budget. Authentication and validation failures are not retried; timeouts, 429,
@@ -134,12 +136,14 @@ labels, quality is `pending`, never inferred from ratings or model output.
 
 ## Results and cost accounting
 
-`decisions.jsonl` contains only predicates actually evaluated, including probability, threshold,
+`decisions.jsonl` contains only completed predicate decisions, including probability, threshold,
 cache status, model, usage, latency, attempt count, timestamp, and a question hash. The manifest
 captures configuration, dataset SHA-256, Git commit, requested/resolved model, concurrency,
 caching, and completion. Token use is measured from provider responses. `estimated_cost_usd` is
 `null` until both verified input/output prices are configured in `configs/settings.yaml`; unknown
-cost is not zero.
+cost is not zero. Report schema 1.1 distinguishes requested evaluations, completed decisions,
+budget blocks, HTTP attempts, provider errors, and actual cache lookups; see the
+[reporting schema](docs/reporting_schema.md).
 
 ## Troubleshooting
 

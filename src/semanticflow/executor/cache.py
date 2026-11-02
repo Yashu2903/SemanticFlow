@@ -60,7 +60,6 @@ class RequestCache:
         self, key: str, compute: Callable[[], Awaitable[Decision]]
     ) -> CacheResult:
         if not self.enabled:
-            self.stats.misses += 1
             return CacheResult(await compute(), hit=False)
 
         leader = False

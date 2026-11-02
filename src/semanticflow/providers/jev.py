@@ -99,6 +99,8 @@ class JevProvider(InferenceProvider):
                 ) from exc
             if attempts == 0:
                 self.stats.calls += 1
+            else:
+                self.stats.retries += 1
             attempts += 1
             self.stats.attempts += 1
             try:
@@ -158,7 +160,6 @@ class JevProvider(InferenceProvider):
                             raise ValueError("negative output token usage")
                         resolved_model = str(data.get("model") or self._model)
                     except (KeyError, TypeError, ValueError) as exc:
-                        self.stats.failed_attempts += 1
                         raise ResponseValidationError(
                             f"Malformed Jev response: {exc}",
                             attempts=attempts,
@@ -185,7 +186,6 @@ class JevProvider(InferenceProvider):
                     )
             if not retryable or retry_number >= self.max_retries:
                 break
-            self.stats.retries += 1
             await asyncio.sleep(self.backoff_seconds * (2**retry_number))
 
         raise ProviderError(

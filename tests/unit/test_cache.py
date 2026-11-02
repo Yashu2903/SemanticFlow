@@ -30,6 +30,8 @@ async def test_hit_miss_disabled_and_failures_not_cached() -> None:
     await disabled.get_or_compute("x", compute)
     await disabled.get_or_compute("x", compute)
     assert calls == 3
+    assert disabled.stats.hits == 0
+    assert disabled.stats.misses == 0
 
     failures = RequestCache(enabled=True)
 

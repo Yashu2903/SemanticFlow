@@ -56,15 +56,32 @@ async def test_end_to_end_mock_artifacts(tmp_path: Path) -> None:
     assert [row["review_id"] for row in matches] == ["a"]
     assert len(decisions) == 3
     assert all(row["model_identifier"] and row["question_hash"] for row in decisions)
+    assert report["requested_evaluations"] == 3
+    assert report["total_input_reviews"] == 2
+    assert report["total_completed_reviews"] == 2
+    assert report["final_matching_reviews"] == 1
+    assert report["final_rejected_reviews"] == 1
+    assert report["completed_decisions"] == 3
+    assert report["budget_blocked_evaluations"] == 0
     assert report["logical_evaluations"] == 3
     assert report["actual_provider_calls"] == 3
     assert report["reviews_evaluated"] == 2
     assert report["predicate_decisions_evaluated"] == 3
-    assert report["successful_api_calls"] == 3
-    assert report["failed_api_calls"] == 0
+    assert report["successful_api_calls"] == 0
+    assert report["http_attempts"] == 0
+    assert report["failed_http_attempts"] == 0
+    assert report["provider_errors"] == 0
+    assert report["stages_reached"] == 2
+    assert report["stages_with_completed_decisions"] == 2
+    assert report["caching_enabled"] is False
+    assert report["cache_hits"] == 0
+    assert report["cache_misses"] == 0
     assert report["quality"]["status"] == "pending"
     assert manifest["dataset_fingerprint"].startswith("sha256:")
     assert manifest["completion_status"] == "complete"
+    assert manifest["incomplete_reason"] is None
+    assert manifest["report_schema_version"] == report["report_schema_version"]
+    assert manifest["pricing_configuration"] == {}
 
 
 @pytest.mark.asyncio
@@ -93,4 +110,6 @@ async def test_runtime_max_calls_override_marks_run_incomplete(tmp_path: Path) -
     )
     assert outcome.report["completion_status"] == "incomplete"
     assert outcome.report["request_attempts"] == 3
+    assert outcome.report["budget_blocked_evaluations"] == 1
+    assert outcome.report["incomplete_reason"] == "request_budget_exhausted"
     assert outcome.report["final_record_count"] == 0

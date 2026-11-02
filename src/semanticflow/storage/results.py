@@ -85,7 +85,10 @@ def build_manifest(
     timeout_seconds: float,
     max_retries: int,
     completion_status: str,
+    incomplete_reason: str | None,
+    report_schema_version: str,
     pricing_id: str | None,
+    pricing_configuration: dict[str, Any],
 ) -> dict[str, Any]:
     question_hashes = {
         predicate.id: hashlib.sha256(
@@ -114,12 +117,25 @@ def build_manifest(
         "resolved_model_versions": sorted(set(resolved_models)),
         "threshold": query.threshold,
         "max_calls": query.max_calls,
+        "request_budget": {
+            "unit": "http_attempts" if provider == "jev" else "provider_attempts",
+            "maximum": query.max_calls,
+        },
         "concurrency": concurrency,
         "timeout_seconds": timeout_seconds,
         "max_retries": max_retries,
         "caching_enabled": cache_enabled,
+        "cache_configuration": {"enabled": cache_enabled, "scope": "per-run-memory"},
         "question_type": "noul",
         "question_hashes": question_hashes,
         "pricing_configuration_id": pricing_id,
+        "pricing_configuration": pricing_configuration,
         "completion_status": completion_status,
+        "incomplete_reason": incomplete_reason,
+        "report_schema_version": report_schema_version,
+        "sampling_configuration": {
+            "record_limit": query.limit,
+            "sample_seed": query.sample_seed,
+            "subset_selection_method": "stable-review-id-order-then-record-limit",
+        },
     }

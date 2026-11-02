@@ -9,7 +9,7 @@ from datetime import UTC, datetime
 from semanticflow.dataset.loader import ReviewRecord
 from semanticflow.executor.cache import RequestCache, cache_key
 from semanticflow.metrics.collector import DecisionTrace, ExecutionResult, PredicateMetrics
-from semanticflow.providers.base import InferenceProvider, ProviderError, RequestBudget
+from semanticflow.providers.base import BudgetExceeded, InferenceProvider, RequestBudget
 from semanticflow.query.models import PredicateSpec, QuerySpec
 
 
@@ -39,34 +39,17 @@ class SequentialExecutor:
         self, records: list[ReviewRecord], query: QuerySpec, run_id: str
     ) -> ExecutionResult:
         started = time.perf_counter()
-        result = ExecutionResult(run_id=run_id, initial_record_count=len(records))
+        result = ExecutionResult(
+            run_id=run_id,
+            initial_record_count=len(records),
+            caching_enabled=self.cache.enabled,
+        )
         active = list(records)
         budget = RequestBudget(query.max_calls)
 
         for stage, predicate in enumerate(query.predicates, start=1):
             if not active:
-                result.predicates.append(
-                    PredicateMetrics(
-                        predicate_id=predicate.id,
-                        stage=stage,
-                        input_record_count=0,
-                        passing_record_count=0,
-                        rejected_record_count=0,
-                        selectivity=0.0,
-                        logical_evaluations=0,
-                        actual_provider_calls=0,
-                        request_attempts=0,
-                        successful_requests=0,
-                        failed_attempts=0,
-                        retries=0,
-                        input_tokens=0,
-                        output_tokens=0,
-                        inference_latency_seconds=0.0,
-                        errors=0,
-                        cache_hits=0,
-                        cache_misses=0,
-                    )
-                )
+                result.predicates.append(self._empty_predicate_metrics(predicate, stage))
                 continue
 
             provider_before = self.provider.stats.copy()
@@ -74,12 +57,13 @@ class SequentialExecutor:
             input_count = len(active)
             stage_results: list[_Evaluated] = []
             stage_errors: list[str] = []
-            logical_evaluations = 0
+            stage_budget_diagnostics: list[str] = []
+            requested_evaluations = 0
 
             # Batches cap both active tasks and total created tasks at any one time.
             for offset in range(0, len(active), self.concurrency):
                 batch = active[offset : offset + self.concurrency]
-                logical_evaluations += len(batch)
+                requested_evaluations += len(batch)
                 evaluated = await asyncio.gather(
                     *(
                         self._evaluate(record, predicate, stage, query.threshold, budget, run_id)
@@ -88,13 +72,18 @@ class SequentialExecutor:
                     return_exceptions=True,
                 )
                 for record, item in zip(batch, evaluated, strict=True):
-                    if isinstance(item, BaseException):
-                        stage_errors.append(
-                            f"{predicate.id}/{record.review_id}: {type(item).__name__}: {item}"
-                        )
+                    diagnostic = (
+                        f"{predicate.id}/{record.review_id}: {type(item).__name__}: {item}"
+                        if isinstance(item, BaseException)
+                        else None
+                    )
+                    if isinstance(item, BudgetExceeded):
+                        stage_budget_diagnostics.append(diagnostic or str(item))
+                    elif isinstance(item, BaseException):
+                        stage_errors.append(diagnostic or str(item))
                     else:
                         stage_results.append(item)
-                if stage_errors:
+                if stage_errors or stage_budget_diagnostics:
                     break
 
             provider_delta = self.provider.stats.delta(provider_before)
@@ -103,42 +92,93 @@ class SequentialExecutor:
             result.traces.extend(traces)
             passed = [item.record for item in stage_results if item.trace.passed]
             rejected = sum(not item.trace.passed for item in stage_results)
+            completed_decisions = len(stage_results)
+            is_http_provider = self.provider.name == "jev"
             result.predicates.append(
                 PredicateMetrics(
                     predicate_id=predicate.id,
                     stage=stage,
+                    reached=True,
+                    caching_enabled=self.cache.enabled,
                     input_record_count=input_count,
+                    requested_evaluations=requested_evaluations,
+                    completed_decisions=completed_decisions,
+                    budget_blocked_evaluations=len(stage_budget_diagnostics),
                     passing_record_count=len(passed),
                     rejected_record_count=rejected,
-                    selectivity=(len(passed) / input_count) if input_count else 0.0,
-                    logical_evaluations=logical_evaluations,
+                    selectivity=(
+                        len(passed) / completed_decisions if completed_decisions else None
+                    ),
                     actual_provider_calls=provider_delta.calls,
-                    request_attempts=provider_delta.attempts,
-                    successful_requests=provider_delta.successful_requests,
-                    failed_attempts=provider_delta.failed_attempts,
-                    retries=provider_delta.retries,
+                    provider_attempts=provider_delta.attempts,
+                    successful_provider_calls=provider_delta.successful_requests,
+                    http_attempts=provider_delta.attempts if is_http_provider else 0,
+                    successful_api_calls=(
+                        provider_delta.successful_requests if is_http_provider else 0
+                    ),
+                    failed_http_attempts=(
+                        provider_delta.failed_attempts if is_http_provider else 0
+                    ),
+                    provider_errors=len(stage_errors),
+                    retry_attempts=provider_delta.retries,
                     input_tokens=sum(trace.input_tokens or 0 for trace in traces),
                     output_tokens=sum(trace.output_tokens or 0 for trace in traces),
                     inference_latency_seconds=sum(
                         trace.request_latency_seconds
                         for trace in traces
-                        if trace.cache_status == "miss"
+                        if trace.cache_status != "hit"
                     ),
-                    errors=len(stage_errors),
                     cache_hits=cache_delta.hits,
                     cache_misses=cache_delta.misses,
                 )
             )
-            if stage_errors:
+            if stage_errors or stage_budget_diagnostics:
                 result.complete = False
                 result.errors.extend(stage_errors)
+                result.budget_diagnostics.extend(stage_budget_diagnostics)
+                if stage_errors and stage_budget_diagnostics:
+                    result.incomplete_reason = "multiple_execution_failures"
+                elif stage_budget_diagnostics:
+                    result.incomplete_reason = "request_budget_exhausted"
+                else:
+                    result.incomplete_reason = "provider_error"
                 active = []
-                break
+                continue
             active = passed
 
         result.matching_records = active if result.complete else []
         result.wall_time_seconds = time.perf_counter() - started
         return result
+
+    def _empty_predicate_metrics(
+        self, predicate: PredicateSpec, stage: int
+    ) -> PredicateMetrics:
+        return PredicateMetrics(
+            predicate_id=predicate.id,
+            stage=stage,
+            reached=False,
+            caching_enabled=self.cache.enabled,
+            input_record_count=0,
+            requested_evaluations=0,
+            completed_decisions=0,
+            budget_blocked_evaluations=0,
+            passing_record_count=0,
+            rejected_record_count=0,
+            selectivity=None,
+            actual_provider_calls=0,
+            provider_attempts=0,
+            successful_provider_calls=0,
+            http_attempts=0,
+            successful_api_calls=0,
+            failed_http_attempts=0,
+            provider_errors=0,
+            retry_attempts=0,
+            input_tokens=0,
+            output_tokens=0,
+            inference_latency_seconds=0.0,
+            cache_hits=0,
+            cache_misses=0,
+        )
 
     async def _evaluate(
         self,
@@ -154,14 +194,14 @@ class SequentialExecutor:
         async def compute():
             return await self.provider.decide(record.review_text, predicate, budget)
 
-        try:
-            cached = await self.cache.get_or_compute(key, compute)
-        except ProviderError:
-            raise
+        cached = await self.cache.get_or_compute(key, compute)
         decision = cached.decision
         question_hash = hashlib.sha256(
             f"{self.provider.question_type}\0{predicate.id}\0{predicate.instructions}".encode()
         ).hexdigest()
+        cache_status = (
+            "disabled" if not self.cache.enabled else "hit" if cached.hit else "miss"
+        )
         trace = DecisionTrace(
             run_id=run_id,
             review_id=record.review_id,
@@ -175,7 +215,7 @@ class SequentialExecutor:
             input_tokens=decision.input_tokens,
             output_tokens=decision.output_tokens,
             request_latency_seconds=0.0 if cached.hit else decision.latency_seconds,
-            cache_status="hit" if cached.hit else "miss",
+            cache_status=cache_status,
             request_attempt_count=0 if cached.hit else decision.request_attempts,
             timestamp=datetime.now(UTC).isoformat(),
             question_hash=question_hash,

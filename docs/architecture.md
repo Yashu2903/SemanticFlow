@@ -13,8 +13,10 @@
    cleanup. A shared atomic `RequestBudget` is reserved before every submission attempt.
 5. `RequestCache` is a per-run, optional in-memory single-flight cache. Failed decisions are never
    cached.
-6. Every successful evaluated pair becomes a `DecisionTrace`. Stage metrics distinguish logical
-   evaluations, provider calls, request attempts, retries, usage, latency, and cache behavior.
+6. Every successful evaluated pair becomes a `DecisionTrace`. Stage metrics distinguish requested
+   evaluations, completed decisions, budget blocks, provider calls, HTTP attempts, retries, usage,
+   latency, and cache behavior. Observed selectivity divides passes by completed decisions and is
+   unknown (`null`) when a stage has no completed decisions.
 7. `runtime.run_query` optionally evaluates human labels, builds report/manifest data, and asks
    `ResultStore` to atomically scope artifacts to a never-reused run directory.
 
@@ -22,12 +24,14 @@
 
 Transient Jev transport, HTTP 429, and 5xx failures are retried within configured and budget
 limits. Authentication, other 4xx, malformed answers, missing answers, and invalid probabilities
-are permanent. Any stage error marks the run incomplete; prior diagnostics remain, while
+are permanent. Budget exhaustion is expected execution control and is reported separately from
+provider errors. Either condition marks the run incomplete; prior diagnostics remain, while
 `matches.jsonl` is empty so partial output cannot be mistaken for a completed query.
+
+The canonical metrics and compatibility aliases are defined in [reporting schema](reporting_schema.md).
 
 ## Research boundary
 
 The executor exposes stage metrics and traces but contains no planner. This separation is
 intentional: a future planner can supply a different ordered `QuerySpec` while the same executor,
 provider, tracing, and reporting layers remain the measurement substrate.
-

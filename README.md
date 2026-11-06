@@ -150,11 +150,17 @@ On the stored `product_quality` Jev traces:
   The economics gate can skip adaptive profiling entirely when even the bounded saving
   cannot cover the first checkpoint.
 
-Full results are in the [research report](docs/milestone_3_research_report.md). The design is in
-the [Milestone 3 architecture](docs/milestone_3_architecture.md), and the unexecuted live
-benchmark is in the [benchmark protocol](docs/milestone_3_benchmark_protocol.md).
-`configs/queries/` also has three proposed workloads, verified with mocks only:
-`listing_mismatch`, `positive_experience`, and `mixed_feedback`.
+A later live Jev evaluation ran contemporaneous ABBA sessions on `product_quality` and the
+three new workloads (19,407 HTTP attempts, $0.264). Independence beat the original order on
+all four; correlation-aware agreed on two, kept the original on `positive_experience`, and
+selected the cheapest order on `mixed_feedback` (45% execution-cost reduction). Details are in
+the [live evaluation](docs/milestone_3_live_evaluation.md).
+
+Full offline results are in the [research report](docs/milestone_3_research_report.md). The design is in
+the [Milestone 3 architecture](docs/milestone_3_architecture.md), and the live protocol is in
+the [benchmark protocol](docs/milestone_3_benchmark_protocol.md). The three additional
+workloads `listing_mismatch`, `positive_experience`, and `mixed_feedback` were executed on
+Jev in the live evaluation.
 
 The executed Milestone 1 real-data mock run (`product_quality`, seed 2026) loaded 1,000 reviews and
 produced stage counts `1000 -> 476 -> 234 -> 117`, 1,710 decisions/provider calls, and a complete

@@ -1,0 +1,211 @@
+{
+  "attempts_used": 4490,
+  "cache_enabled": false,
+  "concurrency": 4,
+  "finished_at": "2026-11-06T04:08:47.667271+00:00",
+  "git_commit": "213c3a5e59620db0df7ce0f52c06bdff7290fc84",
+  "git_worktree_dirty": true,
+  "per_run_attempt_cap": 2640,
+  "pricing_configuration": {
+    "id": "jev-public-list-2026-11-02",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://typesafe.ai/",
+    "status": "published_list_price",
+    "verified_date": "2026-11-02"
+  },
+  "profile_dir": "results/milestone_3/jev_positive_experience/profile",
+  "provider": "jev",
+  "query_id": "positive_experience",
+  "requested_model": "jev-1.14.0",
+  "runs": [
+    {
+      "block": 1,
+      "completed_decisions": 1120,
+      "completion_status": "complete",
+      "estimated_cost_usd": 0.015266538,
+      "final_record_count": 142,
+      "finished_at": "2026-11-06T04:06:56.558389+00:00",
+      "http_attempts": 1120,
+      "incomplete_reason": null,
+      "index": 1,
+      "input_tokens": 363489,
+      "label": "p1",
+      "order": [
+        "easy_to_use",
+        "meets_expectations",
+        "would_recommend"
+      ],
+      "order_key": "easy_to_use -> meets_expectations -> would_recommend",
+      "output_tokens": 25130,
+      "provider_attempts": 1120,
+      "retry_attempts": 0,
+      "role": "abba_fixed",
+      "run_dir": "run_01_p1",
+      "run_id": "m3-p1-b1970738ea2e",
+      "started_at": "2026-11-06T04:06:19.882823+00:00",
+      "wall_time_seconds": 36.50254270000005
+    },
+    {
+      "block": 1,
+      "completed_decisions": 1120,
+      "completion_status": "complete",
+      "estimated_cost_usd": 0.015269982000000001,
+      "final_record_count": 144,
+      "finished_at": "2026-11-06T04:07:32.693218+00:00",
+      "http_attempts": 1120,
+      "incomplete_reason": null,
+      "index": 2,
+      "input_tokens": 363571,
+      "label": "p2",
+      "order": [
+        "easy_to_use",
+        "would_recommend",
+        "meets_expectations"
+      ],
+      "order_key": "easy_to_use -> would_recommend -> meets_expectations",
+      "output_tokens": 25106,
+      "provider_attempts": 1120,
+      "retry_attempts": 0,
+      "role": "abba_comparator",
+      "run_dir": "run_02_p2",
+      "run_id": "m3-p2-08603d1545e4",
+      "started_at": "2026-11-06T04:06:56.559388+00:00",
+      "wall_time_seconds": 35.97135359999993
+    },
+    {
+      "block": 1,
+      "completed_decisions": 1116,
+      "completion_status": "complete",
+      "estimated_cost_usd": 0.015218322,
+      "final_record_count": 142,
+      "finished_at": "2026-11-06T04:08:09.676858+00:00",
+      "http_attempts": 1116,
+      "incomplete_reason": null,
+      "index": 3,
+      "input_tokens": 362341,
+      "label": "p2",
+      "order": [
+        "easy_to_use",
+        "would_recommend",
+        "meets_expectations"
+      ],
+      "order_key": "easy_to_use -> would_recommend -> meets_expectations",
+      "output_tokens": 25013,
+      "provider_attempts": 1116,
+      "retry_attempts": 0,
+      "role": "abba_comparator",
+      "run_dir": "run_03_p2",
+      "run_id": "m3-p2-87fb29cef327",
+      "started_at": "2026-11-06T04:07:32.693218+00:00",
+      "wall_time_seconds": 36.815001299999494
+    },
+    {
+      "block": 1,
+      "completed_decisions": 1134,
+      "completion_status": "complete",
+      "estimated_cost_usd": 0.015457134000000003,
+      "final_record_count": 148,
+      "finished_at": "2026-11-06T04:08:47.666271+00:00",
+      "http_attempts": 1134,
+      "incomplete_reason": null,
+      "index": 4,
+      "input_tokens": 368027,
+      "label": "p1",
+      "order": [
+        "easy_to_use",
+        "meets_expectations",
+        "would_recommend"
+      ],
+      "order_key": "easy_to_use -> meets_expectations -> would_recommend",
+      "output_tokens": 25458,
+      "provider_attempts": 1134,
+      "retry_attempts": 0,
+      "role": "abba_fixed",
+      "run_dir": "run_04_p1",
+      "run_id": "m3-p1-474ab0327ba2",
+      "started_at": "2026-11-06T04:08:09.677858+00:00",
+      "wall_time_seconds": 37.82189610000023
+    }
+  ],
+  "schedule": {
+    "abba_blocks": 1,
+    "comparator_order": [
+      "easy_to_use",
+      "would_recommend",
+      "meets_expectations"
+    ],
+    "comparator_source": "independent_selection",
+    "design": "abba_then_shuffled_remaining_orders",
+    "fixed_order": [
+      "easy_to_use",
+      "meets_expectations",
+      "would_recommend"
+    ],
+    "orders": "selected",
+    "query_id": "positive_experience",
+    "runs": [
+      {
+        "block": 1,
+        "index": 1,
+        "label": "p1",
+        "order": [
+          "easy_to_use",
+          "meets_expectations",
+          "would_recommend"
+        ],
+        "order_key": "easy_to_use -> meets_expectations -> would_recommend",
+        "role": "abba_fixed",
+        "run_dir": "run_01_p1"
+      },
+      {
+        "block": 1,
+        "index": 2,
+        "label": "p2",
+        "order": [
+          "easy_to_use",
+          "would_recommend",
+          "meets_expectations"
+        ],
+        "order_key": "easy_to_use -> would_recommend -> meets_expectations",
+        "role": "abba_comparator",
+        "run_dir": "run_02_p2"
+      },
+      {
+        "block": 1,
+        "index": 3,
+        "label": "p2",
+        "order": [
+          "easy_to_use",
+          "would_recommend",
+          "meets_expectations"
+        ],
+        "order_key": "easy_to_use -> would_recommend -> meets_expectations",
+        "role": "abba_comparator",
+        "run_dir": "run_03_p2"
+      },
+      {
+        "block": 1,
+        "index": 4,
+        "label": "p1",
+        "order": [
+          "easy_to_use",
+          "meets_expectations",
+          "would_recommend"
+        ],
+        "order_key": "easy_to_use -> meets_expectations -> would_recommend",
+        "role": "abba_fixed",
+        "run_dir": "run_04_p1"
+      }
+    ],
+    "schema_version": "m3-strategy-benchmark-v1",
+    "seed": 5051
+  },
+  "schedule_path": "results/milestone_3/jev_positive_experience/schedule.json",
+  "schedule_sha256": "sha256:192ef8fe49ece297ce38d7779c9f66e0828ab0544254f236ad3565402d9bf686",
+  "schema_version": "m3-strategy-benchmark-v1",
+  "session_attempt_cap": 10560,
+  "split_manifest_sha256": "sha256:6a2791bdbbddb4a5d4f03fdd515bbae4b040fae826ee4817e58b1b2917e27e14",
+  "started_at": "2026-11-06T04:06:19.881823+00:00",
+  "status": "complete"
+}

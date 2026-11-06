@@ -1,0 +1,211 @@
+{
+  "attempts_used": 3331,
+  "cache_enabled": false,
+  "concurrency": 4,
+  "finished_at": "2026-11-06T03:57:52.904340+00:00",
+  "git_commit": "213c3a5e59620db0df7ce0f52c06bdff7290fc84",
+  "git_worktree_dirty": true,
+  "per_run_attempt_cap": 2640,
+  "pricing_configuration": {
+    "id": "jev-public-list-2026-11-02",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://typesafe.ai/",
+    "status": "published_list_price",
+    "verified_date": "2026-11-02"
+  },
+  "profile_dir": "results/milestone_3/jev_listing_mismatch/profile",
+  "provider": "jev",
+  "query_id": "listing_mismatch",
+  "requested_model": "jev-1.14.0",
+  "runs": [
+    {
+      "block": 1,
+      "completed_decisions": 843,
+      "completion_status": "complete",
+      "estimated_cost_usd": 0.011796792000000002,
+      "final_record_count": 5,
+      "finished_at": "2026-11-06T03:56:31.067547+00:00",
+      "http_attempts": 843,
+      "incomplete_reason": null,
+      "index": 1,
+      "input_tokens": 280876,
+      "label": "p1",
+      "order": [
+        "description_mismatch",
+        "value_complaint",
+        "dissatisfaction"
+      ],
+      "order_key": "description_mismatch -> value_complaint -> dissatisfaction",
+      "output_tokens": 20194,
+      "provider_attempts": 843,
+      "retry_attempts": 0,
+      "role": "abba_fixed",
+      "run_dir": "run_01_p1",
+      "run_id": "m3-p1-18e9b0f518c3",
+      "started_at": "2026-11-06T03:56:03.378207+00:00",
+      "wall_time_seconds": 27.53470180000113
+    },
+    {
+      "block": 1,
+      "completed_decisions": 823,
+      "completion_status": "complete",
+      "estimated_cost_usd": 0.011148774000000002,
+      "final_record_count": 5,
+      "finished_at": "2026-11-06T03:56:58.049299+00:00",
+      "http_attempts": 823,
+      "incomplete_reason": null,
+      "index": 2,
+      "input_tokens": 265447,
+      "label": "p3",
+      "order": [
+        "value_complaint",
+        "description_mismatch",
+        "dissatisfaction"
+      ],
+      "order_key": "value_complaint -> description_mismatch -> dissatisfaction",
+      "output_tokens": 18952,
+      "provider_attempts": 823,
+      "retry_attempts": 0,
+      "role": "abba_comparator",
+      "run_dir": "run_02_p3",
+      "run_id": "m3-p3-73b6b8679029",
+      "started_at": "2026-11-06T03:56:31.068547+00:00",
+      "wall_time_seconds": 26.8312963999997
+    },
+    {
+      "block": 1,
+      "completed_decisions": 823,
+      "completion_status": "complete",
+      "estimated_cost_usd": 0.011148774000000002,
+      "final_record_count": 5,
+      "finished_at": "2026-11-06T03:57:24.650843+00:00",
+      "http_attempts": 823,
+      "incomplete_reason": null,
+      "index": 3,
+      "input_tokens": 265447,
+      "label": "p3",
+      "order": [
+        "value_complaint",
+        "description_mismatch",
+        "dissatisfaction"
+      ],
+      "order_key": "value_complaint -> description_mismatch -> dissatisfaction",
+      "output_tokens": 18952,
+      "provider_attempts": 823,
+      "retry_attempts": 0,
+      "role": "abba_comparator",
+      "run_dir": "run_03_p3",
+      "run_id": "m3-p3-69cc8d033768",
+      "started_at": "2026-11-06T03:56:58.050300+00:00",
+      "wall_time_seconds": 26.4489304000017
+    },
+    {
+      "block": 1,
+      "completed_decisions": 842,
+      "completion_status": "complete",
+      "estimated_cost_usd": 0.011784402,
+      "final_record_count": 5,
+      "finished_at": "2026-11-06T03:57:52.903342+00:00",
+      "http_attempts": 842,
+      "incomplete_reason": null,
+      "index": 4,
+      "input_tokens": 280581,
+      "label": "p1",
+      "order": [
+        "description_mismatch",
+        "value_complaint",
+        "dissatisfaction"
+      ],
+      "order_key": "description_mismatch -> value_complaint -> dissatisfaction",
+      "output_tokens": 20171,
+      "provider_attempts": 842,
+      "retry_attempts": 0,
+      "role": "abba_fixed",
+      "run_dir": "run_04_p1",
+      "run_id": "m3-p1-7d46bc8b2042",
+      "started_at": "2026-11-06T03:57:24.650843+00:00",
+      "wall_time_seconds": 28.097544199999902
+    }
+  ],
+  "schedule": {
+    "abba_blocks": 1,
+    "comparator_order": [
+      "value_complaint",
+      "description_mismatch",
+      "dissatisfaction"
+    ],
+    "comparator_source": "correlation_aware_selection",
+    "design": "abba_then_shuffled_remaining_orders",
+    "fixed_order": [
+      "description_mismatch",
+      "value_complaint",
+      "dissatisfaction"
+    ],
+    "orders": "selected",
+    "query_id": "listing_mismatch",
+    "runs": [
+      {
+        "block": 1,
+        "index": 1,
+        "label": "p1",
+        "order": [
+          "description_mismatch",
+          "value_complaint",
+          "dissatisfaction"
+        ],
+        "order_key": "description_mismatch -> value_complaint -> dissatisfaction",
+        "role": "abba_fixed",
+        "run_dir": "run_01_p1"
+      },
+      {
+        "block": 1,
+        "index": 2,
+        "label": "p3",
+        "order": [
+          "value_complaint",
+          "description_mismatch",
+          "dissatisfaction"
+        ],
+        "order_key": "value_complaint -> description_mismatch -> dissatisfaction",
+        "role": "abba_comparator",
+        "run_dir": "run_02_p3"
+      },
+      {
+        "block": 1,
+        "index": 3,
+        "label": "p3",
+        "order": [
+          "value_complaint",
+          "description_mismatch",
+          "dissatisfaction"
+        ],
+        "order_key": "value_complaint -> description_mismatch -> dissatisfaction",
+        "role": "abba_comparator",
+        "run_dir": "run_03_p3"
+      },
+      {
+        "block": 1,
+        "index": 4,
+        "label": "p1",
+        "order": [
+          "description_mismatch",
+          "value_complaint",
+          "dissatisfaction"
+        ],
+        "order_key": "description_mismatch -> value_complaint -> dissatisfaction",
+        "role": "abba_fixed",
+        "run_dir": "run_04_p1"
+      }
+    ],
+    "schema_version": "m3-strategy-benchmark-v1",
+    "seed": 5051
+  },
+  "schedule_path": "results/milestone_3/jev_listing_mismatch/schedule.json",
+  "schedule_sha256": "sha256:b9d8e986da224dc7c28aea0f5b66944bbaff5a84e7280315f6f05b7512035fdb",
+  "schema_version": "m3-strategy-benchmark-v1",
+  "session_attempt_cap": 10560,
+  "split_manifest_sha256": "sha256:6a2791bdbbddb4a5d4f03fdd515bbae4b040fae826ee4817e58b1b2917e27e14",
+  "started_at": "2026-11-06T03:56:03.377207+00:00",
+  "status": "complete"
+}

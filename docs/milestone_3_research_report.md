@@ -2,9 +2,10 @@
 
 Every number below comes from stored Jev traces (Milestone 1 fixed run, Milestone 2 profiling
 and optimized runs, and the Milestone 1 smoke run) or from deterministic offline computation over
-them. **No new Jev request was made for Milestone 3.** Replay, bootstrap, calibration, and
-adaptive results are offline analyses, not new live evaluations. Replay-derived savings are
-estimates, not causal measurements. The generated artifacts are in
+them. Sections A–G below are that offline analysis. A later live Jev evaluation, with
+contemporaneous ABBA sessions on four workloads, is in
+[milestone_3_live_evaluation.md](milestone_3_live_evaluation.md). Replay-derived savings in
+this report are estimates, not causal measurements. The offline artifacts are in
 `results/milestone_3/offline_analysis_20261105_19162a2/`, generated from clean commit `19162a2`
 (recorded in its manifest with `git_worktree_dirty: false`) and reproducible with:
 

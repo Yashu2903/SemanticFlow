@@ -1,24 +1,27 @@
-# Milestone 3 benchmark protocol (not executed)
+# Milestone 3 benchmark protocol
 
-This protocol is prepared but **not run**. Every Jev step needs separate, explicit authorization.
-`--authorize-paid` is only a CLI acknowledgement and is not that authorization.
+The first live run of this protocol is recorded in
+[milestone_3_live_evaluation.md](milestone_3_live_evaluation.md) (ABBA sessions of
+strategy-selected orders; 19,407 HTTP attempts). Remaining permutations and live sequential
+profiling were not executed. `--authorize-paid` is only a CLI acknowledgement and is not
+authorization for additional paid work.
 
 ## Workloads
 
 | Workload | Predicates | Expected regime | Status |
 |---|---|---|---|
 | `product_quality` (`configs/queries/product_quality.yaml`) | poor_quality, product_defect, dissatisfaction | sparse, strongly positively correlated | Jev outcomes stored |
-| `listing_mismatch` | description_mismatch, value_complaint, dissatisfaction | sparse complaints, positively correlated | mock-verified only |
-| `positive_experience` | easy_to_use, meets_expectations, would_recommend | high selectivity, positively correlated | mock-verified only |
-| `mixed_feedback` | praises_product, reports_problem, size_or_quantity_issue | praise and problems negatively correlated | mock-verified only |
+| `listing_mismatch` | description_mismatch, value_complaint, dissatisfaction | sparse complaints, positively correlated | Jev ABBA session stored |
+| `positive_experience` | easy_to_use, meets_expectations, would_recommend | high selectivity, positively correlated | Jev ABBA session stored |
+| `mixed_feedback` | praises_product, reports_problem, size_or_quantity_issue | praise and problems negatively correlated | Jev session stored |
 
 All configurations read the real `reviews_1000.parquet` and share the Milestone 2 split: seed
 2027, 200 profiling and 800 held-out reviews, with profiling fingerprint `sha256:ca43925d…` and
 evaluation fingerprint `sha256:5a1df48e…`. Available structured fields are rating, product IDs,
 user ID, title, timestamp, helpful votes, and verified purchase. They are not used as labels.
 `listing_mismatch` reuses the exact `dissatisfaction` definition, so stored Jev decisions with
-the same question hash remain reusable. Model quality and optimization gains for the three new
-workloads are **unmeasured**.
+the same question hash remain reusable. Measured outcomes for the three new workloads are in
+[milestone_3_live_evaluation.md](milestone_3_live_evaluation.md).
 
 ## Strategies compared
 

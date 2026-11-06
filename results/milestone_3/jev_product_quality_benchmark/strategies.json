@@ -1,0 +1,2133 @@
+{
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "distinct_selected_orders": [
+    "poor_quality -> product_defect -> dissatisfaction",
+    "product_defect -> poor_quality -> dissatisfaction"
+  ],
+  "evaluation_fingerprint": "sha256:5a1df48e8b331f0d1f96ba36e650f10ba94c3f14e6eea568cd9d5680656c9b45",
+  "evaluation_size": 800,
+  "held_out_outcomes_used": false,
+  "horizons": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "model": [
+    "jev-1.14.0"
+  ],
+  "original_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "permutation_labels": {
+    "dissatisfaction -> poor_quality -> product_defect": "p5",
+    "dissatisfaction -> product_defect -> poor_quality": "p6",
+    "poor_quality -> dissatisfaction -> product_defect": "p2",
+    "poor_quality -> product_defect -> dissatisfaction": "p1",
+    "product_defect -> dissatisfaction -> poor_quality": "p4",
+    "product_defect -> poor_quality -> dissatisfaction": "p3"
+  },
+  "plans": {
+    "correlation_aware": {
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.013202018056634167,
+          "estimated_evaluations": 987.9243278441319,
+          "estimated_input_tokens": 314333.7632531944,
+          "estimated_output_tokens": 21907.1987936323,
+          "estimated_reduction_vs_original_percent": 0.9499927584539609,
+          "estimated_stage_input_records": [
+            800.0,
+            101.49253731343283,
+            86.43179053069898
+          ],
+          "estimated_summed_latency_seconds": 103.4855229262433,
+          "estimated_total_tokens": 336240.9620468267,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.013202018056634167,
+          "predicate_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "rank": 1,
+          "selected": true,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "product_defect",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.4052815000000003e-05,
+              "average_input_tokens": 334.59083333333336,
+              "average_latency_seconds": 0.1076993825015476,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 25,
+              "reach_probability": 0.12686567164179105,
+              "reach_wilson_lower": 0.08611974475712644,
+              "reach_wilson_upper": 0.17801425002582347,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.396535e-05,
+              "average_input_tokens": 332.5083333333333,
+              "average_latency_seconds": 0.1045810953747908,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 25,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 22,
+              "reach_probability": 0.10803973816337373,
+              "reach_wilson_lower": 0.07377244460125303,
+              "reach_wilson_upper": 0.1609269099730149,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.01332863916348776,
+          "estimated_evaluations": 999.9815641299422,
+          "estimated_input_tokens": 317348.5515116133,
+          "estimated_output_tokens": 22172.69186747682,
+          "estimated_reduction_vs_original_percent": 0.0,
+          "estimated_stage_input_records": [
+            800.0,
+            113.43283582089552,
+            86.54872830904662
+          ],
+          "estimated_summed_latency_seconds": 106.29988990224138,
+          "estimated_total_tokens": 339521.2433790901,
+          "is_original_order": true,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.01332863916348776,
+          "predicate_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "rank": 2,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.3971650000000002e-05,
+              "average_input_tokens": 332.65833333333336,
+              "average_latency_seconds": 0.10677999015169916,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "product_defect",
+              "prefix_passing": 28,
+              "reach_probability": 0.1417910447761194,
+              "reach_wilson_lower": 0.09866982633455634,
+              "reach_wilson_upper": 0.1948988086570756,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.396535e-05,
+              "average_input_tokens": 332.5083333333333,
+              "average_latency_seconds": 0.1045810953747908,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 28,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 22,
+              "reach_probability": 0.10818591038630829,
+              "reach_wilson_lower": 0.07377244460125303,
+              "reach_wilson_upper": 0.1609269099730149,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.01337933118846354,
+          "estimated_evaluations": 1000.003998377801,
+          "estimated_input_tokens": 318555.50448722707,
+          "estimated_output_tokens": 22203.073038938488,
+          "estimated_reduction_vs_original_percent": -0.3803240852572911,
+          "estimated_stage_input_records": [
+            800.0,
+            101.49253731343283,
+            98.51146106436816
+          ],
+          "estimated_summed_latency_seconds": 104.80930875533167,
+          "estimated_total_tokens": 340758.5775261656,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.01337933118846354,
+          "predicate_order": [
+            "product_defect",
+            "dissatisfaction",
+            "poor_quality"
+          ],
+          "rank": 3,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "product_defect",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.4052815000000003e-05,
+              "average_input_tokens": 334.59083333333336,
+              "average_latency_seconds": 0.10526859917013402,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 25,
+              "reach_probability": 0.12686567164179105,
+              "reach_wilson_lower": 0.08611974475712644,
+              "reach_wilson_upper": 0.17801425002582347,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.4052815000000003e-05,
+              "average_input_tokens": 334.59083333333336,
+              "average_latency_seconds": 0.1076993825015476,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 25,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 25,
+              "reach_probability": 0.12313932633046021,
+              "reach_wilson_lower": 0.08611974475712644,
+              "reach_wilson_upper": 0.17801425002582347,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.013658300544232007,
+          "estimated_evaluations": 1023.8785485849189,
+          "estimated_input_tokens": 325197.63200552395,
+          "estimated_output_tokens": 22752.19374051001,
+          "estimated_reduction_vs_original_percent": -2.4733311233101403,
+          "estimated_stage_input_records": [
+            800.0,
+            113.43283582089552,
+            110.44571276402341
+          ],
+          "estimated_summed_latency_seconds": 108.46765682664018,
+          "estimated_total_tokens": 347949.825746034,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.013658300544232007,
+          "predicate_order": [
+            "poor_quality",
+            "dissatisfaction",
+            "product_defect"
+          ],
+          "rank": 4,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.3929650000000003e-05,
+              "average_input_tokens": 331.65833333333336,
+              "average_latency_seconds": 0.10171739621379829,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 28,
+              "reach_probability": 0.1417910447761194,
+              "reach_wilson_lower": 0.09866982633455634,
+              "reach_wilson_upper": 0.1948988086570756,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.3971650000000002e-05,
+              "average_input_tokens": 332.65833333333336,
+              "average_latency_seconds": 0.10677999015169916,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 28,
+              "predicate_id": "product_defect",
+              "prefix_passing": 28,
+              "reach_probability": 0.13805714095502927,
+              "reach_wilson_lower": 0.09866982633455634,
+              "reach_wilson_upper": 0.1948988086570756,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.014604903678130469,
+          "estimated_evaluations": 1088.0204079106952,
+          "estimated_input_tokens": 347735.80186024925,
+          "estimated_output_tokens": 25536.4489740353,
+          "estimated_reduction_vs_original_percent": -9.575354985517848,
+          "estimated_stage_input_records": [
+            800.0,
+            189.0547263681592,
+            98.96568154253607
+          ],
+          "estimated_summed_latency_seconds": 113.21865188343135,
+          "estimated_total_tokens": 373272.2508342845,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.014604903678130469,
+          "predicate_order": [
+            "dissatisfaction",
+            "product_defect",
+            "poor_quality"
+          ],
+          "rank": 5,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.4170739423076924e-05,
+              "average_input_tokens": 337.3985576923077,
+              "average_latency_seconds": 0.1073314668275718,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "product_defect",
+              "prefix_passing": 47,
+              "reach_probability": 0.236318407960199,
+              "reach_wilson_lower": 0.18157433415232588,
+              "reach_wilson_upper": 0.29841368882762537,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.4052815000000003e-05,
+              "average_input_tokens": 334.59083333333336,
+              "average_latency_seconds": 0.1076993825015476,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 47,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 25,
+              "reach_probability": 0.1237071019281701,
+              "reach_wilson_lower": 0.08611974475712644,
+              "reach_wilson_upper": 0.17801425002582347,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.014754840067166323,
+          "estimated_evaluations": 1099.895113982327,
+          "estimated_input_tokens": 351305.7158849124,
+          "estimated_output_tokens": 25797.6925076112,
+          "estimated_reduction_vs_original_percent": -10.700273945336242,
+          "estimated_stage_input_records": [
+            800.0,
+            189.0547263681592,
+            110.84038761416797
+          ],
+          "estimated_summed_latency_seconds": 113.74777440256025,
+          "estimated_total_tokens": 377103.4083925236,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.014754840067166323,
+          "predicate_order": [
+            "dissatisfaction",
+            "poor_quality",
+            "product_defect"
+          ],
+          "rank": 6,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.4128739423076924e-05,
+              "average_input_tokens": 336.3985576923077,
+              "average_latency_seconds": 0.10390457451870204,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 47,
+              "reach_probability": 0.236318407960199,
+              "reach_wilson_lower": 0.18157433415232588,
+              "reach_wilson_upper": 0.29841368882762537,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.3971650000000002e-05,
+              "average_input_tokens": 332.65833333333336,
+              "average_latency_seconds": 0.10677999015169916,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 47,
+              "predicate_id": "product_defect",
+              "prefix_passing": 28,
+              "reach_probability": 0.13855048451770996,
+              "reach_wilson_lower": 0.09866982633455634,
+              "reach_wilson_upper": 0.1948988086570756,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        }
+      ],
+      "cardinality_estimator": "correlation_aware",
+      "cost_model_version": "correlation-aware-and-v1",
+      "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+      "estimated_reduction_percent": 0.9499927584539609,
+      "evaluation_record_count": 800,
+      "joint_matrix_fingerprint": "sha256:08f4174dc2d2b9a0af7fc51a7217441ee0f75f000143dbe49b6b223771e9373c",
+      "joint_statistics_version": "joint-profile-v1",
+      "minimum_objective_predicate_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "objective": "estimated_cost_usd",
+      "optimizer_version": "exhaustive-order-v1",
+      "original_estimated_objective": 0.01332863916348776,
+      "original_predicate_order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "predicate_hashes": {
+        "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+        "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+        "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+      },
+      "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+      "query_id": "product_quality",
+      "reordered": true,
+      "requested_model": "jev-1.14.0",
+      "schema_version": "m2-plan-v1",
+      "selected_estimated_objective": 0.013202018056634167,
+      "selected_predicate_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "selection_explanation": null,
+      "selection_policy": "minimum_expected_objective",
+      "statistics_version": "unconditional-profile-v1",
+      "threshold": 0.5
+    },
+    "correlation_aware_confidence": {
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.01332863916348776,
+          "estimated_evaluations": 999.9815641299422,
+          "estimated_input_tokens": 317348.5515116133,
+          "estimated_output_tokens": 22172.69186747682,
+          "estimated_reduction_vs_original_percent": 0.0,
+          "estimated_stage_input_records": [
+            800.0,
+            113.43283582089552,
+            86.54872830904662
+          ],
+          "estimated_summed_latency_seconds": 106.29988990224138,
+          "estimated_total_tokens": 339521.2433790901,
+          "is_original_order": true,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.01332863916348776,
+          "predicate_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "rank": 1,
+          "selected": true,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.3971650000000002e-05,
+              "average_input_tokens": 332.65833333333336,
+              "average_latency_seconds": 0.10677999015169916,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "product_defect",
+              "prefix_passing": 28,
+              "reach_probability": 0.1417910447761194,
+              "reach_wilson_lower": 0.09866982633455634,
+              "reach_wilson_upper": 0.1948988086570756,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.396535e-05,
+              "average_input_tokens": 332.5083333333333,
+              "average_latency_seconds": 0.1045810953747908,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 28,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 22,
+              "reach_probability": 0.10818591038630829,
+              "reach_wilson_lower": 0.07377244460125303,
+              "reach_wilson_upper": 0.1609269099730149,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.013202018056634167,
+          "estimated_evaluations": 987.9243278441319,
+          "estimated_input_tokens": 314333.7632531944,
+          "estimated_output_tokens": 21907.1987936323,
+          "estimated_reduction_vs_original_percent": 0.9499927584539609,
+          "estimated_stage_input_records": [
+            800.0,
+            101.49253731343283,
+            86.43179053069898
+          ],
+          "estimated_summed_latency_seconds": 103.4855229262433,
+          "estimated_total_tokens": 336240.9620468267,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.013202018056634167,
+          "predicate_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "rank": 2,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "product_defect",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.4052815000000003e-05,
+              "average_input_tokens": 334.59083333333336,
+              "average_latency_seconds": 0.1076993825015476,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 25,
+              "reach_probability": 0.12686567164179105,
+              "reach_wilson_lower": 0.08611974475712644,
+              "reach_wilson_upper": 0.17801425002582347,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.396535e-05,
+              "average_input_tokens": 332.5083333333333,
+              "average_latency_seconds": 0.1045810953747908,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 25,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 22,
+              "reach_probability": 0.10803973816337373,
+              "reach_wilson_lower": 0.07377244460125303,
+              "reach_wilson_upper": 0.1609269099730149,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.01337933118846354,
+          "estimated_evaluations": 1000.003998377801,
+          "estimated_input_tokens": 318555.50448722707,
+          "estimated_output_tokens": 22203.073038938488,
+          "estimated_reduction_vs_original_percent": -0.3803240852572911,
+          "estimated_stage_input_records": [
+            800.0,
+            101.49253731343283,
+            98.51146106436816
+          ],
+          "estimated_summed_latency_seconds": 104.80930875533167,
+          "estimated_total_tokens": 340758.5775261656,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.01337933118846354,
+          "predicate_order": [
+            "product_defect",
+            "dissatisfaction",
+            "poor_quality"
+          ],
+          "rank": 3,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "product_defect",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.4052815000000003e-05,
+              "average_input_tokens": 334.59083333333336,
+              "average_latency_seconds": 0.10526859917013402,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 25,
+              "reach_probability": 0.12686567164179105,
+              "reach_wilson_lower": 0.08611974475712644,
+              "reach_wilson_upper": 0.17801425002582347,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.4052815000000003e-05,
+              "average_input_tokens": 334.59083333333336,
+              "average_latency_seconds": 0.1076993825015476,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 25,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 25,
+              "reach_probability": 0.12313932633046021,
+              "reach_wilson_lower": 0.08611974475712644,
+              "reach_wilson_upper": 0.17801425002582347,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.013658300544232007,
+          "estimated_evaluations": 1023.8785485849189,
+          "estimated_input_tokens": 325197.63200552395,
+          "estimated_output_tokens": 22752.19374051001,
+          "estimated_reduction_vs_original_percent": -2.4733311233101403,
+          "estimated_stage_input_records": [
+            800.0,
+            113.43283582089552,
+            110.44571276402341
+          ],
+          "estimated_summed_latency_seconds": 108.46765682664018,
+          "estimated_total_tokens": 347949.825746034,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.013658300544232007,
+          "predicate_order": [
+            "poor_quality",
+            "dissatisfaction",
+            "product_defect"
+          ],
+          "rank": 4,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.3929650000000003e-05,
+              "average_input_tokens": 331.65833333333336,
+              "average_latency_seconds": 0.10171739621379829,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 28,
+              "reach_probability": 0.1417910447761194,
+              "reach_wilson_lower": 0.09866982633455634,
+              "reach_wilson_upper": 0.1948988086570756,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.3971650000000002e-05,
+              "average_input_tokens": 332.65833333333336,
+              "average_latency_seconds": 0.10677999015169916,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 28,
+              "predicate_id": "product_defect",
+              "prefix_passing": 28,
+              "reach_probability": 0.13805714095502927,
+              "reach_wilson_lower": 0.09866982633455634,
+              "reach_wilson_upper": 0.1948988086570756,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.014604903678130469,
+          "estimated_evaluations": 1088.0204079106952,
+          "estimated_input_tokens": 347735.80186024925,
+          "estimated_output_tokens": 25536.4489740353,
+          "estimated_reduction_vs_original_percent": -9.575354985517848,
+          "estimated_stage_input_records": [
+            800.0,
+            189.0547263681592,
+            98.96568154253607
+          ],
+          "estimated_summed_latency_seconds": 113.21865188343135,
+          "estimated_total_tokens": 373272.2508342845,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.014604903678130469,
+          "predicate_order": [
+            "dissatisfaction",
+            "product_defect",
+            "poor_quality"
+          ],
+          "rank": 5,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.4170739423076924e-05,
+              "average_input_tokens": 337.3985576923077,
+              "average_latency_seconds": 0.1073314668275718,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "product_defect",
+              "prefix_passing": 47,
+              "reach_probability": 0.236318407960199,
+              "reach_wilson_lower": 0.18157433415232588,
+              "reach_wilson_upper": 0.29841368882762537,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.4052815000000003e-05,
+              "average_input_tokens": 334.59083333333336,
+              "average_latency_seconds": 0.1076993825015476,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 47,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 25,
+              "reach_probability": 0.1237071019281701,
+              "reach_wilson_lower": 0.08611974475712644,
+              "reach_wilson_upper": 0.17801425002582347,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "correlation_aware",
+          "confidence": "high",
+          "estimated_cost_usd": 0.014754840067166323,
+          "estimated_evaluations": 1099.895113982327,
+          "estimated_input_tokens": 351305.7158849124,
+          "estimated_output_tokens": 25797.6925076112,
+          "estimated_reduction_vs_original_percent": -10.700273945336242,
+          "estimated_stage_input_records": [
+            800.0,
+            189.0547263681592,
+            110.84038761416797
+          ],
+          "estimated_summed_latency_seconds": 113.74777440256025,
+          "estimated_total_tokens": 377103.4083925236,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.014754840067166323,
+          "predicate_order": [
+            "dissatisfaction",
+            "poor_quality",
+            "product_defect"
+          ],
+          "rank": 6,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": "high",
+              "method": "certain_first_stage",
+              "minimum_chain_support": 200,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": 200,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": 1.0,
+              "reach_wilson_upper": 1.0,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.4128739423076924e-05,
+              "average_input_tokens": 336.3985576923077,
+              "average_latency_seconds": 0.10390457451870204,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 200,
+              "predicate_id": "poor_quality",
+              "prefix_passing": 47,
+              "reach_probability": 0.236318407960199,
+              "reach_wilson_lower": 0.18157433415232588,
+              "reach_wilson_upper": 0.29841368882762537,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.3971650000000002e-05,
+              "average_input_tokens": 332.65833333333336,
+              "average_latency_seconds": 0.10677999015169916,
+              "average_output_tokens": 22.0,
+              "confidence": "high",
+              "method": "prefix_chain_smoothed",
+              "minimum_chain_support": 47,
+              "predicate_id": "product_defect",
+              "prefix_passing": 28,
+              "reach_probability": 0.13855048451770996,
+              "reach_wilson_lower": 0.09866982633455634,
+              "reach_wilson_upper": 0.1948988086570756,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        }
+      ],
+      "cardinality_estimator": "correlation_aware",
+      "cost_model_version": "correlation-aware-and-v1",
+      "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+      "estimated_reduction_percent": 0.0,
+      "evaluation_record_count": 800,
+      "joint_matrix_fingerprint": "sha256:08f4174dc2d2b9a0af7fc51a7217441ee0f75f000143dbe49b6b223771e9373c",
+      "joint_statistics_version": "joint-profile-v1",
+      "minimum_objective_predicate_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "objective": "estimated_cost_usd",
+      "optimizer_version": "exhaustive-order-v1",
+      "original_estimated_objective": 0.01332863916348776,
+      "original_predicate_order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "predicate_hashes": {
+        "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+        "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+        "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+      },
+      "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+      "query_id": "product_quality",
+      "reordered": false,
+      "requested_model": "jev-1.14.0",
+      "schema_version": "m2-plan-v1",
+      "selected_estimated_objective": 0.01332863916348776,
+      "selected_predicate_order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "selection_explanation": {
+        "bootstrap_iterations": 1000,
+        "bootstrap_seed": 3031,
+        "confidence_level": 0.95,
+        "decision": "retain_original",
+        "full_sample_relative_saving": 0.00949992758453961,
+        "interpretation": "sampling_uncertainty_diagnostic",
+        "minimum_objective_order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ],
+        "minimum_relative_saving": 0.0,
+        "original_order": [
+          "poor_quality",
+          "product_defect",
+          "dissatisfaction"
+        ],
+        "policy": "confidence_aware",
+        "probability_minimum_cheaper_than_original": 0.769,
+        "reasons": [
+          "savings_probability_below_confidence_level"
+        ],
+        "selected_order": [
+          "poor_quality",
+          "product_defect",
+          "dissatisfaction"
+        ]
+      },
+      "selection_policy": "confidence_aware",
+      "statistics_version": "unconditional-profile-v1",
+      "threshold": 0.5
+    },
+    "independent": {
+      "candidate_count": 6,
+      "candidates": [
+        {
+          "cardinality_estimator": "independent",
+          "confidence": null,
+          "estimated_cost_usd": 0.01206996546,
+          "estimated_evaluations": 914.0,
+          "estimated_input_tokens": 287380.13,
+          "estimated_output_tokens": 20136.0,
+          "estimated_reduction_vs_original_percent": 1.058526619661517,
+          "estimated_stage_input_records": [
+            800.0,
+            100.0,
+            14.000000000000002
+          ],
+          "estimated_summed_latency_seconds": 95.59742979024712,
+          "estimated_total_tokens": 307516.13,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.01206996546,
+          "predicate_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "rank": 1,
+          "selected": true,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "product_defect",
+              "prefix_passing": null,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "poor_quality",
+              "prefix_passing": null,
+              "reach_probability": 0.125,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": null,
+              "reach_probability": 0.0175,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "independent",
+          "confidence": null,
+          "estimated_cost_usd": 0.012195069915,
+          "estimated_evaluations": 923.5,
+          "estimated_input_tokens": 290358.8075,
+          "estimated_output_tokens": 20517.0,
+          "estimated_reduction_vs_original_percent": 0.0330042894473021,
+          "estimated_stage_input_records": [
+            800.0,
+            100.0,
+            23.5
+          ],
+          "estimated_summed_latency_seconds": 96.300156552767,
+          "estimated_total_tokens": 310875.8075,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.012195069915,
+          "predicate_order": [
+            "product_defect",
+            "dissatisfaction",
+            "poor_quality"
+          ],
+          "rank": 2,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "product_defect",
+              "prefix_passing": null,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": null,
+              "reach_probability": 0.125,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "poor_quality",
+              "prefix_passing": null,
+              "reach_probability": 0.029375,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "independent",
+          "confidence": null,
+          "estimated_cost_usd": 0.01219909614,
+          "estimated_evaluations": 926.0,
+          "estimated_input_tokens": 290454.67000000004,
+          "estimated_output_tokens": 20400.0,
+          "estimated_reduction_vs_original_percent": 0.0,
+          "estimated_stage_input_records": [
+            800.0,
+            112.00000000000001,
+            14.000000000000002
+          ],
+          "estimated_summed_latency_seconds": 98.26807141058671,
+          "estimated_total_tokens": 310854.67000000004,
+          "is_original_order": true,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.01219909614,
+          "predicate_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "rank": 3,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "poor_quality",
+              "prefix_passing": null,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "product_defect",
+              "prefix_passing": null,
+              "reach_probability": 0.14,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": null,
+              "reach_probability": 0.0175,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "independent",
+          "confidence": null,
+          "estimated_cost_usd": 0.012357738304800001,
+          "estimated_evaluations": 938.32,
+          "estimated_input_tokens": 294231.8644,
+          "estimated_output_tokens": 20867.04,
+          "estimated_reduction_vs_original_percent": -1.3004419588089298,
+          "estimated_stage_input_records": [
+            800.0,
+            112.00000000000001,
+            26.32
+          ],
+          "estimated_summed_latency_seconds": 99.40144111385166,
+          "estimated_total_tokens": 315098.9044,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.012357738304800001,
+          "predicate_order": [
+            "poor_quality",
+            "dissatisfaction",
+            "product_defect"
+          ],
+          "rank": 4,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "poor_quality",
+              "prefix_passing": null,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": null,
+              "reach_probability": 0.14,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "product_defect",
+              "prefix_passing": null,
+              "reach_probability": 0.0329,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "independent",
+          "confidence": null,
+          "estimated_cost_usd": 0.013328228235,
+          "estimated_evaluations": 1011.5,
+          "estimated_input_tokens": 317338.7675,
+          "estimated_output_tokens": 23853.0,
+          "estimated_reduction_vs_original_percent": -9.255866844902156,
+          "estimated_stage_input_records": [
+            800.0,
+            188.0,
+            23.5
+          ],
+          "estimated_summed_latency_seconds": 104.39565443323096,
+          "estimated_total_tokens": 341191.7675,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.013328228235,
+          "predicate_order": [
+            "dissatisfaction",
+            "product_defect",
+            "poor_quality"
+          ],
+          "rank": 5,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": null,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "product_defect",
+              "prefix_passing": null,
+              "reach_probability": 0.235,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "poor_quality",
+              "prefix_passing": null,
+              "reach_probability": 0.029375,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        },
+        {
+          "cardinality_estimator": "independent",
+          "confidence": null,
+          "estimated_cost_usd": 0.0133585739448,
+          "estimated_evaluations": 1014.32,
+          "estimated_input_tokens": 318061.2844,
+          "estimated_output_tokens": 23915.04,
+          "estimated_reduction_vs_original_percent": -9.504620600522621,
+          "estimated_stage_input_records": [
+            800.0,
+            188.0,
+            26.32
+          ],
+          "estimated_summed_latency_seconds": 105.02325521401076,
+          "estimated_total_tokens": 341976.3244,
+          "is_original_order": false,
+          "objective": "estimated_cost_usd",
+          "objective_value": 0.0133585739448,
+          "predicate_order": [
+            "dissatisfaction",
+            "poor_quality",
+            "product_defect"
+          ],
+          "rank": 6,
+          "selected": false,
+          "stage_estimates": [
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10283573500084459,
+              "average_output_tokens": 24.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "dissatisfaction",
+              "prefix_passing": null,
+              "reach_probability": 1.0,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 1
+            },
+            {
+              "average_cost_usd": 1.3168890000000001e-05,
+              "average_input_tokens": 313.545,
+              "average_latency_seconds": 0.10642021500068949,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "poor_quality",
+              "prefix_passing": null,
+              "reach_probability": 0.235,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 2
+            },
+            {
+              "average_cost_usd": 1.321089e-05,
+              "average_input_tokens": 314.545,
+              "average_latency_seconds": 0.10439463500020793,
+              "average_output_tokens": 22.0,
+              "confidence": null,
+              "method": "independent_product",
+              "minimum_chain_support": null,
+              "predicate_id": "product_defect",
+              "prefix_passing": null,
+              "reach_probability": 0.0329,
+              "reach_wilson_lower": null,
+              "reach_wilson_upper": null,
+              "sample_size": 200,
+              "stage": 3
+            }
+          ]
+        }
+      ],
+      "cardinality_estimator": "independent",
+      "cost_model_version": "independent-and-v1",
+      "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+      "estimated_reduction_percent": 1.058526619661517,
+      "evaluation_record_count": 800,
+      "joint_matrix_fingerprint": null,
+      "joint_statistics_version": null,
+      "minimum_objective_predicate_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "objective": "estimated_cost_usd",
+      "optimizer_version": "exhaustive-order-v1",
+      "original_estimated_objective": 0.01219909614,
+      "original_predicate_order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "predicate_hashes": {
+        "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+        "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+        "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+      },
+      "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+      "query_id": "product_quality",
+      "reordered": true,
+      "requested_model": "jev-1.14.0",
+      "schema_version": "m2-plan-v1",
+      "selected_estimated_objective": 0.01206996546,
+      "selected_predicate_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "selection_explanation": null,
+      "selection_policy": "minimum_expected_objective",
+      "statistics_version": "unconditional-profile-v1",
+      "threshold": 0.5
+    }
+  },
+  "pricing": {
+    "id": "jev-public-list-2026-11-02",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://typesafe.ai/",
+    "status": "published_list_price",
+    "verified_date": "2026-11-02"
+  },
+  "prior_cost_per_decision_usd": 1.318289e-05,
+  "prior_cost_source": "Milestone 2 stored profiling average",
+  "prior_structural_savings_bound_per_execution_usd": 0.021092624,
+  "profile_decisions_sha256": "sha256:60dcee7bbf89f50d5ece916ac370e4e4f07376a13134311cb2073ee40bef645b",
+  "profile_dir": "results/milestone_3/jev_product_quality_benchmark",
+  "profile_report_sha256": "sha256:e5f322d7b23fef517d758eb00ef93938c0e06a980850d2f79bc12bf006c087f2",
+  "profiling_cost_usd": 0.007909734,
+  "profiling_decisions": 600,
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "query_id": "product_quality",
+  "schema_version": "m3-strategy-benchmark-v1",
+  "split_manifest_sha256": "sha256:6a2791bdbbddb4a5d4f03fdd515bbae4b040fae826ee4817e58b1b2917e27e14",
+  "strategies": {
+    "adaptive": {
+      "by_horizon": {
+        "1": {
+          "profiling_cost_usd": 0.0009827160000000002,
+          "profiling_decisions": 75,
+          "profiling_started": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "start_decision": {
+            "action": "start_adaptive_profiling",
+            "best_case_break_even_executions": 1,
+            "best_case_net_savings_usd": 0.02010390725,
+            "economics_gate_configured": true,
+            "expected_executions": 1,
+            "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+            "first_checkpoint_cost_usd": 0.00098871675,
+            "first_checkpoint_decisions": 75,
+            "optimization_overhead_usd": 0.0,
+            "reasons": [
+              "bounded_savings_may_exceed_first_checkpoint_cost"
+            ],
+            "savings_bound_basis": "structural_upper_bound",
+            "savings_upper_bound_per_execution_usd": 0.021092624,
+            "schema_version": "m3-optimization-economics-v2",
+            "status": "decided"
+          },
+          "stopping_checkpoint": {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 9.213994479110624e-06,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          }
+        },
+        "10": {
+          "profiling_cost_usd": 0.0009827160000000002,
+          "profiling_decisions": 75,
+          "profiling_started": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "start_decision": {
+            "action": "start_adaptive_profiling",
+            "best_case_break_even_executions": 1,
+            "best_case_net_savings_usd": 0.20993752325,
+            "economics_gate_configured": true,
+            "expected_executions": 10,
+            "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+            "first_checkpoint_cost_usd": 0.00098871675,
+            "first_checkpoint_decisions": 75,
+            "optimization_overhead_usd": 0.0,
+            "reasons": [
+              "bounded_savings_may_exceed_first_checkpoint_cost"
+            ],
+            "savings_bound_basis": "structural_upper_bound",
+            "savings_upper_bound_per_execution_usd": 0.021092624,
+            "schema_version": "m3-optimization-economics-v2",
+            "status": "decided"
+          },
+          "stopping_checkpoint": {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 9.213994479110625e-05,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          }
+        },
+        "100": {
+          "profiling_cost_usd": 0.0009827160000000002,
+          "profiling_decisions": 75,
+          "profiling_started": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "start_decision": {
+            "action": "start_adaptive_profiling",
+            "best_case_break_even_executions": 1,
+            "best_case_net_savings_usd": 2.10827368325,
+            "economics_gate_configured": true,
+            "expected_executions": 100,
+            "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+            "first_checkpoint_cost_usd": 0.00098871675,
+            "first_checkpoint_decisions": 75,
+            "optimization_overhead_usd": 0.0,
+            "reasons": [
+              "bounded_savings_may_exceed_first_checkpoint_cost"
+            ],
+            "savings_bound_basis": "structural_upper_bound",
+            "savings_upper_bound_per_execution_usd": 0.021092624,
+            "schema_version": "m3-optimization-economics-v2",
+            "status": "decided"
+          },
+          "stopping_checkpoint": {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 0.0009213994479110625,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          }
+        },
+        "1000": {
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "profiling_started": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "start_decision": {
+            "action": "start_adaptive_profiling",
+            "best_case_break_even_executions": 1,
+            "best_case_net_savings_usd": 21.09163528325,
+            "economics_gate_configured": true,
+            "expected_executions": 1000,
+            "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+            "first_checkpoint_cost_usd": 0.00098871675,
+            "first_checkpoint_decisions": 75,
+            "optimization_overhead_usd": 0.0,
+            "reasons": [
+              "bounded_savings_may_exceed_first_checkpoint_cost"
+            ],
+            "savings_bound_basis": "structural_upper_bound",
+            "savings_upper_bound_per_execution_usd": 0.021092624,
+            "schema_version": "m3-optimization-economics-v2",
+            "status": "decided"
+          },
+          "stopping_checkpoint": {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.787,
+            "bootstrap_selection_frequency_of_selected": 0.787,
+            "checkpoint": 5,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 0.021601016291378422,
+            "next_checkpoint_reviews": null,
+            "next_increment_cost_usd_estimate": null,
+            "original_predicted_objective": 0.01332863916348776,
+            "profiled_reviews": 200,
+            "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+            "profiling_decisions": 600,
+            "reasons": [
+              "maximum_checkpoint_reached"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.013202018056634167
+          }
+        }
+      },
+      "horizon_dependent": true
+    },
+    "correlation_aware": {
+      "horizon_dependent": false,
+      "profiling_cost_usd": 0.007909734,
+      "profiling_decisions": 600,
+      "selected_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ]
+    },
+    "correlation_aware_confidence": {
+      "horizon_dependent": false,
+      "profiling_cost_usd": 0.007909734,
+      "profiling_decisions": 600,
+      "selected_order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ]
+    },
+    "economics_gated": {
+      "by_horizon": {
+        "1": {
+          "after_profiling": {
+            "action": "optimize_with_existing_statistics",
+            "break_even_executions_for_new_comparable_profile": 63,
+            "break_even_executions_for_sunk_profiling": 63,
+            "existing_plan_available": false,
+            "expected_executions": 1,
+            "expected_executions_known": true,
+            "fixed_total_cost_usd": 0.01332863916348776,
+            "forward_net_savings_usd": 0.00012662110685359232,
+            "forward_optimized_total_cost_usd": 0.013202018056634167,
+            "minimum_net_savings_usd": 0.0,
+            "new_profiling_cost_usd": 0.007909734,
+            "optimization_overhead_usd": 0.0,
+            "optimized_cost_per_execution_usd": 0.013202018056634167,
+            "original_cost_per_execution_usd": 0.01332863916348776,
+            "profiling_budget_usd": null,
+            "reasons": [
+              "forward_net_savings_positive"
+            ],
+            "retrospective_net_savings_including_sunk_profiling_usd": -0.0077831128931464075,
+            "retrospective_optimized_total_including_sunk_profiling_usd": 0.021111752056634167,
+            "savings_basis": "predicted",
+            "savings_interval_usd": null,
+            "savings_per_execution_usd": 0.00012662110685359232,
+            "savings_probability": null,
+            "schema_version": "m3-optimization-economics-v2",
+            "statistics_reusable": true,
+            "statistics_state": "available",
+            "status": "decided",
+            "sunk_profiling_cost_usd": 0.007909734
+          },
+          "before_profiling": {
+            "action": "collect_additional_statistics",
+            "best_case_break_even_executions": 1,
+            "best_case_net_savings_usd": 0.013182890000000001,
+            "existing_plan_available": false,
+            "expected_executions": 1,
+            "expected_executions_known": true,
+            "fixed_total_cost_usd": 0.010546312,
+            "minimum_net_savings_usd": 0.0,
+            "new_profiling_cost_usd": 0.007909734,
+            "optimization_overhead_usd": 0.0,
+            "optimized_cost_per_execution_usd": null,
+            "optimized_total_cost_upper_bound_usd": 0.018456046,
+            "original_cost_per_execution_usd": 0.010546312,
+            "profiling_budget_usd": null,
+            "reasons": [
+              "potential_savings_may_exceed_profiling_cost"
+            ],
+            "savings_basis": "structural_upper_bound",
+            "schema_version": "m3-optimization-economics-v2",
+            "statistics_reusable": true,
+            "statistics_state": "none",
+            "status": "decided",
+            "sunk_profiling_cost_usd": 0.0
+          },
+          "profiling_cost_usd": 0.007909734,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "10": {
+          "after_profiling": {
+            "action": "optimize_with_existing_statistics",
+            "break_even_executions_for_new_comparable_profile": 63,
+            "break_even_executions_for_sunk_profiling": 63,
+            "existing_plan_available": false,
+            "expected_executions": 10,
+            "expected_executions_known": true,
+            "fixed_total_cost_usd": 0.1332863916348776,
+            "forward_net_savings_usd": 0.0012662110685359232,
+            "forward_optimized_total_cost_usd": 0.13202018056634168,
+            "minimum_net_savings_usd": 0.0,
+            "new_profiling_cost_usd": 0.007909734,
+            "optimization_overhead_usd": 0.0,
+            "optimized_cost_per_execution_usd": 0.013202018056634167,
+            "original_cost_per_execution_usd": 0.01332863916348776,
+            "profiling_budget_usd": null,
+            "reasons": [
+              "forward_net_savings_positive"
+            ],
+            "retrospective_net_savings_including_sunk_profiling_usd": -0.006643522931464077,
+            "retrospective_optimized_total_including_sunk_profiling_usd": 0.13992991456634168,
+            "savings_basis": "predicted",
+            "savings_interval_usd": null,
+            "savings_per_execution_usd": 0.00012662110685359232,
+            "savings_probability": null,
+            "schema_version": "m3-optimization-economics-v2",
+            "statistics_reusable": true,
+            "statistics_state": "available",
+            "status": "decided",
+            "sunk_profiling_cost_usd": 0.007909734
+          },
+          "before_profiling": {
+            "action": "collect_additional_statistics",
+            "best_case_break_even_executions": 1,
+            "best_case_net_savings_usd": 0.203016506,
+            "existing_plan_available": false,
+            "expected_executions": 10,
+            "expected_executions_known": true,
+            "fixed_total_cost_usd": 0.10546312000000001,
+            "minimum_net_savings_usd": 0.0,
+            "new_profiling_cost_usd": 0.007909734,
+            "optimization_overhead_usd": 0.0,
+            "optimized_cost_per_execution_usd": null,
+            "optimized_total_cost_upper_bound_usd": 0.11337285400000001,
+            "original_cost_per_execution_usd": 0.010546312,
+            "profiling_budget_usd": null,
+            "reasons": [
+              "potential_savings_may_exceed_profiling_cost"
+            ],
+            "savings_basis": "structural_upper_bound",
+            "schema_version": "m3-optimization-economics-v2",
+            "statistics_reusable": true,
+            "statistics_state": "none",
+            "status": "decided",
+            "sunk_profiling_cost_usd": 0.0
+          },
+          "profiling_cost_usd": 0.007909734,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "100": {
+          "after_profiling": {
+            "action": "optimize_with_existing_statistics",
+            "break_even_executions_for_new_comparable_profile": 63,
+            "break_even_executions_for_sunk_profiling": 63,
+            "existing_plan_available": false,
+            "expected_executions": 100,
+            "expected_executions_known": true,
+            "fixed_total_cost_usd": 1.3328639163487759,
+            "forward_net_savings_usd": 0.012662110685359232,
+            "forward_optimized_total_cost_usd": 1.3202018056634168,
+            "minimum_net_savings_usd": 0.0,
+            "new_profiling_cost_usd": 0.007909734,
+            "optimization_overhead_usd": 0.0,
+            "optimized_cost_per_execution_usd": 0.013202018056634167,
+            "original_cost_per_execution_usd": 0.01332863916348776,
+            "profiling_budget_usd": null,
+            "reasons": [
+              "forward_net_savings_positive"
+            ],
+            "retrospective_net_savings_including_sunk_profiling_usd": 0.004752376685359232,
+            "retrospective_optimized_total_including_sunk_profiling_usd": 1.3281115396634169,
+            "savings_basis": "predicted",
+            "savings_interval_usd": null,
+            "savings_per_execution_usd": 0.00012662110685359232,
+            "savings_probability": null,
+            "schema_version": "m3-optimization-economics-v2",
+            "statistics_reusable": true,
+            "statistics_state": "available",
+            "status": "decided",
+            "sunk_profiling_cost_usd": 0.007909734
+          },
+          "before_profiling": {
+            "action": "collect_additional_statistics",
+            "best_case_break_even_executions": 1,
+            "best_case_net_savings_usd": 2.101352666,
+            "existing_plan_available": false,
+            "expected_executions": 100,
+            "expected_executions_known": true,
+            "fixed_total_cost_usd": 1.0546312,
+            "minimum_net_savings_usd": 0.0,
+            "new_profiling_cost_usd": 0.007909734,
+            "optimization_overhead_usd": 0.0,
+            "optimized_cost_per_execution_usd": null,
+            "optimized_total_cost_upper_bound_usd": 1.062540934,
+            "original_cost_per_execution_usd": 0.010546312,
+            "profiling_budget_usd": null,
+            "reasons": [
+              "potential_savings_may_exceed_profiling_cost"
+            ],
+            "savings_basis": "structural_upper_bound",
+            "schema_version": "m3-optimization-economics-v2",
+            "statistics_reusable": true,
+            "statistics_state": "none",
+            "status": "decided",
+            "sunk_profiling_cost_usd": 0.0
+          },
+          "profiling_cost_usd": 0.007909734,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "1000": {
+          "after_profiling": {
+            "action": "optimize_with_existing_statistics",
+            "break_even_executions_for_new_comparable_profile": 63,
+            "break_even_executions_for_sunk_profiling": 63,
+            "existing_plan_available": false,
+            "expected_executions": 1000,
+            "expected_executions_known": true,
+            "fixed_total_cost_usd": 13.32863916348776,
+            "forward_net_savings_usd": 0.12662110685359232,
+            "forward_optimized_total_cost_usd": 13.202018056634166,
+            "minimum_net_savings_usd": 0.0,
+            "new_profiling_cost_usd": 0.007909734,
+            "optimization_overhead_usd": 0.0,
+            "optimized_cost_per_execution_usd": 0.013202018056634167,
+            "original_cost_per_execution_usd": 0.01332863916348776,
+            "profiling_budget_usd": null,
+            "reasons": [
+              "forward_net_savings_positive"
+            ],
+            "retrospective_net_savings_including_sunk_profiling_usd": 0.11871137285359232,
+            "retrospective_optimized_total_including_sunk_profiling_usd": 13.209927790634167,
+            "savings_basis": "predicted",
+            "savings_interval_usd": null,
+            "savings_per_execution_usd": 0.00012662110685359232,
+            "savings_probability": null,
+            "schema_version": "m3-optimization-economics-v2",
+            "statistics_reusable": true,
+            "statistics_state": "available",
+            "status": "decided",
+            "sunk_profiling_cost_usd": 0.007909734
+          },
+          "before_profiling": {
+            "action": "collect_additional_statistics",
+            "best_case_break_even_executions": 1,
+            "best_case_net_savings_usd": 21.084714266000002,
+            "existing_plan_available": false,
+            "expected_executions": 1000,
+            "expected_executions_known": true,
+            "fixed_total_cost_usd": 10.546312,
+            "minimum_net_savings_usd": 0.0,
+            "new_profiling_cost_usd": 0.007909734,
+            "optimization_overhead_usd": 0.0,
+            "optimized_cost_per_execution_usd": null,
+            "optimized_total_cost_upper_bound_usd": 10.554221734,
+            "original_cost_per_execution_usd": 0.010546312,
+            "profiling_budget_usd": null,
+            "reasons": [
+              "potential_savings_may_exceed_profiling_cost"
+            ],
+            "savings_basis": "structural_upper_bound",
+            "schema_version": "m3-optimization-economics-v2",
+            "statistics_reusable": true,
+            "statistics_state": "none",
+            "status": "decided",
+            "sunk_profiling_cost_usd": 0.0
+          },
+          "profiling_cost_usd": 0.007909734,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "horizon_dependent": true
+    },
+    "fixed": {
+      "horizon_dependent": false,
+      "profiling_cost_usd": 0.0,
+      "profiling_decisions": 0,
+      "selected_order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ]
+    },
+    "independent": {
+      "horizon_dependent": false,
+      "profiling_cost_usd": 0.007909734,
+      "profiling_decisions": 600,
+      "selected_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ]
+    }
+  },
+  "strategy_definitions": {
+    "adaptive": "economics-gated sequential profiling simulated over the recorded profile; charged only for the profiling decisions consumed up to its stopping checkpoint",
+    "correlation_aware": "chain-rule correlation-aware estimator on the full profile",
+    "correlation_aware_confidence": "correlation-aware estimator; reorders only if the bootstrap savings probability reaches the configured confidence level",
+    "economics_gated": "decides before profiling, from a structural savings bound and a prior per-decision cost, whether profiling can pay off within the declared horizon; then reorders only if the predicted forward savings are positive",
+    "fixed": "query-file order; no profiling",
+    "independent": "Milestone 2 independence estimator on the full profile"
+  }
+}

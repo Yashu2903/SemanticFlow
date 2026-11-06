@@ -1,0 +1,935 @@
+{
+  "cardinality": {
+    "paired_absolute_error": {
+      "caveat": "stages within one order and orders within one workload share predicates, so units are not independent; the sign test is descriptive",
+      "correlation_aware_smaller": 14,
+      "independent_smaller": 4,
+      "mean_absolute_error_difference_correlation_minus_independent": -12.965475140265012,
+      "sign_test_p_value": 0.0308837890625,
+      "unit": "(workload, executed order, stage >= 2) observed mean stage input",
+      "units": 18
+    },
+    "pooled": {
+      "correlation_aware": {
+        "cost_prediction_error": {
+          "count": 9,
+          "mae": 0.00029517616795727674,
+          "mape_percent": 2.210627338029422,
+          "mean_signed_error": -7.262456348573388e-05
+        },
+        "pairwise_order_concordance": {
+          "concordant": 5,
+          "discordant": 1,
+          "rate": 0.8333333333333334
+        },
+        "stage_input_error": {
+          "count": 18,
+          "mae": 9.25896930417943,
+          "mape_percent": 22.601734996488847,
+          "mean_signed_error": 0.3605634147956
+        }
+      },
+      "independent": {
+        "cost_prediction_error": {
+          "count": 9,
+          "mae": 0.0005980395791999895,
+          "mape_percent": 4.283437340150515,
+          "mean_signed_error": -0.0005120105181333234
+        },
+        "pairwise_order_concordance": {
+          "concordant": 5,
+          "discordant": 1,
+          "rate": 0.8333333333333334
+        },
+        "stage_input_error": {
+          "count": 18,
+          "mae": 22.224444444444444,
+          "mape_percent": 37.01291521720452,
+          "mean_signed_error": -11.104444444444447
+        }
+      }
+    }
+  },
+  "caveat": "with few workloads, cross-workload tests have low power; intervals pool only within-workload review sampling and replicate variability, not workload sampling",
+  "evidence": {
+    "causal_measurement": true,
+    "kind": "live_counterbalanced_executions",
+    "scope": "differences between orders executed in one session on identical held-out reviews; response variability is included only through repeated runs of the same order"
+  },
+  "pairwise_strategy_comparisons": {
+    "correlation_aware_minus_correlation_aware_confidence": {
+      "difference_interval_usd": {
+        "lower": -0.0002937417000000131,
+        "mean": -5.0277801000007506e-05,
+        "upper": 0.0001863130499999824
+      },
+      "probability_first_cheaper": 0.6545,
+      "sign_test_p_value": 1.0,
+      "total_execution_cost_difference_usd": -4.5633000000003254e-05,
+      "workloads": 4,
+      "workloads_first_cheaper": 1,
+      "workloads_second_cheaper": 0,
+      "workloads_tied_same_order": 3
+    },
+    "fixed_minus_correlation_aware": {
+      "difference_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "probability_first_cheaper": 0.0,
+      "sign_test_p_value": 0.25,
+      "total_execution_cost_difference_usd": 0.010736733000000036,
+      "workloads": 4,
+      "workloads_first_cheaper": 0,
+      "workloads_second_cheaper": 3,
+      "workloads_tied_same_order": 1
+    },
+    "fixed_minus_correlation_aware_confidence": {
+      "difference_interval_usd": {
+        "lower": 0.010076498250000007,
+        "mean": 0.010687604214000005,
+        "upper": 0.011322620399999992
+      },
+      "probability_first_cheaper": 0.0,
+      "sign_test_p_value": 0.5,
+      "total_execution_cost_difference_usd": 0.010691100000000033,
+      "workloads": 4,
+      "workloads_first_cheaper": 0,
+      "workloads_second_cheaper": 2,
+      "workloads_tied_same_order": 2
+    },
+    "fixed_minus_independent": {
+      "difference_interval_usd": {
+        "lower": 0.009931581450000003,
+        "mean": 0.010661068110000019,
+        "upper": 0.01140706244999999
+      },
+      "probability_first_cheaper": 0.0,
+      "sign_test_p_value": 0.125,
+      "total_execution_cost_difference_usd": 0.010664703000000043,
+      "workloads": 4,
+      "workloads_first_cheaper": 0,
+      "workloads_second_cheaper": 4,
+      "workloads_tied_same_order": 0
+    },
+    "independent_minus_correlation_aware": {
+      "difference_interval_usd": {
+        "lower": -0.00021634514999999724,
+        "mean": 7.68139049999984e-05,
+        "upper": 0.00035911365000000113
+      },
+      "probability_first_cheaper": 0.311,
+      "sign_test_p_value": 1.0,
+      "total_execution_cost_difference_usd": 7.202999999999377e-05,
+      "workloads": 4,
+      "workloads_first_cheaper": 1,
+      "workloads_second_cheaper": 1,
+      "workloads_tied_same_order": 2
+    },
+    "independent_minus_correlation_aware_confidence": {
+      "difference_interval_usd": {
+        "lower": -0.0003499366500000076,
+        "mean": 2.6536103999990838e-05,
+        "upper": 0.000397324200000001
+      },
+      "probability_first_cheaper": 0.4395,
+      "sign_test_p_value": 1.0,
+      "total_execution_cost_difference_usd": 2.639699999999051e-05,
+      "workloads": 4,
+      "workloads_first_cheaper": 2,
+      "workloads_second_cheaper": 1,
+      "workloads_tied_same_order": 1
+    }
+  },
+  "schema_version": "m3-strategy-statistics-v1",
+  "strategies": {
+    "adaptive@1": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 2,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 22,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.003980214,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "adaptive@10": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 2,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 22,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.003980214,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "adaptive@100": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 4,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 22,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.010994969999999998,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "adaptive@1000": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 7,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 174,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.027971916,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "correlation_aware": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 13,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 174,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.032033736,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "correlation_aware_confidence": {
+      "mean_bootstrap_probability_selected_cheapest": 0.633625,
+      "mean_regret_usd": 4.082925000000121e-05,
+      "mean_relative_regret_percent": 0.2807348221269075,
+      "mean_savings_vs_fixed_percent": 12.616176858195352,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 13,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": null,
+          "regret_usd": 4.5633000000003254e-05,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 2,
+      "selection_accuracy": 0.5,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.010076498250000007,
+        "mean": 0.010687604214000005,
+        "upper": 0.011322620399999992
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010691100000000033,
+      "total_profiling_cost_usd": 0.032033736,
+      "workloads_cheaper_than_fixed": 2,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "economics_gated@1": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 13,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 174,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.032033736,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "economics_gated@10": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 13,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 174,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.032033736,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "economics_gated@100": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 13,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 174,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.032033736,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "economics_gated@1000": {
+      "mean_bootstrap_probability_selected_cheapest": 0.7110000000000001,
+      "mean_regret_usd": 2.9421000000000395e-05,
+      "mean_relative_regret_percent": 0.19152007611590463,
+      "mean_savings_vs_fixed_percent": 12.705391604206355,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 13,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 45.02119172276241,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": null,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 174,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.01009039080000005,
+        "mean": 0.010737882015000012,
+        "upper": 0.011384506350000007
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010736733000000036,
+      "total_profiling_cost_usd": 0.032033736,
+      "workloads_cheaper_than_fixed": 3,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "fixed": {
+      "mean_bootstrap_probability_selected_cheapest": 0.136625,
+      "mean_regret_usd": 0.0027136042500000095,
+      "mean_relative_regret_percent": 12.89691168032226,
+      "mean_savings_vs_fixed_percent": 0.0,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 0,
+          "regret_usd": 0.0006418230000000292,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "description_mismatch",
+            "value_complaint",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 0,
+          "regret_usd": 0.010049277000000004,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "praises_product",
+            "reports_problem",
+            "size_or_quantity_issue"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": 0,
+          "regret_usd": 0.00011768400000000158,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 0,
+          "regret_usd": 4.5633000000003254e-05,
+          "savings_vs_fixed_percent": 0.0,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 0.0,
+      "selected_observed_cheapest": 0,
+      "selection_accuracy": 0.0,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.0,
+        "mean": 0.0,
+        "upper": 0.0
+      },
+      "total_execution_savings_vs_fixed_usd": 0.0,
+      "total_profiling_cost_usd": 0.0,
+      "workloads_cheaper_than_fixed": 0,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    },
+    "independent": {
+      "mean_bootstrap_probability_selected_cheapest": 0.6165,
+      "mean_regret_usd": 4.7428499999998836e-05,
+      "mean_relative_regret_percent": 0.21248171302502497,
+      "mean_savings_vs_fixed_percent": 12.684429967297236,
+      "per_workload": {
+        "listing_mismatch": {
+          "break_even_executions": 13,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 5.443515710019,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "mixed_feedback": {
+          "break_even_executions": 1,
+          "regret_usd": 0.00018971399999999534,
+          "savings_vs_fixed_percent": 44.17126487066231,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "reports_problem",
+            "praises_product"
+          ]
+        },
+        "positive_experience": {
+          "break_even_executions": 68,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.7660803044636185,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "easy_to_use",
+            "would_recommend",
+            "meets_expectations"
+          ]
+        },
+        "product_quality": {
+          "break_even_executions": 174,
+          "regret_usd": 0.0,
+          "savings_vs_fixed_percent": 0.3568589840440114,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "probability_total_savings_positive": 1.0,
+      "selected_observed_cheapest": 3,
+      "selection_accuracy": 0.75,
+      "total_execution_savings_interval_usd": {
+        "lower": 0.009931581450000003,
+        "mean": 0.010661068110000019,
+        "upper": 0.01140706244999999
+      },
+      "total_execution_savings_vs_fixed_usd": 0.010664703000000043,
+      "total_profiling_cost_usd": 0.032033736,
+      "workloads_cheaper_than_fixed": 4,
+      "workloads_evaluated": 4,
+      "workloads_without_executed_selection": []
+    }
+  },
+  "workload_count": 4,
+  "workloads": [
+    "product_quality",
+    "listing_mismatch",
+    "positive_experience",
+    "mixed_feedback"
+  ]
+}

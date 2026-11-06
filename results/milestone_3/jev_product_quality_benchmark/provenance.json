@@ -1,0 +1,13 @@
+{
+  "copied_files_sha256": {
+    "profiling/decisions.jsonl": "sha256:60dcee7bbf89f50d5ece916ac370e4e4f07376a13134311cb2073ee40bef645b",
+    "profiling/manifest.json": "sha256:4edcdbcd548aeacac314335c3096078597ef2174b9281e3d9e4398b3302a8baa",
+    "profiling/report.json": "sha256:e5f322d7b23fef517d758eb00ef93938c0e06a980850d2f79bc12bf006c087f2",
+    "profiling/statistics.json": "sha256:1f98dd174c545e0c6c8c41b7cfe6f1c85fb72c21167d4e286d4cd93fd89ee08b",
+    "split_manifest.json": "sha256:6a2791bdbbddb4a5d4f03fdd515bbae4b040fae826ee4817e58b1b2917e27e14"
+  },
+  "created_at": "2026-11-06T03:49:11.707875+00:00",
+  "network_requests_made": 0,
+  "planning_copied": false,
+  "source_experiment": "results/milestone_2/jev_product_quality_profile_20261102"
+}

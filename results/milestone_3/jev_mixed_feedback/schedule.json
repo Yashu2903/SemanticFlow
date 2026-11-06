@@ -1,0 +1,86 @@
+{
+  "abba_blocks": 1,
+  "comparator_order": [
+    "size_or_quantity_issue",
+    "praises_product",
+    "reports_problem"
+  ],
+  "comparator_source": "correlation_aware_selection",
+  "design": "abba_then_shuffled_remaining_orders",
+  "fixed_order": [
+    "praises_product",
+    "reports_problem",
+    "size_or_quantity_issue"
+  ],
+  "orders": "selected",
+  "query_id": "mixed_feedback",
+  "runs": [
+    {
+      "block": 1,
+      "index": 1,
+      "label": "p1",
+      "order": [
+        "praises_product",
+        "reports_problem",
+        "size_or_quantity_issue"
+      ],
+      "order_key": "praises_product -> reports_problem -> size_or_quantity_issue",
+      "role": "abba_fixed",
+      "run_dir": "run_01_p1"
+    },
+    {
+      "block": 1,
+      "index": 2,
+      "label": "p5",
+      "order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ],
+      "order_key": "size_or_quantity_issue -> praises_product -> reports_problem",
+      "role": "abba_comparator",
+      "run_dir": "run_02_p5"
+    },
+    {
+      "block": 1,
+      "index": 3,
+      "label": "p5",
+      "order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ],
+      "order_key": "size_or_quantity_issue -> praises_product -> reports_problem",
+      "role": "abba_comparator",
+      "run_dir": "run_03_p5"
+    },
+    {
+      "block": 1,
+      "index": 4,
+      "label": "p1",
+      "order": [
+        "praises_product",
+        "reports_problem",
+        "size_or_quantity_issue"
+      ],
+      "order_key": "praises_product -> reports_problem -> size_or_quantity_issue",
+      "role": "abba_fixed",
+      "run_dir": "run_04_p1"
+    },
+    {
+      "block": null,
+      "index": 5,
+      "label": "p6",
+      "order": [
+        "size_or_quantity_issue",
+        "reports_problem",
+        "praises_product"
+      ],
+      "order_key": "size_or_quantity_issue -> reports_problem -> praises_product",
+      "role": "coverage",
+      "run_dir": "run_05_p6"
+    }
+  ],
+  "schema_version": "m3-strategy-benchmark-v1",
+  "seed": 5051
+}

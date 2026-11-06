@@ -1,0 +1,142 @@
+{
+  "budget_blocked_evaluations": 0,
+  "budget_diagnostics": [],
+  "complete": true,
+  "completed_decisions": 600,
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "errors": [],
+  "estimated_cost_usd": 0.008094534,
+  "failed_http_attempts": 0,
+  "http_attempts": 600,
+  "incomplete_reason": null,
+  "input_tokens": 192727,
+  "output_tokens": 14200,
+  "predicate_hashes": {
+    "description_mismatch": "67dd9d6371c0aa13f26b951a40b4aed477142c325b867681ed26abdc47bee7f2",
+    "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+    "value_complaint": "ff669abc77b7e8ff27f3be65ec3ad617e2f92ee7041ace92752784444cc27747"
+  },
+  "predicate_instructions": {
+    "description_mismatch": "Does the customer say the product differed from its listing, description, or photos, for example in size, color, material, or quantity?",
+    "dissatisfaction": "Does the customer express dissatisfaction with the product or purchase?",
+    "value_complaint": "Does the customer say the product was not worth its price or was overpriced?"
+  },
+  "predicate_order": [
+    "description_mismatch",
+    "value_complaint",
+    "dissatisfaction"
+  ],
+  "pricing": {
+    "id": "jev-public-list-2026-11-02",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://typesafe.ai/",
+    "status": "published_list_price",
+    "verified_date": "2026-11-02"
+  },
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "provider_attempts": 600,
+  "provider_errors": 0,
+  "query_id": "listing_mismatch",
+  "requested_evaluations": 600,
+  "requested_model": "jev-1.14.0",
+  "resolved_model_versions": [
+    "jev-1.14.0"
+  ],
+  "retry_attempts": 0,
+  "sample_size": 200,
+  "schema_version": "m2-profile-v1",
+  "statistics": [
+    {
+      "average_estimated_cost_usd": 1.3882890000000002e-05,
+      "average_inference_latency_seconds": 0.1033915404999334,
+      "average_input_tokens": 330.545,
+      "average_output_tokens": 24.0,
+      "average_total_tokens": 354.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.965,
+      "estimated_selectivity": 0.035,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 7,
+      "predicate_id": "description_mismatch",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "67dd9d6371c0aa13f26b951a40b4aed477142c325b867681ed26abdc47bee7f2",
+      "rejected_decisions": 193,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.017055542008567192,
+      "wilson_upper": 0.07047061152229073
+    },
+    {
+      "average_estimated_cost_usd": 1.3420890000000002e-05,
+      "average_inference_latency_seconds": 0.10936647699994864,
+      "average_input_tokens": 319.545,
+      "average_output_tokens": 23.0,
+      "average_total_tokens": 342.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.985,
+      "estimated_selectivity": 0.015,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 3,
+      "predicate_id": "value_complaint",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "ff669abc77b7e8ff27f3be65ec3ad617e2f92ee7041ace92752784444cc27747",
+      "rejected_decisions": 197,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.00511423779325831,
+      "wilson_upper": 0.04316572879269026
+    },
+    {
+      "average_estimated_cost_usd": 1.3168890000000001e-05,
+      "average_inference_latency_seconds": 0.10265132850006012,
+      "average_input_tokens": 313.545,
+      "average_output_tokens": 24.0,
+      "average_total_tokens": 337.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.765,
+      "estimated_selectivity": 0.235,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 47,
+      "predicate_id": "dissatisfaction",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+      "rejected_decisions": 153,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.18157433415232588,
+      "wilson_upper": 0.29841368882762537
+    }
+  ],
+  "statistics_version": "unconditional-profile-v1",
+  "successful_api_calls": 600,
+  "summed_inference_latency_seconds": 63.08186919998843,
+  "threshold": 0.5,
+  "total_tokens": 206927,
+  "wall_time_seconds": 19.090793100000155,
+  "workload_id": "workload_e_listing_mismatch"
+}

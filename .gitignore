@@ -31,4 +31,7 @@ results/milestone_3/*
 !results/milestone_3/offline_analysis_20261105_19162a2/**
 !results/milestone_3/offline_analysis_20261105_corrected/
 !results/milestone_3/offline_analysis_20261105_corrected/**
+!results/milestone_3/jev_*/
+!results/milestone_3/jev_*/**
+!results/milestone_3/strategy_comparison.json
 

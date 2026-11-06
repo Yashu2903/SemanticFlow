@@ -1,0 +1,54 @@
+{
+  "cache_enabled": false,
+  "completion_status": "complete",
+  "concurrency": 4,
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "dataset_path": "data\\processed\\reviews_1000.parquet",
+  "dataset_preparation_version": "m1-v1",
+  "dataset_version": "semceb_amazon_arts_crafts_sewing_sample_1000",
+  "experiment_id": "profile",
+  "git_commit": "213c3a5e59620db0df7ce0f52c06bdff7290fc84",
+  "git_worktree_dirty": true,
+  "incomplete_reason": null,
+  "max_http_attempts": 1800,
+  "max_retries": 2,
+  "predicate_hashes": {
+    "praises_product": "a8d06b484217cb69ea894fca3a8802410e40c3eaff52aa0f05fa4f32a572d5f5",
+    "reports_problem": "80a37786dbf6190106049d3ba3e19a8a7271e742bb6337be80fff446349e7964",
+    "size_or_quantity_issue": "b95867e2da8788919b710583f03f96fc38011b7a5741a3ca2e89055a88a61322"
+  },
+  "predicate_instructions": {
+    "praises_product": "Does the customer praise at least one aspect of the product?",
+    "reports_problem": "Does the customer report at least one problem or shortcoming with the product?",
+    "size_or_quantity_issue": "Does the customer say the size, dimensions, or quantity of the product differed from what they needed or expected?"
+  },
+  "predicate_order": [
+    "praises_product",
+    "reports_problem",
+    "size_or_quantity_issue"
+  ],
+  "pricing_configuration": {
+    "id": "jev-public-list-2026-11-02",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://typesafe.ai/",
+    "status": "published_list_price",
+    "verified_date": "2026-11-02"
+  },
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "profiling_size": 200,
+  "provider": "jev",
+  "query_id": "mixed_feedback",
+  "requested_model": "jev-1.14.0",
+  "resolved_model_versions": [
+    "jev-1.14.0"
+  ],
+  "sampling_seed": 2027,
+  "schema_version": "m2-profile-manifest-v1",
+  "split_algorithm": "sha256-seed-review-id-rank-v1",
+  "split_manifest": "../split_manifest.json",
+  "statistics_version": "unconditional-profile-v1",
+  "threshold": 0.5,
+  "timeout_seconds": 30,
+  "timestamp": "20261106T040922.057722Z"
+}

@@ -1,0 +1,73 @@
+{
+  "abba_blocks": 1,
+  "comparator_order": [
+    "product_defect",
+    "poor_quality",
+    "dissatisfaction"
+  ],
+  "comparator_source": "correlation_aware_selection",
+  "design": "abba_then_shuffled_remaining_orders",
+  "fixed_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "orders": "selected",
+  "query_id": "product_quality",
+  "runs": [
+    {
+      "block": 1,
+      "index": 1,
+      "label": "p1",
+      "order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "order_key": "poor_quality -> product_defect -> dissatisfaction",
+      "role": "abba_fixed",
+      "run_dir": "run_01_p1"
+    },
+    {
+      "block": 1,
+      "index": 2,
+      "label": "p3",
+      "order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "order_key": "product_defect -> poor_quality -> dissatisfaction",
+      "role": "abba_comparator",
+      "run_dir": "run_02_p3"
+    },
+    {
+      "block": 1,
+      "index": 3,
+      "label": "p3",
+      "order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "order_key": "product_defect -> poor_quality -> dissatisfaction",
+      "role": "abba_comparator",
+      "run_dir": "run_03_p3"
+    },
+    {
+      "block": 1,
+      "index": 4,
+      "label": "p1",
+      "order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "order_key": "poor_quality -> product_defect -> dissatisfaction",
+      "role": "abba_fixed",
+      "run_dir": "run_04_p1"
+    }
+  ],
+  "schema_version": "m3-strategy-benchmark-v1",
+  "seed": 5051
+}

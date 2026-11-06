@@ -1,0 +1,54 @@
+{
+  "cache_enabled": false,
+  "completion_status": "complete",
+  "concurrency": 4,
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "dataset_path": "data\\processed\\reviews_1000.parquet",
+  "dataset_preparation_version": "m1-v1",
+  "dataset_version": "semceb_amazon_arts_crafts_sewing_sample_1000",
+  "experiment_id": "jev_product_quality_profile_20261102",
+  "git_commit": "272a231dbfdaff9f37f8824f61e3d37d84f55450",
+  "git_worktree_dirty": true,
+  "incomplete_reason": null,
+  "max_http_attempts": 1800,
+  "max_retries": 2,
+  "predicate_hashes": {
+    "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+    "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+    "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+  },
+  "predicate_instructions": {
+    "dissatisfaction": "Does the customer express dissatisfaction with the product or purchase?",
+    "poor_quality": "Does the customer report that the product has poor quality?",
+    "product_defect": "Does the customer describe a defect or malfunction in the product?"
+  },
+  "predicate_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "pricing_configuration": {
+    "id": "jev-public-list-2026-11-02",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://typesafe.ai/",
+    "status": "published_list_price",
+    "verified_date": "2026-11-02"
+  },
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "profiling_size": 200,
+  "provider": "jev",
+  "query_id": "product_quality",
+  "requested_model": "jev-1.14.0",
+  "resolved_model_versions": [
+    "jev-1.14.0"
+  ],
+  "sampling_seed": 2027,
+  "schema_version": "m2-profile-manifest-v1",
+  "split_algorithm": "sha256-seed-review-id-rank-v1",
+  "split_manifest": "../split_manifest.json",
+  "statistics_version": "unconditional-profile-v1",
+  "threshold": 0.5,
+  "timeout_seconds": 30,
+  "timestamp": "20261102T171809.310622Z"
+}

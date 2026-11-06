@@ -1,0 +1,89 @@
+{
+  "schema_version": "m2-profile-v1",
+  "statistics": [
+    {
+      "average_estimated_cost_usd": 1.321089e-05,
+      "average_inference_latency_seconds": 0.10016606550000688,
+      "average_input_tokens": 314.545,
+      "average_output_tokens": 22.0,
+      "average_total_tokens": 336.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.13,
+      "estimated_selectivity": 0.87,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 174,
+      "predicate_id": "praises_product",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "a8d06b484217cb69ea894fca3a8802410e40c3eaff52aa0f05fa4f32a572d5f5",
+      "rejected_decisions": 26,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.8163364812775159,
+      "wilson_upper": 0.9097179772033067
+    },
+    {
+      "average_estimated_cost_usd": 1.3420890000000002e-05,
+      "average_inference_latency_seconds": 0.09528781850003724,
+      "average_input_tokens": 319.545,
+      "average_output_tokens": 21.0,
+      "average_total_tokens": 340.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.7050000000000001,
+      "estimated_selectivity": 0.295,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 59,
+      "predicate_id": "reports_problem",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "80a37786dbf6190106049d3ba3e19a8a7271e742bb6337be80fff446349e7964",
+      "rejected_decisions": 141,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.23613943856849148,
+      "wilson_upper": 0.36158714524618774
+    },
+    {
+      "average_estimated_cost_usd": 1.3630890000000001e-05,
+      "average_inference_latency_seconds": 0.0990854575000776,
+      "average_input_tokens": 324.545,
+      "average_output_tokens": 23.0,
+      "average_total_tokens": 347.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.94,
+      "estimated_selectivity": 0.06,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 12,
+      "predicate_id": "size_or_quantity_issue",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "b95867e2da8788919b710583f03f96fc38011b7a5741a3ca2e89055a88a61322",
+      "rejected_decisions": 188,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.03465219425433187,
+      "wilson_upper": 0.1019316929576627
+    }
+  ]
+}

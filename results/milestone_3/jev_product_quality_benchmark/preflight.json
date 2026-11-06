@@ -1,0 +1,55 @@
+{
+  "cost_if_every_allowed_attempt_were_billed_usd": 0.1413175104,
+  "cost_per_decision_usd": 1.338234e-05,
+  "max_http_attempts": 10560,
+  "network_requests_made": 0,
+  "predicted_cost_usd": 0.053061314440243854,
+  "predicted_decisions": 3975.8117839481483,
+  "prediction_source": "correlation-aware candidate estimates from the profile",
+  "run_count": 4,
+  "runs": [
+    {
+      "index": 1,
+      "label": "p1",
+      "max_http_attempts": 2640,
+      "order_key": "poor_quality -> product_defect -> dissatisfaction",
+      "predicted_cost_usd": 0.01332863916348776,
+      "predicted_decisions": 999.9815641299422,
+      "worst_case_cost_usd": 0.032117616,
+      "worst_case_decisions": 2400
+    },
+    {
+      "index": 2,
+      "label": "p3",
+      "max_http_attempts": 2640,
+      "order_key": "product_defect -> poor_quality -> dissatisfaction",
+      "predicted_cost_usd": 0.013202018056634167,
+      "predicted_decisions": 987.9243278441319,
+      "worst_case_cost_usd": 0.032117616,
+      "worst_case_decisions": 2400
+    },
+    {
+      "index": 3,
+      "label": "p3",
+      "max_http_attempts": 2640,
+      "order_key": "product_defect -> poor_quality -> dissatisfaction",
+      "predicted_cost_usd": 0.013202018056634167,
+      "predicted_decisions": 987.9243278441319,
+      "worst_case_cost_usd": 0.032117616,
+      "worst_case_decisions": 2400
+    },
+    {
+      "index": 4,
+      "label": "p1",
+      "max_http_attempts": 2640,
+      "order_key": "poor_quality -> product_defect -> dissatisfaction",
+      "predicted_cost_usd": 0.01332863916348776,
+      "predicted_decisions": 999.9815641299422,
+      "worst_case_cost_usd": 0.032117616,
+      "worst_case_decisions": 2400
+    }
+  ],
+  "schema_version": "m3-strategy-benchmark-v1",
+  "worst_case_cost_usd": 0.128470464,
+  "worst_case_decisions": 9600
+}

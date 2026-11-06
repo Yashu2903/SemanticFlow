@@ -1,0 +1,73 @@
+{
+  "abba_blocks": 1,
+  "comparator_order": [
+    "easy_to_use",
+    "would_recommend",
+    "meets_expectations"
+  ],
+  "comparator_source": "independent_selection",
+  "design": "abba_then_shuffled_remaining_orders",
+  "fixed_order": [
+    "easy_to_use",
+    "meets_expectations",
+    "would_recommend"
+  ],
+  "orders": "selected",
+  "query_id": "positive_experience",
+  "runs": [
+    {
+      "block": 1,
+      "index": 1,
+      "label": "p1",
+      "order": [
+        "easy_to_use",
+        "meets_expectations",
+        "would_recommend"
+      ],
+      "order_key": "easy_to_use -> meets_expectations -> would_recommend",
+      "role": "abba_fixed",
+      "run_dir": "run_01_p1"
+    },
+    {
+      "block": 1,
+      "index": 2,
+      "label": "p2",
+      "order": [
+        "easy_to_use",
+        "would_recommend",
+        "meets_expectations"
+      ],
+      "order_key": "easy_to_use -> would_recommend -> meets_expectations",
+      "role": "abba_comparator",
+      "run_dir": "run_02_p2"
+    },
+    {
+      "block": 1,
+      "index": 3,
+      "label": "p2",
+      "order": [
+        "easy_to_use",
+        "would_recommend",
+        "meets_expectations"
+      ],
+      "order_key": "easy_to_use -> would_recommend -> meets_expectations",
+      "role": "abba_comparator",
+      "run_dir": "run_03_p2"
+    },
+    {
+      "block": 1,
+      "index": 4,
+      "label": "p1",
+      "order": [
+        "easy_to_use",
+        "meets_expectations",
+        "would_recommend"
+      ],
+      "order_key": "easy_to_use -> meets_expectations -> would_recommend",
+      "role": "abba_fixed",
+      "run_dir": "run_04_p1"
+    }
+  ],
+  "schema_version": "m3-strategy-benchmark-v1",
+  "seed": 5051
+}

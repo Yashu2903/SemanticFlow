@@ -1,0 +1,202 @@
+{
+  "complete_rows": 200,
+  "conjunctions": [
+    {
+      "passing": 28,
+      "predicates": [
+        "poor_quality"
+      ],
+      "selectivity": 0.14,
+      "support": 200
+    },
+    {
+      "passing": 25,
+      "predicates": [
+        "product_defect"
+      ],
+      "selectivity": 0.125,
+      "support": 200
+    },
+    {
+      "passing": 47,
+      "predicates": [
+        "dissatisfaction"
+      ],
+      "selectivity": 0.235,
+      "support": 200
+    },
+    {
+      "passing": 22,
+      "predicates": [
+        "poor_quality",
+        "product_defect"
+      ],
+      "selectivity": 0.11,
+      "support": 200
+    },
+    {
+      "passing": 28,
+      "predicates": [
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "selectivity": 0.14,
+      "support": 200
+    },
+    {
+      "passing": 25,
+      "predicates": [
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "selectivity": 0.125,
+      "support": 200
+    },
+    {
+      "passing": 22,
+      "predicates": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "selectivity": 0.11,
+      "support": 200
+    }
+  ],
+  "joint_statistics_version": "joint-profile-v1",
+  "marginals": {
+    "dissatisfaction": {
+      "passing": 47,
+      "selectivity": 0.235,
+      "support": 200,
+      "wilson_lower": 0.18157433415232588,
+      "wilson_upper": 0.29841368882762537
+    },
+    "poor_quality": {
+      "passing": 28,
+      "selectivity": 0.14,
+      "support": 200,
+      "wilson_lower": 0.09866982633455634,
+      "wilson_upper": 0.1948988086570756
+    },
+    "product_defect": {
+      "passing": 25,
+      "selectivity": 0.125,
+      "support": 200,
+      "wilson_lower": 0.08611974475712644,
+      "wilson_upper": 0.17801425002582347
+    }
+  },
+  "matrix_complete": true,
+  "matrix_fingerprint": "sha256:08f4174dc2d2b9a0af7fc51a7217441ee0f75f000143dbe49b6b223771e9373c",
+  "missing_cells": 0,
+  "observed_outcome_patterns": [
+    {
+      "count": 153,
+      "outcomes": {
+        "dissatisfaction": false,
+        "poor_quality": false,
+        "product_defect": false
+      }
+    },
+    {
+      "count": 22,
+      "outcomes": {
+        "dissatisfaction": true,
+        "poor_quality": true,
+        "product_defect": true
+      }
+    },
+    {
+      "count": 16,
+      "outcomes": {
+        "dissatisfaction": true,
+        "poor_quality": false,
+        "product_defect": false
+      }
+    },
+    {
+      "count": 6,
+      "outcomes": {
+        "dissatisfaction": true,
+        "poor_quality": true,
+        "product_defect": false
+      }
+    },
+    {
+      "count": 3,
+      "outcomes": {
+        "dissatisfaction": true,
+        "poor_quality": false,
+        "product_defect": true
+      }
+    }
+  ],
+  "pairwise": [
+    {
+      "both_pass": 22,
+      "first_only": 6,
+      "independence_joint_selectivity": 0.0175,
+      "joint_selectivity": 0.11,
+      "lift": 6.285714285714286,
+      "neither": 169,
+      "p_poor_quality_given_product_defect": 0.88,
+      "p_poor_quality_given_product_defect_support": 25,
+      "p_product_defect_given_poor_quality": 0.7857142857142857,
+      "p_product_defect_given_poor_quality_support": 28,
+      "phi": 0.8060638717580532,
+      "predicates": [
+        "poor_quality",
+        "product_defect"
+      ],
+      "second_only": 3,
+      "support": 200
+    },
+    {
+      "both_pass": 28,
+      "first_only": 0,
+      "independence_joint_selectivity": 0.0329,
+      "joint_selectivity": 0.14,
+      "lift": 4.255319148936171,
+      "neither": 153,
+      "p_dissatisfaction_given_poor_quality": 1.0,
+      "p_dissatisfaction_given_poor_quality_support": 28,
+      "p_poor_quality_given_dissatisfaction": 0.5957446808510638,
+      "p_poor_quality_given_dissatisfaction_support": 47,
+      "phi": 0.7279668092765039,
+      "predicates": [
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "second_only": 19,
+      "support": 200
+    },
+    {
+      "both_pass": 25,
+      "first_only": 0,
+      "independence_joint_selectivity": 0.029375,
+      "joint_selectivity": 0.125,
+      "lift": 4.25531914893617,
+      "neither": 153,
+      "p_dissatisfaction_given_product_defect": 1.0,
+      "p_dissatisfaction_given_product_defect_support": 25,
+      "p_product_defect_given_dissatisfaction": 0.5319148936170213,
+      "p_product_defect_given_dissatisfaction_support": 47,
+      "phi": 0.6819425142232791,
+      "predicates": [
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "second_only": 22,
+      "support": 200
+    }
+  ],
+  "predicate_ids": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "rows": 200,
+  "schema_version": "m3-profile-matrix-v1",
+  "source": "recorded_profiling_outcomes"
+}

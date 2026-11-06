@@ -1,0 +1,772 @@
+{
+  "bootstrap_savings_interval_usd": {
+    "lower": -0.0002162900217757931,
+    "mean": 0.00011952762845897163,
+    "median": 0.00012086955785974018,
+    "upper": 0.0004561656868245152
+  },
+  "bootstrap_savings_probability": 0.769,
+  "break_even": {
+    "cached_new_profile_vs_predicted_savings": 37,
+    "historical_profile_vs_observed_savings": 113,
+    "historical_profile_vs_predicted_savings": 63,
+    "historical_profile_vs_replay_ordering_savings": {
+      "conflicts_unknown": {
+        "at_lower_savings": 224,
+        "at_upper_savings": 151
+      },
+      "fresh_first": {
+        "at_lower_savings": 224,
+        "at_upper_savings": 224
+      },
+      "historical_first": {
+        "at_lower_savings": 151,
+        "at_upper_savings": 151
+      }
+    }
+  },
+  "cost_source": "correlation_aware predicted per-execution cost on 800 records",
+  "independent_predicted_savings_per_execution_usd": 0.00012913068000000062,
+  "milestone_2_observed_savings_usd_confounded": 7.001400000000019e-05,
+  "objective": "estimated_cost_usd",
+  "optimized_predicted_cost_usd": 0.013202018056634167,
+  "original_predicted_cost_usd": 0.01332863916348776,
+  "predicted_savings_per_execution_usd": 0.00012662110685359232,
+  "pricing": {
+    "id": "jev-public-list-2026-11-02",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://typesafe.ai/",
+    "status": "published_list_price",
+    "verified_date": "2026-11-02"
+  },
+  "profiling_accounting": {
+    "average_cost_per_decision_usd": 1.318289e-05,
+    "new_decisions": 351,
+    "new_profiling_cost_usd": 0.00462719439,
+    "required_decisions": 600,
+    "reusable_cached_decisions": 249,
+    "sunk_profiling_cost_usd": 0.007909734
+  },
+  "replay_measured_ordering_savings_usd": {
+    "conflicts_unknown": {
+      "exact": false,
+      "lower": 3.536400000000024e-05,
+      "upper": 5.271000000000033e-05
+    },
+    "fresh_first": {
+      "exact": true,
+      "lower": 3.536400000000024e-05,
+      "upper": 3.536400000000024e-05
+    },
+    "historical_first": {
+      "exact": true,
+      "lower": 5.271000000000033e-05,
+      "upper": 5.271000000000033e-05
+    }
+  },
+  "savings_upper_bound_definition": "original-order cost minus N times the cheapest per-evaluation cost: every order must evaluate all N records at stage 1, so no plan can save more",
+  "savings_upper_bound_per_execution_usd": 0.0027935271634877586,
+  "scenarios": [
+    {
+      "existing_statistics_confidence_gated": {
+        "action": "decline_optimization_execute_original",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 0,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.0,
+        "forward_net_savings_usd": 0.0,
+        "forward_optimized_total_cost_usd": 0.0,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "no_expected_executions",
+          "savings_probability_below_minimum"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": -0.007909734,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 0.007909734,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "existing_statistics_sunk_profile": {
+        "action": "decline_optimization_execute_original",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 0,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.0,
+        "forward_net_savings_usd": 0.0,
+        "forward_optimized_total_cost_usd": 0.0,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "no_expected_executions"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": -0.007909734,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 0.007909734,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "expected_executions": 0,
+      "new_comparable_workload_full_profile": {
+        "action": "execute_original_without_profiling",
+        "existing_plan_available": false,
+        "expected_executions": 0,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.0,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 0.007909734,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "no_expected_executions"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      },
+      "new_workload_savings_upper_bound": {
+        "action": "execute_original_without_profiling",
+        "existing_plan_available": false,
+        "expected_executions": 0,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.0,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 0.007909734,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "no_expected_executions"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      }
+    },
+    {
+      "existing_statistics_confidence_gated": {
+        "action": "decline_optimization_execute_original",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 1,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.01332863916348776,
+        "forward_net_savings_usd": 0.00012662110685359232,
+        "forward_optimized_total_cost_usd": 0.013202018056634167,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "savings_probability_below_minimum"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": -0.0077831128931464075,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 0.021111752056634167,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "existing_statistics_sunk_profile": {
+        "action": "reuse_existing_plan",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 1,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.01332863916348776,
+        "forward_net_savings_usd": 0.00012662110685359232,
+        "forward_optimized_total_cost_usd": 0.013202018056634167,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "forward_net_savings_positive"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": -0.0077831128931464075,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 0.021111752056634167,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "expected_executions": 1,
+      "new_comparable_workload_full_profile": {
+        "action": "execute_original_without_profiling",
+        "best_case_break_even_executions": 63,
+        "best_case_net_savings_usd": -0.0077831128931464075,
+        "existing_plan_available": false,
+        "expected_executions": 1,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.01332863916348776,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 0.02123837316348776,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "profiling_cannot_break_even_within_horizon"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      },
+      "new_workload_savings_upper_bound": {
+        "action": "execute_original_without_profiling",
+        "best_case_break_even_executions": 3,
+        "best_case_net_savings_usd": -0.005116206836512241,
+        "existing_plan_available": false,
+        "expected_executions": 1,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.01332863916348776,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 0.02123837316348776,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "profiling_cannot_break_even_within_horizon"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      }
+    },
+    {
+      "existing_statistics_confidence_gated": {
+        "action": "decline_optimization_execute_original",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 10,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.1332863916348776,
+        "forward_net_savings_usd": 0.0012662110685359232,
+        "forward_optimized_total_cost_usd": 0.13202018056634168,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "savings_probability_below_minimum"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": -0.006643522931464077,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 0.13992991456634168,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "existing_statistics_sunk_profile": {
+        "action": "reuse_existing_plan",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 10,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.1332863916348776,
+        "forward_net_savings_usd": 0.0012662110685359232,
+        "forward_optimized_total_cost_usd": 0.13202018056634168,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "forward_net_savings_positive"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": -0.006643522931464077,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 0.13992991456634168,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "expected_executions": 10,
+      "new_comparable_workload_full_profile": {
+        "action": "execute_original_without_profiling",
+        "best_case_break_even_executions": 63,
+        "best_case_net_savings_usd": -0.006643522931464077,
+        "existing_plan_available": false,
+        "expected_executions": 10,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.1332863916348776,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 0.1411961256348776,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "profiling_cannot_break_even_within_horizon"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      },
+      "new_workload_savings_upper_bound": {
+        "action": "collect_additional_statistics",
+        "best_case_break_even_executions": 3,
+        "best_case_net_savings_usd": 0.020025537634877584,
+        "existing_plan_available": false,
+        "expected_executions": 10,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 0.1332863916348776,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 0.1411961256348776,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "potential_savings_may_exceed_profiling_cost"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      }
+    },
+    {
+      "existing_statistics_confidence_gated": {
+        "action": "decline_optimization_execute_original",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 100,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 1.3328639163487759,
+        "forward_net_savings_usd": 0.012662110685359232,
+        "forward_optimized_total_cost_usd": 1.3202018056634168,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "savings_probability_below_minimum"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": 0.004752376685359232,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 1.3281115396634169,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "existing_statistics_sunk_profile": {
+        "action": "reuse_existing_plan",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 100,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 1.3328639163487759,
+        "forward_net_savings_usd": 0.012662110685359232,
+        "forward_optimized_total_cost_usd": 1.3202018056634168,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "forward_net_savings_positive"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": 0.004752376685359232,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 1.3281115396634169,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "expected_executions": 100,
+      "new_comparable_workload_full_profile": {
+        "action": "collect_additional_statistics",
+        "best_case_break_even_executions": 63,
+        "best_case_net_savings_usd": 0.004752376685359232,
+        "existing_plan_available": false,
+        "expected_executions": 100,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 1.3328639163487759,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 1.340773650348776,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "potential_savings_may_exceed_profiling_cost"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      },
+      "new_workload_savings_upper_bound": {
+        "action": "collect_additional_statistics",
+        "best_case_break_even_executions": 3,
+        "best_case_net_savings_usd": 0.27144298234877584,
+        "existing_plan_available": false,
+        "expected_executions": 100,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 1.3328639163487759,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 1.340773650348776,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "potential_savings_may_exceed_profiling_cost"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      }
+    },
+    {
+      "existing_statistics_confidence_gated": {
+        "action": "decline_optimization_execute_original",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 113,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 1.5061362254741169,
+        "forward_net_savings_usd": 0.014308185074455932,
+        "forward_optimized_total_cost_usd": 1.4918280403996609,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "savings_probability_below_minimum"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": 0.006398451074455932,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 1.499737774399661,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "existing_statistics_sunk_profile": {
+        "action": "reuse_existing_plan",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 113,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 1.5061362254741169,
+        "forward_net_savings_usd": 0.014308185074455932,
+        "forward_optimized_total_cost_usd": 1.4918280403996609,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "forward_net_savings_positive"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": 0.006398451074455932,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 1.499737774399661,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "expected_executions": 113,
+      "new_comparable_workload_full_profile": {
+        "action": "collect_additional_statistics",
+        "best_case_break_even_executions": 63,
+        "best_case_net_savings_usd": 0.006398451074455932,
+        "existing_plan_available": false,
+        "expected_executions": 113,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 1.5061362254741169,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 1.514045959474117,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "potential_savings_may_exceed_profiling_cost"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      },
+      "new_workload_savings_upper_bound": {
+        "action": "collect_additional_statistics",
+        "best_case_break_even_executions": 3,
+        "best_case_net_savings_usd": 0.3077588354741167,
+        "existing_plan_available": false,
+        "expected_executions": 113,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 1.5061362254741169,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 1.514045959474117,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "potential_savings_may_exceed_profiling_cost"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      }
+    },
+    {
+      "existing_statistics_confidence_gated": {
+        "action": "decline_optimization_execute_original",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 1000,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 13.32863916348776,
+        "forward_net_savings_usd": 0.12662110685359232,
+        "forward_optimized_total_cost_usd": 13.202018056634166,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "savings_probability_below_minimum"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": 0.11871137285359232,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 13.209927790634167,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "existing_statistics_sunk_profile": {
+        "action": "reuse_existing_plan",
+        "break_even_executions_for_new_comparable_profile": 63,
+        "break_even_executions_for_sunk_profiling": 63,
+        "existing_plan_available": true,
+        "expected_executions": 1000,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 13.32863916348776,
+        "forward_net_savings_usd": 0.12662110685359232,
+        "forward_optimized_total_cost_usd": 13.202018056634166,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": 0.013202018056634167,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "forward_net_savings_positive"
+        ],
+        "retrospective_net_savings_including_sunk_profiling_usd": 0.11871137285359232,
+        "retrospective_optimized_total_including_sunk_profiling_usd": 13.209927790634167,
+        "savings_interval_usd": [
+          -0.0002162900217757931,
+          0.0004561656868245152
+        ],
+        "savings_per_execution_usd": 0.00012662110685359232,
+        "savings_probability": 0.769,
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "available",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.007909734
+      },
+      "expected_executions": 1000,
+      "new_comparable_workload_full_profile": {
+        "action": "collect_additional_statistics",
+        "best_case_break_even_executions": 63,
+        "best_case_net_savings_usd": 0.11871137285359232,
+        "existing_plan_available": false,
+        "expected_executions": 1000,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 13.32863916348776,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 13.33654889748776,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "potential_savings_may_exceed_profiling_cost"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      },
+      "new_workload_savings_upper_bound": {
+        "action": "collect_additional_statistics",
+        "best_case_break_even_executions": 3,
+        "best_case_net_savings_usd": 2.7856174294877585,
+        "existing_plan_available": false,
+        "expected_executions": 1000,
+        "expected_executions_known": true,
+        "fixed_total_cost_usd": 13.32863916348776,
+        "minimum_net_savings_usd": 0.0,
+        "new_profiling_cost_usd": 0.007909734,
+        "optimization_overhead_usd": 0.0,
+        "optimized_cost_per_execution_usd": null,
+        "optimized_total_cost_upper_bound_usd": 13.33654889748776,
+        "original_cost_per_execution_usd": 0.01332863916348776,
+        "profiling_budget_usd": null,
+        "reasons": [
+          "potential_savings_may_exceed_profiling_cost"
+        ],
+        "schema_version": "m3-optimization-economics-v1",
+        "statistics_reusable": true,
+        "statistics_state": "none",
+        "status": "decided",
+        "sunk_profiling_cost_usd": 0.0
+      }
+    }
+  ],
+  "schema_version": "m3-offline-analysis-v1"
+}

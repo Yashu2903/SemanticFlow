@@ -1,0 +1,1897 @@
+{
+  "evidence": "offline simulation over the recorded profiling matrix; no provider calls",
+  "first_checkpoint_cost_basis": "average recorded profiling cost per decision times first-checkpoint decisions",
+  "runs": {
+    "structural_upper_bound": {
+      "0": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 0,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.007909734000000009,
+        "profiling_decisions_saved": 600,
+        "profiling_decisions_used": 0,
+        "profiling_started": false,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "poor_quality",
+          "product_defect",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "original_order_without_profiling",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "skip_profiling_execute_original",
+          "economics_gate_configured": true,
+          "expected_executions": 0,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "no_expected_executions"
+          ],
+          "savings_bound_basis": "structural_upper_bound",
+          "savings_upper_bound_per_execution_usd": 0.021103824,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": false,
+        "stopping_checkpoint": null,
+        "trajectory": [],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      },
+      "1": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 1,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.006927018000000009,
+        "profiling_decisions_saved": 525,
+        "profiling_decisions_used": 75,
+        "profiling_started": true,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "adaptive_profile_at_stopping_checkpoint",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "start_adaptive_profiling",
+          "best_case_break_even_executions": 1,
+          "best_case_net_savings_usd": 0.02011510725,
+          "economics_gate_configured": true,
+          "expected_executions": 1,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "bounded_savings_may_exceed_first_checkpoint_cost"
+          ],
+          "savings_bound_basis": "structural_upper_bound",
+          "savings_upper_bound_per_execution_usd": 0.021103824,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": true,
+        "stopping_checkpoint": {
+          "agrees_with_full_profile_plan": true,
+          "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+          "bootstrap_modal_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "bootstrap_probability_selected_cheaper_than_original": 0.651,
+          "bootstrap_selection_frequency_of_selected": 0.645,
+          "checkpoint": 1,
+          "controller_decision": "stop",
+          "expected_value_of_information_bound": 9.213994479110624e-06,
+          "next_checkpoint_reviews": 50,
+          "next_increment_cost_usd_estimate": 0.0009827160000000002,
+          "original_predicted_objective": 0.014942891664335666,
+          "profiled_reviews": 25,
+          "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+          "profiling_decisions": 75,
+          "reasons": [
+            "expected_value_of_information_below_increment_cost"
+          ],
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "selected_predicted_objective": 0.014579010923076924
+        },
+        "trajectory": [
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 9.213994479110624e-06,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.889,
+            "bootstrap_selection_frequency_of_selected": 0.889,
+            "checkpoint": 2,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 3.1646588235294157e-06,
+            "next_checkpoint_reviews": 100,
+            "next_increment_cost_usd_estimate": 0.0019503120000000011,
+            "original_predicted_objective": 0.013720767169550176,
+            "profiled_reviews": 50,
+            "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+            "profiling_decisions": 150,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01334054335409458
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.3941873162284416e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.773,
+            "bootstrap_selection_frequency_of_selected": 0.773,
+            "checkpoint": 3,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 2.3941873162284416e-05,
+            "next_checkpoint_reviews": 150,
+            "next_increment_cost_usd_estimate": 0.0019701570000000028,
+            "original_predicted_objective": 0.012960324795804334,
+            "profiled_reviews": 100,
+            "profiling_cost_usd_offline_estimate": 0.0039403140000000055,
+            "profiling_decisions": 300,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.012790273138009345
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.8996891664925474e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.746,
+            "bootstrap_selection_frequency_of_selected": 0.746,
+            "checkpoint": 4,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 2.8996891664925474e-05,
+            "next_checkpoint_reviews": 200,
+            "next_increment_cost_usd_estimate": 0.0019805100000000017,
+            "original_predicted_objective": 0.01306324241557388,
+            "profiled_reviews": 150,
+            "profiling_cost_usd_offline_estimate": 0.005941530000000006,
+            "profiling_decisions": 450,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01295619797328799
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.787,
+            "bootstrap_selection_frequency_of_selected": 0.787,
+            "checkpoint": 5,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 2.160101629137842e-05,
+            "next_checkpoint_reviews": null,
+            "next_increment_cost_usd_estimate": null,
+            "original_predicted_objective": 0.01332863916348776,
+            "profiled_reviews": 200,
+            "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+            "profiling_decisions": 600,
+            "reasons": [
+              "maximum_checkpoint_reached"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.013202018056634167
+          }
+        ],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      },
+      "10": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 10,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.006927018000000009,
+        "profiling_decisions_saved": 525,
+        "profiling_decisions_used": 75,
+        "profiling_started": true,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "adaptive_profile_at_stopping_checkpoint",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "start_adaptive_profiling",
+          "best_case_break_even_executions": 1,
+          "best_case_net_savings_usd": 0.21004952324999998,
+          "economics_gate_configured": true,
+          "expected_executions": 10,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "bounded_savings_may_exceed_first_checkpoint_cost"
+          ],
+          "savings_bound_basis": "structural_upper_bound",
+          "savings_upper_bound_per_execution_usd": 0.021103824,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": true,
+        "stopping_checkpoint": {
+          "agrees_with_full_profile_plan": true,
+          "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+          "bootstrap_modal_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "bootstrap_probability_selected_cheaper_than_original": 0.651,
+          "bootstrap_selection_frequency_of_selected": 0.645,
+          "checkpoint": 1,
+          "controller_decision": "stop",
+          "expected_value_of_information_bound": 9.213994479110625e-05,
+          "next_checkpoint_reviews": 50,
+          "next_increment_cost_usd_estimate": 0.0009827160000000002,
+          "original_predicted_objective": 0.014942891664335666,
+          "profiled_reviews": 25,
+          "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+          "profiling_decisions": 75,
+          "reasons": [
+            "expected_value_of_information_below_increment_cost"
+          ],
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "selected_predicted_objective": 0.014579010923076924
+        },
+        "trajectory": [
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 9.213994479110625e-05,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.889,
+            "bootstrap_selection_frequency_of_selected": 0.889,
+            "checkpoint": 2,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 3.1646588235294155e-05,
+            "next_checkpoint_reviews": 100,
+            "next_increment_cost_usd_estimate": 0.0019503120000000011,
+            "original_predicted_objective": 0.013720767169550176,
+            "profiled_reviews": 50,
+            "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+            "profiling_decisions": 150,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01334054335409458
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.3941873162284416e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.773,
+            "bootstrap_selection_frequency_of_selected": 0.773,
+            "checkpoint": 3,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.00023941873162284415,
+            "next_checkpoint_reviews": 150,
+            "next_increment_cost_usd_estimate": 0.0019701570000000028,
+            "original_predicted_objective": 0.012960324795804334,
+            "profiled_reviews": 100,
+            "profiling_cost_usd_offline_estimate": 0.0039403140000000055,
+            "profiling_decisions": 300,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.012790273138009345
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.8996891664925474e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.746,
+            "bootstrap_selection_frequency_of_selected": 0.746,
+            "checkpoint": 4,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.00028996891664925475,
+            "next_checkpoint_reviews": 200,
+            "next_increment_cost_usd_estimate": 0.0019805100000000017,
+            "original_predicted_objective": 0.01306324241557388,
+            "profiled_reviews": 150,
+            "profiling_cost_usd_offline_estimate": 0.005941530000000006,
+            "profiling_decisions": 450,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01295619797328799
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.787,
+            "bootstrap_selection_frequency_of_selected": 0.787,
+            "checkpoint": 5,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.00021601016291378423,
+            "next_checkpoint_reviews": null,
+            "next_increment_cost_usd_estimate": null,
+            "original_predicted_objective": 0.01332863916348776,
+            "profiled_reviews": 200,
+            "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+            "profiling_decisions": 600,
+            "reasons": [
+              "maximum_checkpoint_reached"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.013202018056634167
+          }
+        ],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      },
+      "1000": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 1000,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.0,
+        "profiling_decisions_saved": 0,
+        "profiling_decisions_used": 600,
+        "profiling_started": true,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "adaptive_profile_at_stopping_checkpoint",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "start_adaptive_profiling",
+          "best_case_break_even_executions": 1,
+          "best_case_net_savings_usd": 21.10283528325,
+          "economics_gate_configured": true,
+          "expected_executions": 1000,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "bounded_savings_may_exceed_first_checkpoint_cost"
+          ],
+          "savings_bound_basis": "structural_upper_bound",
+          "savings_upper_bound_per_execution_usd": 0.021103824,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": true,
+        "stopping_checkpoint": {
+          "agrees_with_full_profile_plan": true,
+          "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+          "bootstrap_modal_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "bootstrap_probability_selected_cheaper_than_original": 0.787,
+          "bootstrap_selection_frequency_of_selected": 0.787,
+          "checkpoint": 5,
+          "controller_decision": "stop",
+          "expected_value_of_information_bound": 0.021601016291378422,
+          "next_checkpoint_reviews": null,
+          "next_increment_cost_usd_estimate": null,
+          "original_predicted_objective": 0.01332863916348776,
+          "profiled_reviews": 200,
+          "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "reasons": [
+            "maximum_checkpoint_reached"
+          ],
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "selected_predicted_objective": 0.013202018056634167
+        },
+        "trajectory": [
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.009213994479110624,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.889,
+            "bootstrap_selection_frequency_of_selected": 0.889,
+            "checkpoint": 2,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.0031646588235294155,
+            "next_checkpoint_reviews": 100,
+            "next_increment_cost_usd_estimate": 0.0019503120000000011,
+            "original_predicted_objective": 0.013720767169550176,
+            "profiled_reviews": 50,
+            "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+            "profiling_decisions": 150,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01334054335409458
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.3941873162284416e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.773,
+            "bootstrap_selection_frequency_of_selected": 0.773,
+            "checkpoint": 3,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.023941873162284417,
+            "next_checkpoint_reviews": 150,
+            "next_increment_cost_usd_estimate": 0.0019701570000000028,
+            "original_predicted_objective": 0.012960324795804334,
+            "profiled_reviews": 100,
+            "profiling_cost_usd_offline_estimate": 0.0039403140000000055,
+            "profiling_decisions": 300,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.012790273138009345
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.8996891664925474e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.746,
+            "bootstrap_selection_frequency_of_selected": 0.746,
+            "checkpoint": 4,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.028996891664925473,
+            "next_checkpoint_reviews": 200,
+            "next_increment_cost_usd_estimate": 0.0019805100000000017,
+            "original_predicted_objective": 0.01306324241557388,
+            "profiled_reviews": 150,
+            "profiling_cost_usd_offline_estimate": 0.005941530000000006,
+            "profiling_decisions": 450,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01295619797328799
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.787,
+            "bootstrap_selection_frequency_of_selected": 0.787,
+            "checkpoint": 5,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 0.021601016291378422,
+            "next_checkpoint_reviews": null,
+            "next_increment_cost_usd_estimate": null,
+            "original_predicted_objective": 0.01332863916348776,
+            "profiled_reviews": 200,
+            "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+            "profiling_decisions": 600,
+            "reasons": [
+              "maximum_checkpoint_reached"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.013202018056634167
+          }
+        ],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      },
+      "113": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 113,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.005959422000000008,
+        "profiling_decisions_saved": 450,
+        "profiling_decisions_used": 150,
+        "profiling_started": true,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "adaptive_profile_at_stopping_checkpoint",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "start_adaptive_profiling",
+          "best_case_break_even_executions": 1,
+          "best_case_net_savings_usd": 2.3837433952500002,
+          "economics_gate_configured": true,
+          "expected_executions": 113,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "bounded_savings_may_exceed_first_checkpoint_cost"
+          ],
+          "savings_bound_basis": "structural_upper_bound",
+          "savings_upper_bound_per_execution_usd": 0.021103824,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": true,
+        "stopping_checkpoint": {
+          "agrees_with_full_profile_plan": true,
+          "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+          "bootstrap_modal_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "bootstrap_probability_selected_cheaper_than_original": 0.889,
+          "bootstrap_selection_frequency_of_selected": 0.889,
+          "checkpoint": 2,
+          "controller_decision": "stop",
+          "expected_value_of_information_bound": 0.000357606447058824,
+          "next_checkpoint_reviews": 100,
+          "next_increment_cost_usd_estimate": 0.0019503120000000011,
+          "original_predicted_objective": 0.013720767169550176,
+          "profiled_reviews": 50,
+          "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+          "profiling_decisions": 150,
+          "reasons": [
+            "expected_value_of_information_below_increment_cost"
+          ],
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "selected_predicted_objective": 0.01334054335409458
+        },
+        "trajectory": [
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.0010411813761395006,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.889,
+            "bootstrap_selection_frequency_of_selected": 0.889,
+            "checkpoint": 2,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 0.000357606447058824,
+            "next_checkpoint_reviews": 100,
+            "next_increment_cost_usd_estimate": 0.0019503120000000011,
+            "original_predicted_objective": 0.013720767169550176,
+            "profiled_reviews": 50,
+            "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+            "profiling_decisions": 150,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01334054335409458
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.3941873162284416e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.773,
+            "bootstrap_selection_frequency_of_selected": 0.773,
+            "checkpoint": 3,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.002705431667338139,
+            "next_checkpoint_reviews": 150,
+            "next_increment_cost_usd_estimate": 0.0019701570000000028,
+            "original_predicted_objective": 0.012960324795804334,
+            "profiled_reviews": 100,
+            "profiling_cost_usd_offline_estimate": 0.0039403140000000055,
+            "profiling_decisions": 300,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.012790273138009345
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.8996891664925474e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.746,
+            "bootstrap_selection_frequency_of_selected": 0.746,
+            "checkpoint": 4,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.0032766487581365783,
+            "next_checkpoint_reviews": 200,
+            "next_increment_cost_usd_estimate": 0.0019805100000000017,
+            "original_predicted_objective": 0.01306324241557388,
+            "profiled_reviews": 150,
+            "profiling_cost_usd_offline_estimate": 0.005941530000000006,
+            "profiling_decisions": 450,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01295619797328799
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.787,
+            "bootstrap_selection_frequency_of_selected": 0.787,
+            "checkpoint": 5,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.0024409148409257615,
+            "next_checkpoint_reviews": null,
+            "next_increment_cost_usd_estimate": null,
+            "original_predicted_objective": 0.01332863916348776,
+            "profiled_reviews": 200,
+            "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+            "profiling_decisions": 600,
+            "reasons": [
+              "maximum_checkpoint_reached"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.013202018056634167
+          }
+        ],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      }
+    },
+    "transferred_prediction": {
+      "0": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 0,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.007909734000000009,
+        "profiling_decisions_saved": 600,
+        "profiling_decisions_used": 0,
+        "profiling_started": false,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "poor_quality",
+          "product_defect",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "original_order_without_profiling",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "skip_profiling_execute_original",
+          "economics_gate_configured": true,
+          "expected_executions": 0,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "no_expected_executions"
+          ],
+          "savings_bound_basis": "transferred_prediction",
+          "savings_upper_bound_per_execution_usd": 0.00012662110685359232,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": false,
+        "stopping_checkpoint": null,
+        "trajectory": [],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      },
+      "1": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 1,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.007909734000000009,
+        "profiling_decisions_saved": 600,
+        "profiling_decisions_used": 0,
+        "profiling_started": false,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "poor_quality",
+          "product_defect",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "original_order_without_profiling",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "skip_profiling_execute_original",
+          "best_case_break_even_executions": 8,
+          "best_case_net_savings_usd": -0.0008620956431464077,
+          "economics_gate_configured": true,
+          "expected_executions": 1,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "profiling_cannot_break_even_within_horizon"
+          ],
+          "savings_bound_basis": "transferred_prediction",
+          "savings_upper_bound_per_execution_usd": 0.00012662110685359232,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": false,
+        "stopping_checkpoint": null,
+        "trajectory": [],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      },
+      "10": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 10,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.006927018000000009,
+        "profiling_decisions_saved": 525,
+        "profiling_decisions_used": 75,
+        "profiling_started": true,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "adaptive_profile_at_stopping_checkpoint",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "start_adaptive_profiling",
+          "best_case_break_even_executions": 8,
+          "best_case_net_savings_usd": 0.0002774943185359232,
+          "economics_gate_configured": true,
+          "expected_executions": 10,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "bounded_savings_may_exceed_first_checkpoint_cost"
+          ],
+          "savings_bound_basis": "transferred_prediction",
+          "savings_upper_bound_per_execution_usd": 0.00012662110685359232,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": true,
+        "stopping_checkpoint": {
+          "agrees_with_full_profile_plan": true,
+          "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+          "bootstrap_modal_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "bootstrap_probability_selected_cheaper_than_original": 0.651,
+          "bootstrap_selection_frequency_of_selected": 0.645,
+          "checkpoint": 1,
+          "controller_decision": "stop",
+          "expected_value_of_information_bound": 9.213994479110625e-05,
+          "next_checkpoint_reviews": 50,
+          "next_increment_cost_usd_estimate": 0.0009827160000000002,
+          "original_predicted_objective": 0.014942891664335666,
+          "profiled_reviews": 25,
+          "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+          "profiling_decisions": 75,
+          "reasons": [
+            "expected_value_of_information_below_increment_cost"
+          ],
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "selected_predicted_objective": 0.014579010923076924
+        },
+        "trajectory": [
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 9.213994479110625e-05,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.889,
+            "bootstrap_selection_frequency_of_selected": 0.889,
+            "checkpoint": 2,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 3.1646588235294155e-05,
+            "next_checkpoint_reviews": 100,
+            "next_increment_cost_usd_estimate": 0.0019503120000000011,
+            "original_predicted_objective": 0.013720767169550176,
+            "profiled_reviews": 50,
+            "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+            "profiling_decisions": 150,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01334054335409458
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.3941873162284416e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.773,
+            "bootstrap_selection_frequency_of_selected": 0.773,
+            "checkpoint": 3,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.00023941873162284415,
+            "next_checkpoint_reviews": 150,
+            "next_increment_cost_usd_estimate": 0.0019701570000000028,
+            "original_predicted_objective": 0.012960324795804334,
+            "profiled_reviews": 100,
+            "profiling_cost_usd_offline_estimate": 0.0039403140000000055,
+            "profiling_decisions": 300,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.012790273138009345
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.8996891664925474e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.746,
+            "bootstrap_selection_frequency_of_selected": 0.746,
+            "checkpoint": 4,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.00028996891664925475,
+            "next_checkpoint_reviews": 200,
+            "next_increment_cost_usd_estimate": 0.0019805100000000017,
+            "original_predicted_objective": 0.01306324241557388,
+            "profiled_reviews": 150,
+            "profiling_cost_usd_offline_estimate": 0.005941530000000006,
+            "profiling_decisions": 450,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01295619797328799
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.787,
+            "bootstrap_selection_frequency_of_selected": 0.787,
+            "checkpoint": 5,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.00021601016291378423,
+            "next_checkpoint_reviews": null,
+            "next_increment_cost_usd_estimate": null,
+            "original_predicted_objective": 0.01332863916348776,
+            "profiled_reviews": 200,
+            "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+            "profiling_decisions": 600,
+            "reasons": [
+              "maximum_checkpoint_reached"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.013202018056634167
+          }
+        ],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      },
+      "1000": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 1000,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.0,
+        "profiling_decisions_saved": 0,
+        "profiling_decisions_used": 600,
+        "profiling_started": true,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "adaptive_profile_at_stopping_checkpoint",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "start_adaptive_profiling",
+          "best_case_break_even_executions": 8,
+          "best_case_net_savings_usd": 0.1256323901035923,
+          "economics_gate_configured": true,
+          "expected_executions": 1000,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "bounded_savings_may_exceed_first_checkpoint_cost"
+          ],
+          "savings_bound_basis": "transferred_prediction",
+          "savings_upper_bound_per_execution_usd": 0.00012662110685359232,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": true,
+        "stopping_checkpoint": {
+          "agrees_with_full_profile_plan": true,
+          "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+          "bootstrap_modal_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "bootstrap_probability_selected_cheaper_than_original": 0.787,
+          "bootstrap_selection_frequency_of_selected": 0.787,
+          "checkpoint": 5,
+          "controller_decision": "stop",
+          "expected_value_of_information_bound": 0.021601016291378422,
+          "next_checkpoint_reviews": null,
+          "next_increment_cost_usd_estimate": null,
+          "original_predicted_objective": 0.01332863916348776,
+          "profiled_reviews": 200,
+          "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "reasons": [
+            "maximum_checkpoint_reached"
+          ],
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "selected_predicted_objective": 0.013202018056634167
+        },
+        "trajectory": [
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.009213994479110624,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.889,
+            "bootstrap_selection_frequency_of_selected": 0.889,
+            "checkpoint": 2,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.0031646588235294155,
+            "next_checkpoint_reviews": 100,
+            "next_increment_cost_usd_estimate": 0.0019503120000000011,
+            "original_predicted_objective": 0.013720767169550176,
+            "profiled_reviews": 50,
+            "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+            "profiling_decisions": 150,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01334054335409458
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.3941873162284416e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.773,
+            "bootstrap_selection_frequency_of_selected": 0.773,
+            "checkpoint": 3,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.023941873162284417,
+            "next_checkpoint_reviews": 150,
+            "next_increment_cost_usd_estimate": 0.0019701570000000028,
+            "original_predicted_objective": 0.012960324795804334,
+            "profiled_reviews": 100,
+            "profiling_cost_usd_offline_estimate": 0.0039403140000000055,
+            "profiling_decisions": 300,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.012790273138009345
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.8996891664925474e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.746,
+            "bootstrap_selection_frequency_of_selected": 0.746,
+            "checkpoint": 4,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.028996891664925473,
+            "next_checkpoint_reviews": 200,
+            "next_increment_cost_usd_estimate": 0.0019805100000000017,
+            "original_predicted_objective": 0.01306324241557388,
+            "profiled_reviews": 150,
+            "profiling_cost_usd_offline_estimate": 0.005941530000000006,
+            "profiling_decisions": 450,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01295619797328799
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.787,
+            "bootstrap_selection_frequency_of_selected": 0.787,
+            "checkpoint": 5,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 0.021601016291378422,
+            "next_checkpoint_reviews": null,
+            "next_increment_cost_usd_estimate": null,
+            "original_predicted_objective": 0.01332863916348776,
+            "profiled_reviews": 200,
+            "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+            "profiling_decisions": 600,
+            "reasons": [
+              "maximum_checkpoint_reached"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.013202018056634167
+          }
+        ],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      },
+      "113": {
+        "bootstrap_iterations_per_checkpoint": 1000,
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "estimator": "correlation_aware",
+        "evidence": "offline_simulation_over_recorded_complete_profiling_matrix",
+        "expected_executions": 113,
+        "full_profile": {
+          "note": "diagnostic computed from every profiled row; unknown to the controller",
+          "predicted_saving_per_execution_vs_original": 0.00012662110685359232,
+          "profiled_reviews": 200,
+          "profiling_cost_usd": 0.007909734000000009,
+          "profiling_decisions": 600,
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ]
+        },
+        "live_provider_calls": 0,
+        "objective": "estimated_cost_usd",
+        "objective_unit": "usd",
+        "profiling_cost_saved_usd_offline_estimate": 0.005959422000000008,
+        "profiling_decisions_saved": 450,
+        "profiling_decisions_used": 150,
+        "profiling_started": true,
+        "sampling": {
+          "design": "uniform_without_replacement_complete_rows",
+          "order": "sha256(seed:review_id) rank fixed before any outcome is observed",
+          "per_row_evaluation": "every predicate is evaluated for every sampled review",
+          "seed": 4049,
+          "selection_bias": "None from row or predicate selection: inclusion never depends on observed outcomes, so each checkpoint is a simple random sample of fixed size. The stopping time does depend on data, so estimates reported at a data-dependent stop are not guaranteed unbiased. Outcome-dependent (predicate-selective) profiling is not implemented; adding it would require inverse-probability weighting."
+        },
+        "schema_version": "m3-adaptive-profiling-v2",
+        "selected_order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ],
+        "selected_order_source": "adaptive_profile_at_stopping_checkpoint",
+        "stability_threshold": 0.95,
+        "start_decision": {
+          "action": "start_adaptive_profiling",
+          "best_case_break_even_executions": 8,
+          "best_case_net_savings_usd": 0.013319468324455932,
+          "economics_gate_configured": true,
+          "expected_executions": 113,
+          "first_checkpoint_cost_source": "estimated_cost_per_decision_times_decisions",
+          "first_checkpoint_cost_usd": 0.00098871675,
+          "first_checkpoint_decisions": 75,
+          "optimization_overhead_usd": 0.0,
+          "reasons": [
+            "bounded_savings_may_exceed_first_checkpoint_cost"
+          ],
+          "savings_bound_basis": "transferred_prediction",
+          "savings_upper_bound_per_execution_usd": 0.00012662110685359232,
+          "schema_version": "m3-optimization-economics-v2",
+          "status": "decided"
+        },
+        "stopped_plan_agrees_with_full_profile": true,
+        "stopping_checkpoint": {
+          "agrees_with_full_profile_plan": true,
+          "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+          "bootstrap_modal_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "bootstrap_probability_selected_cheaper_than_original": 0.889,
+          "bootstrap_selection_frequency_of_selected": 0.889,
+          "checkpoint": 2,
+          "controller_decision": "stop",
+          "expected_value_of_information_bound": 0.000357606447058824,
+          "next_checkpoint_reviews": 100,
+          "next_increment_cost_usd_estimate": 0.0019503120000000011,
+          "original_predicted_objective": 0.013720767169550176,
+          "profiled_reviews": 50,
+          "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+          "profiling_decisions": 150,
+          "reasons": [
+            "expected_value_of_information_below_increment_cost"
+          ],
+          "selected_order": [
+            "product_defect",
+            "poor_quality",
+            "dissatisfaction"
+          ],
+          "selected_predicted_objective": 0.01334054335409458
+        },
+        "trajectory": [
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 9.213994479110624e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.651,
+            "bootstrap_selection_frequency_of_selected": 0.645,
+            "checkpoint": 1,
+            "controller_decision": "continue",
+            "expected_value_of_information_bound": 0.0010411813761395006,
+            "next_checkpoint_reviews": 50,
+            "next_increment_cost_usd_estimate": 0.0009827160000000002,
+            "original_predicted_objective": 0.014942891664335666,
+            "profiled_reviews": 25,
+            "profiling_cost_usd_offline_estimate": 0.0009827160000000002,
+            "profiling_decisions": 75,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.014579010923076924
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 3.1646588235294157e-06,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.889,
+            "bootstrap_selection_frequency_of_selected": 0.889,
+            "checkpoint": 2,
+            "controller_decision": "stop",
+            "expected_value_of_information_bound": 0.000357606447058824,
+            "next_checkpoint_reviews": 100,
+            "next_increment_cost_usd_estimate": 0.0019503120000000011,
+            "original_predicted_objective": 0.013720767169550176,
+            "profiled_reviews": 50,
+            "profiling_cost_usd_offline_estimate": 0.0019503120000000011,
+            "profiling_decisions": 150,
+            "reasons": [
+              "expected_value_of_information_below_increment_cost"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01334054335409458
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.3941873162284416e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.773,
+            "bootstrap_selection_frequency_of_selected": 0.773,
+            "checkpoint": 3,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.002705431667338139,
+            "next_checkpoint_reviews": 150,
+            "next_increment_cost_usd_estimate": 0.0019701570000000028,
+            "original_predicted_objective": 0.012960324795804334,
+            "profiled_reviews": 100,
+            "profiling_cost_usd_offline_estimate": 0.0039403140000000055,
+            "profiling_decisions": 300,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.012790273138009345
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.8996891664925474e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.746,
+            "bootstrap_selection_frequency_of_selected": 0.746,
+            "checkpoint": 4,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.0032766487581365783,
+            "next_checkpoint_reviews": 200,
+            "next_increment_cost_usd_estimate": 0.0019805100000000017,
+            "original_predicted_objective": 0.01306324241557388,
+            "profiled_reviews": 150,
+            "profiling_cost_usd_offline_estimate": 0.005941530000000006,
+            "profiling_decisions": 450,
+            "reasons": [],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.01295619797328799
+          },
+          {
+            "agrees_with_full_profile_plan": true,
+            "bootstrap_mean_regret_per_execution": 2.160101629137842e-05,
+            "bootstrap_modal_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "bootstrap_probability_selected_cheaper_than_original": 0.787,
+            "bootstrap_selection_frequency_of_selected": 0.787,
+            "checkpoint": 5,
+            "controller_decision": "after_stop_diagnostic",
+            "expected_value_of_information_bound": 0.0024409148409257615,
+            "next_checkpoint_reviews": null,
+            "next_increment_cost_usd_estimate": null,
+            "original_predicted_objective": 0.01332863916348776,
+            "profiled_reviews": 200,
+            "profiling_cost_usd_offline_estimate": 0.007909734000000009,
+            "profiling_decisions": 600,
+            "reasons": [
+              "maximum_checkpoint_reached"
+            ],
+            "selected_order": [
+              "product_defect",
+              "poor_quality",
+              "dissatisfaction"
+            ],
+            "selected_predicted_objective": 0.013202018056634167
+          }
+        ],
+        "value_of_information_bound": "expected_executions * bootstrap mean regret of the selected plan; an EVPI-style upper bound on what further profiling of this workload could save"
+      }
+    }
+  },
+  "schema_version": "m3-offline-analysis-v2",
+  "start_gate_bases": {
+    "structural_upper_bound": {
+      "definition": "no order can save more than N times (sum of per-evaluation costs minus the cheapest); holds for any selectivities",
+      "savings_upper_bound_per_execution_usd": 0.021103824
+    },
+    "transferred_prediction": {
+      "definition": "predicted saving of a comparable, already profiled workload, assumed to transfer",
+      "savings_upper_bound_per_execution_usd": 0.00012662110685359232
+    }
+  }
+}

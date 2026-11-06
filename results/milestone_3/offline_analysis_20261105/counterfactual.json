@@ -1,0 +1,1740 @@
+{
+  "all_orders_held_out_historical_first": {
+    "dissatisfaction -> poor_quality -> product_defect": {
+      "estimate": {
+        "assumption": "Unknown outcomes follow the smoothed profiling outcome-pattern distribution conditioned on this review's recorded outcomes; reviews are assumed exchangeable with the profiling sample.",
+        "estimate_kind": "profile_pattern_conditional_imputation",
+        "estimated_cost_usd": 0.014888035347438332,
+        "final_matches": 66.0,
+        "input_tokens": 354477.032081865,
+        "is_exact": false,
+        "logical_evaluations": 1060.1670168067328,
+        "output_tokens": 24923.674369748092,
+        "stage_input_records": [
+          800.0,
+          171.88130252100666,
+          88.28571428571432
+        ],
+        "stage_passed_records": [
+          171.88130252100666,
+          88.28571428571432,
+          66.0
+        ]
+      },
+      "final_matches": {
+        "bounds": {
+          "exact": true,
+          "lower": 66,
+          "upper": 66
+        },
+        "definite_count": 66,
+        "possible_additional_count": 0
+      },
+      "logical_evaluations": {
+        "exact": false,
+        "lower": 932,
+        "upper": 1689
+      },
+      "missing_decisions_on_possible_paths": 733,
+      "observability": "partially_observable",
+      "resolved_reviews": 67,
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 800,
+            "upper": 800
+          },
+          "passed_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 799
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": false,
+            "lower": 1,
+            "upper": 734
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 799
+          },
+          "passed_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 90
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": false,
+            "lower": 0,
+            "upper": 709
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 90
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 66,
+            "upper": 66
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": false,
+            "lower": 0,
+            "upper": 24
+          },
+          "stage": 3
+        }
+      ],
+      "unresolved_reviews": 733,
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": false,
+          "lower": 0.013080194670967875,
+          "upper": 0.023065862670967937
+        },
+        "exact_from_recorded_usage": false,
+        "input_tokens": {
+          "exact": false,
+          "lower": 311433.206451616,
+          "upper": 549187.2064516175
+        },
+        "output_tokens": {
+          "exact": false,
+          "lower": 22104.0,
+          "upper": 38758.0
+        },
+        "pairs_with_estimated_usage": 733,
+        "usage_estimate_method": "per_predicate_mean_of_recorded_usage"
+      }
+    },
+    "dissatisfaction -> product_defect -> poor_quality": {
+      "estimate": {
+        "assumption": "Unknown outcomes follow the smoothed profiling outcome-pattern distribution conditioned on this review's recorded outcomes; reviews are assumed exchangeable with the profiling sample.",
+        "estimate_kind": "profile_pattern_conditional_imputation",
+        "estimated_cost_usd": 0.0147995738621442,
+        "final_matches": 66.0,
+        "input_tokens": 352370.80624152854,
+        "is_exact": false,
+        "logical_evaluations": 1054.506302521019,
+        "output_tokens": 24799.138655462397,
+        "stage_input_records": [
+          800.0,
+          171.88130252100666,
+          82.625
+        ],
+        "stage_passed_records": [
+          171.88130252100666,
+          82.625,
+          66.0
+        ]
+      },
+      "final_matches": {
+        "bounds": {
+          "exact": true,
+          "lower": 66,
+          "upper": 66
+        },
+        "definite_count": 66,
+        "possible_additional_count": 0
+      },
+      "logical_evaluations": {
+        "exact": false,
+        "lower": 932,
+        "upper": 1684
+      },
+      "missing_decisions_on_possible_paths": 733,
+      "observability": "partially_observable",
+      "resolved_reviews": 67,
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 800,
+            "upper": 800
+          },
+          "passed_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 799
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": false,
+            "lower": 1,
+            "upper": 734
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 799
+          },
+          "passed_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 85
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": false,
+            "lower": 0,
+            "upper": 714
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 85
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 66,
+            "upper": 66
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": false,
+            "lower": 0,
+            "upper": 19
+          },
+          "stage": 3
+        }
+      ],
+      "unresolved_reviews": 733,
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": false,
+          "lower": 0.013080194670967875,
+          "upper": 0.02301315267096794
+        },
+        "exact_from_recorded_usage": false,
+        "input_tokens": {
+          "exact": false,
+          "lower": 311433.206451616,
+          "upper": 547932.2064516175
+        },
+        "output_tokens": {
+          "exact": false,
+          "lower": 22104.0,
+          "upper": 38648.0
+        },
+        "pairs_with_estimated_usage": 733,
+        "usage_estimate_method": "per_predicate_mean_of_recorded_usage"
+      }
+    },
+    "poor_quality -> dissatisfaction -> product_defect": {
+      "estimate": {
+        "assumption": "Unknown outcomes follow the smoothed profiling outcome-pattern distribution conditioned on this review's recorded outcomes; reviews are assumed exchangeable with the profiling sample.",
+        "estimate_kind": "profile_pattern_conditional_imputation",
+        "estimated_cost_usd": 0.013105555045161294,
+        "final_matches": 66.0,
+        "input_tokens": 312037.0248847927,
+        "is_exact": false,
+        "logical_evaluations": 979.2857142857146,
+        "output_tokens": 21726.285714285717,
+        "stage_input_records": [
+          800.0,
+          91.0,
+          88.28571428571432
+        ],
+        "stage_passed_records": [
+          91.0,
+          88.28571428571432,
+          66.0
+        ]
+      },
+      "final_matches": {
+        "bounds": {
+          "exact": true,
+          "lower": 66,
+          "upper": 66
+        },
+        "definite_count": 66,
+        "possible_additional_count": 0
+      },
+      "logical_evaluations": {
+        "exact": false,
+        "lower": 957,
+        "upper": 981
+      },
+      "missing_decisions_on_possible_paths": 24,
+      "observability": "partially_observable",
+      "resolved_reviews": 776,
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 800,
+            "upper": 800
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 91,
+            "upper": 91
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 709,
+            "upper": 709
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 91,
+            "upper": 91
+          },
+          "passed_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 90
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": false,
+            "lower": 1,
+            "upper": 25
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 90
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 66,
+            "upper": 66
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": false,
+            "lower": 0,
+            "upper": 24
+          },
+          "stage": 3
+        }
+      ],
+      "unresolved_reviews": 24,
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": false,
+          "lower": 0.012761497045161295,
+          "upper": 0.013132021045161296
+        },
+        "exact_from_recorded_usage": false,
+        "input_tokens": {
+          "exact": false,
+          "lower": 303845.1677419356,
+          "upper": 312667.1677419356
+        },
+        "output_tokens": {
+          "exact": false,
+          "lower": 21236.0,
+          "upper": 21764.0
+        },
+        "pairs_with_estimated_usage": 24,
+        "usage_estimate_method": "per_predicate_mean_of_recorded_usage"
+      }
+    },
+    "poor_quality -> product_defect -> dissatisfaction": {
+      "estimate": {
+        "assumption": "Unknown outcomes follow the smoothed profiling outcome-pattern distribution conditioned on this review's recorded outcomes; reviews are assumed exchangeable with the profiling sample.",
+        "estimate_kind": "profile_pattern_conditional_imputation",
+        "estimated_cost_usd": 0.01281,
+        "final_matches": 66.0,
+        "input_tokens": 305000.0,
+        "is_exact": false,
+        "logical_evaluations": 958.0,
+        "output_tokens": 21210.0,
+        "stage_input_records": [
+          800.0,
+          91.0,
+          67.0
+        ],
+        "stage_passed_records": [
+          91.0,
+          67.0,
+          66.0
+        ]
+      },
+      "final_matches": {
+        "bounds": {
+          "exact": true,
+          "lower": 66,
+          "upper": 66
+        },
+        "definite_count": 66,
+        "possible_additional_count": 0
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 958,
+        "upper": 958
+      },
+      "missing_decisions_on_possible_paths": 0,
+      "observability": "fully_observable",
+      "resolved_reviews": 800,
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 800,
+            "upper": 800
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 91,
+            "upper": 91
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 709,
+            "upper": 709
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 91,
+            "upper": 91
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 67,
+            "upper": 67
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 24,
+            "upper": 24
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 67,
+            "upper": 67
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 66,
+            "upper": 66
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": true,
+            "lower": 1,
+            "upper": 1
+          },
+          "stage": 3
+        }
+      ],
+      "unresolved_reviews": 0,
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": true,
+          "lower": 0.01281,
+          "upper": 0.01281
+        },
+        "exact_from_recorded_usage": true,
+        "input_tokens": {
+          "exact": true,
+          "lower": 305000.0,
+          "upper": 305000.0
+        },
+        "output_tokens": {
+          "exact": true,
+          "lower": 21210.0,
+          "upper": 21210.0
+        },
+        "pairs_with_estimated_usage": 0,
+        "usage_estimate_method": null
+      }
+    },
+    "product_defect -> dissatisfaction -> poor_quality": {
+      "estimate": {
+        "assumption": "Unknown outcomes follow the smoothed profiling outcome-pattern distribution conditioned on this review's recorded outcomes; reviews are assumed exchangeable with the profiling sample.",
+        "estimate_kind": "profile_pattern_conditional_imputation",
+        "estimated_cost_usd": 0.012973315577419358,
+        "final_matches": 66.0,
+        "input_tokens": 308888.4661290323,
+        "is_exact": false,
+        "logical_evaluations": 968.625,
+        "output_tokens": 21481.75,
+        "stage_input_records": [
+          800.0,
+          86.0,
+          82.625
+        ],
+        "stage_passed_records": [
+          86.0,
+          82.625,
+          66.0
+        ]
+      },
+      "final_matches": {
+        "bounds": {
+          "exact": true,
+          "lower": 66,
+          "upper": 66
+        },
+        "definite_count": 66,
+        "possible_additional_count": 0
+      },
+      "logical_evaluations": {
+        "exact": false,
+        "lower": 952,
+        "upper": 971
+      },
+      "missing_decisions_on_possible_paths": 19,
+      "observability": "partially_observable",
+      "resolved_reviews": 781,
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 800,
+            "upper": 800
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 86,
+            "upper": 86
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 714,
+            "upper": 714
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 86,
+            "upper": 86
+          },
+          "passed_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 85
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": false,
+            "lower": 1,
+            "upper": 20
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": false,
+            "lower": 66,
+            "upper": 85
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 66,
+            "upper": 66
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": false,
+            "lower": 0,
+            "upper": 19
+          },
+          "stage": 3
+        }
+      ],
+      "unresolved_reviews": 19,
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": false,
+          "lower": 0.01272216607741936,
+          "upper": 0.013009194077419357
+        },
+        "exact_from_recorded_usage": false,
+        "input_tokens": {
+          "exact": false,
+          "lower": 302908.7161290323,
+          "upper": 309742.7161290323
+        },
+        "output_tokens": {
+          "exact": false,
+          "lower": 21116.0,
+          "upper": 21534.0
+        },
+        "pairs_with_estimated_usage": 19,
+        "usage_estimate_method": "per_predicate_mean_of_recorded_usage"
+      }
+    },
+    "product_defect -> poor_quality -> dissatisfaction": {
+      "estimate": {
+        "assumption": "Unknown outcomes follow the smoothed profiling outcome-pattern distribution conditioned on this review's recorded outcomes; reviews are assumed exchangeable with the profiling sample.",
+        "estimate_kind": "profile_pattern_conditional_imputation",
+        "estimated_cost_usd": 0.012757290000000001,
+        "final_matches": 66.0,
+        "input_tokens": 303745.0,
+        "is_exact": false,
+        "logical_evaluations": 953.0,
+        "output_tokens": 21100.0,
+        "stage_input_records": [
+          800.0,
+          86.0,
+          67.0
+        ],
+        "stage_passed_records": [
+          86.0,
+          67.0,
+          66.0
+        ]
+      },
+      "final_matches": {
+        "bounds": {
+          "exact": true,
+          "lower": 66,
+          "upper": 66
+        },
+        "definite_count": 66,
+        "possible_additional_count": 0
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 953,
+        "upper": 953
+      },
+      "missing_decisions_on_possible_paths": 0,
+      "observability": "fully_observable",
+      "resolved_reviews": 800,
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 800,
+            "upper": 800
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 86,
+            "upper": 86
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 714,
+            "upper": 714
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 86,
+            "upper": 86
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 67,
+            "upper": 67
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 19,
+            "upper": 19
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 67,
+            "upper": 67
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 66,
+            "upper": 66
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": true,
+            "lower": 1,
+            "upper": 1
+          },
+          "stage": 3
+        }
+      ],
+      "unresolved_reviews": 0,
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": true,
+          "lower": 0.012757290000000001,
+          "upper": 0.012757290000000001
+        },
+        "exact_from_recorded_usage": true,
+        "input_tokens": {
+          "exact": true,
+          "lower": 303745.0,
+          "upper": 303745.0
+        },
+        "output_tokens": {
+          "exact": true,
+          "lower": 21100.0,
+          "upper": 21100.0
+        },
+        "pairs_with_estimated_usage": 0,
+        "usage_estimate_method": null
+      }
+    }
+  },
+  "all_orders_profiling_exact": {
+    "dissatisfaction -> poor_quality -> product_defect": {
+      "final_matches": {
+        "exact": true,
+        "lower": 22,
+        "upper": 22
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 275,
+        "upper": 275
+      },
+      "observability": "fully_observable",
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 200,
+            "upper": 200
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 47,
+            "upper": 47
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": true,
+            "lower": 153,
+            "upper": 153
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 47,
+            "upper": 47
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 28,
+            "upper": 28
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 19,
+            "upper": 19
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 28,
+            "upper": 28
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 6,
+            "upper": 6
+          },
+          "stage": 3
+        }
+      ],
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": true,
+          "lower": 0.0036976380000000005,
+          "upper": 0.0036976380000000005
+        },
+        "exact_from_recorded_usage": true,
+        "input_tokens": {
+          "exact": true,
+          "lower": 88039.0,
+          "upper": 88039.0
+        },
+        "output_tokens": {
+          "exact": true,
+          "lower": 6450.0,
+          "upper": 6450.0
+        },
+        "pairs_with_estimated_usage": 0,
+        "usage_estimate_method": null
+      }
+    },
+    "dissatisfaction -> product_defect -> poor_quality": {
+      "final_matches": {
+        "exact": true,
+        "lower": 22,
+        "upper": 22
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 272,
+        "upper": 272
+      },
+      "observability": "fully_observable",
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 200,
+            "upper": 200
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 47,
+            "upper": 47
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": true,
+            "lower": 153,
+            "upper": 153
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 47,
+            "upper": 47
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 25,
+            "upper": 25
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 25,
+            "upper": 25
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 3,
+            "upper": 3
+          },
+          "stage": 3
+        }
+      ],
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": true,
+          "lower": 0.003660342,
+          "upper": 0.003660342
+        },
+        "exact_from_recorded_usage": true,
+        "input_tokens": {
+          "exact": true,
+          "lower": 87151.0,
+          "upper": 87151.0
+        },
+        "output_tokens": {
+          "exact": true,
+          "lower": 6384.0,
+          "upper": 6384.0
+        },
+        "pairs_with_estimated_usage": 0,
+        "usage_estimate_method": null
+      }
+    },
+    "poor_quality -> dissatisfaction -> product_defect": {
+      "final_matches": {
+        "exact": true,
+        "lower": 22,
+        "upper": 22
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 256,
+        "upper": 256
+      },
+      "observability": "fully_observable",
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 200,
+            "upper": 200
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 28,
+            "upper": 28
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 172,
+            "upper": 172
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 28,
+            "upper": 28
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 28,
+            "upper": 28
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": true,
+            "lower": 0,
+            "upper": 0
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 28,
+            "upper": 28
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 6,
+            "upper": 6
+          },
+          "stage": 3
+        }
+      ],
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": true,
+          "lower": 0.003422622,
+          "upper": 0.003422622
+        },
+        "exact_from_recorded_usage": true,
+        "input_tokens": {
+          "exact": true,
+          "lower": 81491.0,
+          "upper": 81491.0
+        },
+        "output_tokens": {
+          "exact": true,
+          "lower": 5688.0,
+          "upper": 5688.0
+        },
+        "pairs_with_estimated_usage": 0,
+        "usage_estimate_method": null
+      }
+    },
+    "poor_quality -> product_defect -> dissatisfaction": {
+      "final_matches": {
+        "exact": true,
+        "lower": 22,
+        "upper": 22
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 250,
+        "upper": 250
+      },
+      "observability": "fully_observable",
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 200,
+            "upper": 200
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 28,
+            "upper": 28
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 172,
+            "upper": 172
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 28,
+            "upper": 28
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 6,
+            "upper": 6
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": true,
+            "lower": 0,
+            "upper": 0
+          },
+          "stage": 3
+        }
+      ],
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": true,
+          "lower": 0.003340008,
+          "upper": 0.003340008
+        },
+        "exact_from_recorded_usage": true,
+        "input_tokens": {
+          "exact": true,
+          "lower": 79524.0,
+          "upper": 79524.0
+        },
+        "output_tokens": {
+          "exact": true,
+          "lower": 5544.0,
+          "upper": 5544.0
+        },
+        "pairs_with_estimated_usage": 0,
+        "usage_estimate_method": null
+      }
+    },
+    "product_defect -> dissatisfaction -> poor_quality": {
+      "final_matches": {
+        "exact": true,
+        "lower": 22,
+        "upper": 22
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 250,
+        "upper": 250
+      },
+      "observability": "fully_observable",
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 200,
+            "upper": 200
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 25,
+            "upper": 25
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 175,
+            "upper": 175
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 25,
+            "upper": 25
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 25,
+            "upper": 25
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": true,
+            "lower": 0,
+            "upper": 0
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 25,
+            "upper": 25
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 3,
+            "upper": 3
+          },
+          "stage": 3
+        }
+      ],
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": true,
+          "lower": 0.0033536580000000002,
+          "upper": 0.0033536580000000002
+        },
+        "exact_from_recorded_usage": true,
+        "input_tokens": {
+          "exact": true,
+          "lower": 79849.0,
+          "upper": 79849.0
+        },
+        "output_tokens": {
+          "exact": true,
+          "lower": 5550.0,
+          "upper": 5550.0
+        },
+        "pairs_with_estimated_usage": 0,
+        "usage_estimate_method": null
+      }
+    },
+    "product_defect -> poor_quality -> dissatisfaction": {
+      "final_matches": {
+        "exact": true,
+        "lower": 22,
+        "upper": 22
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 247,
+        "upper": 247
+      },
+      "observability": "fully_observable",
+      "stages": [
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 200,
+            "upper": 200
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 25,
+            "upper": 25
+          },
+          "predicate_id": "product_defect",
+          "rejected_records": {
+            "exact": true,
+            "lower": 175,
+            "upper": 175
+          },
+          "stage": 1
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 25,
+            "upper": 25
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "predicate_id": "poor_quality",
+          "rejected_records": {
+            "exact": true,
+            "lower": 3,
+            "upper": 3
+          },
+          "stage": 2
+        },
+        {
+          "input_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "passed_records": {
+            "exact": true,
+            "lower": 22,
+            "upper": 22
+          },
+          "predicate_id": "dissatisfaction",
+          "rejected_records": {
+            "exact": true,
+            "lower": 0,
+            "upper": 0
+          },
+          "stage": 3
+        }
+      ],
+      "usage": {
+        "estimated_cost_usd": {
+          "exact": true,
+          "lower": 0.0033091380000000005,
+          "upper": 0.0033091380000000005
+        },
+        "exact_from_recorded_usage": true,
+        "input_tokens": {
+          "exact": true,
+          "lower": 78789.0,
+          "upper": 78789.0
+        },
+        "output_tokens": {
+          "exact": true,
+          "lower": 5478.0,
+          "upper": 5478.0
+        },
+        "pairs_with_estimated_usage": 0,
+        "usage_estimate_method": null
+      }
+    }
+  },
+  "decomposition": [
+    {
+      "exact_under_policy": true,
+      "final_matches_fixed_order": {
+        "exact": true,
+        "lower": 66,
+        "upper": 66
+      },
+      "final_matches_optimized_order": {
+        "exact": true,
+        "lower": 66,
+        "upper": 66
+      },
+      "fixed_order_replay_evaluations": {
+        "exact": true,
+        "lower": 958,
+        "upper": 958
+      },
+      "optimized_order_replay_evaluations": {
+        "exact": true,
+        "lower": 953,
+        "upper": 953
+      },
+      "ordering_effect_cost_usd": {
+        "exact": true,
+        "lower": 5.271000000000033e-05,
+        "upper": 5.271000000000033e-05
+      },
+      "ordering_effect_evaluations": {
+        "exact": true,
+        "lower": 5,
+        "upper": 5
+      },
+      "policy": "historical_first",
+      "policy_definition": {
+        "conflict_mode": "prefer_priority",
+        "name": "historical_first",
+        "source_priority": [
+          "m1_fixed_full_baseline",
+          "m2_optimized_heldout"
+        ]
+      },
+      "priority_resolved_conflicts_on_paths": {
+        "fixed_order": 2,
+        "optimized_order": 2
+      },
+      "variability_residual_cost_usd": {
+        "lower": 1.730399999999986e-05,
+        "upper": 1.730399999999986e-05
+      },
+      "variability_residual_evaluations": {
+        "lower": 1,
+        "upper": 1
+      }
+    },
+    {
+      "exact_under_policy": true,
+      "final_matches_fixed_order": {
+        "exact": true,
+        "lower": 66,
+        "upper": 66
+      },
+      "final_matches_optimized_order": {
+        "exact": true,
+        "lower": 66,
+        "upper": 66
+      },
+      "fixed_order_replay_evaluations": {
+        "exact": true,
+        "lower": 956,
+        "upper": 956
+      },
+      "optimized_order_replay_evaluations": {
+        "exact": true,
+        "lower": 952,
+        "upper": 952
+      },
+      "ordering_effect_cost_usd": {
+        "exact": true,
+        "lower": 3.536400000000024e-05,
+        "upper": 3.536400000000024e-05
+      },
+      "ordering_effect_evaluations": {
+        "exact": true,
+        "lower": 4,
+        "upper": 4
+      },
+      "policy": "fresh_first",
+      "policy_definition": {
+        "conflict_mode": "prefer_priority",
+        "name": "fresh_first",
+        "source_priority": [
+          "m2_optimized_heldout",
+          "m1_fixed_full_baseline"
+        ]
+      },
+      "priority_resolved_conflicts_on_paths": {
+        "fixed_order": 2,
+        "optimized_order": 2
+      },
+      "variability_residual_cost_usd": {
+        "lower": 3.464999999999995e-05,
+        "upper": 3.464999999999995e-05
+      },
+      "variability_residual_evaluations": {
+        "lower": 2,
+        "upper": 2
+      }
+    },
+    {
+      "exact_under_policy": false,
+      "final_matches_fixed_order": {
+        "exact": false,
+        "lower": 65,
+        "upper": 67
+      },
+      "final_matches_optimized_order": {
+        "exact": false,
+        "lower": 65,
+        "upper": 67
+      },
+      "fixed_order_replay_evaluations": {
+        "exact": false,
+        "lower": 956,
+        "upper": 958
+      },
+      "optimized_order_replay_evaluations": {
+        "exact": false,
+        "lower": 952,
+        "upper": 953
+      },
+      "ordering_effect_cost_usd": {
+        "exact": false,
+        "lower": 3.536400000000024e-05,
+        "upper": 5.271000000000033e-05
+      },
+      "ordering_effect_evaluations": {
+        "exact": false,
+        "lower": 4,
+        "upper": 5
+      },
+      "policy": "conflicts_unknown",
+      "policy_definition": {
+        "conflict_mode": "treat_as_unknown",
+        "name": "conflicts_unknown",
+        "source_priority": [
+          "m1_fixed_full_baseline",
+          "m2_optimized_heldout"
+        ]
+      },
+      "priority_resolved_conflicts_on_paths": {
+        "fixed_order": 0,
+        "optimized_order": 0
+      },
+      "variability_residual_cost_usd": {
+        "lower": 1.730399999999986e-05,
+        "upper": 3.464999999999995e-05
+      },
+      "variability_residual_evaluations": {
+        "lower": 1,
+        "upper": 2
+      }
+    }
+  ],
+  "evaluation_record_count": 800,
+  "evidence_sources": {
+    "m1_fixed_full_baseline": {
+      "description": "Milestone 1 fixed-order Jev run over all 1,000 reviews",
+      "label": "m1_fixed_full_baseline",
+      "models": {
+        "jev-1.14.0": 1207
+      },
+      "path": "results\\milestone_1_full_baseline\\product_quality_20261102T163100.862806Z_d23f73f2cbd1\\decisions.jsonl",
+      "predicates": {
+        "dissatisfaction": 89,
+        "poor_quality": 1000,
+        "product_defect": 118
+      },
+      "rows": 1207,
+      "run_ids": [
+        "d23f73f2cbd1"
+      ],
+      "sha256": "sha256:0606136f489e71aadb5d294fadd59fd1def3a95bf389ceccacbc8fcad1e999d3"
+    },
+    "m1_smoke_jev": {
+      "description": "additional stored decisions",
+      "label": "m1_smoke_jev",
+      "models": {
+        "jev-1.14.0": 10
+      },
+      "path": "results\\product_quality_20261029T022635.415784Z_96caeebde714\\decisions.jsonl",
+      "predicates": {
+        "poor_quality": 10
+      },
+      "rows": 10,
+      "run_ids": [
+        "96caeebde714"
+      ],
+      "sha256": "sha256:e73eceb422e03d9ccf6aa3d29c5312f9ba75638345db363240511c6202e8ad47"
+    },
+    "m2_optimized_heldout": {
+      "description": "Milestone 2 fresh optimized-order Jev run over 800 held-out reviews",
+      "label": "m2_optimized_heldout",
+      "models": {
+        "jev-1.14.0": 952
+      },
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\optimized\\decisions.jsonl",
+      "predicates": {
+        "dissatisfaction": 66,
+        "poor_quality": 86,
+        "product_defect": 800
+      },
+      "rows": 952,
+      "run_ids": [
+        "m2-optimized-850e8d978efd"
+      ],
+      "sha256": "sha256:de4789c78c3a5b60c4cd556f703778eff23e4caf6b5b318a5824f3a8ab8393ae"
+    },
+    "m2_profiling": {
+      "description": "Milestone 2 unconditional Jev profiling over 200 profiling reviews",
+      "label": "m2_profiling",
+      "models": {
+        "jev-1.14.0": 600
+      },
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\profiling\\decisions.jsonl",
+      "predicates": {
+        "dissatisfaction": 200,
+        "poor_quality": 200,
+        "product_defect": 200
+      },
+      "rows": 600,
+      "run_ids": [
+        "profile-55d055934700"
+      ],
+      "sha256": "sha256:60dcee7bbf89f50d5ece916ac370e4e4f07376a13134311cb2073ee40bef645b"
+    }
+  },
+  "interpretation": "Both orders are replayed over one resolved decision set, so their difference isolates ordering. The residual between the observed difference and the ordering effect is attributed to response variability between the historical and fresh calls. Bounds come from treating conflicting repeats as unknown.",
+  "observed_cost_difference_usd": 7.001400000000019e-05,
+  "observed_difference": 6,
+  "observed_fixed_evaluations": 958,
+  "observed_optimized_evaluations": 952,
+  "reproduction": {
+    "fixed_from_trace": {
+      "estimated_cost_usd": {
+        "exact": true,
+        "lower": 0.01281,
+        "upper": 0.01281
+      },
+      "final_match_ids_equal_recorded": true,
+      "input_tokens": {
+        "exact": true,
+        "lower": 305000.0,
+        "upper": 305000.0
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 958,
+        "upper": 958
+      },
+      "observability": "fully_observable"
+    },
+    "optimized_from_trace": {
+      "estimated_cost_usd": {
+        "exact": true,
+        "lower": 0.012739986,
+        "upper": 0.012739986
+      },
+      "final_match_ids_equal_recorded": true,
+      "input_tokens": {
+        "exact": true,
+        "lower": 303333.0,
+        "upper": 303333.0
+      },
+      "logical_evaluations": {
+        "exact": true,
+        "lower": 952,
+        "upper": 952
+      },
+      "observability": "fully_observable",
+      "recorded_completed_decisions": 952,
+      "recorded_estimated_cost_usd": 0.012739986,
+      "recorded_input_tokens": 303333
+    }
+  },
+  "schema_version": "m3-offline-analysis-v1",
+  "variability": {
+    "model_identifier": "jev-1.14.0",
+    "near_threshold_decisions": {
+      "m1_fixed_full_baseline": {
+        "decisions": 1207,
+        "within_margin": 21,
+        "within_margin_dissatisfaction": 1,
+        "within_margin_poor_quality": 14,
+        "within_margin_product_defect": 6
+      },
+      "m1_smoke_jev": {
+        "decisions": 10,
+        "within_margin": 0
+      },
+      "m2_optimized_heldout": {
+        "decisions": 952,
+        "within_margin": 19,
+        "within_margin_dissatisfaction": 1,
+        "within_margin_poor_quality": 8,
+        "within_margin_product_defect": 10
+      },
+      "m2_profiling": {
+        "decisions": 600,
+        "within_margin": 3,
+        "within_margin_poor_quality": 2,
+        "within_margin_product_defect": 1
+      }
+    },
+    "near_threshold_margin": 0.05,
+    "pairs_with_repeated_observations": 499,
+    "source_comparisons": [
+      {
+        "crossing_details": [
+          {
+            "m1_fixed_full_baseline_passed": false,
+            "m1_fixed_full_baseline_probability": 0.46,
+            "m2_profiling_passed": true,
+            "m2_profiling_probability": 0.5,
+            "predicate_id": "poor_quality",
+            "review_id": "sf_c50b7cb9eedc92247cda13fb08a35dbc7653ba6907266442566692ec2134bc01"
+          }
+        ],
+        "crossing_rate": 0.004016064257028112,
+        "identical_probability_pairs": 171,
+        "input_token_mismatches": 0,
+        "maximum_absolute_probability_difference": 0.050000000000000044,
+        "mean_absolute_probability_difference": 0.004136546184738955,
+        "median_absolute_probability_difference": 0.0,
+        "output_token_mismatches": 0,
+        "shared_pairs": 249,
+        "shared_pairs_by_predicate": {
+          "dissatisfaction": 22,
+          "poor_quality": 200,
+          "product_defect": 27
+        },
+        "sources": [
+          "m1_fixed_full_baseline",
+          "m2_profiling"
+        ],
+        "threshold_crossings": 1
+      },
+      {
+        "crossing_details": [
+          {
+            "m1_fixed_full_baseline_passed": true,
+            "m1_fixed_full_baseline_probability": 0.51,
+            "m2_optimized_heldout_passed": false,
+            "m2_optimized_heldout_probability": 0.48,
+            "predicate_id": "poor_quality",
+            "review_id": "sf_ac4e6614d925ff19cc446f120c238cd19ac0349f211c18e6ff71fc6eabdd627e"
+          },
+          {
+            "m1_fixed_full_baseline_passed": false,
+            "m1_fixed_full_baseline_probability": 0.49,
+            "m2_optimized_heldout_passed": true,
+            "m2_optimized_heldout_probability": 0.51,
+            "predicate_id": "dissatisfaction",
+            "review_id": "sf_d8442bce1f82303b5e686090c27c35b7b57963d938956e820c2e480a864f88c1"
+          }
+        ],
+        "crossing_rate": 0.00823045267489712,
+        "identical_probability_pairs": 105,
+        "input_token_mismatches": 0,
+        "maximum_absolute_probability_difference": 0.09999999999999998,
+        "mean_absolute_probability_difference": 0.009670781893004115,
+        "median_absolute_probability_difference": 0.010000000000000009,
+        "output_token_mismatches": 0,
+        "shared_pairs": 243,
+        "shared_pairs_by_predicate": {
+          "dissatisfaction": 66,
+          "poor_quality": 86,
+          "product_defect": 91
+        },
+        "sources": [
+          "m1_fixed_full_baseline",
+          "m2_optimized_heldout"
+        ],
+        "threshold_crossings": 2
+      },
+      {
+        "crossing_details": [],
+        "crossing_rate": 0.0,
+        "identical_probability_pairs": 9,
+        "input_token_mismatches": 0,
+        "maximum_absolute_probability_difference": 0.030000000000000027,
+        "mean_absolute_probability_difference": 0.0030000000000000027,
+        "median_absolute_probability_difference": 0.0,
+        "output_token_mismatches": 0,
+        "shared_pairs": 10,
+        "shared_pairs_by_predicate": {
+          "poor_quality": 10
+        },
+        "sources": [
+          "m1_fixed_full_baseline",
+          "m1_smoke_jev"
+        ],
+        "threshold_crossings": 0
+      },
+      {
+        "crossing_details": [],
+        "crossing_rate": null,
+        "identical_probability_pairs": 0,
+        "input_token_mismatches": 0,
+        "maximum_absolute_probability_difference": null,
+        "mean_absolute_probability_difference": null,
+        "median_absolute_probability_difference": null,
+        "output_token_mismatches": 0,
+        "shared_pairs": 0,
+        "shared_pairs_by_predicate": {},
+        "sources": [
+          "m2_profiling",
+          "m2_optimized_heldout"
+        ],
+        "threshold_crossings": 0
+      },
+      {
+        "crossing_details": [],
+        "crossing_rate": 0.0,
+        "identical_probability_pairs": 1,
+        "input_token_mismatches": 0,
+        "maximum_absolute_probability_difference": 0.010000000000000009,
+        "mean_absolute_probability_difference": 0.0050000000000000044,
+        "median_absolute_probability_difference": 0.0050000000000000044,
+        "output_token_mismatches": 0,
+        "shared_pairs": 2,
+        "shared_pairs_by_predicate": {
+          "poor_quality": 2
+        },
+        "sources": [
+          "m2_profiling",
+          "m1_smoke_jev"
+        ],
+        "threshold_crossings": 0
+      },
+      {
+        "crossing_details": [],
+        "crossing_rate": 0.0,
+        "identical_probability_pairs": 0,
+        "input_token_mismatches": 0,
+        "maximum_absolute_probability_difference": 0.010000000000000009,
+        "mean_absolute_probability_difference": 0.010000000000000009,
+        "median_absolute_probability_difference": 0.010000000000000009,
+        "output_token_mismatches": 0,
+        "shared_pairs": 1,
+        "shared_pairs_by_predicate": {
+          "poor_quality": 1
+        },
+        "sources": [
+          "m2_optimized_heldout",
+          "m1_smoke_jev"
+        ],
+        "threshold_crossings": 0
+      }
+    ],
+    "sources": [
+      "m1_fixed_full_baseline",
+      "m2_profiling",
+      "m2_optimized_heldout",
+      "m1_smoke_jev"
+    ],
+    "threshold": 0.5
+  }
+}

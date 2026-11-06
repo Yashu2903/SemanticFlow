@@ -1,0 +1,246 @@
+{
+  "correlation_aware": {
+    "estimator": "correlation_aware",
+    "evaluation_record_count": 800,
+    "full_sample_objective_by_order": {
+      "dissatisfaction -> poor_quality -> product_defect": 0.014754840067166323,
+      "dissatisfaction -> product_defect -> poor_quality": 0.014604903678130469,
+      "poor_quality -> dissatisfaction -> product_defect": 0.013658300544232007,
+      "poor_quality -> product_defect -> dissatisfaction": 0.01332863916348776,
+      "product_defect -> dissatisfaction -> poor_quality": 0.01337933118846354,
+      "product_defect -> poor_quality -> dissatisfaction": 0.013202018056634167
+    },
+    "full_sample_selected_order": [
+      "product_defect",
+      "poor_quality",
+      "dissatisfaction"
+    ],
+    "interpretation": "sampling_uncertainty_diagnostic",
+    "interval_level": 0.95,
+    "iterations": 1000,
+    "modal_frequency": 0.769,
+    "modal_order": [
+      "product_defect",
+      "poor_quality",
+      "dissatisfaction"
+    ],
+    "not_evidence_of": "real-world generalization to other data, prompts, or model versions",
+    "objective": "estimated_cost_usd",
+    "objective_distribution_by_order": {
+      "dissatisfaction -> poor_quality -> product_defect": {
+        "lower": 0.013482453227846304,
+        "mean": 0.014760029384864043,
+        "median": 0.014769731653618787,
+        "upper": 0.016006462133981946
+      },
+      "dissatisfaction -> product_defect -> poor_quality": {
+        "lower": 0.01336942410836472,
+        "mean": 0.01461709818049466,
+        "median": 0.014620239730518942,
+        "upper": 0.01588636931251778
+      },
+      "poor_quality -> dissatisfaction -> product_defect": {
+        "lower": 0.01249618048911634,
+        "mean": 0.013658313252768211,
+        "median": 0.013649774213164682,
+        "upper": 0.014930679671152788
+      },
+      "poor_quality -> product_defect -> dissatisfaction": {
+        "lower": 0.012226180757040014,
+        "mean": 0.013338590283976689,
+        "median": 0.01332683554670798,
+        "upper": 0.014548114311220495
+      },
+      "product_defect -> dissatisfaction -> poor_quality": {
+        "lower": 0.012289529911504919,
+        "mean": 0.013393411730887969,
+        "median": 0.013381456987948504,
+        "upper": 0.014631207337000714
+      },
+      "product_defect -> poor_quality -> dissatisfaction": {
+        "lower": 0.012172061717234887,
+        "mean": 0.013219062655517703,
+        "median": 0.013205889207683941,
+        "upper": 0.014444962436454607
+      }
+    },
+    "original_order": [
+      "poor_quality",
+      "product_defect",
+      "dissatisfaction"
+    ],
+    "probability_cheapest": {
+      "dissatisfaction -> poor_quality -> product_defect": 0.0,
+      "dissatisfaction -> product_defect -> poor_quality": 0.0,
+      "poor_quality -> dissatisfaction -> product_defect": 0.0,
+      "poor_quality -> product_defect -> dissatisfaction": 0.231,
+      "product_defect -> dissatisfaction -> poor_quality": 0.0,
+      "product_defect -> poor_quality -> dissatisfaction": 0.769
+    },
+    "probability_reference_cheaper_than_original": 0.769,
+    "probability_reference_not_more_expensive": 0.769,
+    "random_generator": "python_random_mersenne_twister_random_only",
+    "reference_order": [
+      "product_defect",
+      "poor_quality",
+      "dissatisfaction"
+    ],
+    "reference_regret": {
+      "definition": "objective(reference) - minimum objective, per resample",
+      "lower": 0.0,
+      "mean": 2.4335838741881026e-05,
+      "median": 0.0,
+      "probability_positive": 0.231,
+      "upper": 0.0002162900217757931
+    },
+    "reference_relative_savings_vs_original": {
+      "lower": -0.01679733941569418,
+      "mean": 0.00888398035437653,
+      "median": 0.009020909876325051,
+      "upper": 0.034083664331572144
+    },
+    "reference_savings_vs_original": {
+      "lower": -0.0002162900217757931,
+      "mean": 0.00011952762845897163,
+      "median": 0.00012086955785974018,
+      "upper": 0.0004561656868245152
+    },
+    "resampling_unit": "review_row_with_all_predicate_outcomes_and_usage",
+    "sample_size": 200,
+    "schema_version": "m3-paired-bootstrap-v1",
+    "seed": 3031,
+    "selection_frequency": {
+      "dissatisfaction -> poor_quality -> product_defect": 0.0,
+      "dissatisfaction -> product_defect -> poor_quality": 0.0,
+      "poor_quality -> dissatisfaction -> product_defect": 0.0,
+      "poor_quality -> product_defect -> dissatisfaction": 0.231,
+      "product_defect -> dissatisfaction -> poor_quality": 0.0,
+      "product_defect -> poor_quality -> dissatisfaction": 0.769
+    },
+    "stability_threshold": 0.95,
+    "stable_selection": false,
+    "unstable_selection_evidence": "reference order wins 0.769 of resamples; threshold is 0.95"
+  },
+  "independent": {
+    "estimator": "independent",
+    "evaluation_record_count": 800,
+    "full_sample_objective_by_order": {
+      "dissatisfaction -> poor_quality -> product_defect": 0.0133585739448,
+      "dissatisfaction -> product_defect -> poor_quality": 0.013328228235,
+      "poor_quality -> dissatisfaction -> product_defect": 0.012357738304800001,
+      "poor_quality -> product_defect -> dissatisfaction": 0.01219909614,
+      "product_defect -> dissatisfaction -> poor_quality": 0.012195069915,
+      "product_defect -> poor_quality -> dissatisfaction": 0.01206996546
+    },
+    "full_sample_selected_order": [
+      "product_defect",
+      "poor_quality",
+      "dissatisfaction"
+    ],
+    "interpretation": "sampling_uncertainty_diagnostic",
+    "interval_level": 0.95,
+    "iterations": 1000,
+    "modal_frequency": 0.786,
+    "modal_order": [
+      "product_defect",
+      "poor_quality",
+      "dissatisfaction"
+    ],
+    "not_evidence_of": "real-world generalization to other data, prompts, or model versions",
+    "objective": "estimated_cost_usd",
+    "objective_distribution_by_order": {
+      "dissatisfaction -> poor_quality -> product_defect": {
+        "lower": 0.012459621981975,
+        "mean": 0.013368196543627803,
+        "median": 0.013358720363100002,
+        "upper": 0.014286836040120002
+      },
+      "dissatisfaction -> product_defect -> poor_quality": {
+        "lower": 0.012445506983490002,
+        "mean": 0.013338749639871592,
+        "median": 0.013328746914000001,
+        "upper": 0.014251498060170002
+      },
+      "poor_quality -> dissatisfaction -> product_defect": {
+        "lower": 0.01158037261059,
+        "mean": 0.01236151576866779,
+        "median": 0.012351910918200003,
+        "upper": 0.013191637311720001
+      },
+      "poor_quality -> product_defect -> dissatisfaction": {
+        "lower": 0.011470069412655002,
+        "mean": 0.012202254104976596,
+        "median": 0.012192018552000002,
+        "upper": 0.012984277621350002
+      },
+      "product_defect -> dissatisfaction -> poor_quality": {
+        "lower": 0.011474718528,
+        "mean": 0.01220658076343159,
+        "median": 0.012194522995199998,
+        "upper": 0.01303739761443
+      },
+      "product_defect -> poor_quality -> dissatisfaction": {
+        "lower": 0.011399941698915,
+        "mean": 0.012079975475496602,
+        "median": 0.012065113468800001,
+        "upper": 0.01286167939056
+      }
+    },
+    "original_order": [
+      "poor_quality",
+      "product_defect",
+      "dissatisfaction"
+    ],
+    "probability_cheapest": {
+      "dissatisfaction -> poor_quality -> product_defect": 0.0,
+      "dissatisfaction -> product_defect -> poor_quality": 0.0,
+      "poor_quality -> dissatisfaction -> product_defect": 0.0,
+      "poor_quality -> product_defect -> dissatisfaction": 0.214,
+      "product_defect -> dissatisfaction -> poor_quality": 0.0,
+      "product_defect -> poor_quality -> dissatisfaction": 0.786
+    },
+    "probability_reference_cheaper_than_original": 0.786,
+    "probability_reference_not_more_expensive": 0.786,
+    "random_generator": "python_random_mersenne_twister_random_only",
+    "reference_order": [
+      "product_defect",
+      "poor_quality",
+      "dissatisfaction"
+    ],
+    "reference_regret": {
+      "definition": "objective(reference) - minimum objective, per resample",
+      "lower": 0.0,
+      "mean": 1.9891345320000015e-05,
+      "median": 0.0,
+      "probability_positive": 0.214,
+      "upper": 0.00018722182500000142
+    },
+    "reference_relative_savings_vs_original": {
+      "lower": -0.01577599387338028,
+      "mean": 0.00992349791244624,
+      "median": 0.010506422268901795,
+      "upper": 0.03481988522699879
+    },
+    "reference_savings_vs_original": {
+      "lower": -0.00018722182500000142,
+      "mean": 0.00012227862948,
+      "median": 0.0001284523799999996,
+      "upper": 0.0004386658919999963
+    },
+    "resampling_unit": "review_row_with_all_predicate_outcomes_and_usage",
+    "sample_size": 200,
+    "schema_version": "m3-paired-bootstrap-v1",
+    "seed": 3031,
+    "selection_frequency": {
+      "dissatisfaction -> poor_quality -> product_defect": 0.0,
+      "dissatisfaction -> product_defect -> poor_quality": 0.0,
+      "poor_quality -> dissatisfaction -> product_defect": 0.0,
+      "poor_quality -> product_defect -> dissatisfaction": 0.214,
+      "product_defect -> dissatisfaction -> poor_quality": 0.0,
+      "product_defect -> poor_quality -> dissatisfaction": 0.786
+    },
+    "stability_threshold": 0.95,
+    "stable_selection": false,
+    "unstable_selection_evidence": "reference order wins 0.786 of resamples; threshold is 0.95"
+  }
+}

@@ -5,7 +5,8 @@ and optimized runs, and the Milestone 1 smoke run) or from deterministic offline
 them. **No new Jev request was made for Milestone 3.** Replay, bootstrap, calibration, and
 adaptive results are offline analyses, not new live evaluations. Replay-derived savings are
 estimates, not causal measurements. The generated artifacts are in
-`results/milestone_3/offline_analysis_20261105_corrected/`, reproducible with:
+`results/milestone_3/offline_analysis_20261105_19162a2/`, generated from clean commit `19162a2`
+(recorded in its manifest with `git_worktree_dirty: false`) and reproducible with:
 
 ```powershell
 semanticflow analyze --query configs/queries/product_quality.yaml `
@@ -16,7 +17,8 @@ semanticflow analyze --query configs/queries/product_quality.yaml `
   --output-dir results/milestone_3/<new-directory>
 ```
 
-Two runs produced byte-identical artifacts apart from the manifest timestamp. The first
+Three runs (two from the uncommitted working tree, one from the clean commit) produced
+byte-identical artifacts apart from the manifest timestamp and git fields. The first
 Milestone 3 output, `results/milestone_3/offline_analysis_20261105/`, is preserved unchanged
 but superseded; the corrections are listed below. Workload: `product_quality`
 (`poor_quality AND product_defect AND dissatisfaction`), model `jev-1.14.0`, threshold 0.5,

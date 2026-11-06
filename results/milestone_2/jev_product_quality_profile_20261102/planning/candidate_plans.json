@@ -1,0 +1,120 @@
+{
+  "candidates": [
+    {
+      "estimated_cost_usd": 0.01206996546,
+      "estimated_evaluations": 914.0,
+      "estimated_input_tokens": 287380.13,
+      "estimated_output_tokens": 20136.0,
+      "estimated_reduction_vs_original_percent": 1.058526619661517,
+      "estimated_summed_latency_seconds": 95.59742979024712,
+      "estimated_total_tokens": 307516.13,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.01206996546,
+      "predicate_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "rank": 1,
+      "selected": true
+    },
+    {
+      "estimated_cost_usd": 0.012195069915,
+      "estimated_evaluations": 923.5,
+      "estimated_input_tokens": 290358.8075,
+      "estimated_output_tokens": 20517.0,
+      "estimated_reduction_vs_original_percent": 0.0330042894473021,
+      "estimated_summed_latency_seconds": 96.300156552767,
+      "estimated_total_tokens": 310875.8075,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.012195069915,
+      "predicate_order": [
+        "product_defect",
+        "dissatisfaction",
+        "poor_quality"
+      ],
+      "rank": 2,
+      "selected": false
+    },
+    {
+      "estimated_cost_usd": 0.01219909614,
+      "estimated_evaluations": 926.0,
+      "estimated_input_tokens": 290454.67000000004,
+      "estimated_output_tokens": 20400.0,
+      "estimated_reduction_vs_original_percent": 0.0,
+      "estimated_summed_latency_seconds": 98.26807141058671,
+      "estimated_total_tokens": 310854.67000000004,
+      "is_original_order": true,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.01219909614,
+      "predicate_order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "rank": 3,
+      "selected": false
+    },
+    {
+      "estimated_cost_usd": 0.012357738304800001,
+      "estimated_evaluations": 938.32,
+      "estimated_input_tokens": 294231.8644,
+      "estimated_output_tokens": 20867.04,
+      "estimated_reduction_vs_original_percent": -1.3004419588089298,
+      "estimated_summed_latency_seconds": 99.40144111385166,
+      "estimated_total_tokens": 315098.9044,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.012357738304800001,
+      "predicate_order": [
+        "poor_quality",
+        "dissatisfaction",
+        "product_defect"
+      ],
+      "rank": 4,
+      "selected": false
+    },
+    {
+      "estimated_cost_usd": 0.013328228235,
+      "estimated_evaluations": 1011.5,
+      "estimated_input_tokens": 317338.7675,
+      "estimated_output_tokens": 23853.0,
+      "estimated_reduction_vs_original_percent": -9.255866844902156,
+      "estimated_summed_latency_seconds": 104.39565443323096,
+      "estimated_total_tokens": 341191.7675,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.013328228235,
+      "predicate_order": [
+        "dissatisfaction",
+        "product_defect",
+        "poor_quality"
+      ],
+      "rank": 5,
+      "selected": false
+    },
+    {
+      "estimated_cost_usd": 0.0133585739448,
+      "estimated_evaluations": 1014.32,
+      "estimated_input_tokens": 318061.2844,
+      "estimated_output_tokens": 23915.04,
+      "estimated_reduction_vs_original_percent": -9.504620600522621,
+      "estimated_summed_latency_seconds": 105.02325521401076,
+      "estimated_total_tokens": 341976.3244,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.0133585739448,
+      "predicate_order": [
+        "dissatisfaction",
+        "poor_quality",
+        "product_defect"
+      ],
+      "rank": 6,
+      "selected": false
+    }
+  ],
+  "objective": "estimated_cost_usd",
+  "schema_version": "m2-plan-v1"
+}

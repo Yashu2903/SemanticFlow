@@ -1,0 +1,66 @@
+{
+  "caching_enabled": false,
+  "completion_status": "incomplete",
+  "concurrency": 4,
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "dataset_path": "data\\processed\\reviews_1000.parquet",
+  "dataset_preparation_version": "m1-v1",
+  "dataset_version": "semceb_amazon_arts_crafts_sewing_sample_1000",
+  "git_commit": "e1eb157564285ffee1d0cc392f39f9ae27d73686",
+  "max_calls": 10,
+  "max_retries": 2,
+  "predicate_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "pricing_configuration_id": null,
+  "provider": "jev",
+  "query_definition": {
+    "config_id": "m1-product-quality-v1",
+    "dataset_path": "data\\processed\\reviews_1000.parquet",
+    "dataset_preparation_version": "m1-v1",
+    "dataset_version": "semceb_amazon_arts_crafts_sewing_sample_1000",
+    "limit": 10,
+    "max_calls": 10,
+    "operation": "and",
+    "predicates": [
+      {
+        "id": "poor_quality",
+        "instructions": "Does the customer report that the product has poor quality?"
+      },
+      {
+        "id": "product_defect",
+        "instructions": "Does the customer describe a defect or malfunction in the product?"
+      },
+      {
+        "id": "dissatisfaction",
+        "instructions": "Does the customer express dissatisfaction with the product or purchase?"
+      }
+    ],
+    "query_id": "product_quality",
+    "sample_seed": 2026,
+    "threshold": 0.5,
+    "workload_id": "workload_a_product_quality"
+  },
+  "query_id": "product_quality",
+  "question_hashes": {
+    "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+    "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+    "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+  },
+  "question_type": "noul",
+  "record_limit": 10,
+  "requested_model": "jev-latest",
+  "resolved_model_versions": [
+    "jev-1.14.0"
+  ],
+  "run_id": "96caeebde714",
+  "sample_seed": 2026,
+  "semanticflow_version": "0.1.0",
+  "subset_selection_method": "stable-review-id-order-then-record-limit",
+  "threshold": 0.5,
+  "timeout_seconds": 30.0,
+  "timestamp": "20261029T022635.415784Z",
+  "workload_id": "workload_a_product_quality"
+}

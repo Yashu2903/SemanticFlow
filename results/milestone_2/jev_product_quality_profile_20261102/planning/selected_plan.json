@@ -1,0 +1,33 @@
+{
+  "candidate_count": 6,
+  "cost_model_version": "independent-and-v1",
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "estimated_reduction_percent": 1.058526619661517,
+  "evaluation_record_count": 800,
+  "objective": "estimated_cost_usd",
+  "optimizer_version": "exhaustive-order-v1",
+  "original_estimated_objective": 0.01219909614,
+  "original_predicate_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "predicate_hashes": {
+    "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+    "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+    "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+  },
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "query_id": "product_quality",
+  "reordered": true,
+  "requested_model": "jev-1.14.0",
+  "schema_version": "m2-plan-v1",
+  "selected_estimated_objective": 0.01206996546,
+  "selected_predicate_order": [
+    "product_defect",
+    "poor_quality",
+    "dissatisfaction"
+  ],
+  "statistics_version": "unconditional-profile-v1",
+  "threshold": 0.5
+}

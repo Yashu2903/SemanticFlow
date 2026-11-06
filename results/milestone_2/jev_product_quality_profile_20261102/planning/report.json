@@ -1,0 +1,75 @@
+{
+  "candidate_count": 6,
+  "cost_model_version": "independent-and-v1",
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "estimated_reduction_percent": 1.058526619661517,
+  "evaluation_record_count": 800,
+  "held_out_evaluation_outcomes_used": false,
+  "limitation": "unconditional selectivity assumes predicate independence",
+  "objective": "estimated_cost_usd",
+  "optimizer_version": "exhaustive-order-v1",
+  "original_estimated_objective": 0.01219909614,
+  "original_predicate_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "predicate_hashes": {
+    "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+    "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+    "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+  },
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "profiling_statistics_source": "../profiling/statistics.json",
+  "query_id": "product_quality",
+  "reordered": true,
+  "requested_model": "jev-1.14.0",
+  "schema_version": "m2-plan-v1",
+  "selected_estimated_objective": 0.01206996546,
+  "selected_is_minimum_objective": true,
+  "selected_plan_stage_breakdown": [
+    {
+      "average_cost_usd": 1.321089e-05,
+      "average_input_tokens": 314.545,
+      "average_total_tokens": 336.545,
+      "estimated_cost_usd": 0.010568712000000001,
+      "estimated_input_records": 800.0,
+      "estimated_input_tokens": 251636.0,
+      "estimated_selectivity": 0.125,
+      "estimated_total_tokens": 269236.0,
+      "predicate_id": "product_defect",
+      "stage": 1
+    },
+    {
+      "average_cost_usd": 1.3168890000000001e-05,
+      "average_input_tokens": 313.545,
+      "average_total_tokens": 335.545,
+      "estimated_cost_usd": 0.0013168890000000001,
+      "estimated_input_records": 100.0,
+      "estimated_input_tokens": 31354.5,
+      "estimated_selectivity": 0.14,
+      "estimated_total_tokens": 33554.5,
+      "predicate_id": "poor_quality",
+      "stage": 2
+    },
+    {
+      "average_cost_usd": 1.3168890000000001e-05,
+      "average_input_tokens": 313.545,
+      "average_total_tokens": 337.545,
+      "estimated_cost_usd": 0.00018436446000000004,
+      "estimated_input_records": 14.000000000000002,
+      "estimated_input_tokens": 4389.630000000001,
+      "estimated_selectivity": 0.235,
+      "estimated_total_tokens": 4725.630000000001,
+      "predicate_id": "dissatisfaction",
+      "stage": 3
+    }
+  ],
+  "selected_predicate_order": [
+    "product_defect",
+    "poor_quality",
+    "dissatisfaction"
+  ],
+  "statistics_version": "unconditional-profile-v1",
+  "threshold": 0.5
+}

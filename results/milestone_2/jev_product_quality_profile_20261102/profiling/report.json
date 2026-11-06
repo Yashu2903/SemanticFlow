@@ -1,0 +1,142 @@
+{
+  "budget_blocked_evaluations": 0,
+  "budget_diagnostics": [],
+  "complete": true,
+  "completed_decisions": 600,
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "errors": [],
+  "estimated_cost_usd": 0.007909734,
+  "failed_http_attempts": 0,
+  "http_attempts": 600,
+  "incomplete_reason": null,
+  "input_tokens": 188327,
+  "output_tokens": 13600,
+  "predicate_hashes": {
+    "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+    "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+    "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+  },
+  "predicate_instructions": {
+    "dissatisfaction": "Does the customer express dissatisfaction with the product or purchase?",
+    "poor_quality": "Does the customer report that the product has poor quality?",
+    "product_defect": "Does the customer describe a defect or malfunction in the product?"
+  },
+  "predicate_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "pricing": {
+    "id": "jev-public-list-2026-11-02",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://typesafe.ai/",
+    "status": "published_list_price",
+    "verified_date": "2026-11-02"
+  },
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "provider_attempts": 600,
+  "provider_errors": 0,
+  "query_id": "product_quality",
+  "requested_evaluations": 600,
+  "requested_model": "jev-1.14.0",
+  "resolved_model_versions": [
+    "jev-1.14.0"
+  ],
+  "retry_attempts": 0,
+  "sample_size": 200,
+  "schema_version": "m2-profile-v1",
+  "statistics": [
+    {
+      "average_estimated_cost_usd": 1.3168890000000001e-05,
+      "average_inference_latency_seconds": 0.10642021500068949,
+      "average_input_tokens": 313.545,
+      "average_output_tokens": 22.0,
+      "average_total_tokens": 335.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.86,
+      "estimated_selectivity": 0.14,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 28,
+      "predicate_id": "poor_quality",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+      "rejected_decisions": 172,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.09866982633455634,
+      "wilson_upper": 0.1948988086570756
+    },
+    {
+      "average_estimated_cost_usd": 1.321089e-05,
+      "average_inference_latency_seconds": 0.10439463500020793,
+      "average_input_tokens": 314.545,
+      "average_output_tokens": 22.0,
+      "average_total_tokens": 336.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.875,
+      "estimated_selectivity": 0.125,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 25,
+      "predicate_id": "product_defect",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f",
+      "rejected_decisions": 175,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.08611974475712644,
+      "wilson_upper": 0.17801425002582347
+    },
+    {
+      "average_estimated_cost_usd": 1.3168890000000001e-05,
+      "average_inference_latency_seconds": 0.10283573500084459,
+      "average_input_tokens": 313.545,
+      "average_output_tokens": 24.0,
+      "average_total_tokens": 337.545,
+      "budget_blocked_evaluations": 0,
+      "completed_decisions": 200,
+      "estimate_kind": "empirical_unconditional",
+      "estimated_rejection_rate": 0.765,
+      "estimated_selectivity": 0.235,
+      "failed_http_attempts": 0,
+      "http_attempts": 200,
+      "model_versions": [
+        "jev-1.14.0"
+      ],
+      "passing_decisions": 47,
+      "predicate_id": "dissatisfaction",
+      "provider_attempts": 200,
+      "provider_errors": 0,
+      "question_hash": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+      "rejected_decisions": 153,
+      "retry_attempts": 0,
+      "sample_size": 200,
+      "successful_api_calls": 200,
+      "wilson_lower": 0.18157433415232588,
+      "wilson_upper": 0.29841368882762537
+    }
+  ],
+  "statistics_version": "unconditional-profile-v1",
+  "successful_api_calls": 600,
+  "summed_inference_latency_seconds": 62.7301170003484,
+  "threshold": 0.5,
+  "total_tokens": 201927,
+  "wall_time_seconds": 19.30846740002744,
+  "workload_id": "workload_a_product_quality"
+}

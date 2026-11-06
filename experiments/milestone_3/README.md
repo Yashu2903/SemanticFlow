@@ -38,3 +38,26 @@ historical experiment.
 The commands that preflight prints are paid. They must not be run without explicit,
 experiment-specific authorization. See `docs/milestone_3_benchmark_protocol.md` and
 `docs/milestone_3_research_report.md`.
+
+Contemporaneous strategy comparison. Plan and schedule are offline; `benchmark-session` is
+paid. Copy a stored profile first so historical experiment directories stay untouched:
+
+```powershell
+.\.venv\Scripts\python.exe experiments/milestone_3/prepare_strategy_experiment.py `
+  --source results/milestone_2/jev_product_quality_profile_20261102 `
+  --destination results/milestone_3/jev_product_quality_benchmark
+.\.venv\Scripts\semanticflow.exe benchmark-plan --query configs/queries/product_quality.yaml `
+  --optimizer-config configs/optimizer.milestone_3.yaml `
+  --experiment-dir results/milestone_3/jev_product_quality_benchmark `
+  --prior-cost-per-decision 0.00001318289 `
+  --prior-cost-source "Milestone 2 stored profiling average" `
+  --output results/milestone_3/jev_product_quality_benchmark/strategies.json
+.\.venv\Scripts\semanticflow.exe benchmark-schedule `
+  --strategies results/milestone_3/jev_product_quality_benchmark/strategies.json `
+  --orders selected --abba-blocks 1 `
+  --output results/milestone_3/jev_product_quality_benchmark/schedule.json
+.\.venv\Scripts\semanticflow.exe benchmark-preflight `
+  --strategies results/milestone_3/jev_product_quality_benchmark/strategies.json `
+  --schedule results/milestone_3/jev_product_quality_benchmark/schedule.json `
+  --cost-per-decision 0.00001338234
+```

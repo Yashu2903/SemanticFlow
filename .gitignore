@@ -15,4 +15,20 @@ results/*
 !data/processed/.gitkeep
 !data/labels/.gitkeep
 !results/.gitkeep
+!results/milestone_1_full_baseline/
+results/milestone_1_full_baseline/*
+!results/milestone_1_full_baseline/product_quality_20261102T163100.862806Z_d23f73f2cbd1/
+!results/milestone_1_full_baseline/product_quality_20261102T163100.862806Z_d23f73f2cbd1/**
+!results/milestone_2/
+results/milestone_2/*
+!results/milestone_2/jev_product_quality_profile_20261102/
+!results/milestone_2/jev_product_quality_profile_20261102/**
+!results/milestone_3/
+results/milestone_3/*
+!results/milestone_3/offline_analysis_20261105/
+!results/milestone_3/offline_analysis_20261105/**
+!results/milestone_3/offline_analysis_20261105_19162a2/
+!results/milestone_3/offline_analysis_20261105_19162a2/**
+!results/milestone_3/offline_analysis_20261105_corrected/
+!results/milestone_3/offline_analysis_20261105_corrected/**
 

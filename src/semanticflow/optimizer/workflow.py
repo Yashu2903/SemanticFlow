@@ -327,23 +327,71 @@ async def execute_experiment_strategy(
         or plan.predicate_hashes != profile.predicate_hashes
     ):
         raise ValueError("selected plan is incompatible with profiling artifacts")
-    records = _records_by_ids(load_dataset(query.dataset_path), split.evaluation_ids)
     order = plan.original_predicate_order if strategy == "fixed" else plan.selected_predicate_order
-    execution_query = _ordered_query(query, order, optimizer.execution.max_attempts_per_run)
-    run_dir = experiment_dir / strategy
-    timestamp = _timestamp()
-    metadata = {
-        "execution_strategy": strategy,
-        "original_predicate_order": plan.original_predicate_order,
-        "selected_predicate_order": plan.selected_predicate_order,
-        "optimization_objective": plan.objective,
-        "original_estimated_objective": plan.original_estimated_objective,
-        "selected_estimated_objective": plan.selected_estimated_objective,
+    return await execute_order_run(
+        order=order,
+        label=strategy,
+        query=query,
+        settings=settings,
+        optimizer=optimizer,
+        provider=provider,
+        experiment_dir=experiment_dir,
+        run_dir=experiment_dir / strategy,
+        split=split,
+        run_id_prefix="m2",
+        metadata={
+            "original_predicate_order": plan.original_predicate_order,
+            "selected_predicate_order": plan.selected_predicate_order,
+            "optimization_objective": plan.objective,
+            "original_estimated_objective": plan.original_estimated_objective,
+            "selected_estimated_objective": plan.selected_estimated_objective,
+            "cost_model_version": plan.cost_model_version,
+            "optimizer_version": plan.optimizer_version,
+        },
+    )
+
+
+async def execute_order_run(
+    *,
+    order: list[str],
+    label: str,
+    query: QuerySpec,
+    settings: dict[str, Any],
+    optimizer: OptimizerSettings,
+    provider: InferenceProvider,
+    experiment_dir: Path,
+    run_dir: Path,
+    split: SplitManifest | None = None,
+    max_attempts: int | None = None,
+    run_id_prefix: str = "m3",
+    metadata: dict[str, Any] | None = None,
+) -> RunOutcome:
+    """Execute one predicate order on the held-out split of a profiled experiment.
+
+    ``experiment_dir`` is only read (split and profile); results go to ``run_dir``.
+    """
+    split = split or SplitManifest.model_validate(
+        _load_json(experiment_dir / "split_manifest.json")
+    )
+    profile = ProfilingResult.model_validate(_load_json(_profiling_report_path(experiment_dir)))
+    CostBasedPlanner(optimizer).validate_compatibility(
+        query, profile, split, provider_model=provider.model_identifier
+    )
+    cap = optimizer.execution.max_attempts_per_run
+    if max_attempts is not None:
+        if not 0 < max_attempts <= cap:
+            raise ValueError(f"run attempt cap must be in 1..{cap}")
+        cap = max_attempts
+    records = _records_by_ids(load_dataset(query.dataset_path), split.evaluation_ids)
+    execution_query = _ordered_query(query, list(order), cap)
+    run_metadata = {
+        "execution_strategy": label,
+        "executed_predicate_order": list(order),
+        "original_predicate_order": [item.id for item in query.predicates],
         "profiling_fingerprint": split.profiling_fingerprint,
         "evaluation_fingerprint": split.evaluation_fingerprint,
         "evaluation_record_ids": split.evaluation_ids,
-        "cost_model_version": plan.cost_model_version,
-        "optimizer_version": plan.optimizer_version,
+        **(metadata or {}),
     }
     return await run_query_records(
         query=execution_query,
@@ -351,11 +399,11 @@ async def execute_experiment_strategy(
         settings=settings,
         provider=provider,
         run_dir=run_dir,
-        run_id=f"m2-{strategy}-{uuid.uuid4().hex[:12]}",
-        timestamp=timestamp,
+        run_id=f"{run_id_prefix}-{label}-{uuid.uuid4().hex[:12]}",
+        timestamp=_timestamp(),
         cache_enabled=optimizer.execution.cache_enabled,
-        report_metadata=metadata,
-        manifest_metadata=metadata,
+        report_metadata=run_metadata,
+        manifest_metadata=run_metadata,
     )
 
 

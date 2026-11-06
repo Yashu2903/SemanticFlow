@@ -1,0 +1,529 @@
+{
+  "candidate_count": 6,
+  "candidates": [
+    {
+      "cardinality_estimator": "correlation_aware",
+      "confidence": "high",
+      "estimated_cost_usd": 0.01332863916348776,
+      "estimated_evaluations": 999.9815641299422,
+      "estimated_input_tokens": 317348.5515116133,
+      "estimated_output_tokens": 22172.69186747682,
+      "estimated_reduction_vs_original_percent": 0.0,
+      "estimated_stage_input_records": [
+        800.0,
+        113.43283582089552,
+        86.54872830904662
+      ],
+      "estimated_summed_latency_seconds": 106.29988990224138,
+      "estimated_total_tokens": 339521.2433790901,
+      "is_original_order": true,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.01332863916348776,
+      "predicate_order": [
+        "poor_quality",
+        "product_defect",
+        "dissatisfaction"
+      ],
+      "rank": 1,
+      "selected": true,
+      "stage_estimates": [
+        {
+          "average_cost_usd": 1.3168890000000001e-05,
+          "average_input_tokens": 313.545,
+          "average_latency_seconds": 0.10642021500068949,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "certain_first_stage",
+          "minimum_chain_support": 200,
+          "predicate_id": "poor_quality",
+          "prefix_passing": 200,
+          "reach_probability": 1.0,
+          "reach_wilson_lower": 1.0,
+          "reach_wilson_upper": 1.0,
+          "sample_size": 200,
+          "stage": 1
+        },
+        {
+          "average_cost_usd": 1.3971650000000002e-05,
+          "average_input_tokens": 332.65833333333336,
+          "average_latency_seconds": 0.10677999015169916,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 200,
+          "predicate_id": "product_defect",
+          "prefix_passing": 28,
+          "reach_probability": 0.1417910447761194,
+          "reach_wilson_lower": 0.09866982633455634,
+          "reach_wilson_upper": 0.1948988086570756,
+          "sample_size": 200,
+          "stage": 2
+        },
+        {
+          "average_cost_usd": 1.396535e-05,
+          "average_input_tokens": 332.5083333333333,
+          "average_latency_seconds": 0.1045810953747908,
+          "average_output_tokens": 24.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 28,
+          "predicate_id": "dissatisfaction",
+          "prefix_passing": 22,
+          "reach_probability": 0.10818591038630829,
+          "reach_wilson_lower": 0.07377244460125303,
+          "reach_wilson_upper": 0.1609269099730149,
+          "sample_size": 200,
+          "stage": 3
+        }
+      ]
+    },
+    {
+      "cardinality_estimator": "correlation_aware",
+      "confidence": "high",
+      "estimated_cost_usd": 0.013202018056634167,
+      "estimated_evaluations": 987.9243278441319,
+      "estimated_input_tokens": 314333.7632531944,
+      "estimated_output_tokens": 21907.1987936323,
+      "estimated_reduction_vs_original_percent": 0.9499927584539609,
+      "estimated_stage_input_records": [
+        800.0,
+        101.49253731343283,
+        86.43179053069898
+      ],
+      "estimated_summed_latency_seconds": 103.4855229262433,
+      "estimated_total_tokens": 336240.9620468267,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.013202018056634167,
+      "predicate_order": [
+        "product_defect",
+        "poor_quality",
+        "dissatisfaction"
+      ],
+      "rank": 2,
+      "selected": false,
+      "stage_estimates": [
+        {
+          "average_cost_usd": 1.321089e-05,
+          "average_input_tokens": 314.545,
+          "average_latency_seconds": 0.10439463500020793,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "certain_first_stage",
+          "minimum_chain_support": 200,
+          "predicate_id": "product_defect",
+          "prefix_passing": 200,
+          "reach_probability": 1.0,
+          "reach_wilson_lower": 1.0,
+          "reach_wilson_upper": 1.0,
+          "sample_size": 200,
+          "stage": 1
+        },
+        {
+          "average_cost_usd": 1.4052815000000003e-05,
+          "average_input_tokens": 334.59083333333336,
+          "average_latency_seconds": 0.1076993825015476,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 200,
+          "predicate_id": "poor_quality",
+          "prefix_passing": 25,
+          "reach_probability": 0.12686567164179105,
+          "reach_wilson_lower": 0.08611974475712644,
+          "reach_wilson_upper": 0.17801425002582347,
+          "sample_size": 200,
+          "stage": 2
+        },
+        {
+          "average_cost_usd": 1.396535e-05,
+          "average_input_tokens": 332.5083333333333,
+          "average_latency_seconds": 0.1045810953747908,
+          "average_output_tokens": 24.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 25,
+          "predicate_id": "dissatisfaction",
+          "prefix_passing": 22,
+          "reach_probability": 0.10803973816337373,
+          "reach_wilson_lower": 0.07377244460125303,
+          "reach_wilson_upper": 0.1609269099730149,
+          "sample_size": 200,
+          "stage": 3
+        }
+      ]
+    },
+    {
+      "cardinality_estimator": "correlation_aware",
+      "confidence": "high",
+      "estimated_cost_usd": 0.01337933118846354,
+      "estimated_evaluations": 1000.003998377801,
+      "estimated_input_tokens": 318555.50448722707,
+      "estimated_output_tokens": 22203.073038938488,
+      "estimated_reduction_vs_original_percent": -0.3803240852572911,
+      "estimated_stage_input_records": [
+        800.0,
+        101.49253731343283,
+        98.51146106436816
+      ],
+      "estimated_summed_latency_seconds": 104.80930875533167,
+      "estimated_total_tokens": 340758.5775261656,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.01337933118846354,
+      "predicate_order": [
+        "product_defect",
+        "dissatisfaction",
+        "poor_quality"
+      ],
+      "rank": 3,
+      "selected": false,
+      "stage_estimates": [
+        {
+          "average_cost_usd": 1.321089e-05,
+          "average_input_tokens": 314.545,
+          "average_latency_seconds": 0.10439463500020793,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "certain_first_stage",
+          "minimum_chain_support": 200,
+          "predicate_id": "product_defect",
+          "prefix_passing": 200,
+          "reach_probability": 1.0,
+          "reach_wilson_lower": 1.0,
+          "reach_wilson_upper": 1.0,
+          "sample_size": 200,
+          "stage": 1
+        },
+        {
+          "average_cost_usd": 1.4052815000000003e-05,
+          "average_input_tokens": 334.59083333333336,
+          "average_latency_seconds": 0.10526859917013402,
+          "average_output_tokens": 24.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 200,
+          "predicate_id": "dissatisfaction",
+          "prefix_passing": 25,
+          "reach_probability": 0.12686567164179105,
+          "reach_wilson_lower": 0.08611974475712644,
+          "reach_wilson_upper": 0.17801425002582347,
+          "sample_size": 200,
+          "stage": 2
+        },
+        {
+          "average_cost_usd": 1.4052815000000003e-05,
+          "average_input_tokens": 334.59083333333336,
+          "average_latency_seconds": 0.1076993825015476,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 25,
+          "predicate_id": "poor_quality",
+          "prefix_passing": 25,
+          "reach_probability": 0.12313932633046021,
+          "reach_wilson_lower": 0.08611974475712644,
+          "reach_wilson_upper": 0.17801425002582347,
+          "sample_size": 200,
+          "stage": 3
+        }
+      ]
+    },
+    {
+      "cardinality_estimator": "correlation_aware",
+      "confidence": "high",
+      "estimated_cost_usd": 0.013658300544232007,
+      "estimated_evaluations": 1023.8785485849189,
+      "estimated_input_tokens": 325197.63200552395,
+      "estimated_output_tokens": 22752.19374051001,
+      "estimated_reduction_vs_original_percent": -2.4733311233101403,
+      "estimated_stage_input_records": [
+        800.0,
+        113.43283582089552,
+        110.44571276402341
+      ],
+      "estimated_summed_latency_seconds": 108.46765682664018,
+      "estimated_total_tokens": 347949.825746034,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.013658300544232007,
+      "predicate_order": [
+        "poor_quality",
+        "dissatisfaction",
+        "product_defect"
+      ],
+      "rank": 4,
+      "selected": false,
+      "stage_estimates": [
+        {
+          "average_cost_usd": 1.3168890000000001e-05,
+          "average_input_tokens": 313.545,
+          "average_latency_seconds": 0.10642021500068949,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "certain_first_stage",
+          "minimum_chain_support": 200,
+          "predicate_id": "poor_quality",
+          "prefix_passing": 200,
+          "reach_probability": 1.0,
+          "reach_wilson_lower": 1.0,
+          "reach_wilson_upper": 1.0,
+          "sample_size": 200,
+          "stage": 1
+        },
+        {
+          "average_cost_usd": 1.3929650000000003e-05,
+          "average_input_tokens": 331.65833333333336,
+          "average_latency_seconds": 0.10171739621379829,
+          "average_output_tokens": 24.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 200,
+          "predicate_id": "dissatisfaction",
+          "prefix_passing": 28,
+          "reach_probability": 0.1417910447761194,
+          "reach_wilson_lower": 0.09866982633455634,
+          "reach_wilson_upper": 0.1948988086570756,
+          "sample_size": 200,
+          "stage": 2
+        },
+        {
+          "average_cost_usd": 1.3971650000000002e-05,
+          "average_input_tokens": 332.65833333333336,
+          "average_latency_seconds": 0.10677999015169916,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 28,
+          "predicate_id": "product_defect",
+          "prefix_passing": 28,
+          "reach_probability": 0.13805714095502927,
+          "reach_wilson_lower": 0.09866982633455634,
+          "reach_wilson_upper": 0.1948988086570756,
+          "sample_size": 200,
+          "stage": 3
+        }
+      ]
+    },
+    {
+      "cardinality_estimator": "correlation_aware",
+      "confidence": "high",
+      "estimated_cost_usd": 0.014604903678130469,
+      "estimated_evaluations": 1088.0204079106952,
+      "estimated_input_tokens": 347735.80186024925,
+      "estimated_output_tokens": 25536.4489740353,
+      "estimated_reduction_vs_original_percent": -9.575354985517848,
+      "estimated_stage_input_records": [
+        800.0,
+        189.0547263681592,
+        98.96568154253607
+      ],
+      "estimated_summed_latency_seconds": 113.21865188343135,
+      "estimated_total_tokens": 373272.2508342845,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.014604903678130469,
+      "predicate_order": [
+        "dissatisfaction",
+        "product_defect",
+        "poor_quality"
+      ],
+      "rank": 5,
+      "selected": false,
+      "stage_estimates": [
+        {
+          "average_cost_usd": 1.3168890000000001e-05,
+          "average_input_tokens": 313.545,
+          "average_latency_seconds": 0.10283573500084459,
+          "average_output_tokens": 24.0,
+          "confidence": "high",
+          "method": "certain_first_stage",
+          "minimum_chain_support": 200,
+          "predicate_id": "dissatisfaction",
+          "prefix_passing": 200,
+          "reach_probability": 1.0,
+          "reach_wilson_lower": 1.0,
+          "reach_wilson_upper": 1.0,
+          "sample_size": 200,
+          "stage": 1
+        },
+        {
+          "average_cost_usd": 1.4170739423076924e-05,
+          "average_input_tokens": 337.3985576923077,
+          "average_latency_seconds": 0.1073314668275718,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 200,
+          "predicate_id": "product_defect",
+          "prefix_passing": 47,
+          "reach_probability": 0.236318407960199,
+          "reach_wilson_lower": 0.18157433415232588,
+          "reach_wilson_upper": 0.29841368882762537,
+          "sample_size": 200,
+          "stage": 2
+        },
+        {
+          "average_cost_usd": 1.4052815000000003e-05,
+          "average_input_tokens": 334.59083333333336,
+          "average_latency_seconds": 0.1076993825015476,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 47,
+          "predicate_id": "poor_quality",
+          "prefix_passing": 25,
+          "reach_probability": 0.1237071019281701,
+          "reach_wilson_lower": 0.08611974475712644,
+          "reach_wilson_upper": 0.17801425002582347,
+          "sample_size": 200,
+          "stage": 3
+        }
+      ]
+    },
+    {
+      "cardinality_estimator": "correlation_aware",
+      "confidence": "high",
+      "estimated_cost_usd": 0.014754840067166323,
+      "estimated_evaluations": 1099.895113982327,
+      "estimated_input_tokens": 351305.7158849124,
+      "estimated_output_tokens": 25797.6925076112,
+      "estimated_reduction_vs_original_percent": -10.700273945336242,
+      "estimated_stage_input_records": [
+        800.0,
+        189.0547263681592,
+        110.84038761416797
+      ],
+      "estimated_summed_latency_seconds": 113.74777440256025,
+      "estimated_total_tokens": 377103.4083925236,
+      "is_original_order": false,
+      "objective": "estimated_cost_usd",
+      "objective_value": 0.014754840067166323,
+      "predicate_order": [
+        "dissatisfaction",
+        "poor_quality",
+        "product_defect"
+      ],
+      "rank": 6,
+      "selected": false,
+      "stage_estimates": [
+        {
+          "average_cost_usd": 1.3168890000000001e-05,
+          "average_input_tokens": 313.545,
+          "average_latency_seconds": 0.10283573500084459,
+          "average_output_tokens": 24.0,
+          "confidence": "high",
+          "method": "certain_first_stage",
+          "minimum_chain_support": 200,
+          "predicate_id": "dissatisfaction",
+          "prefix_passing": 200,
+          "reach_probability": 1.0,
+          "reach_wilson_lower": 1.0,
+          "reach_wilson_upper": 1.0,
+          "sample_size": 200,
+          "stage": 1
+        },
+        {
+          "average_cost_usd": 1.4128739423076924e-05,
+          "average_input_tokens": 336.3985576923077,
+          "average_latency_seconds": 0.10390457451870204,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 200,
+          "predicate_id": "poor_quality",
+          "prefix_passing": 47,
+          "reach_probability": 0.236318407960199,
+          "reach_wilson_lower": 0.18157433415232588,
+          "reach_wilson_upper": 0.29841368882762537,
+          "sample_size": 200,
+          "stage": 2
+        },
+        {
+          "average_cost_usd": 1.3971650000000002e-05,
+          "average_input_tokens": 332.65833333333336,
+          "average_latency_seconds": 0.10677999015169916,
+          "average_output_tokens": 22.0,
+          "confidence": "high",
+          "method": "prefix_chain_smoothed",
+          "minimum_chain_support": 47,
+          "predicate_id": "product_defect",
+          "prefix_passing": 28,
+          "reach_probability": 0.13855048451770996,
+          "reach_wilson_lower": 0.09866982633455634,
+          "reach_wilson_upper": 0.1948988086570756,
+          "sample_size": 200,
+          "stage": 3
+        }
+      ]
+    }
+  ],
+  "cardinality_estimator": "correlation_aware",
+  "cost_model_version": "correlation-aware-and-v1",
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "estimated_reduction_percent": 0.0,
+  "evaluation_record_count": 800,
+  "joint_matrix_fingerprint": "sha256:08f4174dc2d2b9a0af7fc51a7217441ee0f75f000143dbe49b6b223771e9373c",
+  "joint_statistics_version": "joint-profile-v1",
+  "minimum_objective_predicate_order": [
+    "product_defect",
+    "poor_quality",
+    "dissatisfaction"
+  ],
+  "objective": "estimated_cost_usd",
+  "optimizer_version": "exhaustive-order-v1",
+  "original_estimated_objective": 0.01332863916348776,
+  "original_predicate_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "predicate_hashes": {
+    "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+    "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+    "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+  },
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "query_id": "product_quality",
+  "reordered": false,
+  "requested_model": "jev-1.14.0",
+  "schema_version": "m2-plan-v1",
+  "selected_estimated_objective": 0.01332863916348776,
+  "selected_predicate_order": [
+    "poor_quality",
+    "product_defect",
+    "dissatisfaction"
+  ],
+  "selection_explanation": {
+    "bootstrap_iterations": 1000,
+    "bootstrap_seed": 3031,
+    "confidence_level": 0.95,
+    "decision": "retain_original",
+    "full_sample_relative_saving": 0.00949992758453961,
+    "interpretation": "sampling_uncertainty_diagnostic",
+    "minimum_objective_order": [
+      "product_defect",
+      "poor_quality",
+      "dissatisfaction"
+    ],
+    "minimum_relative_saving": 0.0,
+    "original_order": [
+      "poor_quality",
+      "product_defect",
+      "dissatisfaction"
+    ],
+    "policy": "confidence_aware",
+    "probability_minimum_cheaper_than_original": 0.769,
+    "reasons": [
+      "savings_probability_below_confidence_level"
+    ],
+    "selected_order": [
+      "poor_quality",
+      "product_defect",
+      "dissatisfaction"
+    ]
+  },
+  "selection_policy": "confidence_aware",
+  "statistics_version": "unconditional-profile-v1",
+  "threshold": 0.5
+}

@@ -130,6 +130,64 @@ def build_optimizer_parser() -> argparse.ArgumentParser:
         help="Additional stored decisions used only for variability analysis",
     )
     analyze.add_argument("--cv-folds", type=int, default=5)
+
+    plan_b = subparsers.add_parser(
+        "benchmark-plan", help="Select an order for every strategy from a stored profile"
+    )
+    plan_b.add_argument("--query", type=Path, required=True)
+    plan_b.add_argument(
+        "--optimizer-config", type=Path, default=Path("configs/optimizer.milestone_3.yaml")
+    )
+    plan_b.add_argument("--experiment-dir", type=Path, required=True)
+    plan_b.add_argument("--output", type=Path, required=True)
+    plan_b.add_argument("--prior-cost-per-decision", type=float, required=True)
+    plan_b.add_argument("--prior-cost-source", required=True)
+
+    schedule_b = subparsers.add_parser(
+        "benchmark-schedule", help="Build a counterbalanced ABBA execution schedule"
+    )
+    schedule_b.add_argument("--strategies", type=Path, required=True)
+    schedule_b.add_argument("--output", type=Path, required=True)
+    schedule_b.add_argument("--orders", choices=("selected", "all"), default="selected")
+    schedule_b.add_argument("--abba-blocks", type=int, default=1)
+    schedule_b.add_argument("--seed", type=int, default=5051)
+
+    preflight_b = subparsers.add_parser(
+        "benchmark-preflight", help="Offline cost and attempt bounds for a schedule"
+    )
+    preflight_b.add_argument("--strategies", type=Path, required=True)
+    preflight_b.add_argument("--schedule", type=Path, required=True)
+    preflight_b.add_argument(
+        "--optimizer-config", type=Path, default=Path("configs/optimizer.milestone_3.yaml")
+    )
+    preflight_b.add_argument("--cost-per-decision", type=float, required=True)
+    preflight_b.add_argument("--output", type=Path)
+
+    session_b = subparsers.add_parser(
+        "benchmark-session",
+        help="Execute a schedule of predicate orders in one contemporaneous session",
+    )
+    common(session_b, needs_provider=True)
+    session_b.add_argument("--experiment-dir", type=Path, required=True)
+    session_b.add_argument("--schedule", type=Path, required=True)
+    session_b.add_argument("--session-dir", type=Path, required=True)
+    session_b.add_argument("--max-session-attempts", type=int)
+
+    analyze_b = subparsers.add_parser(
+        "benchmark-analyze", help="Paired statistics for completed benchmark sessions"
+    )
+    analyze_b.add_argument("--workload", required=True)
+    analyze_b.add_argument("--strategies", type=Path, required=True)
+    analyze_b.add_argument("--session-dir", action="append", type=Path, required=True)
+    analyze_b.add_argument("--output", type=Path, required=True)
+    analyze_b.add_argument("--iterations", type=int, default=2000)
+    analyze_b.add_argument("--seed", type=int, default=6067)
+
+    compare_b = subparsers.add_parser(
+        "benchmark-compare", help="Pool strategy statistics across workload analysis files"
+    )
+    compare_b.add_argument("--analysis", action="append", type=Path, required=True)
+    compare_b.add_argument("--output", type=Path, required=True)
     return parser
 
 
@@ -242,6 +300,102 @@ def _run_analyze(args: argparse.Namespace) -> int:
     return 0
 
 
+def _refuse_existing(path: Path) -> None:
+    if path.exists():
+        raise FileExistsError(f"Refusing to overwrite {path}")
+
+
+def _load_json_object(path: Path) -> dict:
+    import json
+
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ValueError(f"Expected JSON object in {path}")
+    return payload
+
+
+def _run_benchmark_offline(args: argparse.Namespace) -> int:
+    import json
+
+    from semanticflow.optimizer.benchmark import (
+        build_schedule,
+        plan_strategies,
+        schedule_preflight,
+    )
+    from semanticflow.optimizer.benchmark_stats import analyze_workload, compare_workloads
+    from semanticflow.optimizer.models import SplitManifest, load_optimizer_settings
+    from semanticflow.storage.results import ResultStore
+
+    if args.command == "benchmark-plan":
+        _refuse_existing(args.output)
+        payload = plan_strategies(
+            query=load_query(args.query),
+            optimizer=load_optimizer_settings(args.optimizer_config),
+            profile_dir=args.experiment_dir,
+            prior_cost_per_decision=args.prior_cost_per_decision,
+            prior_cost_source=args.prior_cost_source,
+        )
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        ResultStore.write_json(args.output, payload)
+        print(f"Distinct selected orders: {len(payload['distinct_selected_orders'])}")
+        print(f"Strategies: {args.output}")
+        return 0
+    if args.command == "benchmark-schedule":
+        _refuse_existing(args.output)
+        payload = build_schedule(
+            _load_json_object(args.strategies),
+            orders=args.orders,
+            abba_blocks=args.abba_blocks,
+            seed=args.seed,
+        )
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        ResultStore.write_json(args.output, payload)
+        print(f"Scheduled runs: {len(payload['runs'])}")
+        print(f"Comparator: {' -> '.join(payload['comparator_order'])}")
+        print(f"Schedule: {args.output}")
+        return 0
+    if args.command == "benchmark-preflight":
+        if args.output is not None:
+            _refuse_existing(args.output)
+        payload = schedule_preflight(
+            _load_json_object(args.strategies),
+            _load_json_object(args.schedule),
+            load_optimizer_settings(args.optimizer_config),
+            cost_per_decision=args.cost_per_decision,
+        )
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        if args.output is not None:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            ResultStore.write_json(args.output, payload)
+        return 0
+    if args.command == "benchmark-analyze":
+        _refuse_existing(args.output)
+        strategies = _load_json_object(args.strategies)
+        split = SplitManifest.model_validate(
+            _load_json_object(Path(strategies["profile_dir"]) / "split_manifest.json")
+        )
+        payload = analyze_workload(
+            args.workload,
+            strategies,
+            args.session_dir,
+            evaluation_ids=split.evaluation_ids,
+            iterations=args.iterations,
+            seed=args.seed,
+        )
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        ResultStore.write_json(args.output, payload)
+        print(f"Observed cheapest: {payload['observed_cheapest_order']}")
+        print(f"Analysis: {args.output}")
+        return 0
+    _refuse_existing(args.output)
+    payload = compare_workloads([_load_json_object(path) for path in args.analysis])
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    ResultStore.write_json(args.output, payload)
+    print(f"Workloads: {payload['workload_count']}")
+    print(f"Comparison: {args.output}")
+    return 0
+
+
 def _provider(
     name: str,
     settings: dict[str, object],
@@ -307,6 +461,24 @@ async def _run_optimizer(args: argparse.Namespace) -> int:
             print(f"Completed profiling decisions: {profile.completed_decisions}")
             print(f"Artifacts: {args.experiment_dir}")
             return 0 if profile.complete else 2
+        if args.command == "benchmark-session":
+            from semanticflow.optimizer.benchmark import run_session
+
+            manifest = await run_session(
+                query=query,
+                settings=settings,
+                optimizer=optimizer,
+                provider=provider,
+                profile_dir=args.experiment_dir,
+                schedule=_load_json_object(args.schedule),
+                schedule_path=args.schedule,
+                session_dir=args.session_dir,
+                max_session_attempts=args.max_session_attempts,
+            )
+            print(f"Session status: {manifest['status']}")
+            print(f"Attempts used: {manifest['attempts_used']}")
+            print(f"Artifacts: {args.session_dir}")
+            return 0 if manifest["status"] == "complete" else 2
         if args.command == "run":
             outcome = await execute_experiment_strategy(
                 strategy=args.strategy,
@@ -386,7 +558,22 @@ def main(argv: list[str] | None = None) -> int:
         if arguments and arguments[0] in {"replay", "analyze"}:
             args = build_optimizer_parser().parse_args(arguments)
             return _run_replay(args) if args.command == "replay" else _run_analyze(args)
-        if arguments and arguments[0] in {"profile", "plan", "run", "compare", "experiment"}:
+        if arguments and arguments[0] in {
+            "benchmark-plan",
+            "benchmark-schedule",
+            "benchmark-preflight",
+            "benchmark-analyze",
+            "benchmark-compare",
+        }:
+            return _run_benchmark_offline(build_optimizer_parser().parse_args(arguments))
+        if arguments and arguments[0] in {
+            "profile",
+            "plan",
+            "run",
+            "compare",
+            "experiment",
+            "benchmark-session",
+        }:
             return asyncio.run(_run_optimizer(build_optimizer_parser().parse_args(arguments)))
         return asyncio.run(_run(build_parser().parse_args(arguments)))
     except (FileNotFoundError, FileExistsError, ValueError, RuntimeError) as exc:

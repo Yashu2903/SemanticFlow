@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 import pyarrow as pa
 import pyarrow.parquet as pq
@@ -6,6 +7,7 @@ import pytest
 import yaml
 
 from semanticflow import cli
+from semanticflow.optimizer.benchmark import run_session
 from semanticflow.optimizer.models import OptimizerSettings
 from semanticflow.optimizer.workflow import (
     execute_experiment_strategy,
@@ -256,3 +258,102 @@ async def test_plan_experiment_with_correlation_aware_estimator(experiment) -> N
     assert selected["joint_matrix_fingerprint"].startswith("sha256:")
     assert report["held_out_evaluation_outcomes_used"] is False
     assert len(report["selected_plan_stage_breakdown"]) == 3
+
+
+async def test_benchmark_session_pairs_orders_and_offline_cli_never_builds_a_provider(
+    experiment, no_provider, capsys
+):
+    root = experiment["tmp"] / "benchmark"
+    strategies_path = root / "strategies.json"
+    schedule_path = root / "schedule.json"
+    session_dir = root / "session"
+    analysis_path = root / "analysis.json"
+    common = [
+        "--query", str(experiment["query"]),
+        "--optimizer-config", str(experiment["config"]),
+        "--experiment-dir", str(experiment["experiment"]),
+    ]
+    assert cli.main(
+        [
+            "benchmark-plan",
+            *common,
+            "--output", str(strategies_path),
+            "--prior-cost-per-decision", "0.00001",
+            "--prior-cost-source", "unit-test",
+        ]
+    ) == 0
+    strategies = json.loads(strategies_path.read_text())
+    assert strategies["held_out_outcomes_used"] is False
+    assert cli.main(
+        [
+            "benchmark-schedule",
+            "--strategies", str(strategies_path),
+            "--output", str(schedule_path),
+            "--orders", "selected",
+        ]
+    ) == 0
+    schedule = json.loads(schedule_path.read_text())
+    assert len(schedule["runs"]) == 4
+    assert schedule["runs"][0]["order"] != schedule["runs"][1]["order"]
+    assert cli.main(
+        [
+            "benchmark-preflight",
+            "--strategies", str(strategies_path),
+            "--schedule", str(schedule_path),
+            "--optimizer-config", str(experiment["config"]),
+            "--cost-per-decision", "0.00001",
+        ]
+    ) == 0
+    printed = capsys.readouterr().out
+    assert "network_requests_made" in printed
+    manifest = await run_session(
+        query=load_query(experiment["query"]),
+        settings=SETTINGS,
+        optimizer=OptimizerSettings.model_validate(
+            yaml.safe_load(experiment["config"].read_text(encoding="utf-8"))
+        ),
+        provider=provider(),
+        profile_dir=experiment["experiment"],
+        schedule=schedule,
+        schedule_path=schedule_path,
+        session_dir=session_dir,
+        max_session_attempts=400,
+    )
+    assert manifest["status"] == "complete"
+    assert manifest["cache_enabled"] is False
+    assert len(manifest["runs"]) == 4
+    for first, second in zip(manifest["runs"], manifest["runs"][1:], strict=False):
+        gap = datetime.fromisoformat(second["started_at"]) - datetime.fromisoformat(
+            first["finished_at"]
+        )
+        assert gap.total_seconds() >= 0
+    assert cli.main(
+        [
+            "benchmark-analyze",
+            "--workload", "synthetic",
+            "--strategies", str(strategies_path),
+            "--session-dir", str(session_dir),
+            "--output", str(analysis_path),
+            "--iterations", "40",
+        ]
+    ) == 0
+    analysis = json.loads(analysis_path.read_text())
+    assert analysis["evidence"]["causal_measurement"] is True
+    assert analysis["abba"] is not None
+    assert analysis["strategies"]["fixed"]["executed"] is True
+    assert cli.main(
+        [
+            "benchmark-compare",
+            "--analysis", str(analysis_path),
+            "--output", str(root / "pooled.json"),
+        ]
+    ) == 0
+    assert cli.main(
+        [
+            "benchmark-plan",
+            *common,
+            "--output", str(strategies_path),
+            "--prior-cost-per-decision", "0.00001",
+            "--prior-cost-source", "unit-test",
+        ]
+    ) == 1

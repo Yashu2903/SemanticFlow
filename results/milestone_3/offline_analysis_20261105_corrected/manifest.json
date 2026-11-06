@@ -1,0 +1,172 @@
+{
+  "config_paths": {
+    "optimizer_config": "configs\\optimizer.milestone_3.yaml",
+    "query": "configs\\queries\\product_quality.yaml"
+  },
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "evaluation_fingerprint": "sha256:5a1df48e8b331f0d1f96ba36e650f10ba94c3f14e6eea568cd9d5680656c9b45",
+  "evidence": "stored traces, offline replay, and deterministic computation only",
+  "extra_sources": [
+    {
+      "label": "m1_smoke_jev",
+      "path": "results\\product_quality_20261029T022635.415784Z_96caeebde714\\decisions.jsonl",
+      "sha256": "sha256:e73eceb422e03d9ccf6aa3d29c5312f9ba75638345db363240511c6202e8ad47"
+    }
+  ],
+  "generated_at": "2026-11-06T03:16:58.809248+00:00",
+  "git_commit": "272a231dbfdaff9f37f8824f61e3d37d84f55450",
+  "git_worktree_dirty": true,
+  "input_files": {
+    "historical_decisions": {
+      "path": "results\\milestone_1_full_baseline\\product_quality_20261102T163100.862806Z_d23f73f2cbd1\\decisions.jsonl",
+      "sha256": "sha256:0606136f489e71aadb5d294fadd59fd1def3a95bf389ceccacbc8fcad1e999d3"
+    },
+    "historical_manifest": {
+      "path": "results\\milestone_1_full_baseline\\product_quality_20261102T163100.862806Z_d23f73f2cbd1\\manifest.json",
+      "sha256": "sha256:41a703122805628b47f423abbc8d554cef59ed3bf30aed1f1c156691eceb9475"
+    },
+    "historical_matches": {
+      "path": "results\\milestone_1_full_baseline\\product_quality_20261102T163100.862806Z_d23f73f2cbd1\\matches.jsonl",
+      "sha256": "sha256:adaaf1b9ff129cddc5f4f44999afc26b00e2fb5efdac66d7bf11c915083620c6"
+    },
+    "milestone_2_candidate_plans": {
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\planning\\candidate_plans.json",
+      "sha256": "sha256:6a4a32dccbc21ac15ca18bca1da4a2d50194bc1fad31ef9ea8ab2bf5d26b53d5"
+    },
+    "milestone_2_selected_plan": {
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\planning\\selected_plan.json",
+      "sha256": "sha256:79b41748f52a344d2897dce5e7c923a5595c7ec8dfd878df4bc012bc0a013a63"
+    },
+    "optimized_decisions": {
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\optimized\\decisions.jsonl",
+      "sha256": "sha256:de4789c78c3a5b60c4cd556f703778eff23e4caf6b5b318a5824f3a8ab8393ae"
+    },
+    "optimized_matches": {
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\optimized\\matches.jsonl",
+      "sha256": "sha256:b5bc62ae5dce3ebf522b77468f9aa7b9bad95e743a2803f9894e1771e8826707"
+    },
+    "optimized_report": {
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\optimized\\report.json",
+      "sha256": "sha256:711dc40952f3b1114367f799e2eef0e80515ecf20c329db0ea0baf2149ab3360"
+    },
+    "profiling_decisions": {
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\profiling\\decisions.jsonl",
+      "sha256": "sha256:60dcee7bbf89f50d5ece916ac370e4e4f07376a13134311cb2073ee40bef645b"
+    },
+    "profiling_report": {
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\profiling\\report.json",
+      "sha256": "sha256:e5f322d7b23fef517d758eb00ef93938c0e06a980850d2f79bc12bf006c087f2"
+    },
+    "split_manifest": {
+      "path": "results\\milestone_2\\jev_product_quality_profile_20261102\\split_manifest.json",
+      "sha256": "sha256:6a2791bdbbddb4a5d4f03fdd515bbae4b040fae826ee4817e58b1b2917e27e14"
+    }
+  },
+  "live_provider_calls": 0,
+  "model_identifier": "jev-1.14.0",
+  "optimizer_settings": {
+    "adaptive": {
+      "bootstrap_iterations": 1000,
+      "checkpoints": [
+        25,
+        50,
+        100,
+        150,
+        200
+      ],
+      "maximum_profiling_decisions": null,
+      "profiling_budget_usd": null,
+      "seed": 4049,
+      "stability_threshold": 0.95
+    },
+    "bootstrap": {
+      "confidence_level": 0.95,
+      "interval_level": 0.95,
+      "iterations": 1000,
+      "minimum_relative_saving": 0.0,
+      "seed": 3031,
+      "stability_threshold": 0.95
+    },
+    "correlation": {
+      "allow_incomplete_matrix": false,
+      "conditional_usage": true,
+      "joint_statistics_version": "joint-profile-v1",
+      "minimum_conditional_support": 20,
+      "prior_strength": 1.0,
+      "usage_prior_strength": 5.0
+    },
+    "economics": {
+      "expected_executions": null,
+      "maximum_relative_uncertainty": null,
+      "minimum_net_savings_usd": 0.0,
+      "minimum_savings_probability": null,
+      "optimization_overhead_usd": 0.0,
+      "profiling_budget_usd": null,
+      "statistics_reusable": true,
+      "unknown_reuse_default_executions": 1
+    },
+    "execution": {
+      "cache_enabled": false,
+      "max_attempts_per_run": 2640
+    },
+    "mock_usage": {
+      "input_tokens_per_evaluation": null,
+      "output_tokens_per_evaluation": null
+    },
+    "planner": {
+      "cardinality_estimator": "correlation_aware",
+      "cost_model_version": "correlation-aware-and-v1",
+      "objective": "estimated_cost_usd",
+      "optimizer_version": "exhaustive-order-v1",
+      "selection_policy": "minimum_expected_objective",
+      "statistics_version": "unconditional-profile-v1",
+      "tie_relative_tolerance": 1e-09
+    },
+    "profiling": {
+      "concurrency": 4,
+      "max_attempts": 1800
+    },
+    "split": {
+      "evaluation_size": 800,
+      "profiling_size": 200,
+      "seed": 2027
+    }
+  },
+  "predicate_hashes": {
+    "dissatisfaction": "d1f10af3be6f25da1e88ab67ed5a2fde87dff1a87bea67a18b67f825bc1101ff",
+    "poor_quality": "f6df22c6dc4d631fcae2da27399aa01a66724971cfa685e7fe00d4b4d60813ba",
+    "product_defect": "c46965d1dd532a529cf059c91f111aa0114c1138f9c967a4e640ebed75aa340f"
+  },
+  "profile_matrix_fingerprint": "sha256:08f4174dc2d2b9a0af7fc51a7217441ee0f75f000143dbe49b6b223771e9373c",
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "query_definition": {
+    "config_id": "m1-product-quality-v1",
+    "dataset_path": "data\\processed\\reviews_1000.parquet",
+    "dataset_preparation_version": "m1-v1",
+    "dataset_version": "semceb_amazon_arts_crafts_sewing_sample_1000",
+    "limit": 1000,
+    "max_calls": 3000,
+    "operation": "and",
+    "predicates": [
+      {
+        "id": "poor_quality",
+        "instructions": "Does the customer report that the product has poor quality?"
+      },
+      {
+        "id": "product_defect",
+        "instructions": "Does the customer describe a defect or malfunction in the product?"
+      },
+      {
+        "id": "dissatisfaction",
+        "instructions": "Does the customer express dissatisfaction with the product or purchase?"
+      }
+    ],
+    "query_id": "product_quality",
+    "sample_seed": 2026,
+    "threshold": 0.5,
+    "workload_id": "workload_a_product_quality"
+  },
+  "query_id": "product_quality",
+  "schema_version": "m3-offline-analysis-v2",
+  "threshold": 0.5
+}

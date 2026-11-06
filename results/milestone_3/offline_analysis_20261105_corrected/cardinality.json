@@ -1,0 +1,538 @@
+{
+  "correlation_settings": {
+    "allow_incomplete_matrix": false,
+    "conditional_usage": true,
+    "joint_statistics_version": "joint-profile-v1",
+    "minimum_conditional_support": 20,
+    "prior_strength": 1.0,
+    "usage_prior_strength": 5.0
+  },
+  "estimators_fit_on": "profiling split only",
+  "held_out": {
+    "fairness_limitations": [
+      "Only two held-out orders were executed; four are bounded by replay only.",
+      "The fixed-order observation is a historical trace and the optimized-order observation is a fresh run, so response variability enters both.",
+      "Orders that evaluate dissatisfaction before stage 3 lack dissatisfaction decisions for most held-out reviews."
+    ],
+    "observed_orders": {
+      "poor_quality -> product_defect -> dissatisfaction": {
+        "correlation_aware": {
+          "cost_relative_error_percent": 4.04870541364371,
+          "cost_signed_error_usd": 0.0005186391634877593,
+          "evaluation_absolute_error": 41.98156412994217,
+          "evaluation_relative_error_percent": 4.382209199367659,
+          "evaluation_signed_error": 41.98156412994217,
+          "input_token_relative_error_percent": 4.048705413643706,
+          "observed_cost_usd": 0.01281,
+          "observed_evaluations": 958.0,
+          "observed_input_tokens": 305000.0,
+          "observed_stage_input_records": [
+            800.0,
+            91.0,
+            67.0
+          ],
+          "observed_stage_mean_input_tokens": [
+            314.15625,
+            343.75824175824175,
+            334.2238805970149
+          ],
+          "predicted_cost_usd": 0.01332863916348776,
+          "predicted_evaluations": 999.9815641299422,
+          "predicted_input_tokens": 317348.5515116133,
+          "predicted_stage_input_records": [
+            800.0,
+            113.43283582089552,
+            86.54872830904662
+          ],
+          "predicted_stage_mean_input_tokens": [
+            313.545,
+            332.65833333333336,
+            332.5083333333333
+          ],
+          "stage_errors": {
+            "count": 2,
+            "mae": 20.99078206497107,
+            "mape_defined_pairs": 2,
+            "mape_percent": 26.914337183231446,
+            "mean_signed_error": 20.99078206497107
+          }
+        },
+        "independent": {
+          "cost_relative_error_percent": 4.7689606557377004,
+          "cost_signed_error_usd": -0.0006109038599999995,
+          "evaluation_absolute_error": 32.0,
+          "evaluation_relative_error_percent": 3.3402922755741122,
+          "evaluation_signed_error": -32.0,
+          "input_token_relative_error_percent": 4.768960655737691,
+          "observed_cost_usd": 0.01281,
+          "observed_evaluations": 958.0,
+          "observed_input_tokens": 305000.0,
+          "observed_stage_input_records": [
+            800.0,
+            91.0,
+            67.0
+          ],
+          "observed_stage_mean_input_tokens": [
+            314.15625,
+            343.75824175824175,
+            334.2238805970149
+          ],
+          "predicted_cost_usd": 0.01219909614,
+          "predicted_evaluations": 926.0,
+          "predicted_input_tokens": 290454.67000000004,
+          "predicted_stage_input_records": [
+            800.0,
+            112.00000000000001,
+            14.000000000000002
+          ],
+          "predicted_stage_mean_input_tokens": [
+            313.545,
+            314.545,
+            313.545
+          ],
+          "stage_errors": {
+            "count": 2,
+            "mae": 37.00000000000001,
+            "mape_defined_pairs": 2,
+            "mape_percent": 51.090700344431696,
+            "mean_signed_error": -15.999999999999993
+          }
+        },
+        "observed_source": "historical Milestone 1 fixed-order trace restricted to held-out IDs"
+      },
+      "product_defect -> poor_quality -> dissatisfaction": {
+        "correlation_aware": {
+          "cost_relative_error_percent": 3.6266292336127153,
+          "cost_signed_error_usd": 0.0004620320566341672,
+          "evaluation_absolute_error": 35.92432784413188,
+          "evaluation_relative_error_percent": 3.7735638491735166,
+          "evaluation_signed_error": 35.92432784413188,
+          "input_token_relative_error_percent": 3.6266292336126953,
+          "observed_cost_usd": 0.012739986,
+          "observed_evaluations": 952.0,
+          "observed_input_tokens": 303333.0,
+          "observed_stage_input_records": [
+            800.0,
+            86.0,
+            66.0
+          ],
+          "observed_stage_mean_input_tokens": [
+            315.15625,
+            339.8488372093023,
+            333.04545454545456
+          ],
+          "predicted_cost_usd": 0.013202018056634167,
+          "predicted_evaluations": 987.9243278441319,
+          "predicted_input_tokens": 314333.7632531944,
+          "predicted_stage_input_records": [
+            800.0,
+            101.49253731343283,
+            86.43179053069898
+          ],
+          "predicted_stage_mean_input_tokens": [
+            314.545,
+            334.59083333333336,
+            332.5083333333333
+          ],
+          "stage_errors": {
+            "count": 2,
+            "mae": 17.962163922065905,
+            "mape_defined_pairs": 2,
+            "mape_percent": 24.485918325640228,
+            "mean_signed_error": 17.962163922065905
+          }
+        },
+        "independent": {
+          "cost_relative_error_percent": 5.259193691421638,
+          "cost_signed_error_usd": -0.0006700205399999999,
+          "evaluation_absolute_error": 38.0,
+          "evaluation_relative_error_percent": 3.9915966386554618,
+          "evaluation_signed_error": -38.0,
+          "input_token_relative_error_percent": 5.259193691421638,
+          "observed_cost_usd": 0.012739986,
+          "observed_evaluations": 952.0,
+          "observed_input_tokens": 303333.0,
+          "observed_stage_input_records": [
+            800.0,
+            86.0,
+            66.0
+          ],
+          "observed_stage_mean_input_tokens": [
+            315.15625,
+            339.8488372093023,
+            333.04545454545456
+          ],
+          "predicted_cost_usd": 0.01206996546,
+          "predicted_evaluations": 914.0,
+          "predicted_input_tokens": 287380.13,
+          "predicted_stage_input_records": [
+            800.0,
+            100.0,
+            14.000000000000002
+          ],
+          "predicted_stage_mean_input_tokens": [
+            314.545,
+            313.545,
+            313.545
+          ],
+          "stage_errors": {
+            "count": 2,
+            "mae": 33.0,
+            "mape_defined_pairs": 2,
+            "mape_percent": 47.53347427766032,
+            "mean_signed_error": -19.0
+          }
+        },
+        "observed_source": "fresh Milestone 2 optimized-order Jev execution"
+      }
+    },
+    "replay_bound_checks_all_orders": {
+      "dissatisfaction -> poor_quality -> product_defect": {
+        "correlation_aware_predicted": 1099.895113982327,
+        "correlation_aware_within_bounds": true,
+        "imputation_estimate": 1060.1670168067328,
+        "independent_predicted": 1014.32,
+        "independent_within_bounds": true,
+        "replay_bounds": {
+          "exact": false,
+          "lower": 932,
+          "upper": 1689
+        },
+        "replay_observability": "partially_observable"
+      },
+      "dissatisfaction -> product_defect -> poor_quality": {
+        "correlation_aware_predicted": 1088.0204079106952,
+        "correlation_aware_within_bounds": true,
+        "imputation_estimate": 1054.506302521019,
+        "independent_predicted": 1011.5,
+        "independent_within_bounds": true,
+        "replay_bounds": {
+          "exact": false,
+          "lower": 932,
+          "upper": 1684
+        },
+        "replay_observability": "partially_observable"
+      },
+      "poor_quality -> dissatisfaction -> product_defect": {
+        "correlation_aware_predicted": 1023.8785485849189,
+        "correlation_aware_within_bounds": false,
+        "imputation_estimate": 979.2857142857146,
+        "independent_predicted": 938.32,
+        "independent_within_bounds": false,
+        "replay_bounds": {
+          "exact": false,
+          "lower": 957,
+          "upper": 981
+        },
+        "replay_observability": "partially_observable"
+      },
+      "poor_quality -> product_defect -> dissatisfaction": {
+        "correlation_aware_predicted": 999.9815641299422,
+        "correlation_aware_within_bounds": false,
+        "imputation_estimate": 958.0,
+        "independent_predicted": 926.0,
+        "independent_within_bounds": false,
+        "replay_bounds": {
+          "exact": true,
+          "lower": 958,
+          "upper": 958
+        },
+        "replay_observability": "fully_observable"
+      },
+      "product_defect -> dissatisfaction -> poor_quality": {
+        "correlation_aware_predicted": 1000.003998377801,
+        "correlation_aware_within_bounds": false,
+        "imputation_estimate": 968.625,
+        "independent_predicted": 923.5,
+        "independent_within_bounds": false,
+        "replay_bounds": {
+          "exact": false,
+          "lower": 952,
+          "upper": 971
+        },
+        "replay_observability": "partially_observable"
+      },
+      "product_defect -> poor_quality -> dissatisfaction": {
+        "correlation_aware_predicted": 987.9243278441319,
+        "correlation_aware_within_bounds": false,
+        "imputation_estimate": 953.0,
+        "independent_predicted": 914.0,
+        "independent_within_bounds": false,
+        "replay_bounds": {
+          "exact": true,
+          "lower": 953,
+          "upper": 953
+        },
+        "replay_observability": "fully_observable"
+      }
+    },
+    "stage_cardinality_errors": {
+      "correlation_aware": {
+        "count": 4,
+        "mae": 19.476472993518488,
+        "mape_defined_pairs": 4,
+        "mape_percent": 25.70012775443584,
+        "mean_signed_error": 19.476472993518488
+      },
+      "independent": {
+        "count": 4,
+        "mae": 35.0,
+        "mape_defined_pairs": 4,
+        "mape_percent": 49.31208731104601,
+        "mean_signed_error": -17.499999999999996
+      }
+    },
+    "total_evaluation_errors": {
+      "correlation_aware": {
+        "count": 2,
+        "mae": 38.952945987037026,
+        "mape_defined_pairs": 2,
+        "mape_percent": 4.077886524270587,
+        "mean_signed_error": 38.952945987037026
+      },
+      "independent": {
+        "count": 2,
+        "mae": 35.0,
+        "mape_defined_pairs": 2,
+        "mape_percent": 3.665944457114787,
+        "mean_signed_error": -35.0
+      }
+    }
+  },
+  "held_out_outcomes_used_for_fitting": false,
+  "matrix_statistics_reproduce_profile_statistics": true,
+  "profiling_cross_validation": {
+    "fold_assignment": "sha256(2027:review_id) rank modulo folds",
+    "fold_sizes": [
+      {
+        "fold": 0,
+        "test_reviews": 40,
+        "train_reviews": 160
+      },
+      {
+        "fold": 1,
+        "test_reviews": 40,
+        "train_reviews": 160
+      },
+      {
+        "fold": 2,
+        "test_reviews": 40,
+        "train_reviews": 160
+      },
+      {
+        "fold": 3,
+        "test_reviews": 40,
+        "train_reviews": 160
+      },
+      {
+        "fold": 4,
+        "test_reviews": 40,
+        "train_reviews": 160
+      }
+    ],
+    "folds": 5,
+    "method": "k_fold_cross_validation_within_profiling_split",
+    "stage_cardinality_errors": {
+      "correlation_aware": {
+        "count": 60,
+        "mae": 1.331174576396318,
+        "mape_defined_pairs": 60,
+        "mape_percent": 24.703736499943453,
+        "mean_signed_error": -0.0012154620336157181
+      },
+      "independent": {
+        "count": 60,
+        "mae": 2.7505208333333333,
+        "mape_defined_pairs": 60,
+        "mape_percent": 51.20630226255227,
+        "mean_signed_error": -1.9671875000000003
+      }
+    },
+    "total_evaluation_errors": {
+      "correlation_aware": {
+        "count": 30,
+        "mae": 2.3652302480007514,
+        "mape_defined_pairs": 30,
+        "mape_percent": 4.584572083784374,
+        "mean_signed_error": -0.002430924067230459
+      },
+      "independent": {
+        "count": 30,
+        "mae": 4.313125,
+        "mape_defined_pairs": 30,
+        "mape_percent": 8.129037949272819,
+        "mean_signed_error": -3.934375
+      }
+    }
+  },
+  "profiling_in_sample": {
+    "note": "In-sample comparison; agreement of the correlation-aware model here is largely by construction and is not evidence of out-of-sample accuracy.",
+    "orders": [
+      {
+        "correlation_aware_stage_input_records": [
+          200.0,
+          28.35820895522388,
+          21.637182077261656
+        ],
+        "independent_stage_input_records": [
+          200.0,
+          28.000000000000004,
+          3.5000000000000004
+        ],
+        "observed_stage_input_records": [
+          200,
+          28,
+          22
+        ],
+        "order": [
+          "poor_quality",
+          "product_defect",
+          "dissatisfaction"
+        ]
+      },
+      {
+        "correlation_aware_stage_input_records": [
+          200.0,
+          28.35820895522388,
+          27.611428191005853
+        ],
+        "independent_stage_input_records": [
+          200.0,
+          28.000000000000004,
+          6.58
+        ],
+        "observed_stage_input_records": [
+          200,
+          28,
+          28
+        ],
+        "order": [
+          "poor_quality",
+          "dissatisfaction",
+          "product_defect"
+        ]
+      },
+      {
+        "correlation_aware_stage_input_records": [
+          200.0,
+          25.37313432835821,
+          21.607947632674744
+        ],
+        "independent_stage_input_records": [
+          200.0,
+          25.0,
+          3.5000000000000004
+        ],
+        "observed_stage_input_records": [
+          200,
+          25,
+          22
+        ],
+        "order": [
+          "product_defect",
+          "poor_quality",
+          "dissatisfaction"
+        ]
+      },
+      {
+        "correlation_aware_stage_input_records": [
+          200.0,
+          25.37313432835821,
+          24.62786526609204
+        ],
+        "independent_stage_input_records": [
+          200.0,
+          25.0,
+          5.875
+        ],
+        "observed_stage_input_records": [
+          200,
+          25,
+          25
+        ],
+        "order": [
+          "product_defect",
+          "dissatisfaction",
+          "poor_quality"
+        ]
+      },
+      {
+        "correlation_aware_stage_input_records": [
+          200.0,
+          47.2636815920398,
+          27.71009690354199
+        ],
+        "independent_stage_input_records": [
+          200.0,
+          47.0,
+          6.58
+        ],
+        "observed_stage_input_records": [
+          200,
+          47,
+          28
+        ],
+        "order": [
+          "dissatisfaction",
+          "poor_quality",
+          "product_defect"
+        ]
+      },
+      {
+        "correlation_aware_stage_input_records": [
+          200.0,
+          47.2636815920398,
+          24.74142038563402
+        ],
+        "independent_stage_input_records": [
+          200.0,
+          47.0,
+          5.875
+        ],
+        "observed_stage_input_records": [
+          200,
+          47,
+          25
+        ],
+        "order": [
+          "dissatisfaction",
+          "product_defect",
+          "poor_quality"
+        ]
+      }
+    ],
+    "stage_cardinality_errors": {
+      "correlation_aware": {
+        "count": 12,
+        "mae": 0.3378424412527898,
+        "mape_defined_pairs": 12,
+        "mape_percent": 1.2535808329811642,
+        "mean_signed_error": -0.006167482712159611
+      },
+      "independent": {
+        "count": 12,
+        "mae": 9.840833333333334,
+        "mape_defined_pairs": 12,
+        "mape_percent": 39.51515151515152,
+        "mean_signed_error": -9.840833333333332
+      }
+    },
+    "total_evaluation_errors": {
+      "correlation_aware": {
+        "count": 6,
+        "mae": 0.014368822799009232,
+        "mape_defined_pairs": 6,
+        "mape_percent": 0.005528976538240668,
+        "mean_signed_error": -0.012334965424320407
+      },
+      "independent": {
+        "count": 6,
+        "mae": 19.68166666666666,
+        "mape_defined_pairs": 6,
+        "mape_percent": 7.621234491933504,
+        "mean_signed_error": -19.68166666666666
+      }
+    }
+  },
+  "schema_version": "m3-offline-analysis-v2"
+}

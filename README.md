@@ -1,9 +1,14 @@
 # SemanticFlow
 
 SemanticFlow is an academic research harness for measuring the cost, latency, and quality of
-natural-language predicates over tabular data. Milestone 1 is deliberately a reference engine: it
-runs predicates in configured order as an AND filter and records what actually happened. It does
-not reorder, fuse, learn, route, or adapt queries.
+natural-language predicates over tabular data. Milestone 1 remains the fixed-order reference
+engine. Milestone 2 adds an offline cost-based planner that profiles unconditional predicate
+selectivity and measured inference cost, exhaustively ranks orders, and sends the selected order
+through the same sequential AND executor. Milestone 3 adds an optional correlation-aware
+cardinality estimator, offline counterfactual replay of stored decisions, profiling-cost
+economics, paired-bootstrap plan stability, and an offline adaptive-profiling simulation. The
+independence planner remains the default. SemanticFlow does not fuse predicates or adapt during
+execution.
 
 ## Architecture and requirements
 
@@ -73,6 +78,83 @@ semanticflow --provider mock --query configs/queries/product_quality.yaml
 semanticflow --provider mock --query configs/queries/product_quality.yaml --cache on --limit 50
 python experiments/milestone_1/run_baseline.py --provider mock
 ```
+
+## Milestone 2 optimizer
+
+The optimizer deterministically splits the 1,000-review SemCEB sample into 200 profiling and 800
+held-out evaluation reviews. Profiling evaluates every predicate on every profiling review without
+early rejection. Planning enumerates every permutation for 2–6 predicates and minimizes the
+configured objective in `configs/optimizer.yaml`. Fixed and optimized execution use the same held-
+out IDs and the existing sequential executor.
+
+Run the complete credential-free workflow:
+
+```powershell
+semanticflow experiment --provider mock `
+  --query configs/queries/product_quality.yaml `
+  --optimizer-config configs/optimizer.yaml `
+  --output-dir results/milestone_2
+```
+
+The individual phases are also available:
+
+```powershell
+semanticflow profile --provider mock --experiment-dir results/milestone_2/example
+semanticflow plan --experiment-dir results/milestone_2/example
+semanticflow run --provider mock --strategy fixed --experiment-dir results/milestone_2/example
+semanticflow run --provider mock --strategy optimized --experiment-dir results/milestone_2/example
+semanticflow compare --experiment-dir results/milestone_2/example
+```
+
+Mock token usage is explicitly synthetic and validates only plumbing. Jev commands additionally
+require `--authorize-paid`, but that flag is only a CLI safety acknowledgement: review the exact
+dataset, model, request caps, estimated usage, and cost and obtain experiment-specific approval
+before using it. See the [Milestone 2 architecture](docs/milestone_2_architecture.md) and
+[experiment protocol](docs/milestone_2_experiment_protocol.md).
+
+## Milestone 3 offline analysis
+
+Select the estimator in the optimizer config:
+
+- `cardinality_estimator: correlation_aware` with `cost_model_version: correlation-aware-and-v1`
+  uses chain-rule conditionals from the joint profiling matrix, with Beta shrinkage.
+- `selection_policy: confidence_aware` keeps the original order unless a paired bootstrap shows
+  the cheaper order is credibly cheaper.
+
+See `configs/optimizer.milestone_3.yaml` and `configs/optimizer.milestone_3_confidence.yaml`.
+Two new commands work only on stored decisions and never construct a provider:
+
+```powershell
+semanticflow replay --decisions "m1=<run>/decisions.jsonl" --split-manifest <split_manifest.json> `
+  --split-part evaluation --model jev-1.14.0 --order poor_quality,product_defect,dissatisfaction
+semanticflow analyze --experiment-dir <milestone 2 experiment> `
+  --historical-baseline-dir <milestone 1 run> --output-dir results/milestone_3/<new directory>
+```
+
+On the stored `product_quality` Jev traces:
+
+- Offline replay estimates that 4–5 of the 6 calls saved in Milestone 2 come from predicate
+  ordering. This is an estimate under stated assumptions, not a causal measurement. The
+  remainder is consistent with Jev response variability.
+- The correlation-aware estimator halves stage-cardinality error under cross-validation.
+  Its 90% predictive intervals cover every held-out count, but its held-out point predictions
+  are biased high, and it is not more accurate on held-out total evaluations.
+- The selected order wins only 76.9% of bootstrap resamples, and its savings interval includes
+  zero.
+- A fresh profile's break-even depends on the savings basis:
+  - 62–63 executions on predicted savings;
+  - 113 on the observed, confounded difference;
+  - 151–224 on replay-estimated savings;
+  - 18 executions to never across the bootstrap interval.
+
+  The economics gate can skip adaptive profiling entirely when even the bounded saving
+  cannot cover the first checkpoint.
+
+Full results are in the [research report](docs/milestone_3_research_report.md). The design is in
+the [Milestone 3 architecture](docs/milestone_3_architecture.md), and the unexecuted live
+benchmark is in the [benchmark protocol](docs/milestone_3_benchmark_protocol.md).
+`configs/queries/` also has three proposed workloads, verified with mocks only:
+`listing_mismatch`, `positive_experience`, and `mixed_feedback`.
 
 The executed Milestone 1 real-data mock run (`product_quality`, seed 2026) loaded 1,000 reviews and
 produced stage counts `1000 -> 476 -> 234 -> 117`, 1,710 decisions/provider calls, and a complete
@@ -155,8 +237,14 @@ budget blocks, HTTP attempts, provider errors, and actual cache lookups; see the
 
 ## Roadmap
 
-Milestone 1 supplies measured stage selectivity, latency, usage, cache behavior, and record-level
-decisions. Later research may consume those interfaces for cost-based ordering, fusion,
-conditional selectivity, quality constraints, uncertainty, and adaptive execution. None of those
-optimizations are implemented here. Background systems are summarized in
-[research notes](docs/research_notes.md).
+Milestone 2 supplies the first cost-based ordering baseline. Milestone 3 adds correlation-aware
+estimation, confidence-aware selection, profiling economics, and offline adaptive-profiling
+simulation. Still open:
+
+- live sequential profiling;
+- live evaluation of the new workloads;
+- predicate fusion;
+- quality constraints from human labels;
+- adaptive execution.
+
+Background systems are summarized in [research notes](docs/research_notes.md).

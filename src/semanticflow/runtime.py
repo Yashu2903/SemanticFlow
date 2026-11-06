@@ -7,14 +7,14 @@ from typing import Any
 
 import yaml
 
-from semanticflow.dataset.loader import load_dataset
+from semanticflow.dataset.loader import ReviewRecord, load_dataset
 from semanticflow.executor.cache import RequestCache
 from semanticflow.executor.sequential import SequentialExecutor
 from semanticflow.metrics.collector import REPORT_SCHEMA_VERSION
 from semanticflow.metrics.evaluation import evaluate_labels
 from semanticflow.metrics.reporter import build_report
 from semanticflow.providers.base import InferenceProvider
-from semanticflow.query.models import load_query
+from semanticflow.query.models import QuerySpec, load_query
 from semanticflow.storage.results import (
     ResultStore,
     build_manifest,
@@ -62,14 +62,51 @@ async def run_query(
             raise ValueError("max calls override must be positive")
         query.max_calls = max_calls_override
     records = load_dataset(query.dataset_path, limit=query.limit)
+    store = ResultStore(output_dir)
+    run_id, run_dir, timestamp = store.create_run(query.query_id)
+    LOGGER.info("Loaded %d records for workload %s", len(records), query.workload_id)
+
+    return await run_query_records(
+        query=query,
+        records=records,
+        settings=settings,
+        provider=provider,
+        run_dir=run_dir,
+        run_id=run_id,
+        timestamp=timestamp,
+        cache_enabled=cache_enabled,
+        labels_path=labels_path,
+    )
+
+
+async def run_query_records(
+    *,
+    query: QuerySpec,
+    records: list[ReviewRecord],
+    settings: dict[str, Any],
+    provider: InferenceProvider,
+    run_dir: str | Path,
+    run_id: str,
+    timestamp: str,
+    cache_enabled: bool = False,
+    labels_path: str | Path | None = None,
+    report_metadata: dict[str, Any] | None = None,
+    manifest_metadata: dict[str, Any] | None = None,
+) -> RunOutcome:
+    destination = Path(run_dir)
+    if destination.exists():
+        if any(destination.iterdir()):
+            raise FileExistsError(f"Run directory is not empty: {destination}")
+    else:
+        destination.mkdir(parents=True)
+    query = query.model_copy(deep=True)
+    query.limit = len(records)
     executor_settings = settings.get("executor", {})
     provider_settings = settings.get("providers", {}).get(provider.name, {})
     concurrency = int(executor_settings.get("concurrency", 4))
     timeout_seconds = float(provider_settings.get("timeout_seconds", 30.0))
     max_retries = int(provider_settings.get("max_retries", 2))
-    store = ResultStore(output_dir)
-    run_id, run_dir, timestamp = store.create_run(query.query_id)
-    LOGGER.info("Loaded %d records for workload %s", len(records), query.workload_id)
+    LOGGER.info("Executing %d records for workload %s", len(records), query.workload_id)
 
     execution = await SequentialExecutor(
         provider, concurrency=concurrency, cache=RequestCache(cache_enabled)
@@ -112,7 +149,12 @@ async def run_query(
         pricing_id=pricing.get("id"),
         pricing_configuration=pricing,
     )
+    if report_metadata:
+        report.update(report_metadata)
+    if manifest_metadata:
+        manifest.update(manifest_metadata)
+    store = ResultStore(destination.parent)
     store.write_artifacts(
-        run_dir, execution.matching_records, execution.traces, report, manifest
+        destination, execution.matching_records, execution.traces, report, manifest
     )
-    return RunOutcome(run_dir=run_dir, report=report)
+    return RunOutcome(run_dir=destination, report=report)

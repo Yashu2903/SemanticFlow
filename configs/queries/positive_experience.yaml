@@ -1,0 +1,20 @@
+query_id: positive_experience
+workload_id: workload_f_positive_experience
+dataset_path: data/processed/reviews_1000.parquet
+dataset_version: semceb_amazon_arts_crafts_sewing_sample_1000
+dataset_preparation_version: m1-v1
+sample_seed: 2026
+operation: and
+limit: 1000
+threshold: 0.5
+max_calls: 3000
+config_id: m3-positive-experience-v1
+# Proposed Milestone 3 workload; no Jev outcomes exist for it yet. Expected regime:
+# high-selectivity, positively correlated predicates (76% of reviews are five-star).
+predicates:
+  - id: easy_to_use
+    instructions: Does the customer say the product was easy to use or easy to work with?
+  - id: meets_expectations
+    instructions: Does the customer say the product met or exceeded their expectations?
+  - id: would_recommend
+    instructions: Does the customer recommend the product or say they would buy it again?

@@ -20,11 +20,26 @@ class MockProvider(InferenceProvider):
         *,
         delay_seconds: float = 0.0,
         model: str = "mock-deterministic-v1",
+        input_tokens_per_evaluation: int | None = None,
+        output_tokens_per_evaluation: int | None = None,
+        usage_by_predicate: Mapping[str, tuple[int, int]] | None = None,
     ) -> None:
         super().__init__()
+        if input_tokens_per_evaluation is not None and input_tokens_per_evaluation < 0:
+            raise ValueError("mock input token usage cannot be negative")
+        if output_tokens_per_evaluation is not None and output_tokens_per_evaluation < 0:
+            raise ValueError("mock output token usage cannot be negative")
+        for predicate_id, usage in (usage_by_predicate or {}).items():
+            if len(usage) != 2 or any(value < 0 for value in usage):
+                raise ValueError(
+                    f"mock token usage for {predicate_id} must contain two nonnegative values"
+                )
         self.probabilities = dict(probabilities or {})
         self.delay_seconds = delay_seconds
         self._model = model
+        self.input_tokens_per_evaluation = input_tokens_per_evaluation
+        self.output_tokens_per_evaluation = output_tokens_per_evaluation
+        self.usage_by_predicate = dict(usage_by_predicate or {})
         self.active_calls = 0
         self.max_active_calls = 0
 
@@ -56,11 +71,21 @@ class MockProvider(InferenceProvider):
         finally:
             self.active_calls -= 1
         self.stats.successful_requests += 1
+        input_tokens, output_tokens = self.usage_by_predicate.get(
+            predicate.id,
+            (self.input_tokens_per_evaluation, self.output_tokens_per_evaluation),
+        )
         return Decision(
             probability=probability,
             model_identifier=self._model,
-            input_tokens=None,
-            output_tokens=None,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
             latency_seconds=time.perf_counter() - started,
-            metadata={"mock": True, "token_usage_available": False},
+            metadata={
+                "mock": True,
+                "token_usage_available": input_tokens is not None
+                and output_tokens is not None,
+                "synthetic_token_usage": input_tokens is not None
+                or output_tokens is not None,
+            },
         )

@@ -35,6 +35,21 @@ def git_commit() -> str | None:
         return None
 
 
+def git_worktree_dirty() -> bool | None:
+    try:
+        workspace = str(Path.cwd().resolve()).replace("\\", "/")
+        output = subprocess.run(
+            ["git", "-c", f"safe.directory={workspace}", "status", "--porcelain"],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        ).stdout
+        return bool(output.strip())
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+
 class ResultStore:
     def __init__(self, output_root: str | Path) -> None:
         self.output_root = Path(output_root)
@@ -101,6 +116,7 @@ def build_manifest(
         "timestamp": timestamp,
         "semanticflow_version": "0.1.0",
         "git_commit": git_commit(),
+        "git_worktree_dirty": git_worktree_dirty(),
         "query_id": query.query_id,
         "query_definition": query.model_dump(mode="json"),
         "workload_id": query.workload_id,

@@ -1,0 +1,18 @@
+query_id: milestone_2_controlled_reordering
+workload_id: infrastructure_controlled_reordering
+dataset_path: data/processed/reviews_1000.parquet
+dataset_version: semceb_amazon_arts_crafts_sewing_sample_1000
+dataset_preparation_version: m1-v1
+sample_seed: 2026
+operation: and
+limit: 1000
+threshold: 0.5
+max_calls: 3000
+config_id: m2-controlled-reordering-v1
+predicates:
+  - id: expensive_broad
+    instructions: Controlled mock predicate A; infrastructure validation only.
+  - id: moderate_filter
+    instructions: Controlled mock predicate B; infrastructure validation only.
+  - id: cheap_selective
+    instructions: Controlled mock predicate C; infrastructure validation only.

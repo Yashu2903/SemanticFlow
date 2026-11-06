@@ -33,5 +33,15 @@ The canonical metrics and compatibility aliases are defined in [reporting schema
 ## Research boundary
 
 The executor exposes stage metrics and traces but contains no planner. This separation is
-intentional: a future planner can supply a different ordered `QuerySpec` while the same executor,
+intentional: a planner supplies a different ordered `QuerySpec` while the same executor,
 provider, tracing, and reporting layers remain the measurement substrate.
+
+`semanticflow.optimizer` is that planner layer:
+
+- Milestone 2 added the split, unconditional profiling, and exhaustive independence-based
+  ordering ([Milestone 2 architecture](milestone_2_architecture.md)).
+- Milestone 3 adds pluggable cardinality estimators that use the joint profiling matrix,
+  replay of stored decisions, profiling economics, bootstrap stability, and adaptive-profiling
+  simulation ([Milestone 3 architecture](milestone_3_architecture.md)).
+
+None of these layers changes executor semantics, and the offline analyses never call a provider.

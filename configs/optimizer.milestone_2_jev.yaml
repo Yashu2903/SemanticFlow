@@ -1,0 +1,23 @@
+split:
+  seed: 2027
+  profiling_size: 200
+  evaluation_size: 800
+
+profiling:
+  concurrency: 4
+  max_attempts: 1800
+
+execution:
+  max_attempts_per_run: 2640
+  cache_enabled: false
+
+planner:
+  objective: estimated_cost_usd
+  tie_relative_tolerance: 1.0e-9
+  cost_model_version: independent-and-v1
+  optimizer_version: exhaustive-order-v1
+  statistics_version: unconditional-profile-v1
+
+mock_usage:
+  input_tokens_per_evaluation: null
+  output_tokens_per_evaluation: null

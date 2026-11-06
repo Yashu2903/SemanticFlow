@@ -1,0 +1,21 @@
+query_id: listing_mismatch
+workload_id: workload_e_listing_mismatch
+dataset_path: data/processed/reviews_1000.parquet
+dataset_version: semceb_amazon_arts_crafts_sewing_sample_1000
+dataset_preparation_version: m1-v1
+sample_seed: 2026
+operation: and
+limit: 1000
+threshold: 0.5
+max_calls: 3000
+config_id: m3-listing-mismatch-v1
+# Proposed Milestone 3 workload; no Jev outcomes exist for it yet.
+# dissatisfaction is byte-identical to product_quality, so its stored decisions share a
+# question hash and can be reused.
+predicates:
+  - id: description_mismatch
+    instructions: Does the customer say the product differed from its listing, description, or photos, for example in size, color, material, or quantity?
+  - id: value_complaint
+    instructions: Does the customer say the product was not worth its price or was overpriced?
+  - id: dissatisfaction
+    instructions: Does the customer express dissatisfaction with the product or purchase?

@@ -34,4 +34,16 @@ results/milestone_3/*
 !results/milestone_3/jev_*/
 !results/milestone_3/jev_*/**
 !results/milestone_3/strategy_comparison.json
+!results/milestone_4/
+results/milestone_4/*
+!results/milestone_4/offline_benchmark_*/
+!results/milestone_4/offline_benchmark_*/**
+!results/milestone_4/joint_*/
+!results/milestone_4/joint_*/**
+!results/milestone_4/voi_*/
+!results/milestone_4/voi_*/**
+!results/milestone_4_5/
+results/milestone_4_5/*
+!results/milestone_4_5/calibration_*/
+!results/milestone_4_5/calibration_*/**
 

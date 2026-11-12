@@ -43,5 +43,19 @@ provider, tracing, and reporting layers remain the measurement substrate.
 - Milestone 3 adds pluggable cardinality estimators that use the joint profiling matrix,
   replay of stored decisions, profiling economics, bootstrap stability, and adaptive-profiling
   simulation ([Milestone 3 architecture](milestone_3_architecture.md)).
+- Milestone 4 adds cost-distribution estimates, expected regret, CVaR, a `risk_aware`
+  selection policy, estimator-disagreement analysis, and an offline retrospective benchmark
+  ([Milestone 4 architecture](milestone_4_architecture.md)).
+- The Milestone 4 follow-up coordinates adaptive profiling with the same risk policy using sparse
+  uncertainty and value of additional profiling; its strict no-lookahead replay is described in the
+  [joint adaptive-risk report](milestone_4_joint_adaptive_risk_report.md).
+- VOI validation adds checkpoint-local calibration traces and an optional finite-scenario lower
+  confidence bound without changing the planner/executor boundary
+  ([validation report](milestone_4_voi_validation.md)).
+- Milestone 4.5 adds profiling-only statistical calibration and constrained optimizer tuning,
+  freezing an experimental joint candidate while retaining existing adaptive as the recommended
+  default when the profiling-validation margin is insufficient
+  ([Milestone 4.5 architecture](milestone_4_5_architecture.md),
+  [calibration report](milestone_4_5_calibration_report.md)).
 
 None of these layers changes executor semantics, and the offline analyses never call a provider.

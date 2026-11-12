@@ -1,0 +1,367 @@
+{
+  "all_candidate_count": 18,
+  "created_at": "2026-11-11T15:50:07.809173+00:00",
+  "phase": "configuration_tuning",
+  "ranked_candidates": [
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.95,
+        "prior_strength": 1.0,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 3,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.95,
+        "prior_strength": 0.5,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 4,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.9,
+        "prior_strength": 1.0,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 4,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.95,
+        "prior_strength": 2.0,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 4,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.9,
+        "prior_strength": 0.5,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 5,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.95,
+        "prior_strength": 1.0,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 5,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.9,
+        "prior_strength": 2.0,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 5,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.95,
+        "prior_strength": 0.5,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 6,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.9,
+        "prior_strength": 1.0,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 6,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.95,
+        "prior_strength": 2.0,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 6,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.9,
+        "prior_strength": 0.5,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 7,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "candidate": {
+        "checkpoints": [
+          25,
+          50,
+          100,
+          150,
+          200
+        ],
+        "minimum_relative_saving": 0.01,
+        "minimum_saving_probability": 0.9,
+        "prior_strength": 2.0,
+        "uncertainty_contraction_exponent": 0.5,
+        "voi_decision_rule": "point_estimate"
+      },
+      "complexity_score": 7,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    }
+  ],
+  "schema_version": "m45-calibration-v1",
+  "selection": {
+    "adopt_tuned_as_default": false,
+    "best_joint_candidate": {
+      "checkpoints": [
+        25,
+        50,
+        100
+      ],
+      "minimum_relative_saving": 0.01,
+      "minimum_saving_probability": 0.95,
+      "prior_strength": 1.0,
+      "uncertainty_contraction_exponent": 0.5,
+      "voi_decision_rule": "point_estimate"
+    },
+    "best_joint_score": {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "complexity_score": 3,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    "experimental_strategy": "tuned_joint_adaptive_risk",
+    "fold_seed": 7073,
+    "folds": 2,
+    "grid_size": 18,
+    "held_out_live_reviews_used_for_selection": false,
+    "margin_vs_best_adaptive_usd": -2.3887499999999083e-05,
+    "recommended_default": "existing_adaptive",
+    "reference_adaptive_score": {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "adaptive_mean_profiling_cost_usd": 0.0009866744999999998,
+      "adaptive_mean_regret_usd": 1.909949999999994e-05,
+      "leave_one_workload_out_adaptive_cold_net_usd": {
+        "listing_mismatch": 0.003224543000000002,
+        "mixed_feedback": -0.0009055970000000023,
+        "positive_experience": 0.003286633,
+        "product_quality": 0.0032127830000000003
+      }
+    },
+    "selection_objective": "maximize mean profiling-validation cold-start net at R=10; tie-break by leave-one-workload-out floor then lower complexity"
+  }
+}

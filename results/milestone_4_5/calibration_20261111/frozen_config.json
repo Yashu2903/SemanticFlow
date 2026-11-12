@@ -1,0 +1,27 @@
+{
+  "adopt_tuned_as_default": false,
+  "calibration_fingerprint": "052a80b660971e9bbc54b0c3c8f272f327c62ce76d857883e689aa6d667a7873",
+  "config_fingerprint": "c00fadea786bd2075739576501460f51f0997172caccb5e133a0d2f0db3447c7",
+  "created_at": "2026-11-11T15:50:07.816173+00:00",
+  "git_commit": "399824b90395ae3ce196517f97c25ca86d3340c9",
+  "held_out_live_reviews_used_for_selection": false,
+  "note": "Frozen before any retrospective use of the 800-review live outcomes. Do not edit after examining held-out results.",
+  "parameters": {
+    "adaptive.checkpoints": [
+      25,
+      50,
+      100
+    ],
+    "bootstrap.iterations": 2000,
+    "correlation.prior_strength": 1.0,
+    "joint.bootstrap_iterations": 2000,
+    "joint.uncertainty_contraction_exponent": 0.5,
+    "joint.voi_decision_rule": "point_estimate",
+    "joint.voi_scenarios": 32,
+    "risk.minimum_relative_saving": 0.01,
+    "risk.minimum_saving_probability": 0.95
+  },
+  "recommended_default": "existing_adaptive",
+  "schema_version": "m45-frozen-config-v1",
+  "selection_objective": "maximize mean profiling-validation cold-start net at R=10; tie-break by leave-one-workload-out floor then lower complexity"
+}

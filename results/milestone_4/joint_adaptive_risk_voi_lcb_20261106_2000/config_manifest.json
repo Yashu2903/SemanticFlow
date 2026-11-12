@@ -1,0 +1,13 @@
+{
+  "artifact_config_path_recorded": "configs/optimizer.milestone_4.yaml",
+  "difference_from_validated_default": {
+    "joint.voi_decision_rule": {
+      "default": "point_estimate",
+      "experiment": "lower_confidence_bound"
+    }
+  },
+  "note": "The benchmark ran while the main config temporarily selected the lower-bound ablation; the dedicated file preserves those exact settings after the default was restored.",
+  "reproducible_config_path": "configs/optimizer.milestone_4_voi_lcb.yaml",
+  "schema_version": "m4-experiment-config-manifest-v1",
+  "settings_equivalence_verified": true
+}

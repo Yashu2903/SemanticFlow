@@ -20,6 +20,7 @@ from semanticflow.optimizer.models import (
     ProfilingResult,
     SplitManifest,
 )
+from semanticflow.optimizer.risk import select_risk_aware_plan
 from semanticflow.query.models import QuerySpec
 
 
@@ -184,9 +185,14 @@ class CostBasedPlanner:
 
         selected = minimum
         explanation: dict[str, Any] | None = None
-        if self.settings.planner.selection_policy == "confidence_aware":
+        policy = self.settings.planner.selection_policy
+        if policy == "confidence_aware":
             selected, explanation = self._confidence_aware(
                 profile, split, matrix, original, minimum, raw_candidates
+            )
+        elif policy in {"risk_aware", "risk_aware_robust"}:
+            selected, explanation = self._risk_aware(
+                profile, split, matrix, original, raw_candidates
             )
 
         candidates = self._rank(raw_candidates, selected, original)
@@ -274,5 +280,40 @@ class CostBasedPlanner:
         explanation["bootstrap_iterations"] = report["iterations"]
         explanation["bootstrap_seed"] = report["seed"]
         explanation["interpretation"] = report["interpretation"]
+        selected = next(item for item in raw_candidates if item.predicate_order == order)
+        return selected, explanation
+
+    def _risk_aware(
+        self,
+        profile: ProfilingResult,
+        split: SplitManifest,
+        matrix: ProfileMatrix | None,
+        original: CandidatePlan,
+        raw_candidates: list[CandidatePlan],
+    ) -> tuple[CandidatePlan, dict[str, Any]]:
+        if matrix is None:
+            raise ValueError("risk-aware selection requires the profiling decision matrix")
+        self.validate_matrix(profile, split, matrix)
+        input_rate, output_rate = _pricing_rates(profile)
+        policy = self.settings.planner.selection_policy
+        order, explanation = select_risk_aware_plan(
+            matrix,
+            original_order=original.predicate_order,
+            objective=self.settings.planner.objective,
+            evaluation_record_count=split.evaluation_size,
+            question_hashes=profile.predicate_hashes,
+            bootstrap=self.settings.bootstrap,
+            correlation=self.settings.correlation,
+            risk=self.settings.risk,
+            economics=self.settings.economics,
+            input_price_per_million=input_rate,
+            output_price_per_million=output_rate,
+            tie_relative_tolerance=self.settings.planner.tie_relative_tolerance,
+            primary_estimator=self.settings.planner.cardinality_estimator,
+            robust=policy == "risk_aware_robust",
+            statistics_state="available",
+            new_profiling_cost=profile.estimated_cost_usd,
+            sunk_profiling_cost=profile.estimated_cost_usd or 0.0,
+        )
         selected = next(item for item in raw_candidates if item.predicate_order == order)
         return selected, explanation

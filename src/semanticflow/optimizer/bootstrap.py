@@ -9,7 +9,7 @@ from typing import Any
 
 from semanticflow.optimizer.cardinality import build_estimator, predicate_statistics_from_matrix
 from semanticflow.optimizer.cost_model import estimate_plan
-from semanticflow.optimizer.matrix import ProfileMatrix
+from semanticflow.optimizer.matrix import MatrixRow, ProfileMatrix
 from semanticflow.optimizer.models import (
     BootstrapSettings,
     CorrelationSettings,
@@ -91,13 +91,232 @@ def order_costs(
     }
 
 
+def sample_std(values: Sequence[float]) -> float:
+    if len(values) < 2:
+        return 0.0
+    mean = sum(values) / len(values)
+    return math.sqrt(sum((item - mean) ** 2 for item in values) / (len(values) - 1))
+
+
 def _summary(values: Sequence[float], level: float) -> dict[str, float]:
     tail = (1 - level) / 2
     return {
         "mean": sum(values) / len(values),
-        "lower": quantile(values, tail),
         "median": quantile(values, 0.5),
+        "std": sample_std(values),
+        "percentile_05": quantile(values, 0.05),
+        "percentile_95": quantile(values, 0.95),
+        "lower": quantile(values, tail),
         "upper": quantile(values, 1 - tail),
+        "min": min(values),
+        "max": max(values),
+    }
+
+
+def collect_paired_bootstrap(
+    matrix: ProfileMatrix,
+    *,
+    estimator_name: str,
+    original_order: Sequence[str],
+    objective: OptimizationMetric,
+    evaluation_record_count: int,
+    question_hashes: Mapping[str, str],
+    settings: BootstrapSettings,
+    correlation: CorrelationSettings,
+    input_price_per_million: float | None,
+    output_price_per_million: float | None,
+    tie_relative_tolerance: float = 1e-9,
+    iterations: int | None = None,
+    seed: int | None = None,
+) -> dict[str, Any]:
+    """Resample complete review rows and score every candidate order on each draw.
+
+    Predicate columns are never resampled independently. Token and cost observations
+    travel with the row, so usage variation is part of the same sampling distribution.
+    """
+    if not matrix.complete:
+        raise ValueError("paired bootstrap requires a complete profiling matrix")
+    original = tuple(original_order)
+    common = {
+        "estimator_name": estimator_name,
+        "original_order": original,
+        "objective": objective,
+        "evaluation_record_count": evaluation_record_count,
+        "question_hashes": question_hashes,
+        "correlation": correlation,
+        "input_price_per_million": input_price_per_million,
+        "output_price_per_million": output_price_per_million,
+    }
+    full_costs = order_costs(matrix, **common)
+    full_selected = select_minimum(full_costs, original, tie_relative_tolerance)
+    count = iterations if iterations is not None else settings.iterations
+    used_seed = settings.seed if seed is None else seed
+    rng = random.Random(used_seed)
+    size = matrix.size
+    orders = tuple(sorted(full_costs))
+    draws: dict[tuple[str, ...], list[float]] = {order: [] for order in orders}
+    selected_orders: list[tuple[str, ...]] = []
+    for _ in range(count):
+        indices = [min(int(rng.random() * size), size - 1) for _ in range(size)]
+        costs = order_costs(matrix.take(indices), **common)
+        selected_orders.append(select_minimum(costs, original, tie_relative_tolerance))
+        for order in orders:
+            draws[order].append(costs[order])
+    return {
+        "estimator": estimator_name,
+        "objective": objective,
+        "iterations": count,
+        "seed": used_seed,
+        "sample_size": size,
+        "evaluation_record_count": evaluation_record_count,
+        "interval_level": settings.interval_level,
+        "original_order": original,
+        "orders": orders,
+        "full_sample_costs": full_costs,
+        "full_sample_selected_order": full_selected,
+        "draws": draws,
+        "selected_orders": selected_orders,
+        "tie_relative_tolerance": tie_relative_tolerance,
+        "interpretation": "sampling_uncertainty_diagnostic",
+        "not_evidence_of": "real-world generalization to other data, prompts, or model versions",
+        "resampling_unit": "review_row_with_all_predicate_outcomes_and_usage",
+        "random_generator": "python_random_mersenne_twister_random_only",
+    }
+
+
+def collect_sparse_posterior_bootstrap(
+    matrix: ProfileMatrix,
+    *,
+    estimator_name: str,
+    original_order: Sequence[str],
+    objective: OptimizationMetric,
+    evaluation_record_count: int,
+    question_hashes: Mapping[str, str],
+    settings: BootstrapSettings,
+    correlation: CorrelationSettings,
+    input_price_per_million: float | None,
+    output_price_per_million: float | None,
+    prior_strength: float = 1.0,
+    tie_relative_tolerance: float = 1e-9,
+    iterations: int | None = None,
+    seed: int | None = None,
+) -> dict[str, Any]:
+    """Posterior-predictive row bootstrap with support for unseen binary outcomes.
+
+    A plain empirical bootstrap is degenerate for a predicate observed to pass zero times.
+    This approximation places a Dirichlet prior over the complete binary outcome-pattern
+    distribution.  Its base measure is the product of Jeffreys-smoothed marginal means, so
+    every pattern has positive mass while observed joint patterns still dominate as evidence
+    accumulates.  Pattern draws are statistical simulations, never recorded Jev responses.
+
+    Usage is sampled from an observed row with the same pattern when one exists and otherwise
+    from any currently observed row.  Consequently the method represents uncertainty in
+    selectivity and observed correlations, but it does not identify response variability and
+    only approximates outcome/usage dependence for unseen patterns.
+    """
+    if not matrix.complete:
+        raise ValueError("sparse posterior bootstrap requires a complete profiling matrix")
+    if prior_strength <= 0:
+        raise ValueError("posterior predictive prior strength must be positive")
+    original = tuple(original_order)
+    common = {
+        "estimator_name": estimator_name,
+        "original_order": original,
+        "objective": objective,
+        "evaluation_record_count": evaluation_record_count,
+        "question_hashes": question_hashes,
+        "correlation": correlation,
+        "input_price_per_million": input_price_per_million,
+        "output_price_per_million": output_price_per_million,
+    }
+    full_costs = order_costs(matrix, **common)
+    full_selected = select_minimum(full_costs, original, tie_relative_tolerance)
+    count = iterations if iterations is not None else settings.iterations
+    used_seed = settings.seed if seed is None else seed
+    rng = random.Random(used_seed)
+    size = matrix.size
+    width = len(matrix.predicate_ids)
+    patterns = tuple(itertools.product((False, True), repeat=width))
+    observed_counts = matrix.pattern_counts()
+    marginal_means = []
+    for index in range(width):
+        passing, support = matrix.count(1 << index)
+        marginal_means.append((passing + 0.5) / (support + 1.0))
+    base_mass = []
+    for pattern in patterns:
+        probability = 1.0
+        for value, marginal in zip(pattern, marginal_means, strict=True):
+            probability *= marginal if value else 1.0 - marginal
+        base_mass.append(probability)
+    alphas = [
+        observed_counts.get(pattern, 0) + prior_strength * base
+        for pattern, base in zip(patterns, base_mass, strict=True)
+    ]
+    rows_by_pattern: dict[tuple[bool, ...], list[MatrixRow]] = {
+        pattern: [] for pattern in patterns
+    }
+    for row in matrix.rows:
+        pattern = tuple(bool(value) for value in row.outcomes)
+        rows_by_pattern[pattern].append(row)
+
+    orders = tuple(sorted(full_costs))
+    draws: dict[tuple[str, ...], list[float]] = {order: [] for order in orders}
+    selected_orders: list[tuple[str, ...]] = []
+    for draw_index in range(count):
+        weights = [rng.gammavariate(alpha, 1.0) for alpha in alphas]
+        synthetic_rows = []
+        sampled_patterns = rng.choices(patterns, weights=weights, k=size)
+        for row_index, pattern in enumerate(sampled_patterns):
+            pool = rows_by_pattern[pattern] or list(matrix.rows)
+            usage = pool[rng.randrange(len(pool))]
+            synthetic_rows.append(
+                MatrixRow(
+                    review_id=f"posterior-{draw_index}-{row_index}",
+                    outcomes=pattern,
+                    input_tokens=usage.input_tokens,
+                    output_tokens=usage.output_tokens,
+                    latency_seconds=usage.latency_seconds,
+                )
+            )
+        synthetic = ProfileMatrix(matrix.predicate_ids, synthetic_rows, resampled=True)
+        costs = order_costs(synthetic, **common)
+        selected_orders.append(select_minimum(costs, original, tie_relative_tolerance))
+        for order in orders:
+            draws[order].append(costs[order])
+    return {
+        "estimator": estimator_name,
+        "objective": objective,
+        "iterations": count,
+        "seed": used_seed,
+        "sample_size": size,
+        "evaluation_record_count": evaluation_record_count,
+        "interval_level": settings.interval_level,
+        "original_order": original,
+        "orders": orders,
+        "full_sample_costs": full_costs,
+        "full_sample_selected_order": full_selected,
+        "draws": draws,
+        "selected_orders": selected_orders,
+        "tie_relative_tolerance": tie_relative_tolerance,
+        "interpretation": "sparse_posterior_predictive_uncertainty_approximation",
+        "not_evidence_of": (
+            "actual unseen Jev responses, response variability, or generalization to other data"
+        ),
+        "resampling_unit": "simulated_complete_outcome_pattern_with_observed_usage_row",
+        "random_generator": "python_random_mersenne_twister_random_only",
+        "sparse_data_treatment": {
+            "method": "dirichlet_outcome_patterns",
+            "prior_strength": prior_strength,
+            "base_measure": "product_of_jeffreys_smoothed_marginal_means",
+            "observed_pattern_count": len(observed_counts),
+            "possible_pattern_count": len(patterns),
+            "draws_are_actual_provider_responses": False,
+            "limitations": (
+                "captures finite-profile selectivity and joint-pattern uncertainty; "
+                "unseen-pattern usage is backed off to all observed rows; model-response "
+                "variability is not identified"
+            ),
+        },
     }
 
 
@@ -124,64 +343,60 @@ def paired_bootstrap(
     Results describe sampling uncertainty of the profile only; they do not establish that a
     plan generalizes to other data, prompts, or model versions.
     """
-    if not matrix.complete:
-        raise ValueError("paired bootstrap requires a complete profiling matrix")
-    original = tuple(original_order)
-    common = {
-        "estimator_name": estimator_name,
-        "original_order": original,
-        "objective": objective,
-        "evaluation_record_count": evaluation_record_count,
-        "question_hashes": question_hashes,
-        "correlation": correlation,
-        "input_price_per_million": input_price_per_million,
-        "output_price_per_million": output_price_per_million,
-    }
-    full_costs = order_costs(matrix, **common)
-    full_selected = select_minimum(full_costs, original, tie_relative_tolerance)
-    reference = tuple(reference_order) if reference_order is not None else full_selected
-    count = iterations if iterations is not None else settings.iterations
-    rng = random.Random(settings.seed if seed is None else seed)
-    size = matrix.size
-    selections: Counter[tuple[str, ...]] = Counter()
-    per_order: dict[tuple[str, ...], list[float]] = {order: [] for order in full_costs}
-    savings: list[float] = []
-    relative_savings: list[float] = []
-    regrets: list[float] = []
-    reference_beats_original = 0
-    for _ in range(count):
-        # random() is the only generator output Python guarantees across versions.
-        indices = [min(int(rng.random() * size), size - 1) for _ in range(size)]
-        costs = order_costs(matrix.take(indices), **common)
-        best = select_minimum(costs, original, tie_relative_tolerance)
-        selections[best] += 1
-        for order, value in costs.items():
-            per_order[order].append(value)
-        saving = costs[original] - costs[reference]
-        savings.append(saving)
-        relative_savings.append(saving / costs[original] if costs[original] else 0.0)
-        regrets.append(costs[reference] - costs[best])
-        reference_beats_original += costs[reference] < costs[original]
-    frequency = {
-        order_key(order): selections.get(order, 0) / count for order in sorted(full_costs)
-    }
-    modal_order, modal_count = max(
-        sorted(selections.items()), key=lambda item: item[1]
+    collected = collect_paired_bootstrap(
+        matrix,
+        estimator_name=estimator_name,
+        original_order=original_order,
+        objective=objective,
+        evaluation_record_count=evaluation_record_count,
+        question_hashes=question_hashes,
+        settings=settings,
+        correlation=correlation,
+        input_price_per_million=input_price_per_million,
+        output_price_per_million=output_price_per_million,
+        tie_relative_tolerance=tie_relative_tolerance,
+        iterations=iterations,
+        seed=seed,
     )
+    original = collected["original_order"]
+    full_costs = collected["full_sample_costs"]
+    full_selected = collected["full_sample_selected_order"]
+    reference = tuple(reference_order) if reference_order is not None else full_selected
+    count = collected["iterations"]
+    draws = collected["draws"]
+    selections: Counter[tuple[str, ...]] = Counter(collected["selected_orders"])
+    savings = [
+        draws[original][index] - draws[reference][index] for index in range(count)
+    ]
+    relative_savings = [
+        value / draws[original][index] if draws[original][index] else 0.0
+        for index, value in enumerate(savings)
+    ]
+    regrets = [
+        draws[reference][index] - min(draws[order][index] for order in collected["orders"])
+        for index in range(count)
+    ]
+    reference_beats_original = sum(
+        draws[reference][index] < draws[original][index] for index in range(count)
+    )
+    frequency = {
+        order_key(order): selections.get(order, 0) / count for order in collected["orders"]
+    }
+    modal_order, modal_count = max(sorted(selections.items()), key=lambda item: item[1])
     stable = (
         modal_order == reference and modal_count / count >= settings.stability_threshold
     )
     return {
         "schema_version": BOOTSTRAP_SCHEMA_VERSION,
-        "interpretation": "sampling_uncertainty_diagnostic",
-        "not_evidence_of": "real-world generalization to other data, prompts, or model versions",
-        "resampling_unit": "review_row_with_all_predicate_outcomes_and_usage",
+        "interpretation": collected["interpretation"],
+        "not_evidence_of": collected["not_evidence_of"],
+        "resampling_unit": collected["resampling_unit"],
         "estimator": estimator_name,
         "objective": objective,
         "iterations": count,
-        "seed": settings.seed if seed is None else seed,
-        "random_generator": "python_random_mersenne_twister_random_only",
-        "sample_size": size,
+        "seed": collected["seed"],
+        "random_generator": collected["random_generator"],
+        "sample_size": collected["sample_size"],
         "evaluation_record_count": evaluation_record_count,
         "interval_level": settings.interval_level,
         "original_order": list(original),
@@ -215,7 +430,7 @@ def paired_bootstrap(
         },
         "objective_distribution_by_order": {
             order_key(order): _summary(values, settings.interval_level)
-            for order, values in sorted(per_order.items())
+            for order, values in sorted(draws.items())
         },
     }
 

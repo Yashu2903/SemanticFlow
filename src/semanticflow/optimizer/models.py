@@ -12,7 +12,12 @@ from semanticflow.metrics.collector import DecisionTrace
 
 OptimizationMetric = Literal["estimated_cost_usd", "total_tokens", "input_tokens", "evaluations"]
 CardinalityEstimatorName = Literal["independent", "correlation_aware"]
-SelectionPolicyName = Literal["minimum_expected_objective", "confidence_aware"]
+SelectionPolicyName = Literal[
+    "minimum_expected_objective",
+    "confidence_aware",
+    "risk_aware",
+    "risk_aware_robust",
+]
 
 
 class SplitSettings(BaseModel):
@@ -114,6 +119,31 @@ class BootstrapSettings(BaseModel):
     minimum_relative_saving: float = Field(default=0.0, ge=0.0)
 
 
+class RiskSettings(BaseModel):
+    """Thresholds for uncertainty-aware plan selection.
+
+    Bootstrap frequencies are resampling diagnostics over the profiling matrix, not
+    calibrated probabilities that a plan will be cheaper in production.
+    """
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    # Upper-tail Conditional Value at Risk of L = C(plan) - C(original).
+    cvar_level: float = Field(default=0.95, gt=0.0, lt=1.0)
+    # None disables the corresponding hard gate; the metric is still reported.
+    maximum_cvar_loss: float | None = Field(default=None)
+    maximum_expected_regret: float | None = Field(default=None, ge=0.0)
+    minimum_expected_saving: float = 0.0
+    # Relative execution-cost gap treated as a near-tie; the original order is kept.
+    minimum_relative_saving: float = Field(default=0.01, ge=0.0)
+    # Required share of paired resamples in which the candidate beats the original.
+    minimum_saving_probability: float = Field(default=0.95, ge=0.0, le=1.0)
+    # When statistics are absent, skip new profiling unless economics says otherwise.
+    apply_profiling_economics: bool = False
+    # agree_original_is_worse: leave the original unless both estimators agree it is worse.
+    disagreement_policy: Literal["ignore", "agree_original_is_worse"] = "agree_original_is_worse"
+
+
 class AdaptiveProfilingSettings(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -135,6 +165,32 @@ class AdaptiveProfilingSettings(BaseModel):
         return self
 
 
+class JointAdaptiveSettings(BaseModel):
+    """Sequential risk/VOI policy and sparse posterior-predictive approximation."""
+
+    model_config = ConfigDict(extra="forbid", frozen=True)
+
+    # The ordinary paired bootstrap cannot generate a positive event that has not yet
+    # appeared.  The joint controller instead smooths the complete binary outcome-pattern
+    # distribution toward independent Jeffreys-smoothed marginals before resampling.
+    sparse_posterior_predictive: bool = True
+    predictive_prior_strength: float = Field(default=1.0, gt=0.0)
+    bootstrap_iterations: int = Field(default=2000, ge=20)
+    seed: int = 5051
+    # EVSI is approximated over deterministic draws from the current checkpoint's cost
+    # distribution.  It never reads the next checkpoint's stored outcomes.
+    voi_scenarios: int = Field(default=32, ge=1)
+    minimum_voi_usd: float = 0.0
+    # A point estimate preserves the original Milestone 4 policy.  The lower-bound rule
+    # continues only when a one-sided normal Monte Carlo confidence bound also clears the
+    # configured threshold; this addresses finite-scenario error, not model misspecification.
+    voi_decision_rule: Literal["point_estimate", "lower_confidence_bound"] = "point_estimate"
+    voi_confidence_level: float = Field(default=0.95, gt=0.5, lt=1.0)
+    # Posterior uncertainty is contracted by (n / n_next) ** exponent when projecting the
+    # evidence state after another checkpoint.  0.5 is the usual root-n approximation.
+    uncertainty_contraction_exponent: float = Field(default=0.5, gt=0.0, le=1.0)
+
+
 class MockUsageSettings(BaseModel):
     model_config = ConfigDict(extra="forbid", frozen=True)
 
@@ -154,6 +210,8 @@ class OptimizerSettings(BaseModel):
     economics: EconomicsSettings = EconomicsSettings()
     bootstrap: BootstrapSettings = BootstrapSettings()
     adaptive: AdaptiveProfilingSettings = AdaptiveProfilingSettings()
+    joint: JointAdaptiveSettings = JointAdaptiveSettings()
+    risk: RiskSettings = RiskSettings()
 
 
 def load_optimizer_settings(path: str | Path) -> OptimizerSettings:

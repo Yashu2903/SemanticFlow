@@ -20,6 +20,9 @@ def test_milestone_3_configs_load_with_explicit_estimators() -> None:
     assert correlation.economics.horizon() == 1
     assert correlation.bootstrap.iterations == 1000
     assert correlation.adaptive.checkpoints == [25, 50, 100, 150, 200]
+    milestone_4 = load_optimizer_settings("configs/optimizer.milestone_4.yaml")
+    assert milestone_4.planner.selection_policy == "risk_aware"
+    assert milestone_4.risk.disagreement_policy == "agree_original_is_worse"
 
 
 def test_prepare_strategy_experiment_copies_without_touching_the_source(tmp_path) -> None:

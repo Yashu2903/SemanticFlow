@@ -6,9 +6,13 @@ engine. Milestone 2 adds an offline cost-based planner that profiles uncondition
 selectivity and measured inference cost, exhaustively ranks orders, and sends the selected order
 through the same sequential AND executor. Milestone 3 adds an optional correlation-aware
 cardinality estimator, offline counterfactual replay of stored decisions, profiling-cost
-economics, paired-bootstrap plan stability, and an offline adaptive-profiling simulation. The
-independence planner remains the default. SemanticFlow does not fuse predicates or adapt during
-execution.
+economics, paired-bootstrap plan stability, and an offline adaptive-profiling simulation.
+Milestone 4 adds uncertainty-aware plan selection: paired-bootstrap cost distributions, expected
+regret, downside CVaR, a configurable `risk_aware` policy, and estimator-disagreement analysis.
+Milestone 4.5 calibrates those estimators and controllers on profiling-only folds and freezes an
+experimental tuned joint candidate; existing adaptive profiling remains the recommended default
+when the profiling-validation margin is insufficient. The independence planner remains available.
+SemanticFlow does not fuse predicates or adapt during execution.
 
 ## Architecture and requirements
 
@@ -162,6 +166,42 @@ the [benchmark protocol](docs/milestone_3_benchmark_protocol.md). The three addi
 workloads `listing_mismatch`, `positive_experience`, and `mixed_feedback` were executed on
 Jev in the live evaluation.
 
+## Milestone 4 uncertainty-aware selection
+
+`configs/optimizer.milestone_4.yaml` selects `risk_aware` over correlation-aware cost estimates.
+The policy keeps the original order unless a paired bootstrap of the profiling matrix shows a
+material, stable saving. Bootstrap frequencies are resampling diagnostics, not calibrated
+production probabilities. `risk_aware_robust` additionally keeps the original when the
+independence and correlation-aware estimators disagree on whether the original order is worse.
+
+These commands read stored profiles only and never construct a provider:
+
+```powershell
+semanticflow risk-plan --experiment-dir <profile dir> `
+  --optimizer-config configs/optimizer.milestone_4.yaml --output <new json>
+semanticflow risk-benchmark --output-dir results/milestone_4/<new directory>
+semanticflow joint-risk-benchmark --optimizer-config configs/optimizer.milestone_4.yaml `
+  --output-dir results/milestone_4/<new directory>
+semanticflow voi-validation --optimizer-config configs/optimizer.milestone_4.yaml `
+  --canonical-dir results/milestone_4/joint_adaptive_risk_20261106_2000 `
+  --output-dir results/milestone_4/<new validation directory>
+semanticflow calibrate-m45 --optimizer-config configs/optimizer.milestone_4.yaml `
+  --output-dir results/milestone_4_5/<new directory>
+```
+
+The four-workload retrospective is labeled exploratory. It does not issue Jev requests. Design and
+findings are in the [Milestone 4 architecture](docs/milestone_4_architecture.md) and
+[research report](docs/milestone_4_research_report.md). The coordinated sequential-profiling
+follow-up is documented in the
+[joint adaptive-risk report](docs/milestone_4_joint_adaptive_risk_report.md). Both benchmark
+commands and the VOI validation command are offline, refuse to overwrite output directories, and
+never construct a Jev provider. The calibration results are in the
+[VOI validation report](docs/milestone_4_voi_validation.md). Milestone 4.5 profiling-only tuning
+and the frozen experimental config are documented in the
+[Milestone 4.5 architecture](docs/milestone_4_5_architecture.md) and
+[calibration report](docs/milestone_4_5_calibration_report.md)
+(`configs/optimizer.milestone_4_5_frozen.yaml`).
+
 The executed Milestone 1 real-data mock run (`product_quality`, seed 2026) loaded 1,000 reviews and
 produced stage counts `1000 -> 476 -> 234 -> 117`, 1,710 decisions/provider calls, and a complete
 four-artifact result directory. These deterministic mock outcomes validate plumbing, not semantic
@@ -245,10 +285,12 @@ budget blocks, HTTP attempts, provider errors, and actual cache lookups; see the
 
 Milestone 2 supplies the first cost-based ordering baseline. Milestone 3 adds correlation-aware
 estimation, confidence-aware selection, profiling economics, and offline adaptive-profiling
-simulation. Still open:
+simulation. Milestone 4 adds uncertainty-aware selection on stored evidence. Milestone 4.5
+calibrates those methods on profiling-only folds without promoting fragile complexity by default.
+Still open:
 
 - live sequential profiling;
-- live evaluation of the new workloads;
+- an independent confirmatory workload set;
 - predicate fusion;
 - quality constraints from human labels;
 - adaptive execution.

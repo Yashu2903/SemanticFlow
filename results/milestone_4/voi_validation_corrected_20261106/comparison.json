@@ -1,0 +1,3861 @@
+{
+  "aggregate_by_horizon": {
+    "1": {
+      "corrected_minus_point_net_saving_usd": 0.0,
+      "existing_adaptive": {
+        "cold_start_net_saving_usd": 0.006756519000000037,
+        "warm_start_net_saving_usd": 0.010736733000000036
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "fixed": {
+        "cold_start_net_saving_usd": 0.0,
+        "warm_start_net_saving_usd": 0.0
+      },
+      "full_confidence_aware": {
+        "cold_start_net_saving_usd": -0.02134263599999997,
+        "warm_start_net_saving_usd": 0.010691100000000033
+      },
+      "full_correlation_aware": {
+        "cold_start_net_saving_usd": -0.021297002999999967,
+        "warm_start_net_saving_usd": 0.010736733000000036
+      },
+      "lower_confidence_bound_joint": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "point_estimate_joint": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      }
+    },
+    "10": {
+      "corrected_minus_point_net_saving_usd": 0.0029575980000000057,
+      "existing_adaptive": {
+        "cold_start_net_saving_usd": 0.10338711600000036,
+        "warm_start_net_saving_usd": 0.10736733000000036
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.09651255600000004,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "fixed": {
+        "cold_start_net_saving_usd": 0.0,
+        "warm_start_net_saving_usd": 0.0
+      },
+      "full_confidence_aware": {
+        "cold_start_net_saving_usd": 0.07487726400000033,
+        "warm_start_net_saving_usd": 0.10691100000000033
+      },
+      "full_correlation_aware": {
+        "cold_start_net_saving_usd": 0.07533359400000036,
+        "warm_start_net_saving_usd": 0.10736733000000036
+      },
+      "lower_confidence_bound_joint": {
+        "average_profiling_decisions_consumed": 131.25,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.09990388800000033,
+        "total_profiling_cost_usd": 0.007007112000000003
+      },
+      "point_estimate_joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.09694629000000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "100": {
+      "corrected_minus_point_net_saving_usd": 0.002001216000000028,
+      "existing_adaptive": {
+        "cold_start_net_saving_usd": 1.0626783300000036,
+        "warm_start_net_saving_usd": 1.0736733000000036
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 206.25,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.9939327300000003,
+        "total_profiling_cost_usd": 0.010994969999999998
+      },
+      "fixed": {
+        "cold_start_net_saving_usd": 0.0,
+        "warm_start_net_saving_usd": 0.0
+      },
+      "full_confidence_aware": {
+        "cold_start_net_saving_usd": 1.0370762640000033,
+        "warm_start_net_saving_usd": 1.0691100000000033
+      },
+      "full_correlation_aware": {
+        "cold_start_net_saving_usd": 1.0416395640000036,
+        "warm_start_net_saving_usd": 1.0736733000000036
+      },
+      "lower_confidence_bound_joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 1.0591452900000031,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "point_estimate_joint": {
+        "average_profiling_decisions_consumed": 225.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 1.057144074000003,
+        "total_profiling_cost_usd": 0.011965926000000009
+      }
+    },
+    "1000": {
+      "corrected_minus_point_net_saving_usd": 0.002001216000000028,
+      "existing_adaptive": {
+        "cold_start_net_saving_usd": 10.708761084000034,
+        "warm_start_net_saving_usd": 10.736733000000036
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 525.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.663128084000032,
+        "total_profiling_cost_usd": 0.027971916
+      },
+      "fixed": {
+        "cold_start_net_saving_usd": 0.0,
+        "warm_start_net_saving_usd": 0.0
+      },
+      "full_confidence_aware": {
+        "cold_start_net_saving_usd": 10.659066264000032,
+        "warm_start_net_saving_usd": 10.691100000000032
+      },
+      "full_correlation_aware": {
+        "cold_start_net_saving_usd": 10.704699264000036,
+        "warm_start_net_saving_usd": 10.736733000000036
+      },
+      "lower_confidence_bound_joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.681135290000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "point_estimate_joint": {
+        "average_profiling_decisions_consumed": 225.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.679134074000032,
+        "total_profiling_cost_usd": 0.011965926000000009
+      }
+    },
+    "25": {
+      "corrected_minus_point_net_saving_usd": 0.0,
+      "existing_adaptive": {
+        "cold_start_net_saving_usd": 0.2644381110000009,
+        "warm_start_net_saving_usd": 0.2684183250000009
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.2472517110000001,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "fixed": {
+        "cold_start_net_saving_usd": 0.0,
+        "warm_start_net_saving_usd": 0.0
+      },
+      "full_confidence_aware": {
+        "cold_start_net_saving_usd": 0.2352437640000008,
+        "warm_start_net_saving_usd": 0.26727750000000083
+      },
+      "full_correlation_aware": {
+        "cold_start_net_saving_usd": 0.2363845890000009,
+        "warm_start_net_saving_usd": 0.2684183250000009
+      },
+      "lower_confidence_bound_joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.2573127900000008,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "point_estimate_joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.2573127900000008,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "250": {
+      "corrected_minus_point_net_saving_usd": 0.002001216000000028,
+      "existing_adaptive": {
+        "cold_start_net_saving_usd": 2.664206958000009,
+        "warm_start_net_saving_usd": 2.684183250000009
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 375.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 2.492342958000001,
+        "total_profiling_cost_usd": 0.01997629199999999
+      },
+      "fixed": {
+        "cold_start_net_saving_usd": 0.0,
+        "warm_start_net_saving_usd": 0.0
+      },
+      "full_confidence_aware": {
+        "cold_start_net_saving_usd": 2.6407412640000083,
+        "warm_start_net_saving_usd": 2.672775000000008
+      },
+      "full_correlation_aware": {
+        "cold_start_net_saving_usd": 2.652149514000009,
+        "warm_start_net_saving_usd": 2.684183250000009
+      },
+      "lower_confidence_bound_joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 2.6628102900000084,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "point_estimate_joint": {
+        "average_profiling_decisions_consumed": 225.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 2.6608090740000083,
+        "total_profiling_cost_usd": 0.011965926000000009
+      }
+    },
+    "5": {
+      "corrected_minus_point_net_saving_usd": 0.0,
+      "existing_adaptive": {
+        "cold_start_net_saving_usd": 0.049703451000000176,
+        "warm_start_net_saving_usd": 0.05368366500000018
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.046266171000000016,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "fixed": {
+        "cold_start_net_saving_usd": 0.0,
+        "warm_start_net_saving_usd": 0.0
+      },
+      "full_confidence_aware": {
+        "cold_start_net_saving_usd": 0.021421764000000162,
+        "warm_start_net_saving_usd": 0.05345550000000016
+      },
+      "full_correlation_aware": {
+        "cold_start_net_saving_usd": 0.02164992900000018,
+        "warm_start_net_saving_usd": 0.05368366500000018
+      },
+      "lower_confidence_bound_joint": {
+        "average_profiling_decisions_consumed": 93.75,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.045275475000000016,
+        "total_profiling_cost_usd": 0.00497091
+      },
+      "point_estimate_joint": {
+        "average_profiling_decisions_consumed": 93.75,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.045275475000000016,
+        "total_profiling_cost_usd": 0.00497091
+      }
+    },
+    "50": {
+      "corrected_minus_point_net_saving_usd": 0.002001216000000028,
+      "existing_adaptive": {
+        "cold_start_net_saving_usd": 0.5308802940000017,
+        "warm_start_net_saving_usd": 0.5368366500000018
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 112.5,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.4965074940000001,
+        "total_profiling_cost_usd": 0.005956356000000001
+      },
+      "fixed": {
+        "cold_start_net_saving_usd": 0.0,
+        "warm_start_net_saving_usd": 0.0
+      },
+      "full_confidence_aware": {
+        "cold_start_net_saving_usd": 0.5025212640000016,
+        "warm_start_net_saving_usd": 0.5345550000000017
+      },
+      "full_correlation_aware": {
+        "cold_start_net_saving_usd": 0.5048029140000018,
+        "warm_start_net_saving_usd": 0.5368366500000018
+      },
+      "lower_confidence_bound_joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.5245902900000017,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "point_estimate_joint": {
+        "average_profiling_decisions_consumed": 225.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.5225890740000017,
+        "total_profiling_cost_usd": 0.011965926000000009
+      }
+    }
+  },
+  "calibration_summary": {
+    "decision_benefit_prediction_error_usd": {
+      "maximum_absolute_error": 0.0007787045869183701,
+      "mean_absolute_error": 0.00015407240091202447,
+      "median_absolute_error": 2.780250677858153e-05
+    },
+    "expected_regret_next_std_error": {
+      "count": 10,
+      "maximum_absolute_error": 0.00025059925974128946,
+      "mean_absolute_error": 6.403942655487615e-05,
+      "median_absolute_error": 4.437935598795881e-05
+    },
+    "observable_transition_count": 10,
+    "plan_ranking_next_uncertainty_error": {
+      "count": 10,
+      "maximum_absolute_error": 0.331015625,
+      "mean_absolute_error": 0.1661484375,
+      "median_absolute_error": 0.12949999999999998
+    },
+    "profiling_cost_prediction_error_usd": {
+      "count": 10,
+      "maximum_absolute_error": 3.9690000000003464e-05,
+      "mean_absolute_error": 2.5115999999999073e-05,
+      "median_absolute_error": 2.308949999999389e-05
+    }
+  },
+  "canonical_artifact_integrity": {
+    "recorded_before": {
+      "benchmark.json": "b3de27d347acb23f27dca926fbca9a2d392f56803a755f102a24396675a2dd88",
+      "listing_mismatch.json": "492734ba3e464e33ddafdf457921ab091c59e7e453bfc9fe369a667d1835e6d7",
+      "mixed_feedback.json": "99eeaceb69771779fb76a71b4863a626763aeb0f64d26c912e1d7738cb10ad7e",
+      "positive_experience.json": "cd8c076fe49656125ffa9552f114c558e32018ac97a12ab9875f872bebd1bd45",
+      "product_quality.json": "5dec23556c8c8ba9c3139b1a4f5d035426411b11fd02217ec974cdd1938ae363",
+      "summary.md": "65a84d3d5f8881eb483f7a405479de80081a8c2815a1b44bfdd0b15e0762032a"
+    },
+    "unchanged": true,
+    "verified_after": {
+      "benchmark.json": "b3de27d347acb23f27dca926fbca9a2d392f56803a755f102a24396675a2dd88",
+      "listing_mismatch.json": "492734ba3e464e33ddafdf457921ab091c59e7e453bfc9fe369a667d1835e6d7",
+      "mixed_feedback.json": "99eeaceb69771779fb76a71b4863a626763aeb0f64d26c912e1d7738cb10ad7e",
+      "positive_experience.json": "cd8c076fe49656125ffa9552f114c558e32018ac97a12ab9875f872bebd1bd45",
+      "product_quality.json": "5dec23556c8c8ba9c3139b1a4f5d035426411b11fd02217ec974cdd1938ae363",
+      "summary.md": "65a84d3d5f8881eb483f7a405479de80081a8c2815a1b44bfdd0b15e0762032a"
+    }
+  },
+  "canonical_behavior_reproduced_before_correction": {
+    "matches": true,
+    "mismatches": []
+  },
+  "corrected_sensitivity": {
+    "listing_mismatch": {
+      "prior_strength_sensitivity": {
+        "0.25": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 7.06389389999822,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "0.5": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 8.566880499995023,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "1.0": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 7.653801200001908,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "2.0": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 7.169560399997863,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "5.0": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 7.041802699997788,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "sensitivity": {
+        "checkpoint_schedule": {
+          "25,100,200": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "25,50,100": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "25,50,100,150,200": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "50,100,200": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "decision_budget": {
+          "150": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25,
+              50
+            ],
+            "profiling_cost_usd": 0.0019965120000000006,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "profiling_decision_budget_exhausted",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          },
+          "300": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "450": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "600": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "75": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010058159999999997,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "profiling_decision_budget_exhausted",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "minimum_net_voi_usd": {
+          "0.0": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "0.0001": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "0.00025": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "0.0005": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25,
+              50
+            ],
+            "profiling_cost_usd": 0.0019965120000000006,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          },
+          "0.001": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25,
+              50
+            ],
+            "profiling_cost_usd": 0.0019965120000000006,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "minimum_saving_probability": {
+          "0.9": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "0.95": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "0.99": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010058159999999997,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "risk_constraints": {
+          "cvar_0": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010058159999999997,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          },
+          "disabled": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "expected_regret_0.0001": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "uncertainty_contraction_exponent": {
+          "0.25": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25,
+              50
+            ],
+            "profiling_cost_usd": 0.0019965120000000006,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          },
+          "0.375": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "0.5": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "0.625": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "0.75": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "voi_scenarios": {
+          "128": {
+            "action": "ADOPT_REORDER",
+            "analysis_runtime_seconds": 25.16382390000217,
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "16": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 3.0516353999992134,
+            "checkpoints_visited": [
+              25,
+              50
+            ],
+            "profiling_cost_usd": 0.0019965120000000006,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          },
+          "32": {
+            "action": "ADOPT_REORDER",
+            "analysis_runtime_seconds": 5.992280900005426,
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "64": {
+            "action": "ADOPT_REORDER",
+            "analysis_runtime_seconds": 12.873713700006192,
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.004032714000000003,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "value_complaint",
+              "description_mismatch",
+              "dissatisfaction"
+            ]
+          },
+          "8": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 1.8820596000005025,
+            "checkpoints_visited": [
+              25,
+              50
+            ],
+            "profiling_cost_usd": 0.0019965120000000006,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "description_mismatch",
+              "value_complaint",
+              "dissatisfaction"
+            ]
+          }
+        }
+      }
+    },
+    "mixed_feedback": {
+      "prior_strength_sensitivity": {
+        "0.25": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 4.948312500004249,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "0.5": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 5.491404300002614,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "1.0": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 5.076944399996137,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "2.0": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 8.604330499998468,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "5.0": {
+          "action": "ADOPT_REORDER",
+          "analysis_runtime_seconds": 5.451415099996666,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "candidate_passed_configured_risk_gates",
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      },
+      "sensitivity": {
+        "checkpoint_schedule": {
+          "25,100,200": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "25,50,100": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "25,50,100,150,200": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "50,100,200": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              50
+            ],
+            "profiling_cost_usd": 0.0019860120000000005,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          }
+        },
+        "decision_budget": {
+          "150": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "300": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "450": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "600": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "75": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          }
+        },
+        "minimum_net_voi_usd": {
+          "0.0": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.0001": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.00025": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.0005": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.001": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          }
+        },
+        "minimum_saving_probability": {
+          "0.9": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.95": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.99": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          }
+        },
+        "risk_constraints": {
+          "cvar_0": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "disabled": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "expected_regret_0.0001": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          }
+        },
+        "uncertainty_contraction_exponent": {
+          "0.25": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.375": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.5": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.625": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "0.75": {
+            "action": "ADOPT_REORDER",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          }
+        },
+        "voi_scenarios": {
+          "128": {
+            "action": "ADOPT_REORDER",
+            "analysis_runtime_seconds": 0.32931160000589443,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "16": {
+            "action": "ADOPT_REORDER",
+            "analysis_runtime_seconds": 0.336734600001364,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "32": {
+            "action": "ADOPT_REORDER",
+            "analysis_runtime_seconds": 0.3688012000056915,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "64": {
+            "action": "ADOPT_REORDER",
+            "analysis_runtime_seconds": 0.34096239999780664,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          },
+          "8": {
+            "action": "ADOPT_REORDER",
+            "analysis_runtime_seconds": 0.34033569999883184,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0010005659999999998,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "candidate_passed_configured_risk_gates",
+            "selected_order": [
+              "size_or_quantity_issue",
+              "praises_product",
+              "reports_problem"
+            ]
+          }
+        }
+      }
+    },
+    "positive_experience": {
+      "prior_strength_sensitivity": {
+        "0.25": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 7.923133399999642,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "0.5": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 7.65675740000006,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "1.0": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 7.8056815000018105,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "2.0": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 7.834107999995467,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "5.0": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 7.759369100000185,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      },
+      "sensitivity": {
+        "checkpoint_schedule": {
+          "25,100,200": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "25,50,100": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "25,50,100,150,200": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "50,100,200": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              50
+            ],
+            "profiling_cost_usd": 0.001967112000000001,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          }
+        },
+        "decision_budget": {
+          "150": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "300": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "450": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "600": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "75": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "profiling_decision_budget_exhausted;lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          }
+        },
+        "minimum_net_voi_usd": {
+          "0.0": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.0001": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.00025": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.0005": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.001": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          }
+        },
+        "minimum_saving_probability": {
+          "0.9": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.95": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.99": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          }
+        },
+        "risk_constraints": {
+          "cvar_0": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "disabled": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "expected_regret_0.0001": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          }
+        },
+        "uncertainty_contraction_exponent": {
+          "0.25": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.375": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.5": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.625": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "0.75": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          }
+        },
+        "voi_scenarios": {
+          "128": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 43.45208399999683,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "16": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 5.870363900001394,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "32": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 11.489943599997787,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "64": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 22.09784159999981,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          },
+          "8": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 3.0468095000032918,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009911160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "easy_to_use",
+              "meets_expectations",
+              "would_recommend"
+            ]
+          }
+        }
+      }
+    },
+    "product_quality": {
+      "prior_strength_sensitivity": {
+        "0.25": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 8.556145599999581,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "0.5": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 8.311108500005503,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "1.0": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 8.414262399994186,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "2.0": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 8.478702600004908,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25,
+            50,
+            100
+          ],
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "5.0": {
+          "action": "KEEP_ORIGINAL",
+          "analysis_runtime_seconds": 8.33326980000129,
+          "bootstrap_iterations": 500,
+          "checkpoints_visited": [
+            25
+          ],
+          "profiling_cost_usd": 0.0009827160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "sensitivity": {
+        "checkpoint_schedule": {
+          "25,100,200": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "25,50,100": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "25,50,100,150,200": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "50,100,200": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              50
+            ],
+            "profiling_cost_usd": 0.0019503120000000011,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "decision_budget": {
+          "150": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "300": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "450": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "600": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "75": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "profiling_decision_budget_exhausted;lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "minimum_net_voi_usd": {
+          "0.0": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.0001": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.00025": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.0005": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.001": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "minimum_saving_probability": {
+          "0.9": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25,
+              50
+            ],
+            "profiling_cost_usd": 0.0019503120000000011,
+            "profiling_decisions_consumed": 150,
+            "profiling_reviews_consumed": 50,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.95": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.99": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "risk_constraints": {
+          "cvar_0": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "disabled": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "expected_regret_0.0001": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "uncertainty_contraction_exponent": {
+          "0.25": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.375": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.5": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.625": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "0.75": {
+            "action": "KEEP_ORIGINAL",
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          }
+        },
+        "voi_scenarios": {
+          "128": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 46.703552700004366,
+            "checkpoints_visited": [
+              25,
+              50,
+              100
+            ],
+            "profiling_cost_usd": 0.0039403140000000055,
+            "profiling_decisions_consumed": 300,
+            "profiling_reviews_consumed": 100,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "16": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 6.324152399996819,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "32": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 12.0856203000003,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "64": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 23.473282399994787,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          },
+          "8": {
+            "action": "KEEP_ORIGINAL",
+            "analysis_runtime_seconds": 3.1801303000029293,
+            "checkpoints_visited": [
+              25
+            ],
+            "profiling_cost_usd": 0.0009827160000000002,
+            "profiling_decisions_consumed": 75,
+            "profiling_reviews_consumed": 25,
+            "reason": "lower_confidence_value_of_additional_profiling_not_positive",
+            "selected_order": [
+              "poor_quality",
+              "product_defect",
+              "dissatisfaction"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "created_at": "2026-11-06T19:07:59.105800+00:00",
+  "evidence_scope": {
+    "evaluation": "historical live costs for executed orders only",
+    "selection": "profiling prefixes and statistical simulations only",
+    "unexecuted_counterfactuals": "unavailable"
+  },
+  "live_jev_calls": 0,
+  "paid_api_calls": 0,
+  "per_workload_by_horizon": {
+    "listing_mismatch": {
+      "1": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0010058159999999997,
+          "observed_regret_usd": 0.0006418230000000292,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0010058159999999997,
+          "reviews": 25,
+          "selected_order": [
+            "description_mismatch",
+            "value_complaint",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0010058159999999997,
+          "observed_regret_usd": 0.0006418230000000292,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0010058159999999997,
+          "reviews": 25,
+          "selected_order": [
+            "description_mismatch",
+            "value_complaint",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "10": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.0023855160000002887,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.0023855160000002887,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "100": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.060149586000002905,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.060149586000002905,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "1000": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.6377902860000292,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.6377902860000292,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "25": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.012012861000000725,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.012012861000000725,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "250": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.15642303600000732,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.15642303600000732,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "5": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0019965120000000006,
+          "observed_regret_usd": 0.0006418230000000292,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0019965120000000006,
+          "reviews": 50,
+          "selected_order": [
+            "description_mismatch",
+            "value_complaint",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0019965120000000006,
+          "observed_regret_usd": 0.0006418230000000292,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0019965120000000006,
+          "reviews": 50,
+          "selected_order": [
+            "description_mismatch",
+            "value_complaint",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "50": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.028058436000001453,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.028058436000001453,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.0006418230000000292,
+          "profiling_cost_usd": 0.004032714000000003,
+          "reviews": 100,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ]
+        }
+      }
+    },
+    "mixed_feedback": {
+      "1": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.009048711000000004,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.009048711000000004,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      },
+      "10": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.09949220400000004,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.09949220400000004,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      },
+      "100": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 1.0039271340000002,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 1.0039271340000002,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      },
+      "1000": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 10.048276434000003,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 10.048276434000003,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      },
+      "25": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.2502313590000001,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.2502313590000001,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      },
+      "250": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 2.511318684000001,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 2.511318684000001,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      },
+      "5": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.04924581900000002,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.04924581900000002,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      },
+      "50": {
+        "lower_confidence_bound": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.5014632840000002,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        },
+        "point_estimate": {
+          "action": "ADOPT_REORDER",
+          "cold_start_net_saving_usd": 0.5014632840000002,
+          "observed_regret_usd": 0.0,
+          "observed_saving_usd": 0.010049277000000004,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "reviews": 25,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ]
+        }
+      }
+    },
+    "positive_experience": {
+      "1": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      },
+      "10": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      },
+      "100": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      },
+      "1000": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      },
+      "25": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      },
+      "250": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      },
+      "5": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      },
+      "50": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009911160000000002,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ]
+        }
+      }
+    },
+    "product_quality": {
+      "1": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009827160000000002,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009827160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009827160000000002,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009827160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "10": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009827160000000002,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009827160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0039403140000000055,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "reviews": 100,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "100": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0039403140000000055,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "reviews": 100,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.005941530000000006,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.005941530000000006,
+          "reviews": 150,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "1000": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0039403140000000055,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "reviews": 100,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.005941530000000006,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.005941530000000006,
+          "reviews": 150,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "25": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0039403140000000055,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "reviews": 100,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0039403140000000055,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "reviews": 100,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "250": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0039403140000000055,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "reviews": 100,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.005941530000000006,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.005941530000000006,
+          "reviews": 150,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "5": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009827160000000002,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009827160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0009827160000000002,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0009827160000000002,
+          "reviews": 25,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      },
+      "50": {
+        "lower_confidence_bound": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.0039403140000000055,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "reviews": 100,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        },
+        "point_estimate": {
+          "action": "KEEP_ORIGINAL",
+          "cold_start_net_saving_usd": -0.005941530000000006,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_saving_usd": 0.0,
+          "profiling_cost_usd": 0.005941530000000006,
+          "reviews": 150,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ]
+        }
+      }
+    }
+  },
+  "schema_version": "m4-voi-validation-comparison-v1"
+}

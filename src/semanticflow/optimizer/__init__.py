@@ -1,6 +1,7 @@
 from semanticflow.optimizer.cardinality import CorrelationAwareEstimator, IndependentEstimator
 from semanticflow.optimizer.cost_model import estimate_plan
 from semanticflow.optimizer.evidence import DecisionEvidence
+from semanticflow.optimizer.joint import simulate_joint_adaptive_risk
 from semanticflow.optimizer.matrix import ProfileMatrix, joint_statistics
 from semanticflow.optimizer.models import (
     CandidatePlan,
@@ -32,4 +33,5 @@ __all__ = [
     "estimate_plan",
     "joint_statistics",
     "load_optimizer_settings",
+    "simulate_joint_adaptive_risk",
 ]

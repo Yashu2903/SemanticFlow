@@ -1,0 +1,1446 @@
+{
+  "aggregates": {
+    "1": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.006756519000000037,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      }
+    },
+    "10": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.10338711600000036,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.09651255600000004,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.09694629000000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.09694629000000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "100": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 1.0626783300000036,
+        "total_profiling_cost_usd": 0.010994969999999998
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.9939327300000003,
+        "total_profiling_cost_usd": 0.010994969999999998
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 1.057144074000003,
+        "total_profiling_cost_usd": 0.011965926000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 1.0591452900000031,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "1000": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 10.708761084000034,
+        "total_profiling_cost_usd": 0.027971916
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.663128084000032,
+        "total_profiling_cost_usd": 0.027971916
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.679134074000032,
+        "total_profiling_cost_usd": 0.011965926000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.681135290000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "25": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.2644381110000009,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.2472517110000001,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.2573127900000008,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.2573127900000008,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "250": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 2.664206958000009,
+        "total_profiling_cost_usd": 0.01997629199999999
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 2.492342958000001,
+        "total_profiling_cost_usd": 0.01997629199999999
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 2.6608090740000083,
+        "total_profiling_cost_usd": 0.011965926000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 2.6628102900000084,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "5": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.049703451000000176,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.046266171000000016,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.045275475000000016,
+        "total_profiling_cost_usd": 0.00497091
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.045275475000000016,
+        "total_profiling_cost_usd": 0.00497091
+      }
+    },
+    "50": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.5308802940000017,
+        "total_profiling_cost_usd": 0.005956356000000001
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.4965074940000001,
+        "total_profiling_cost_usd": 0.005956356000000001
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.5225890740000017,
+        "total_profiling_cost_usd": 0.011965926000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.5245902900000017,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    }
+  },
+  "config_path": "configs\\optimizer.milestone_4.yaml",
+  "created_at": "2026-11-11T16:08:47.229928+00:00",
+  "git_commit": "399824b90395ae3ce196517f97c25ca86d3340c9",
+  "held_out_outcomes_used_for_reporting_only": true,
+  "held_out_outcomes_used_for_selection": false,
+  "horizons": [
+    1,
+    5,
+    10,
+    25,
+    50,
+    100,
+    250,
+    1000
+  ],
+  "label": "exploratory_retrospective_after_freeze",
+  "live_jev_calls": 0,
+  "not_a_confirmatory_test": true,
+  "phase": "retrospective_held_out_evaluation",
+  "schema_version": "m45-calibration-v1",
+  "workloads": [
+    {
+      "baseline_actions": {
+        "1": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "KEEP_ORIGINAL"
+        },
+        "10": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "KEEP_ORIGINAL"
+        },
+        "100": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "KEEP_ORIGINAL"
+        }
+      },
+      "tuned_joint_actions": {
+        "1": "KEEP_ORIGINAL",
+        "10": "KEEP_ORIGINAL",
+        "100": "KEEP_ORIGINAL"
+      },
+      "tuned_joint_scores": {
+        "1": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009827160000000002,
+            "10": -0.0009827160000000002,
+            "100": -0.0009827160000000002,
+            "1000": -0.0009827160000000002
+          },
+          "net_saving_usd": -0.0009827160000000002,
+          "observed_cost_usd": 0.012787403999999994,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009827160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "10": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0039403140000000055,
+            "10": -0.0039403140000000055,
+            "100": -0.0039403140000000055,
+            "1000": -0.0039403140000000055
+          },
+          "net_saving_usd": -0.0039403140000000055,
+          "observed_cost_usd": 0.012787403999999994,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "maximum_checkpoint_reached"
+        },
+        "100": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0039403140000000055,
+            "10": -0.0039403140000000055,
+            "100": -0.0039403140000000055,
+            "1000": -0.0039403140000000055
+          },
+          "net_saving_usd": -0.0039403140000000055,
+          "observed_cost_usd": 0.012787403999999994,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "maximum_checkpoint_reached"
+        },
+        "1000": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0039403140000000055,
+            "10": -0.0039403140000000055,
+            "100": -0.0039403140000000055,
+            "1000": -0.0039403140000000055
+          },
+          "net_saving_usd": -0.0039403140000000055,
+          "observed_cost_usd": 0.012787403999999994,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "maximum_checkpoint_reached"
+        },
+        "25": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0039403140000000055,
+            "10": -0.0039403140000000055,
+            "100": -0.0039403140000000055,
+            "1000": -0.0039403140000000055
+          },
+          "net_saving_usd": -0.0039403140000000055,
+          "observed_cost_usd": 0.012787403999999994,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "maximum_checkpoint_reached"
+        },
+        "250": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0039403140000000055,
+            "10": -0.0039403140000000055,
+            "100": -0.0039403140000000055,
+            "1000": -0.0039403140000000055
+          },
+          "net_saving_usd": -0.0039403140000000055,
+          "observed_cost_usd": 0.012787403999999994,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "maximum_checkpoint_reached"
+        },
+        "5": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009827160000000002,
+            "10": -0.0009827160000000002,
+            "100": -0.0009827160000000002,
+            "1000": -0.0009827160000000002
+          },
+          "net_saving_usd": -0.0009827160000000002,
+          "observed_cost_usd": 0.012787403999999994,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009827160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "50": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0039403140000000055,
+            "10": -0.0039403140000000055,
+            "100": -0.0039403140000000055,
+            "1000": -0.0039403140000000055
+          },
+          "net_saving_usd": -0.0039403140000000055,
+          "observed_cost_usd": 0.012787403999999994,
+          "observed_regret_usd": 4.5633000000003254e-05,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0039403140000000055,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "poor_quality",
+            "product_defect",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "maximum_checkpoint_reached"
+        }
+      },
+      "workload_id": "product_quality"
+    },
+    {
+      "baseline_actions": {
+        "1": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "KEEP_ORIGINAL"
+        },
+        "10": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "ADOPT_REORDER"
+        },
+        "100": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "ADOPT_REORDER"
+        }
+      },
+      "tuned_joint_actions": {
+        "1": "KEEP_ORIGINAL",
+        "10": "ADOPT_REORDER",
+        "100": "ADOPT_REORDER"
+      },
+      "tuned_joint_scores": {
+        "1": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0010058159999999997,
+            "10": -0.0010058159999999997,
+            "100": -0.0010058159999999997,
+            "1000": -0.0010058159999999997
+          },
+          "net_saving_usd": -0.0010058159999999997,
+          "observed_cost_usd": 0.011790597000000005,
+          "observed_regret_usd": 0.0006418230000000292,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010058159999999997,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "description_mismatch",
+            "value_complaint",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "10": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0006418230000000292,
+            "10": 0.006418230000000292,
+            "100": 0.06418230000000291,
+            "1000": 0.6418230000000292
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.003390890999999974,
+            "10": 0.0023855160000002887,
+            "100": 0.060149586000002905,
+            "1000": 0.6377902860000292
+          },
+          "net_saving_usd": 0.0023855160000002887,
+          "observed_cost_usd": 0.011148773999999976,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 5.443515710019,
+          "observed_saving_usd": 0.0006418230000000292,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "100": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0006418230000000292,
+            "10": 0.006418230000000292,
+            "100": 0.06418230000000291,
+            "1000": 0.6418230000000292
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.003390890999999974,
+            "10": 0.0023855160000002887,
+            "100": 0.060149586000002905,
+            "1000": 0.6377902860000292
+          },
+          "net_saving_usd": 0.060149586000002905,
+          "observed_cost_usd": 0.011148773999999976,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 5.443515710019,
+          "observed_saving_usd": 0.0006418230000000292,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "1000": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0006418230000000292,
+            "10": 0.006418230000000292,
+            "100": 0.06418230000000291,
+            "1000": 0.6418230000000292
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.003390890999999974,
+            "10": 0.0023855160000002887,
+            "100": 0.060149586000002905,
+            "1000": 0.6377902860000292
+          },
+          "net_saving_usd": 0.6377902860000292,
+          "observed_cost_usd": 0.011148773999999976,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 5.443515710019,
+          "observed_saving_usd": 0.0006418230000000292,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "25": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0006418230000000292,
+            "10": 0.006418230000000292,
+            "100": 0.06418230000000291,
+            "1000": 0.6418230000000292
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.003390890999999974,
+            "10": 0.0023855160000002887,
+            "100": 0.060149586000002905,
+            "1000": 0.6377902860000292
+          },
+          "net_saving_usd": 0.012012861000000725,
+          "observed_cost_usd": 0.011148773999999976,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 5.443515710019,
+          "observed_saving_usd": 0.0006418230000000292,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "250": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0006418230000000292,
+            "10": 0.006418230000000292,
+            "100": 0.06418230000000291,
+            "1000": 0.6418230000000292
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.003390890999999974,
+            "10": 0.0023855160000002887,
+            "100": 0.060149586000002905,
+            "1000": 0.6377902860000292
+          },
+          "net_saving_usd": 0.15642303600000732,
+          "observed_cost_usd": 0.011148773999999976,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 5.443515710019,
+          "observed_saving_usd": 0.0006418230000000292,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "5": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0019965120000000006,
+            "10": -0.0019965120000000006,
+            "100": -0.0019965120000000006,
+            "1000": -0.0019965120000000006
+          },
+          "net_saving_usd": -0.0019965120000000006,
+          "observed_cost_usd": 0.011790597000000005,
+          "observed_regret_usd": 0.0006418230000000292,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0019965120000000006,
+          "profiling_decisions_consumed": 150,
+          "profiling_reviews_consumed": 50,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "description_mismatch",
+            "value_complaint",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "50": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0006418230000000292,
+            "10": 0.006418230000000292,
+            "100": 0.06418230000000291,
+            "1000": 0.6418230000000292
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.003390890999999974,
+            "10": 0.0023855160000002887,
+            "100": 0.060149586000002905,
+            "1000": 0.6377902860000292
+          },
+          "net_saving_usd": 0.028058436000001453,
+          "observed_cost_usd": 0.011148773999999976,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 5.443515710019,
+          "observed_saving_usd": 0.0006418230000000292,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.004032714000000003,
+          "profiling_decisions_consumed": 300,
+          "profiling_reviews_consumed": 100,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "value_complaint",
+            "description_mismatch",
+            "dissatisfaction"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        }
+      },
+      "workload_id": "listing_mismatch"
+    },
+    {
+      "baseline_actions": {
+        "1": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "KEEP_ORIGINAL"
+        },
+        "10": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "KEEP_ORIGINAL"
+        },
+        "100": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "KEEP_ORIGINAL",
+          "joint": "KEEP_ORIGINAL"
+        }
+      },
+      "tuned_joint_actions": {
+        "1": "KEEP_ORIGINAL",
+        "10": "KEEP_ORIGINAL",
+        "100": "KEEP_ORIGINAL"
+      },
+      "tuned_joint_scores": {
+        "1": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009911160000000002,
+            "10": -0.0009911160000000002,
+            "100": -0.0009911160000000002,
+            "1000": -0.0009911160000000002
+          },
+          "net_saving_usd": -0.0009911160000000002,
+          "observed_cost_usd": 0.015361835999999978,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "10": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009911160000000002,
+            "10": -0.0009911160000000002,
+            "100": -0.0009911160000000002,
+            "1000": -0.0009911160000000002
+          },
+          "net_saving_usd": -0.0009911160000000002,
+          "observed_cost_usd": 0.015361835999999978,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "100": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009911160000000002,
+            "10": -0.0009911160000000002,
+            "100": -0.0009911160000000002,
+            "1000": -0.0009911160000000002
+          },
+          "net_saving_usd": -0.0009911160000000002,
+          "observed_cost_usd": 0.015361835999999978,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "1000": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009911160000000002,
+            "10": -0.0009911160000000002,
+            "100": -0.0009911160000000002,
+            "1000": -0.0009911160000000002
+          },
+          "net_saving_usd": -0.0009911160000000002,
+          "observed_cost_usd": 0.015361835999999978,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "25": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009911160000000002,
+            "10": -0.0009911160000000002,
+            "100": -0.0009911160000000002,
+            "1000": -0.0009911160000000002
+          },
+          "net_saving_usd": -0.0009911160000000002,
+          "observed_cost_usd": 0.015361835999999978,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "250": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009911160000000002,
+            "10": -0.0009911160000000002,
+            "100": -0.0009911160000000002,
+            "1000": -0.0009911160000000002
+          },
+          "net_saving_usd": -0.0009911160000000002,
+          "observed_cost_usd": 0.015361835999999978,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "5": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009911160000000002,
+            "10": -0.0009911160000000002,
+            "100": -0.0009911160000000002,
+            "1000": -0.0009911160000000002
+          },
+          "net_saving_usd": -0.0009911160000000002,
+          "observed_cost_usd": 0.015361835999999978,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        },
+        "50": {
+          "action": "KEEP_ORIGINAL",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.0,
+            "10": 0.0,
+            "100": 0.0,
+            "1000": 0.0
+          },
+          "net_saving_by_horizon_usd": {
+            "1": -0.0009911160000000002,
+            "10": -0.0009911160000000002,
+            "100": -0.0009911160000000002,
+            "1000": -0.0009911160000000002
+          },
+          "net_saving_usd": -0.0009911160000000002,
+          "observed_cost_usd": 0.015361835999999978,
+          "observed_regret_usd": 0.00011768400000000158,
+          "observed_result": "measured",
+          "observed_saving_percent": 0.0,
+          "observed_saving_usd": 0.0,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0009911160000000002,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": false,
+          "selected_order": [
+            "easy_to_use",
+            "meets_expectations",
+            "would_recommend"
+          ],
+          "stopping_reason": "value_of_additional_profiling_not_positive"
+        }
+      },
+      "workload_id": "positive_experience"
+    },
+    {
+      "baseline_actions": {
+        "1": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "ADOPT_REORDER",
+          "joint": "ADOPT_REORDER"
+        },
+        "10": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "ADOPT_REORDER",
+          "joint": "ADOPT_REORDER"
+        },
+        "100": {
+          "existing_adaptive": "SELECT_ADAPTIVE_MINIMUM",
+          "existing_adaptive_risk": "ADOPT_REORDER",
+          "joint": "ADOPT_REORDER"
+        }
+      },
+      "tuned_joint_actions": {
+        "1": "ADOPT_REORDER",
+        "10": "ADOPT_REORDER",
+        "100": "ADOPT_REORDER"
+      },
+      "tuned_joint_scores": {
+        "1": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.010049277000000004,
+            "10": 0.10049277000000004,
+            "100": 1.0049277000000003,
+            "1000": 10.049277000000004
+          },
+          "net_saving_by_horizon_usd": {
+            "1": 0.009048711000000004,
+            "10": 0.09949220400000004,
+            "100": 1.0039271340000002,
+            "1000": 10.048276434000003
+          },
+          "net_saving_usd": 0.009048711000000004,
+          "observed_cost_usd": 0.012271938000000001,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 45.02119172276241,
+          "observed_saving_usd": 0.010049277000000004,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "10": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.010049277000000004,
+            "10": 0.10049277000000004,
+            "100": 1.0049277000000003,
+            "1000": 10.049277000000004
+          },
+          "net_saving_by_horizon_usd": {
+            "1": 0.009048711000000004,
+            "10": 0.09949220400000004,
+            "100": 1.0039271340000002,
+            "1000": 10.048276434000003
+          },
+          "net_saving_usd": 0.09949220400000004,
+          "observed_cost_usd": 0.012271938000000001,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 45.02119172276241,
+          "observed_saving_usd": 0.010049277000000004,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "100": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.010049277000000004,
+            "10": 0.10049277000000004,
+            "100": 1.0049277000000003,
+            "1000": 10.049277000000004
+          },
+          "net_saving_by_horizon_usd": {
+            "1": 0.009048711000000004,
+            "10": 0.09949220400000004,
+            "100": 1.0039271340000002,
+            "1000": 10.048276434000003
+          },
+          "net_saving_usd": 1.0039271340000002,
+          "observed_cost_usd": 0.012271938000000001,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 45.02119172276241,
+          "observed_saving_usd": 0.010049277000000004,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "1000": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.010049277000000004,
+            "10": 0.10049277000000004,
+            "100": 1.0049277000000003,
+            "1000": 10.049277000000004
+          },
+          "net_saving_by_horizon_usd": {
+            "1": 0.009048711000000004,
+            "10": 0.09949220400000004,
+            "100": 1.0039271340000002,
+            "1000": 10.048276434000003
+          },
+          "net_saving_usd": 10.048276434000003,
+          "observed_cost_usd": 0.012271938000000001,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 45.02119172276241,
+          "observed_saving_usd": 0.010049277000000004,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "25": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.010049277000000004,
+            "10": 0.10049277000000004,
+            "100": 1.0049277000000003,
+            "1000": 10.049277000000004
+          },
+          "net_saving_by_horizon_usd": {
+            "1": 0.009048711000000004,
+            "10": 0.09949220400000004,
+            "100": 1.0039271340000002,
+            "1000": 10.048276434000003
+          },
+          "net_saving_usd": 0.2502313590000001,
+          "observed_cost_usd": 0.012271938000000001,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 45.02119172276241,
+          "observed_saving_usd": 0.010049277000000004,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "250": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.010049277000000004,
+            "10": 0.10049277000000004,
+            "100": 1.0049277000000003,
+            "1000": 10.049277000000004
+          },
+          "net_saving_by_horizon_usd": {
+            "1": 0.009048711000000004,
+            "10": 0.09949220400000004,
+            "100": 1.0039271340000002,
+            "1000": 10.048276434000003
+          },
+          "net_saving_usd": 2.511318684000001,
+          "observed_cost_usd": 0.012271938000000001,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 45.02119172276241,
+          "observed_saving_usd": 0.010049277000000004,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "5": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.010049277000000004,
+            "10": 0.10049277000000004,
+            "100": 1.0049277000000003,
+            "1000": 10.049277000000004
+          },
+          "net_saving_by_horizon_usd": {
+            "1": 0.009048711000000004,
+            "10": 0.09949220400000004,
+            "100": 1.0039271340000002,
+            "1000": 10.048276434000003
+          },
+          "net_saving_usd": 0.04924581900000002,
+          "observed_cost_usd": 0.012271938000000001,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 45.02119172276241,
+          "observed_saving_usd": 0.010049277000000004,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        },
+        "50": {
+          "action": "ADOPT_REORDER",
+          "forward_net_saving_sunk_excluded_by_horizon_usd": {
+            "1": 0.010049277000000004,
+            "10": 0.10049277000000004,
+            "100": 1.0049277000000003,
+            "1000": 10.049277000000004
+          },
+          "net_saving_by_horizon_usd": {
+            "1": 0.009048711000000004,
+            "10": 0.09949220400000004,
+            "100": 1.0039271340000002,
+            "1000": 10.048276434000003
+          },
+          "net_saving_usd": 0.5014632840000002,
+          "observed_cost_usd": 0.012271938000000001,
+          "observed_regret_usd": 0.0,
+          "observed_result": "measured",
+          "observed_saving_percent": 45.02119172276241,
+          "observed_saving_usd": 0.010049277000000004,
+          "predicted_minus_observed_saving_usd": null,
+          "predicted_saving_usd": null,
+          "profiling_cost_usd": 0.0010005659999999998,
+          "profiling_decisions_consumed": 75,
+          "profiling_reviews_consumed": 25,
+          "selected_is_observed_cheapest": true,
+          "selected_order": [
+            "size_or_quantity_issue",
+            "praises_product",
+            "reports_problem"
+          ],
+          "stopping_reason": "candidate_passed_configured_risk_gates"
+        }
+      },
+      "workload_id": "mixed_feedback"
+    }
+  ]
+}

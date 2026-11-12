@@ -1,0 +1,796 @@
+{
+  "adaptive": {
+    "profiling_started": true,
+    "selected_order_before_risk_gate": [
+      "size_or_quantity_issue",
+      "praises_product",
+      "reports_problem"
+    ],
+    "stopping_checkpoint": 25
+  },
+  "correlation_aware_full_sample_order": [
+    "size_or_quantity_issue",
+    "praises_product",
+    "reports_problem"
+  ],
+  "dataset_fingerprint": "sha256:21cd6032e72379828f334422e29365688c5b5063c07ca23f08f8f025c2d55a99",
+  "evaluation_fingerprint": "sha256:5a1df48e8b331f0d1f96ba36e650f10ba94c3f14e6eea568cd9d5680656c9b45",
+  "evaluation_size": 800,
+  "executed_orders": [
+    "praises_product -> reports_problem -> size_or_quantity_issue",
+    "size_or_quantity_issue -> praises_product -> reports_problem",
+    "size_or_quantity_issue -> reports_problem -> praises_product"
+  ],
+  "held_out_outcomes_used_for_selection": false,
+  "independent_full_sample_order": [
+    "size_or_quantity_issue",
+    "reports_problem",
+    "praises_product"
+  ],
+  "label": "exploratory_retrospective_benchmark",
+  "observed_cheapest_order": "size_or_quantity_issue -> praises_product -> reports_problem",
+  "original_order": [
+    "praises_product",
+    "reports_problem",
+    "size_or_quantity_issue"
+  ],
+  "profiling_cost_usd": 0.008052534,
+  "profiling_fingerprint": "sha256:ca43925d1017f229233181528200496146165eb4aa4cb584454f6c894e56a6b2",
+  "profiling_size": 200,
+  "query_id": "mixed_feedback",
+  "response_variability": {
+    "limitation": "replicate differences mix response variability with residual time effects; they are not used as an independent noise term in the bootstrap",
+    "mode": "sensitivity_analysis",
+    "not_a_probabilistic_response_model": true,
+    "orders": [
+      {
+        "cost_differences_usd": [
+          -1.5497999999999207e-05
+        ],
+        "decision_differences": [
+          -1
+        ],
+        "order": "praises_product -> reports_problem -> size_or_quantity_issue",
+        "replicate_costs_usd": [
+          0.022328964000000007,
+          0.022313466000000007
+        ],
+        "replicate_standard_deviation_usd": 1.0958740894828553e-05,
+        "replicates": 2,
+        "threshold_crossings": [
+          1
+        ]
+      },
+      {
+        "cost_differences_usd": [
+          -5.964000000000316e-05
+        ],
+        "decision_differences": [
+          -5
+        ],
+        "order": "size_or_quantity_issue -> praises_product -> reports_problem",
+        "replicate_costs_usd": [
+          0.012301758000000003,
+          0.012242118
+        ],
+        "replicate_standard_deviation_usd": 4.217184842996793e-05,
+        "replicates": 2,
+        "threshold_crossings": [
+          5
+        ]
+      },
+      {
+        "cost_differences_usd": [],
+        "decision_differences": [],
+        "order": "size_or_quantity_issue -> reports_problem -> praises_product",
+        "replicate_costs_usd": [
+          0.012461651999999997
+        ],
+        "replicate_standard_deviation_usd": null,
+        "replicates": 1,
+        "threshold_crossings": []
+      }
+    ],
+    "schema_version": "m4-response-variability-v1",
+    "small_sample_warning": "too few threshold crossings to fit a response-flip distribution",
+    "sources_are_not_assumed_independent": true,
+    "status": "observed_replicate_sensitivity",
+    "total_recorded_threshold_crossings": 6
+  },
+  "selections": {
+    "correlation_aware": {
+      "decision": null,
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": null,
+        "decision": null,
+        "expected_regret_usd": null,
+        "expected_relative_saving": null,
+        "expected_saving_usd": null,
+        "minimum_objective_order": null,
+        "net_benefit": null,
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": null,
+        "profiling_economics": null,
+        "reason": null,
+        "reasons": null,
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": true,
+      "net_saving_by_horizon_usd": {
+        "1": 0.001996743000000004,
+        "10": 0.09244023600000004,
+        "100": 0.9968751660000004,
+        "1000": 10.041224466000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -4.317601603993568e-05,
+      "predicted_saving_usd": 0.010006100983960068,
+      "profiling_cost_usd": 0.008052534,
+      "reason": null,
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    },
+    "correlation_aware_confidence": {
+      "decision": "adopt_minimum",
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": null,
+        "decision": "adopt_minimum",
+        "expected_regret_usd": null,
+        "expected_relative_saving": null,
+        "expected_saving_usd": null,
+        "minimum_objective_order": [
+          "size_or_quantity_issue",
+          "praises_product",
+          "reports_problem"
+        ],
+        "net_benefit": null,
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": null,
+        "profiling_economics": null,
+        "reason": null,
+        "reasons": [],
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": true,
+      "net_saving_by_horizon_usd": {
+        "1": 0.001996743000000004,
+        "10": 0.09244023600000004,
+        "100": 0.9968751660000004,
+        "1000": 10.041224466000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -4.317601603993568e-05,
+      "predicted_saving_usd": 0.010006100983960068,
+      "profiling_cost_usd": 0.008052534,
+      "reason": null,
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    },
+    "correlation_confidence": {
+      "decision": null,
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": null,
+        "decision": null,
+        "expected_regret_usd": null,
+        "expected_relative_saving": null,
+        "expected_saving_usd": null,
+        "minimum_objective_order": null,
+        "net_benefit": null,
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": null,
+        "profiling_economics": null,
+        "reason": null,
+        "reasons": null,
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.001996743000000004,
+        "10": 0.09244023600000004,
+        "100": 0.9968751660000004,
+        "1000": 10.041224466000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -4.317601603993568e-05,
+      "predicted_saving_usd": 0.010006100983960068,
+      "profiling_cost_usd": 0.008052534,
+      "reason": null,
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    },
+    "correlation_ungated": {
+      "decision": null,
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": null,
+        "decision": null,
+        "expected_regret_usd": null,
+        "expected_relative_saving": null,
+        "expected_saving_usd": null,
+        "minimum_objective_order": null,
+        "net_benefit": null,
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": null,
+        "profiling_economics": null,
+        "reason": null,
+        "reasons": null,
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.001996743000000004,
+        "10": 0.09244023600000004,
+        "100": 0.9968751660000004,
+        "1000": 10.041224466000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -4.317601603993568e-05,
+      "predicted_saving_usd": 0.010006100983960068,
+      "profiling_cost_usd": 0.008052534,
+      "reason": null,
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    },
+    "fixed": {
+      "decision": "KEEP_ORIGINAL",
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": null,
+        "decision": "KEEP_ORIGINAL",
+        "expected_regret_usd": null,
+        "expected_relative_saving": null,
+        "expected_saving_usd": null,
+        "minimum_objective_order": null,
+        "net_benefit": null,
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": null,
+        "profiling_economics": null,
+        "reason": "Query-file order; no optimizer.",
+        "reasons": null,
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.0,
+        "10": 0.0,
+        "100": 0.0,
+        "1000": 0.0
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.0,
+        "10": 0.0,
+        "100": 0.0,
+        "1000": 0.0
+      },
+      "observed_cost_usd": 0.022321215000000005,
+      "observed_regret_usd": 0.010049277000000004,
+      "observed_result": "measured",
+      "observed_saving_percent": 0.0,
+      "observed_saving_usd": 0.0,
+      "predicted_minus_observed_saving_usd": 0.0,
+      "predicted_saving_usd": 0.0,
+      "profiling_cost_usd": 0.0,
+      "reason": "Query-file order; no optimizer.",
+      "selected_is_observed_cheapest": false,
+      "selected_order": [
+        "praises_product",
+        "reports_problem",
+        "size_or_quantity_issue"
+      ]
+    },
+    "independence_ungated": {
+      "decision": null,
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": null,
+        "decision": null,
+        "expected_regret_usd": null,
+        "expected_relative_saving": null,
+        "expected_saving_usd": null,
+        "minimum_objective_order": null,
+        "net_benefit": null,
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": null,
+        "profiling_economics": null,
+        "reason": null,
+        "reasons": null,
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.009859563000000009,
+        "10": 0.09859563000000009,
+        "100": 0.9859563000000009,
+        "1000": 9.859563000000009
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.0018070290000000086,
+        "10": 0.09054309600000009,
+        "100": 0.977903766000001,
+        "1000": 9.851510466000008
+      },
+      "observed_cost_usd": 0.012461651999999997,
+      "observed_regret_usd": 0.00018971399999999534,
+      "observed_result": "measured",
+      "observed_saving_percent": 44.17126487066231,
+      "observed_saving_usd": 0.009859563000000009,
+      "predicted_minus_observed_saving_usd": 0.0011128018523999944,
+      "predicted_saving_usd": 0.010972364852400003,
+      "profiling_cost_usd": 0.008052534,
+      "reason": null,
+      "selected_is_observed_cheapest": false,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "reports_problem",
+        "praises_product"
+      ]
+    },
+    "independent": {
+      "decision": "ADOPT_REORDER",
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": null,
+        "decision": "ADOPT_REORDER",
+        "expected_regret_usd": null,
+        "expected_relative_saving": null,
+        "expected_saving_usd": null,
+        "minimum_objective_order": null,
+        "net_benefit": null,
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": null,
+        "profiling_economics": null,
+        "reason": null,
+        "reasons": null,
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.009859563000000009,
+        "10": 0.09859563000000009,
+        "100": 0.9859563000000009,
+        "1000": 9.859563000000009
+      },
+      "matches_historical_m3_selection": true,
+      "net_saving_by_horizon_usd": {
+        "1": 0.0018070290000000086,
+        "10": 0.09054309600000009,
+        "100": 0.977903766000001,
+        "1000": 9.851510466000008
+      },
+      "observed_cost_usd": 0.012461651999999997,
+      "observed_regret_usd": 0.00018971399999999534,
+      "observed_result": "measured",
+      "observed_saving_percent": 44.17126487066231,
+      "observed_saving_usd": 0.009859563000000009,
+      "predicted_minus_observed_saving_usd": 0.0011128018523999944,
+      "predicted_saving_usd": 0.010972364852400003,
+      "profiling_cost_usd": 0.008052534,
+      "reason": null,
+      "selected_is_observed_cheapest": false,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "reports_problem",
+        "praises_product"
+      ]
+    },
+    "risk_aware": {
+      "decision": "ADOPT_REORDER",
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": -0.008899132166018418,
+        "decision": "ADOPT_REORDER",
+        "expected_regret_usd": 1.2338005203834779e-05,
+        "expected_relative_saving": 0.4523313524140516,
+        "expected_saving_usd": 0.010015573465424425,
+        "minimum_objective_order": [
+          "size_or_quantity_issue",
+          "praises_product",
+          "reports_problem"
+        ],
+        "net_benefit": {
+          "break_even_executions_vs_new_profiling": 1,
+          "expected_executions_known": false,
+          "horizon_executions": 1,
+          "mean_usd": 0.010015573465424425,
+          "new_profiling_cost_charged_usd": 0.0,
+          "note": "sunk profiling is reported and not subtracted from forward net benefit; an optimistic structural bound is never treated as an expected saving",
+          "optimization_overhead_usd": 0.0,
+          "probability_positive": 1.0,
+          "sunk_profiling_cost_usd": 0.008052534
+        },
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": 1.0,
+        "profiling_economics": null,
+        "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+        "reasons": [
+          "passed_risk_gates"
+        ],
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.001996743000000004,
+        "10": 0.09244023600000004,
+        "100": 0.9968751660000004,
+        "1000": 10.041224466000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -3.3703534575579494e-05,
+      "predicted_saving_usd": 0.010015573465424425,
+      "profiling_cost_usd": 0.008052534,
+      "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    },
+    "risk_aware_adaptive": {
+      "decision": "ADOPT_REORDER",
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": -0.005561923643976742,
+        "decision": "ADOPT_REORDER",
+        "expected_regret_usd": 2.7846361100591703e-05,
+        "expected_relative_saving": 0.43111632154030627,
+        "expected_saving_usd": 0.008977812491950085,
+        "minimum_objective_order": [
+          "size_or_quantity_issue",
+          "praises_product",
+          "reports_problem"
+        ],
+        "net_benefit": {
+          "break_even_executions_vs_new_profiling": 1,
+          "expected_executions_known": false,
+          "horizon_executions": 1,
+          "mean_usd": 0.008977812491950085,
+          "new_profiling_cost_charged_usd": 0.0,
+          "note": "sunk profiling is reported and not subtracted from forward net benefit; an optimistic structural bound is never treated as an expected saving",
+          "optimization_overhead_usd": 0.0,
+          "probability_positive": 1.0,
+          "sunk_profiling_cost_usd": 0.0010005659999999998
+        },
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": 1.0,
+        "profiling_economics": null,
+        "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+        "reasons": [
+          "passed_risk_gates"
+        ],
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.009048711000000004,
+        "10": 0.09949220400000004,
+        "100": 1.0039271340000002,
+        "1000": 10.048276434000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -0.0010714645080499192,
+      "predicted_saving_usd": 0.008977812491950085,
+      "profiling_cost_usd": 0.0010005659999999998,
+      "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    },
+    "risk_aware_correlation": {
+      "decision": "ADOPT_REORDER",
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": -0.008899132166018418,
+        "decision": "ADOPT_REORDER",
+        "expected_regret_usd": 1.2338005203834779e-05,
+        "expected_relative_saving": 0.4523313524140516,
+        "expected_saving_usd": 0.010015573465424425,
+        "minimum_objective_order": [
+          "size_or_quantity_issue",
+          "praises_product",
+          "reports_problem"
+        ],
+        "net_benefit": {
+          "break_even_executions_vs_new_profiling": 1,
+          "expected_executions_known": false,
+          "horizon_executions": 1,
+          "mean_usd": 0.010015573465424425,
+          "new_profiling_cost_charged_usd": 0.0,
+          "note": "sunk profiling is reported and not subtracted from forward net benefit; an optimistic structural bound is never treated as an expected saving",
+          "optimization_overhead_usd": 0.0,
+          "probability_positive": 1.0,
+          "sunk_profiling_cost_usd": 0.008052534
+        },
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": 1.0,
+        "profiling_economics": null,
+        "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+        "reasons": [
+          "passed_risk_gates"
+        ],
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.001996743000000004,
+        "10": 0.09244023600000004,
+        "100": 0.9968751660000004,
+        "1000": 10.041224466000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -3.3703534575579494e-05,
+      "predicted_saving_usd": 0.010015573465424425,
+      "profiling_cost_usd": 0.008052534,
+      "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    },
+    "risk_aware_economics": {
+      "decision": "ADOPT_REORDER",
+      "explanation": {
+        "agree_original_is_worse": null,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": -0.008899132166018418,
+        "decision": "ADOPT_REORDER",
+        "expected_regret_usd": 1.2338005203834779e-05,
+        "expected_relative_saving": 0.4523313524140516,
+        "expected_saving_usd": 0.010015573465424425,
+        "minimum_objective_order": [
+          "size_or_quantity_issue",
+          "praises_product",
+          "reports_problem"
+        ],
+        "net_benefit": {
+          "break_even_executions_vs_new_profiling": 1,
+          "expected_executions_known": false,
+          "horizon_executions": 1,
+          "mean_usd": 0.010015573465424425,
+          "new_profiling_cost_charged_usd": 0.0,
+          "note": "sunk profiling is reported and not subtracted from forward net benefit; an optimistic structural bound is never treated as an expected saving",
+          "optimization_overhead_usd": 0.0,
+          "probability_positive": 1.0,
+          "sunk_profiling_cost_usd": 0.008052534
+        },
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": 1.0,
+        "profiling_economics": {
+          "action": "optimize_with_existing_statistics",
+          "break_even_executions_for_new_comparable_profile": 1,
+          "break_even_executions_for_sunk_profiling": 1,
+          "existing_plan_available": false,
+          "expected_executions": 1,
+          "expected_executions_known": false,
+          "fixed_total_cost_usd": 0.02213250716379815,
+          "forward_net_savings_usd": 0.01001557346542442,
+          "forward_optimized_total_cost_usd": 0.012116933698373732,
+          "minimum_net_savings_usd": 0.0,
+          "new_profiling_cost_usd": 0.008052534,
+          "optimization_overhead_usd": 0.0,
+          "optimized_cost_per_execution_usd": 0.012116933698373732,
+          "original_cost_per_execution_usd": 0.02213250716379815,
+          "profiling_budget_usd": null,
+          "reasons": [
+            "forward_net_savings_positive"
+          ],
+          "retrospective_net_savings_including_sunk_profiling_usd": 0.0019630394654244192,
+          "retrospective_optimized_total_including_sunk_profiling_usd": 0.02016946769837373,
+          "savings_basis": "bootstrap_interval",
+          "savings_interval_usd": [
+            0.008941337486578863,
+            0.011119935455745036
+          ],
+          "savings_per_execution_usd": 0.01001557346542442,
+          "savings_probability": 1.0,
+          "schema_version": "m3-optimization-economics-v2",
+          "statistics_reusable": true,
+          "statistics_state": "available",
+          "status": "decided",
+          "sunk_profiling_cost_usd": 0.008052534
+        },
+        "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+        "reasons": [
+          "passed_risk_gates"
+        ],
+        "select_same_order": null
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.001996743000000004,
+        "10": 0.09244023600000004,
+        "100": 0.9968751660000004,
+        "1000": 10.041224466000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -3.3703534575579494e-05,
+      "predicted_saving_usd": 0.010015573465424425,
+      "profiling_cost_usd": 0.008052534,
+      "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    },
+    "risk_aware_robust": {
+      "decision": "ADOPT_REORDER",
+      "explanation": {
+        "agree_original_is_worse": true,
+        "bootstrap_probability_is_not_calibrated": true,
+        "cvar_loss_usd": -0.008899132166018418,
+        "decision": "ADOPT_REORDER",
+        "expected_regret_usd": 1.2338005203834779e-05,
+        "expected_relative_saving": 0.4523313524140516,
+        "expected_saving_usd": 0.010015573465424425,
+        "minimum_objective_order": [
+          "size_or_quantity_issue",
+          "praises_product",
+          "reports_problem"
+        ],
+        "net_benefit": {
+          "break_even_executions_vs_new_profiling": 1,
+          "expected_executions_known": false,
+          "horizon_executions": 1,
+          "mean_usd": 0.010015573465424425,
+          "new_profiling_cost_charged_usd": 0.0,
+          "note": "sunk profiling is reported and not subtracted from forward net benefit; an optimistic structural bound is never treated as an expected saving",
+          "optimization_overhead_usd": 0.0,
+          "probability_positive": 1.0,
+          "sunk_profiling_cost_usd": 0.008052534
+        },
+        "pre_profiling_economics": null,
+        "probability_cheaper_than_original": 1.0,
+        "profiling_economics": null,
+        "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+        "reasons": [
+          "passed_risk_gates"
+        ],
+        "select_same_order": false
+      },
+      "forward_net_saving_sunk_excluded_by_horizon_usd": {
+        "1": 0.010049277000000004,
+        "10": 0.10049277000000004,
+        "100": 1.0049277000000003,
+        "1000": 10.049277000000004
+      },
+      "matches_historical_m3_selection": null,
+      "net_saving_by_horizon_usd": {
+        "1": 0.001996743000000004,
+        "10": 0.09244023600000004,
+        "100": 0.9968751660000004,
+        "1000": 10.041224466000003
+      },
+      "observed_cost_usd": 0.012271938000000001,
+      "observed_regret_usd": 0.0,
+      "observed_result": "measured",
+      "observed_saving_percent": 45.02119172276241,
+      "observed_saving_usd": 0.010049277000000004,
+      "predicted_minus_observed_saving_usd": -3.3703534575579494e-05,
+      "predicted_saving_usd": 0.010015573465424425,
+      "profiling_cost_usd": 0.008052534,
+      "reason": "Adopt size_or_quantity_issue -> praises_product -> reports_problem under the configured risk gates.",
+      "selected_is_observed_cheapest": true,
+      "selected_order": [
+        "size_or_quantity_issue",
+        "praises_product",
+        "reports_problem"
+      ]
+    }
+  },
+  "workload_id": "mixed_feedback"
+}

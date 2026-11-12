@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-11-11T15:42:19.442707+00:00",
+  "fingerprints": {
+    "joint_adaptive_risk": {
+      "created_at_recorded": "2026-11-06T17:30:17.476731+00:00",
+      "live_jev_calls": 0,
+      "path": "results\\milestone_4\\joint_adaptive_risk_20261106_2000\\benchmark.json",
+      "sha256_without_created_at": "644afdad19f1b882166ee822859ef1d648a36111c7cb334a31877b150c2454c5"
+    },
+    "offline_benchmark": {
+      "created_at_recorded": "2026-11-06T16:35:16.302473+00:00",
+      "live_jev_calls": 0,
+      "path": "results\\milestone_4\\offline_benchmark_20261106\\benchmark.json",
+      "sha256_without_created_at": "13db06ade562be23b379cc817e9b43b1a14fa786616e63051dfada5155d0c51e"
+    },
+    "offline_benchmark_reproduction": {
+      "created_at_recorded": "2026-11-06T16:58:24.261348+00:00",
+      "live_jev_calls": 0,
+      "path": "results\\milestone_4\\offline_benchmark_joint_baseline_reproduction_20261106\\benchmark.json",
+      "sha256_without_created_at": "13db06ade562be23b379cc817e9b43b1a14fa786616e63051dfada5155d0c51e"
+    }
+  },
+  "git_commit": "399824b90395ae3ce196517f97c25ca86d3340c9",
+  "git_worktree_dirty": true,
+  "live_jev_calls": 0,
+  "metrics": {
+    "joint_adaptive_risk": {
+      "R10_existing_adaptive_net": 0.10338711600000036,
+      "R10_existing_adaptive_risk_net": 0.09651255600000004,
+      "R10_joint_net": 0.09694629000000032
+    },
+    "offline_benchmark": {
+      "risk_aware_keep_original": 2,
+      "risk_aware_mean_saving_percent": 12.616176858195352
+    },
+    "offline_benchmark_reproduction": {
+      "risk_aware_keep_original": 2,
+      "risk_aware_mean_saving_percent": 12.616176858195352
+    }
+  },
+  "per_workload_offline_benchmark": {
+    "listing_mismatch": {
+      "identical_to_reproduction": true,
+      "sha256": "7718939f712812f4cf9ceb627a1287f755a40fa8bf5b036f0fe8534bb0eddd24"
+    },
+    "mixed_feedback": {
+      "identical_to_reproduction": true,
+      "sha256": "a3843524657b74d2e6d1ba55f5cf0ced8788c0ee32e05505384a18d59f1ff4de"
+    },
+    "positive_experience": {
+      "identical_to_reproduction": true,
+      "sha256": "badd8f65bf3eb19d9e1439d968bc2014382265c961181d21f22345a613bfb688"
+    },
+    "product_quality": {
+      "identical_to_reproduction": true,
+      "sha256": "db5e4b95857dcf584199f15202664ba9df7b676fe718fbc1d9dec9b564c68c7c"
+    }
+  },
+  "phase": "baseline_reproduction",
+  "reproduction_status": "confirmed",
+  "schema_version": "m45-calibration-v1"
+}

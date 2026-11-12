@@ -4,6 +4,8 @@ import random
 import pytest
 
 from semanticflow.optimizer.bootstrap import (
+    collect_paired_bootstrap,
+    collect_sparse_posterior_bootstrap,
     confidence_aware_choice,
     order_key,
     paired_bootstrap,
@@ -138,3 +140,111 @@ def test_quantile_interpolates_linearly() -> None:
     assert quantile([5.0], 0.975) == 5.0
     with pytest.raises(ValueError):
         quantile([], 0.5)
+
+
+def test_perfectly_correlated_predicates_keep_equal_order_costs() -> None:
+    patterns = [(True, True, True), (False, False, True)] * 20
+    matrix = matrix_from_patterns(["A", "B", "C"], patterns)
+    report = run(matrix, ["A", "B", "C"], iterations=40)
+    left = report["objective_distribution_by_order"][order_key(["A", "B", "C"])]
+    right = report["objective_distribution_by_order"][order_key(["B", "A", "C"])]
+    assert left == right
+
+
+def test_zero_pass_predicate_is_placed_first() -> None:
+    patterns = [(False, True, True) for _ in range(30)]
+    matrix = matrix_from_patterns(["A", "B", "C"], patterns)
+    report = run(matrix, ["B", "C", "A"], iterations=40)
+    assert report["full_sample_selected_order"][0] == "A"
+    assert report["probability_reference_cheaper_than_original"] == 1.0
+
+
+def test_unequal_predicate_costs_are_resampled_with_the_row() -> None:
+    patterns = [(index % 2 == 0, index % 3 == 0, True) for index in range(40)]
+    matrix = matrix_from_patterns(
+        ["A", "B", "C"], patterns, input_tokens={"A": 10, "B": 10, "C": 500}
+    )
+    report = paired_bootstrap(
+        matrix,
+        estimator_name="correlation_aware",
+        original_order=["C", "A", "B"],
+        objective="total_tokens",
+        evaluation_record_count=100,
+        question_hashes=hashes(["A", "B", "C"]),
+        settings=BootstrapSettings(iterations=40, seed=11),
+        correlation=EXACT,
+        input_price_per_million=None,
+        output_price_per_million=None,
+    )
+    assert report["full_sample_selected_order"][-1] == "C"
+
+
+def test_sparse_conditionals_and_independent_predicates_do_not_crash() -> None:
+    patterns = [(index < 3, index % 2 == 0, True) for index in range(40)]
+    sparse = matrix_from_patterns(["A", "B", "C"], patterns)
+    sparse_report = run(sparse, ["A", "B", "C"], iterations=25)
+    assert sparse_report["iterations"] == 25
+    generator = random.Random(4)
+    independent = [
+        (generator.random() < 0.5, generator.random() < 0.5, True) for _ in range(40)
+    ]
+    report = run(matrix_from_patterns(["A", "B", "C"], independent), ["A", "B", "C"], iterations=25)
+    assert 0.0 <= report["probability_reference_cheaper_than_original"] <= 1.0
+
+
+@pytest.mark.parametrize("positive_count", [0, 1, 2])
+def test_sparse_posterior_bootstrap_is_not_degenerate_for_rare_predicates(
+    positive_count: int,
+) -> None:
+    patterns = [
+        (index < positive_count, index % 2 == 0, index % 3 == 0) for index in range(25)
+    ]
+    matrix = matrix_from_patterns(["A", "B", "C"], patterns)
+    common = dict(
+        estimator_name="correlation_aware",
+        original_order=["B", "A", "C"],
+        objective="evaluations",
+        evaluation_record_count=100,
+        question_hashes=hashes(["A", "B", "C"]),
+        settings=BootstrapSettings(iterations=60, seed=91),
+        correlation=CorrelationSettings(prior_strength=1.0, conditional_usage=False),
+        input_price_per_million=None,
+        output_price_per_million=None,
+    )
+    empirical = collect_paired_bootstrap(matrix, **common)
+    posterior = collect_sparse_posterior_bootstrap(matrix, prior_strength=1.0, **common)
+    candidate = ("A", "B", "C")
+    if positive_count == 0:
+        empirical_range = max(empirical["draws"][candidate]) - min(empirical["draws"][candidate])
+        posterior_range = max(posterior["draws"][candidate]) - min(
+            posterior["draws"][candidate]
+        )
+        # The empirical resample can vary because B/C vary, but A remains zero in every
+        # resample.  Posterior prediction is wider because an unseen A pass remains possible.
+        assert posterior_range > empirical_range
+    assert len(set(posterior["draws"][candidate])) > 1
+    assert posterior["sparse_data_treatment"]["draws_are_actual_provider_responses"] is False
+    assert posterior["sparse_data_treatment"]["possible_pattern_count"] == 8
+
+
+def test_sparse_posterior_bootstrap_handles_zero_conjunction_support_deterministically() -> None:
+    matrix = matrix_from_patterns(
+        ["A", "B", "C"],
+        [(True, False, True), (False, True, True)] * 13,
+    )
+    kwargs = dict(
+        estimator_name="correlation_aware",
+        original_order=["A", "B", "C"],
+        objective="evaluations",
+        evaluation_record_count=100,
+        question_hashes=hashes(["A", "B", "C"]),
+        settings=BootstrapSettings(iterations=40, seed=113),
+        correlation=CorrelationSettings(prior_strength=1.0, conditional_usage=False),
+        input_price_per_million=None,
+        output_price_per_million=None,
+        prior_strength=1.0,
+    )
+    first = collect_sparse_posterior_bootstrap(matrix, **kwargs)
+    second = collect_sparse_posterior_bootstrap(matrix, **kwargs)
+    assert first["draws"] == second["draws"]
+    assert first["sparse_data_treatment"]["observed_pattern_count"] == 2

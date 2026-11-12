@@ -1,0 +1,460 @@
+{
+  "aggregates": {
+    "1": {
+      "existing_adaptive": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 0,
+        "beneficial_reorderings_rejected": 1,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.126016902268807,
+          "mixed_feedback": 1.9334582313543371,
+          "positive_experience": 16.940522138941805,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.705391604206355,
+        "mean_observed_regret_usd": 2.9421000000000395e-05,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.006756519000000037,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      }
+    },
+    "10": {
+      "existing_adaptive": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 0,
+        "beneficial_reorderings_rejected": 1,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.126016902268807,
+          "mixed_feedback": 1.9334582313543371,
+          "positive_experience": 16.940522138941805,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.705391604206355,
+        "mean_observed_regret_usd": 2.9421000000000395e-05,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.10338711600000036,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.09651255600000004,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.09694629000000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "100": {
+      "existing_adaptive": {
+        "average_profiling_decisions_consumed": 206.25,
+        "beneficial_reorderings_accepted": 0,
+        "beneficial_reorderings_rejected": 1,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.126016902268807,
+          "mixed_feedback": 1.9334582313543371,
+          "positive_experience": 16.940522138941805,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.705391604206355,
+        "mean_observed_regret_usd": 2.9421000000000395e-05,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 1.0626783300000036,
+        "total_profiling_cost_usd": 0.010994969999999998
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 206.25,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.9939327300000003,
+        "total_profiling_cost_usd": 0.010994969999999998
+      },
+      "joint": {
+        "average_profiling_decisions_consumed": 225.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 1.057144074000003,
+        "total_profiling_cost_usd": 0.011965926000000009
+      }
+    },
+    "1000": {
+      "existing_adaptive": {
+        "average_profiling_decisions_consumed": 525.0,
+        "beneficial_reorderings_accepted": 0,
+        "beneficial_reorderings_rejected": 1,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.126016902268807,
+          "mixed_feedback": 1.9334582313543371,
+          "positive_experience": 16.940522138941805,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.705391604206355,
+        "mean_observed_regret_usd": 2.9421000000000395e-05,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 10.708761084000034,
+        "total_profiling_cost_usd": 0.027971916
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 525.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.663128084000032,
+        "total_profiling_cost_usd": 0.027971916
+      },
+      "joint": {
+        "average_profiling_decisions_consumed": 225.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.679134074000032,
+        "total_profiling_cost_usd": 0.011965926000000009
+      }
+    },
+    "25": {
+      "existing_adaptive": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 0,
+        "beneficial_reorderings_rejected": 1,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.126016902268807,
+          "mixed_feedback": 1.9334582313543371,
+          "positive_experience": 16.940522138941805,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.705391604206355,
+        "mean_observed_regret_usd": 2.9421000000000395e-05,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.2644381110000009,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.2472517110000001,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "average_profiling_decisions_consumed": 187.5,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.2573127900000008,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "250": {
+      "existing_adaptive": {
+        "average_profiling_decisions_consumed": 375.0,
+        "beneficial_reorderings_accepted": 0,
+        "beneficial_reorderings_rejected": 1,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.126016902268807,
+          "mixed_feedback": 1.9334582313543371,
+          "positive_experience": 16.940522138941805,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.705391604206355,
+        "mean_observed_regret_usd": 2.9421000000000395e-05,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 2.664206958000009,
+        "total_profiling_cost_usd": 0.01997629199999999
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 375.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 2.492342958000001,
+        "total_profiling_cost_usd": 0.01997629199999999
+      },
+      "joint": {
+        "average_profiling_decisions_consumed": 225.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 2.6608090740000083,
+        "total_profiling_cost_usd": 0.011965926000000009
+      }
+    },
+    "5": {
+      "existing_adaptive": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 0,
+        "beneficial_reorderings_rejected": 1,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.126016902268807,
+          "mixed_feedback": 1.9334582313543371,
+          "positive_experience": 16.940522138941805,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.705391604206355,
+        "mean_observed_regret_usd": 2.9421000000000395e-05,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.049703451000000176,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 75.0,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.046266171000000016,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "average_profiling_decisions_consumed": 93.75,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.045275475000000016,
+        "total_profiling_cost_usd": 0.00497091
+      }
+    },
+    "50": {
+      "existing_adaptive": {
+        "average_profiling_decisions_consumed": 112.5,
+        "beneficial_reorderings_accepted": 0,
+        "beneficial_reorderings_rejected": 1,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.126016902268807,
+          "mixed_feedback": 1.9334582313543371,
+          "positive_experience": 16.940522138941805,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.705391604206355,
+        "mean_observed_regret_usd": 2.9421000000000395e-05,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.5308802940000017,
+        "total_profiling_cost_usd": 0.005956356000000001
+      },
+      "existing_adaptive_risk": {
+        "average_profiling_decisions_consumed": 112.5,
+        "beneficial_reorderings_accepted": 1,
+        "beneficial_reorderings_rejected": 3,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "maximum_observed_regret_usd": 0.0006418230000000292,
+        "mean_execution_saving_percent": 11.255297930690602,
+        "mean_observed_regret_usd": 0.0002012850000000085,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.4965074940000001,
+        "total_profiling_cost_usd": 0.005956356000000001
+      },
+      "joint": {
+        "average_profiling_decisions_consumed": 225.0,
+        "beneficial_reorderings_accepted": 2,
+        "beneficial_reorderings_rejected": 2,
+        "harmful_reorderings_accepted": 0,
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "maximum_observed_regret_usd": 0.00011768400000000158,
+        "mean_execution_saving_percent": 12.616176858195352,
+        "mean_observed_regret_usd": 4.082925000000121e-05,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.5225890740000017,
+        "total_profiling_cost_usd": 0.011965926000000009
+      }
+    }
+  },
+  "created_at": "2026-11-11T16:14:41.419851+00:00",
+  "held_out_used_for_m45_selection": false,
+  "live_jev_calls": 0,
+  "note": "Profiling-only M4.5 selection did not retune VOI contraction or scenario count from held-out outcomes. This artifact cites the existing offline VOI validation for decision-value evidence.",
+  "schema_version": "m45-voi-reference-v1",
+  "source": "results\\milestone_4\\voi_validation_final_point_20261106_2000\\benchmark.json",
+  "source_has_aggregates": true,
+  "source_has_workloads": true
+}

@@ -1,0 +1,153 @@
+{
+  "bootstrap_coverage": {
+    "1000": {
+      "folds": 16,
+      "mean_coverage": {
+        "0.5": 0.3958333333333333,
+        "0.8": 0.6250000000000001,
+        "0.9": 0.7291666666666666,
+        "0.95": 0.7708333333333333
+      },
+      "mean_modal_frequency": 0.7674999999999998
+    },
+    "500": {
+      "folds": 16,
+      "mean_coverage": {
+        "0.5": 0.38541666666666663,
+        "0.8": 0.6145833333333334,
+        "0.9": 0.7395833333333334,
+        "0.95": 0.7708333333333333
+      },
+      "mean_modal_frequency": 0.760375
+    }
+  },
+  "cardinality_by_prior": {
+    "0.5": {
+      "correlation_wins_concordance": 16,
+      "correlation_wins_regret": 16,
+      "folds": 16,
+      "mean_correlation_concordance": 0.9208333333333334,
+      "mean_correlation_regret_tokens": 37.9375,
+      "mean_independent_concordance": 0.9041666666666668,
+      "mean_independent_regret_tokens": 84.75
+    },
+    "1.0": {
+      "correlation_wins_concordance": 16,
+      "correlation_wins_regret": 16,
+      "folds": 16,
+      "mean_correlation_concordance": 0.9208333333333334,
+      "mean_correlation_regret_tokens": 37.9375,
+      "mean_independent_concordance": 0.9041666666666668,
+      "mean_independent_regret_tokens": 84.75
+    },
+    "2.0": {
+      "correlation_wins_concordance": 16,
+      "correlation_wins_regret": 16,
+      "folds": 16,
+      "mean_correlation_concordance": 0.9166666666666667,
+      "mean_correlation_regret_tokens": 64.375,
+      "mean_independent_concordance": 0.9041666666666668,
+      "mean_independent_regret_tokens": 84.75
+    }
+  },
+  "created_at": "2026-11-11T16:16:58.080608+00:00",
+  "held_out_live_reviews_used_for_selection": false,
+  "note": "Ablations are profiling-validation cold-start nets; not held-out confirmatory scores.",
+  "profiling_validation_policies": {
+    "adaptive": {
+      "folds": 16,
+      "leave_one_workload_out_mean_cold_net_usd": {
+        "listing_mismatch": 0.0011202660000000015,
+        "mixed_feedback": -0.0008422540000000002,
+        "positive_experience": 0.0012522160000000013,
+        "product_quality": 0.0012214860000000014
+      },
+      "mean_cold_start_net_usd": 0.000687928500000001,
+      "mean_profiling_cost_usd": 0.0009796815,
+      "mean_validation_regret_usd": 3.2208750000000202e-06,
+      "median_cold_start_net_usd": -0.0008191049999999988
+    },
+    "confidence": {
+      "folds": 16,
+      "leave_one_workload_out_mean_cold_net_usd": {
+        "listing_mismatch": -0.0038828054999999976,
+        "mixed_feedback": -0.0058681804999999995,
+        "positive_experience": -0.0037850854999999985,
+        "product_quality": -0.0038018854999999963
+      },
+      "mean_cold_start_net_usd": -0.004334489249999997,
+      "mean_profiling_cost_usd": 0.0060063255,
+      "mean_validation_regret_usd": 2.7982500000000134e-06,
+      "median_cold_start_net_usd": -0.005884704
+    },
+    "correlation_full": {
+      "folds": 16,
+      "leave_one_workload_out_mean_cold_net_usd": {
+        "listing_mismatch": -0.0038668104999999976,
+        "mixed_feedback": -0.005852185499999999,
+        "positive_experience": -0.003759360499999999,
+        "product_quality": -0.0038116154999999967
+      },
+      "mean_cold_start_net_usd": -0.004322492999999998,
+      "mean_profiling_cost_usd": 0.0060063255,
+      "mean_validation_regret_usd": 1.5986250000000172e-06,
+      "median_cold_start_net_usd": -0.005757990000000001
+    },
+    "fixed": {
+      "folds": 16,
+      "leave_one_workload_out_mean_cold_net_usd": {
+        "listing_mismatch": 0.0,
+        "mixed_feedback": 0.0,
+        "positive_experience": 0.0,
+        "product_quality": 0.0
+      },
+      "mean_cold_start_net_usd": 0.0,
+      "mean_profiling_cost_usd": 0.0,
+      "mean_validation_regret_usd": 0.00016998187500000012,
+      "median_cold_start_net_usd": 0.0
+    },
+    "independent_full": {
+      "folds": 16,
+      "leave_one_workload_out_mean_cold_net_usd": {
+        "listing_mismatch": -0.0038916254999999977,
+        "mixed_feedback": -0.0058522554999999995,
+        "positive_experience": -0.003784105499999998,
+        "product_quality": -0.0038364304999999967
+      },
+      "mean_cold_start_net_usd": -0.004341104249999998,
+      "mean_profiling_cost_usd": 0.0060063255,
+      "mean_validation_regret_usd": 3.4597500000000205e-06,
+      "median_cold_start_net_usd": -0.005757990000000001
+    },
+    "joint": {
+      "folds": 16,
+      "leave_one_workload_out_mean_cold_net_usd": {
+        "listing_mismatch": 0.0011117960000000015,
+        "mixed_feedback": -0.000984949,
+        "positive_experience": 0.0010997910000000017,
+        "product_quality": 0.0010969910000000018
+      },
+      "mean_cold_start_net_usd": 0.0005809072500000011,
+      "mean_profiling_cost_usd": 0.0009796815,
+      "mean_validation_regret_usd": 1.3923000000000009e-05,
+      "median_cold_start_net_usd": -0.0009735180000000003
+    },
+    "risk_aware": {
+      "folds": 16,
+      "leave_one_workload_out_mean_cold_net_usd": {
+        "listing_mismatch": -0.0038828054999999976,
+        "mixed_feedback": -0.0058681804999999995,
+        "positive_experience": -0.0037850854999999985,
+        "product_quality": -0.0038018854999999963
+      },
+      "mean_cold_start_net_usd": -0.004334489249999997,
+      "mean_profiling_cost_usd": 0.0060063255,
+      "mean_validation_regret_usd": 2.7982500000000134e-06,
+      "median_cold_start_net_usd": -0.005884704
+    }
+  },
+  "recommended_default": "existing_adaptive",
+  "schema_version": "m45-ablation-v1",
+  "selection_horizon": 10,
+  "tuning_margin_vs_adaptive_usd": -2.3887499999999083e-05
+}

@@ -1,0 +1,97 @@
+split:
+  seed: 2027
+  profiling_size: 200
+  evaluation_size: 800
+
+profiling:
+  concurrency: 4
+  max_attempts: 1800
+
+execution:
+  max_attempts_per_run: 2640
+  cache_enabled: false
+
+planner:
+  objective: estimated_cost_usd
+  tie_relative_tolerance: 1.0e-9
+  cardinality_estimator: correlation_aware
+  cost_model_version: correlation-aware-and-v1
+  optimizer_version: exhaustive-order-v1
+  statistics_version: unconditional-profile-v1
+  # risk_aware uses correlation-aware estimates and the risk thresholds below.
+  # risk_aware_robust additionally requires both estimators to agree that the
+  # original order is worse before adopting a reorder.
+  selection_policy: risk_aware
+
+correlation:
+  joint_statistics_version: joint-profile-v1
+  prior_strength: 1.0
+  minimum_conditional_support: 20
+  conditional_usage: true
+  usage_prior_strength: 5.0
+  allow_incomplete_matrix: false
+
+economics:
+  # null means unknown reuse; the conservative default horizon is one execution.
+  expected_executions: null
+  unknown_reuse_default_executions: 1
+  profiling_budget_usd: null
+  minimum_net_savings_usd: 0.0
+  maximum_relative_uncertainty: null
+  minimum_savings_probability: null
+  statistics_reusable: true
+  optimization_overhead_usd: 0.0
+
+bootstrap:
+  # Paired review-row bootstrap. 2000 is the Milestone 4 default; unit tests use fewer.
+  iterations: 2000
+  seed: 3031
+  interval_level: 0.95
+  stability_threshold: 0.95
+  confidence_level: 0.95
+  minimum_relative_saving: 0.0
+
+risk:
+  cvar_level: 0.95
+  # null disables the hard gate; CVaR and expected regret are still reported.
+  maximum_cvar_loss: null
+  maximum_expected_regret: null
+  minimum_expected_saving: 0.0
+  # Near-tie fallback: keep the original order when expected relative saving is below 1%.
+  minimum_relative_saving: 0.01
+  # Required share of paired resamples in which the candidate beats the original.
+  # This is a resampling diagnostic, not a calibrated production probability.
+  minimum_saving_probability: 0.95
+  # When false, existing profiling statistics are treated as sunk and not re-charged.
+  apply_profiling_economics: false
+  disagreement_policy: agree_original_is_worse
+
+adaptive:
+  checkpoints: [25, 50, 100, 150, 200]
+  seed: 4049
+  bootstrap_iterations: 1000
+  stability_threshold: 0.95
+  profiling_budget_usd: null
+  maximum_profiling_decisions: null
+
+# Joint adaptive-risk controller. Posterior-predictive draws are statistical simulations,
+# never fabricated Jev observations. The VOI projection uses only the current checkpoint.
+joint:
+  sparse_posterior_predictive: true
+  predictive_prior_strength: 1.0
+  # Match the Milestone 4 risk gate so near-threshold ablations are not dominated by
+  # differing Monte Carlo resolution.
+  bootstrap_iterations: 2000
+  seed: 5051
+  voi_scenarios: 32
+  minimum_voi_usd: 0.0
+  # The validated default remains the original point estimate: the experimental lower-bound
+  # rule reduced overprofiling at 32 scenarios but was not robust at 8, 16, and 128 scenarios.
+  # Set lower_confidence_bound explicitly for the documented ablation.
+  voi_decision_rule: point_estimate
+  voi_confidence_level: 0.95
+  uncertainty_contraction_exponent: 0.5
+
+mock_usage:
+  input_tokens_per_evaluation: null
+  output_tokens_per_evaluation: null

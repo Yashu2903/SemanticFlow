@@ -41,6 +41,7 @@ markers = ["live: tests requiring external credentials (excluded from regular su
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+exclude = ["results"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]

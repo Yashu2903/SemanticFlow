@@ -188,6 +188,83 @@ def build_optimizer_parser() -> argparse.ArgumentParser:
     )
     compare_b.add_argument("--analysis", action="append", type=Path, required=True)
     compare_b.add_argument("--output", type=Path, required=True)
+
+    risk_plan = subparsers.add_parser(
+        "risk-plan",
+        help="Select a plan from stored profiling evidence using the risk-aware policy",
+    )
+    risk_plan.add_argument(
+        "--query", type=Path, default=Path("configs/queries/product_quality.yaml")
+    )
+    risk_plan.add_argument(
+        "--optimizer-config", type=Path, default=Path("configs/optimizer.milestone_4.yaml")
+    )
+    risk_plan.add_argument("--experiment-dir", type=Path, required=True)
+    risk_plan.add_argument("--output", type=Path)
+    risk_plan.add_argument(
+        "--statistics-state", choices=("available", "none"), default="available"
+    )
+    risk_plan.add_argument("--first-checkpoint-cost", type=float)
+    risk_plan.add_argument("--savings-upper-bound", type=float)
+    risk_plan.add_argument(
+        "--robust",
+        action="store_true",
+        help="Use risk_aware_robust (both estimators) instead of risk_aware",
+    )
+
+    risk_bench = subparsers.add_parser(
+        "risk-benchmark",
+        help="Offline Milestone 4 strategy comparison over stored Milestone 3 traces",
+    )
+    risk_bench.add_argument(
+        "--optimizer-config", type=Path, default=Path("configs/optimizer.milestone_4.yaml")
+    )
+    risk_bench.add_argument("--output-dir", type=Path, required=True)
+    risk_bench.add_argument("--iterations", type=int)
+    risk_bench.add_argument("--seed", type=int)
+    risk_bench.add_argument("--skip-adaptive", action="store_true")
+
+    joint_bench = subparsers.add_parser(
+        "joint-risk-benchmark",
+        help="Offline joint adaptive-profiling and risk-selection sequential replay",
+    )
+    joint_bench.add_argument(
+        "--optimizer-config", type=Path, default=Path("configs/optimizer.milestone_4.yaml")
+    )
+    joint_bench.add_argument("--output-dir", type=Path, required=True)
+    joint_bench.add_argument("--joint-iterations", type=int)
+    joint_bench.add_argument("--voi-scenarios", type=int)
+
+    voi_validation = subparsers.add_parser(
+        "voi-validation",
+        help="Offline VOI calibration and sensitivity analysis over stored Milestone 4 data",
+    )
+    voi_validation.add_argument(
+        "--optimizer-config", type=Path, default=Path("configs/optimizer.milestone_4.yaml")
+    )
+    voi_validation.add_argument("--output-dir", type=Path, required=True)
+    voi_validation.add_argument(
+        "--canonical-dir",
+        type=Path,
+        default=Path("results/milestone_4/joint_adaptive_risk_20261106_2000"),
+    )
+
+    calibrate = subparsers.add_parser(
+        "calibrate-m45",
+        help="Milestone 4.5 profiling-only calibration, tuning, freeze, and retrospective",
+    )
+    calibrate.add_argument(
+        "--optimizer-config", type=Path, default=Path("configs/optimizer.milestone_4.yaml")
+    )
+    calibrate.add_argument("--output-dir", type=Path, required=True)
+    calibrate.add_argument("--folds", type=int, default=4)
+    calibrate.add_argument("--fold-seed", type=int, default=7073)
+    calibrate.add_argument("--predictive-iterations", type=int, default=40)
+    calibrate.add_argument(
+        "--skip-retrospective",
+        action="store_true",
+        help="Stop after freezing the configuration; do not score held-out live traces",
+    )
     return parser
 
 
@@ -312,6 +389,178 @@ def _load_json_object(path: Path) -> dict:
     if not isinstance(payload, dict):
         raise ValueError(f"Expected JSON object in {path}")
     return payload
+
+
+def _print_risk_decision(order: list[str], explanation: dict) -> None:
+    print(f"Decision: {explanation['decision']}")
+    print(f"Reason: {explanation['reason']}")
+    print(f"Selected order: {' -> '.join(order)}")
+    print(
+        "Bootstrap P(plan cheaper) is a resampling diagnostic, "
+        "not a calibrated production probability."
+    )
+
+
+def _run_risk_plan(args: argparse.Namespace) -> int:
+    from semanticflow.optimizer.models import ProfilingResult, SplitManifest
+    from semanticflow.optimizer.planner import CostBasedPlanner
+    from semanticflow.optimizer.risk import select_risk_aware_plan
+    from semanticflow.optimizer.workflow import (
+        _load_json,
+        _profiling_report_path,
+        load_profile_matrix,
+    )
+    from semanticflow.storage.results import ResultStore
+
+    if args.output is not None:
+        _refuse_existing(args.output)
+    optimizer = load_optimizer_settings(args.optimizer_config)
+    policy = "risk_aware_robust" if args.robust else "risk_aware"
+    if optimizer.planner.selection_policy != policy:
+        optimizer = optimizer.model_copy(
+            update={
+                "planner": optimizer.planner.model_copy(update={"selection_policy": policy})
+            }
+        )
+    query = load_query(args.query)
+    if args.statistics_state == "none":
+        original = [item.id for item in query.predicates]
+        order, explanation = select_risk_aware_plan(
+            None,
+            original_order=original,
+            objective=optimizer.planner.objective,
+            evaluation_record_count=optimizer.split.evaluation_size,
+            question_hashes={},
+            bootstrap=optimizer.bootstrap,
+            correlation=optimizer.correlation,
+            risk=optimizer.risk,
+            economics=optimizer.economics,
+            input_price_per_million=None,
+            output_price_per_million=None,
+            tie_relative_tolerance=optimizer.planner.tie_relative_tolerance,
+            primary_estimator=optimizer.planner.cardinality_estimator,
+            robust=args.robust,
+            statistics_state="none",
+            first_checkpoint_decisions=optimizer.adaptive.checkpoints[0] * len(original),
+            first_checkpoint_cost=args.first_checkpoint_cost,
+            savings_upper_bound_per_execution=args.savings_upper_bound,
+        )
+        _print_risk_decision(order, explanation)
+        if args.output is not None:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            ResultStore.write_json(
+                args.output, {"selected_order": order, "explanation": explanation}
+            )
+        return 0
+    profile = ProfilingResult.model_validate(
+        _load_json(_profiling_report_path(args.experiment_dir))
+    )
+    split = SplitManifest.model_validate(
+        _load_json(args.experiment_dir / "split_manifest.json")
+    )
+    plan = CostBasedPlanner(optimizer).plan(
+        query,
+        profile,
+        split,
+        matrix=load_profile_matrix(args.experiment_dir, profile, split),
+    )
+    explanation = plan.selection_explanation or {}
+    _print_risk_decision(plan.selected_predicate_order, explanation)
+    if args.output is not None:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        ResultStore.write_json(args.output, plan.artifact_dict())
+    return 0
+
+
+def _run_risk_benchmark(args: argparse.Namespace) -> int:
+    from semanticflow.optimizer.risk_benchmark import run_offline_benchmark, write_text_summary
+
+    _refuse_existing(args.output_dir)
+    optimizer = load_optimizer_settings(args.optimizer_config)
+    updates: dict[str, object] = {}
+    if args.iterations is not None:
+        updates["bootstrap"] = optimizer.bootstrap.model_copy(
+            update={"iterations": args.iterations}
+        )
+    if args.seed is not None:
+        bootstrap = updates.get("bootstrap", optimizer.bootstrap)
+        updates["bootstrap"] = bootstrap.model_copy(update={"seed": args.seed})
+    if updates:
+        optimizer = optimizer.model_copy(update=updates)
+    report = run_offline_benchmark(
+        optimizer,
+        args.output_dir,
+        include_adaptive=not args.skip_adaptive,
+        config_path=str(args.optimizer_config),
+    )
+    write_text_summary(report, args.output_dir / "summary.md")
+    print(f"Workloads: {len(report['workloads'])}")
+    print(f"Live Jev calls: {report['live_jev_calls']}")
+    print(f"Artifacts: {args.output_dir}")
+    return 0
+
+
+def _run_joint_risk_benchmark(args: argparse.Namespace) -> int:
+    from semanticflow.optimizer.joint_benchmark import run_joint_benchmark
+
+    _refuse_existing(args.output_dir)
+    optimizer = load_optimizer_settings(args.optimizer_config)
+    updates = {}
+    if args.joint_iterations is not None:
+        updates["bootstrap_iterations"] = args.joint_iterations
+    if args.voi_scenarios is not None:
+        updates["voi_scenarios"] = args.voi_scenarios
+    if updates:
+        optimizer = optimizer.model_copy(
+            update={"joint": optimizer.joint.model_copy(update=updates)}
+        )
+    report = run_joint_benchmark(
+        optimizer,
+        args.output_dir,
+        config_path=str(args.optimizer_config),
+    )
+    print(f"Workloads: {len(report['workloads'])}")
+    print(f"Live Jev calls: {report['live_jev_calls']}")
+    print(f"Artifacts: {args.output_dir}")
+    return 0
+
+
+def _run_calibrate_m45(args: argparse.Namespace) -> int:
+    from semanticflow.optimizer.m45_calibration import run_milestone_45
+
+    _refuse_existing(args.output_dir)
+    optimizer = load_optimizer_settings(args.optimizer_config)
+    report = run_milestone_45(
+        optimizer,
+        args.output_dir,
+        folds=args.folds,
+        fold_seed=args.fold_seed,
+        predictive_iterations=args.predictive_iterations,
+        skip_retrospective=args.skip_retrospective,
+        config_path=str(args.optimizer_config),
+    )
+    print(f"Baseline reproduction: {report['baseline_reproduction']}")
+    print(f"Recommended default: {report['tuning_selection']['recommended_default']}")
+    print(f"Live Jev calls: {report['live_jev_calls']}")
+    print(f"Artifacts: {args.output_dir}")
+    return 0
+
+
+def _run_voi_validation(args: argparse.Namespace) -> int:
+    from semanticflow.optimizer.voi_validation import run_voi_validation
+
+    _refuse_existing(args.output_dir)
+    optimizer = load_optimizer_settings(args.optimizer_config)
+    report = run_voi_validation(
+        optimizer,
+        args.output_dir,
+        canonical_dir=args.canonical_dir,
+        config_path=str(args.optimizer_config),
+    )
+    print(f"Workloads: {len(report['workloads'])}")
+    print(f"Live Jev calls: {report['live_jev_calls']}")
+    print(f"Artifacts: {args.output_dir}")
+    return 0
 
 
 def _run_benchmark_offline(args: argparse.Namespace) -> int:
@@ -558,6 +807,16 @@ def main(argv: list[str] | None = None) -> int:
         if arguments and arguments[0] in {"replay", "analyze"}:
             args = build_optimizer_parser().parse_args(arguments)
             return _run_replay(args) if args.command == "replay" else _run_analyze(args)
+        if arguments and arguments[0] == "risk-plan":
+            return _run_risk_plan(build_optimizer_parser().parse_args(arguments))
+        if arguments and arguments[0] == "risk-benchmark":
+            return _run_risk_benchmark(build_optimizer_parser().parse_args(arguments))
+        if arguments and arguments[0] == "joint-risk-benchmark":
+            return _run_joint_risk_benchmark(build_optimizer_parser().parse_args(arguments))
+        if arguments and arguments[0] == "voi-validation":
+            return _run_voi_validation(build_optimizer_parser().parse_args(arguments))
+        if arguments and arguments[0] == "calibrate-m45":
+            return _run_calibrate_m45(build_optimizer_parser().parse_args(arguments))
         if arguments and arguments[0] in {
             "benchmark-plan",
             "benchmark-schedule",

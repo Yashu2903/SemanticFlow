@@ -1,0 +1,504 @@
+{
+  "baseline_metrics": {
+    "joint_adaptive_risk": {
+      "R10_existing_adaptive_net": 0.10338711600000036,
+      "R10_existing_adaptive_risk_net": 0.09651255600000004,
+      "R10_joint_net": 0.09694629000000032
+    },
+    "offline_benchmark": {
+      "risk_aware_keep_original": 2,
+      "risk_aware_mean_saving_percent": 12.616176858195352
+    },
+    "offline_benchmark_reproduction": {
+      "risk_aware_keep_original": 2,
+      "risk_aware_mean_saving_percent": 12.616176858195352
+    }
+  },
+  "baseline_reproduction": "confirmed",
+  "calibration_summaries": {
+    "bootstrap": {
+      "1000": {
+        "folds": 16,
+        "mean_coverage": {
+          "0.5": 0.3958333333333333,
+          "0.8": 0.6250000000000001,
+          "0.9": 0.7291666666666666,
+          "0.95": 0.7708333333333333
+        },
+        "mean_modal_frequency": 0.7674999999999998
+      },
+      "500": {
+        "folds": 16,
+        "mean_coverage": {
+          "0.5": 0.38541666666666663,
+          "0.8": 0.6145833333333334,
+          "0.9": 0.7395833333333334,
+          "0.95": 0.7708333333333333
+        },
+        "mean_modal_frequency": 0.760375
+      }
+    },
+    "cardinality": {
+      "0.5": {
+        "correlation_wins_concordance": 16,
+        "correlation_wins_regret": 16,
+        "folds": 16,
+        "mean_correlation_concordance": 0.9208333333333334,
+        "mean_correlation_regret_tokens": 37.9375,
+        "mean_independent_concordance": 0.9041666666666668,
+        "mean_independent_regret_tokens": 84.75
+      },
+      "1.0": {
+        "correlation_wins_concordance": 16,
+        "correlation_wins_regret": 16,
+        "folds": 16,
+        "mean_correlation_concordance": 0.9208333333333334,
+        "mean_correlation_regret_tokens": 37.9375,
+        "mean_independent_concordance": 0.9041666666666668,
+        "mean_independent_regret_tokens": 84.75
+      },
+      "2.0": {
+        "correlation_wins_concordance": 16,
+        "correlation_wins_regret": 16,
+        "folds": 16,
+        "mean_correlation_concordance": 0.9166666666666667,
+        "mean_correlation_regret_tokens": 64.375,
+        "mean_independent_concordance": 0.9041666666666668,
+        "mean_independent_regret_tokens": 84.75
+      }
+    },
+    "policies": {
+      "adaptive": {
+        "folds": 16,
+        "leave_one_workload_out_mean_cold_net_usd": {
+          "listing_mismatch": 0.0011202660000000015,
+          "mixed_feedback": -0.0008422540000000002,
+          "positive_experience": 0.0012522160000000013,
+          "product_quality": 0.0012214860000000014
+        },
+        "mean_cold_start_net_usd": 0.000687928500000001,
+        "mean_profiling_cost_usd": 0.0009796815,
+        "mean_validation_regret_usd": 3.2208750000000202e-06,
+        "median_cold_start_net_usd": -0.0008191049999999988
+      },
+      "confidence": {
+        "folds": 16,
+        "leave_one_workload_out_mean_cold_net_usd": {
+          "listing_mismatch": -0.0038828054999999976,
+          "mixed_feedback": -0.0058681804999999995,
+          "positive_experience": -0.0037850854999999985,
+          "product_quality": -0.0038018854999999963
+        },
+        "mean_cold_start_net_usd": -0.004334489249999997,
+        "mean_profiling_cost_usd": 0.0060063255,
+        "mean_validation_regret_usd": 2.7982500000000134e-06,
+        "median_cold_start_net_usd": -0.005884704
+      },
+      "correlation_full": {
+        "folds": 16,
+        "leave_one_workload_out_mean_cold_net_usd": {
+          "listing_mismatch": -0.0038668104999999976,
+          "mixed_feedback": -0.005852185499999999,
+          "positive_experience": -0.003759360499999999,
+          "product_quality": -0.0038116154999999967
+        },
+        "mean_cold_start_net_usd": -0.004322492999999998,
+        "mean_profiling_cost_usd": 0.0060063255,
+        "mean_validation_regret_usd": 1.5986250000000172e-06,
+        "median_cold_start_net_usd": -0.005757990000000001
+      },
+      "fixed": {
+        "folds": 16,
+        "leave_one_workload_out_mean_cold_net_usd": {
+          "listing_mismatch": 0.0,
+          "mixed_feedback": 0.0,
+          "positive_experience": 0.0,
+          "product_quality": 0.0
+        },
+        "mean_cold_start_net_usd": 0.0,
+        "mean_profiling_cost_usd": 0.0,
+        "mean_validation_regret_usd": 0.00016998187500000012,
+        "median_cold_start_net_usd": 0.0
+      },
+      "independent_full": {
+        "folds": 16,
+        "leave_one_workload_out_mean_cold_net_usd": {
+          "listing_mismatch": -0.0038916254999999977,
+          "mixed_feedback": -0.0058522554999999995,
+          "positive_experience": -0.003784105499999998,
+          "product_quality": -0.0038364304999999967
+        },
+        "mean_cold_start_net_usd": -0.004341104249999998,
+        "mean_profiling_cost_usd": 0.0060063255,
+        "mean_validation_regret_usd": 3.4597500000000205e-06,
+        "median_cold_start_net_usd": -0.005757990000000001
+      },
+      "joint": {
+        "folds": 16,
+        "leave_one_workload_out_mean_cold_net_usd": {
+          "listing_mismatch": 0.0011117960000000015,
+          "mixed_feedback": -0.000984949,
+          "positive_experience": 0.0010997910000000017,
+          "product_quality": 0.0010969910000000018
+        },
+        "mean_cold_start_net_usd": 0.0005809072500000011,
+        "mean_profiling_cost_usd": 0.0009796815,
+        "mean_validation_regret_usd": 1.3923000000000009e-05,
+        "median_cold_start_net_usd": -0.0009735180000000003
+      },
+      "risk_aware": {
+        "folds": 16,
+        "leave_one_workload_out_mean_cold_net_usd": {
+          "listing_mismatch": -0.0038828054999999976,
+          "mixed_feedback": -0.0058681804999999995,
+          "positive_experience": -0.0037850854999999985,
+          "product_quality": -0.0038018854999999963
+        },
+        "mean_cold_start_net_usd": -0.004334489249999997,
+        "mean_profiling_cost_usd": 0.0060063255,
+        "mean_validation_regret_usd": 2.7982500000000134e-06,
+        "median_cold_start_net_usd": -0.005884704
+      }
+    }
+  },
+  "created_at": "2026-11-11T16:08:47.282928+00:00",
+  "frozen_config": {
+    "adopt_tuned_as_default": false,
+    "calibration_fingerprint": "052a80b660971e9bbc54b0c3c8f272f327c62ce76d857883e689aa6d667a7873",
+    "config_fingerprint": "c00fadea786bd2075739576501460f51f0997172caccb5e133a0d2f0db3447c7",
+    "created_at": "2026-11-11T15:50:07.816173+00:00",
+    "git_commit": "399824b90395ae3ce196517f97c25ca86d3340c9",
+    "held_out_live_reviews_used_for_selection": false,
+    "note": "Frozen before any retrospective use of the 800-review live outcomes. Do not edit after examining held-out results.",
+    "parameters": {
+      "adaptive.checkpoints": [
+        25,
+        50,
+        100
+      ],
+      "bootstrap.iterations": 2000,
+      "correlation.prior_strength": 1.0,
+      "joint.bootstrap_iterations": 2000,
+      "joint.uncertainty_contraction_exponent": 0.5,
+      "joint.voi_decision_rule": "point_estimate",
+      "joint.voi_scenarios": 32,
+      "risk.minimum_relative_saving": 0.01,
+      "risk.minimum_saving_probability": 0.95
+    },
+    "recommended_default": "existing_adaptive",
+    "schema_version": "m45-frozen-config-v1",
+    "selection_objective": "maximize mean profiling-validation cold-start net at R=10; tie-break by leave-one-workload-out floor then lower complexity"
+  },
+  "git_commit": "399824b90395ae3ce196517f97c25ca86d3340c9",
+  "git_worktree_dirty": true,
+  "label": "exploratory_milestone_4_5",
+  "live_jev_calls": 0,
+  "not_a_confirmatory_test": true,
+  "paid_api_calls": 0,
+  "retrospective_aggregates": {
+    "1": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.006756519000000037,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.006069063000000005,
+        "total_profiling_cost_usd": 0.003980214
+      }
+    },
+    "10": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.10338711600000036,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.09651255600000004,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.09694629000000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.09694629000000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "100": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 1.0626783300000036,
+        "total_profiling_cost_usd": 0.010994969999999998
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.9939327300000003,
+        "total_profiling_cost_usd": 0.010994969999999998
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 1.057144074000003,
+        "total_profiling_cost_usd": 0.011965926000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 1.0591452900000031,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "1000": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 10.708761084000034,
+        "total_profiling_cost_usd": 0.027971916
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.663128084000032,
+        "total_profiling_cost_usd": 0.027971916
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.679134074000032,
+        "total_profiling_cost_usd": 0.011965926000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 10.681135290000032,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "25": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.2644381110000009,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.2472517110000001,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.2573127900000008,
+        "total_profiling_cost_usd": 0.009964710000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.2573127900000008,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "250": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 2.664206958000009,
+        "total_profiling_cost_usd": 0.01997629199999999
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 2.492342958000001,
+        "total_profiling_cost_usd": 0.01997629199999999
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 2.6608090740000083,
+        "total_profiling_cost_usd": 0.011965926000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 2.6628102900000084,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    },
+    "5": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.049703451000000176,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.046266171000000016,
+        "total_profiling_cost_usd": 0.003980214
+      },
+      "joint": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.045275475000000016,
+        "total_profiling_cost_usd": 0.00497091
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 0.0,
+          "positive_experience": 15.00706390758747,
+          "product_quality": 15.00706390758747
+        },
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.045275475000000016,
+        "total_profiling_cost_usd": 0.00497091
+      }
+    },
+    "50": {
+      "existing_adaptive": {
+        "mean_execution_saving_percent": 12.705391604206355,
+        "median_execution_saving_percent": 2.9001873470315056,
+        "total_net_saving_usd": 0.5308802940000017,
+        "total_profiling_cost_usd": 0.005956356000000001
+      },
+      "existing_adaptive_risk": {
+        "mean_execution_saving_percent": 11.255297930690602,
+        "median_execution_saving_percent": 0.0,
+        "total_net_saving_usd": 0.4965074940000001,
+        "total_profiling_cost_usd": 0.005956356000000001
+      },
+      "joint": {
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.5225890740000017,
+        "total_profiling_cost_usd": 0.011965926000000009
+      },
+      "tuned_joint": {
+        "leave_one_workload_out_mean_execution_saving_percent": {
+          "listing_mismatch": 15.00706390758747,
+          "mixed_feedback": 1.814505236673,
+          "positive_experience": 16.82156914426047,
+          "product_quality": 16.82156914426047
+        },
+        "mean_execution_saving_percent": 12.616176858195352,
+        "median_execution_saving_percent": 2.7217578550095,
+        "total_net_saving_usd": 0.5245902900000017,
+        "total_profiling_cost_usd": 0.009964710000000009
+      }
+    }
+  },
+  "schema_version": "m45-calibration-v1",
+  "tuning_selection": {
+    "adopt_tuned_as_default": false,
+    "best_joint_candidate": {
+      "checkpoints": [
+        25,
+        50,
+        100
+      ],
+      "minimum_relative_saving": 0.01,
+      "minimum_saving_probability": 0.95,
+      "prior_strength": 1.0,
+      "uncertainty_contraction_exponent": 0.5,
+      "voi_decision_rule": "point_estimate"
+    },
+    "best_joint_score": {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "complexity_score": 3,
+      "joint_mean_cold_net_usd": 0.002180703000000001,
+      "joint_mean_profiling_cost_usd": 0.0009866744999999998,
+      "joint_mean_regret_usd": 2.1488249999999877e-05,
+      "leave_one_workload_out_joint_cold_net_usd": {
+        "listing_mismatch": 0.003192693000000002,
+        "mixed_feedback": -0.0009374470000000015,
+        "positive_experience": 0.003235183000000001,
+        "product_quality": 0.0032323830000000006
+      }
+    },
+    "experimental_strategy": "tuned_joint_adaptive_risk",
+    "fold_seed": 7073,
+    "folds": 2,
+    "grid_size": 18,
+    "held_out_live_reviews_used_for_selection": false,
+    "margin_vs_best_adaptive_usd": -2.3887499999999083e-05,
+    "recommended_default": "existing_adaptive",
+    "reference_adaptive_score": {
+      "adaptive_mean_cold_net_usd": 0.0022045905,
+      "adaptive_mean_profiling_cost_usd": 0.0009866744999999998,
+      "adaptive_mean_regret_usd": 1.909949999999994e-05,
+      "leave_one_workload_out_adaptive_cold_net_usd": {
+        "listing_mismatch": 0.003224543000000002,
+        "mixed_feedback": -0.0009055970000000023,
+        "positive_experience": 0.003286633,
+        "product_quality": 0.0032127830000000003
+      }
+    },
+    "selection_objective": "maximize mean profiling-validation cold-start net at R=10; tie-break by leave-one-workload-out floor then lower complexity"
+  }
+}

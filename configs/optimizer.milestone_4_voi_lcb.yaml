@@ -1,0 +1,82 @@
+split:
+  seed: 2027
+  profiling_size: 200
+  evaluation_size: 800
+
+profiling:
+  concurrency: 4
+  max_attempts: 1800
+
+execution:
+  max_attempts_per_run: 2640
+  cache_enabled: false
+
+planner:
+  objective: estimated_cost_usd
+  tie_relative_tolerance: 1.0e-9
+  cardinality_estimator: correlation_aware
+  cost_model_version: correlation-aware-and-v1
+  optimizer_version: exhaustive-order-v1
+  statistics_version: unconditional-profile-v1
+  selection_policy: risk_aware
+
+correlation:
+  joint_statistics_version: joint-profile-v1
+  prior_strength: 1.0
+  minimum_conditional_support: 20
+  conditional_usage: true
+  usage_prior_strength: 5.0
+  allow_incomplete_matrix: false
+
+economics:
+  expected_executions: null
+  unknown_reuse_default_executions: 1
+  profiling_budget_usd: null
+  minimum_net_savings_usd: 0.0
+  maximum_relative_uncertainty: null
+  minimum_savings_probability: null
+  statistics_reusable: true
+  optimization_overhead_usd: 0.0
+
+bootstrap:
+  iterations: 2000
+  seed: 3031
+  interval_level: 0.95
+  stability_threshold: 0.95
+  confidence_level: 0.95
+  minimum_relative_saving: 0.0
+
+risk:
+  cvar_level: 0.95
+  maximum_cvar_loss: null
+  maximum_expected_regret: null
+  minimum_expected_saving: 0.0
+  minimum_relative_saving: 0.01
+  minimum_saving_probability: 0.95
+  apply_profiling_economics: false
+  disagreement_policy: agree_original_is_worse
+
+adaptive:
+  checkpoints: [25, 50, 100, 150, 200]
+  seed: 4049
+  bootstrap_iterations: 1000
+  stability_threshold: 0.95
+  profiling_budget_usd: null
+  maximum_profiling_decisions: null
+
+# Experimental ablation only. Validation showed favorable results at 32 scenarios but
+# sensitivity at 8, 16, and 128 scenarios, so this is not the configured default policy.
+joint:
+  sparse_posterior_predictive: true
+  predictive_prior_strength: 1.0
+  bootstrap_iterations: 2000
+  seed: 5051
+  voi_scenarios: 32
+  minimum_voi_usd: 0.0
+  voi_decision_rule: lower_confidence_bound
+  voi_confidence_level: 0.95
+  uncertainty_contraction_exponent: 0.5
+
+mock_usage:
+  input_tokens_per_evaluation: null
+  output_tokens_per_evaluation: null

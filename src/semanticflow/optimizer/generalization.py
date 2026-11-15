@@ -8,6 +8,7 @@ import itertools
 import json
 import math
 import platform
+import subprocess
 import sys
 from collections import Counter
 from collections.abc import Mapping, Sequence
@@ -36,6 +37,14 @@ M46_FREEZE_SCHEMA_VERSION = "m46-strategy-freeze-v1"
 M46_PREFLIGHT_SCHEMA_VERSION = "m46-offline-preflight-v1"
 STAGE_B_AUTHORIZATION = "AUTHORIZE M4.6 STAGE B JEV PROFILING"
 STAGE_C_AUTHORIZATION = "AUTHORIZE M4.6 STAGE C HELD-OUT JEV EVALUATION"
+HISTORICAL_MILESTONES = (
+    "milestone_1_full_baseline",
+    "milestone_2",
+    "milestone_3",
+    "milestone_4",
+    "milestone_4_5",
+)
+_TEXT_HASH_SUFFIXES = {".csv", ".json", ".jsonl", ".md", ".txt", ".yaml", ".yml"}
 
 
 class PredicateDefinition(BaseModel):
@@ -111,12 +120,36 @@ def load_protocol(path: str | Path) -> dict[str, Any]:
     return payload
 
 
-def sha256_file(path: str | Path) -> str:
-    digest = hashlib.sha256()
-    with Path(path).open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+def sha256_file(path: str | Path, *, normalize_newlines: bool = False) -> str:
+    data = Path(path).read_bytes()
+    if normalize_newlines and Path(path).suffix.lower() in _TEXT_HASH_SUFFIXES:
+        data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(data).hexdigest()
+
+
+def _repository_root() -> Path:
+    return Path(
+        subprocess.check_output(
+            ["git", "rev-parse", "--show-toplevel"],
+            text=True,
+        ).strip()
+    )
+
+
+def _git_tracked_files(*paths: str | Path) -> list[Path]:
+    root = _repository_root()
+    listed = subprocess.check_output(
+        ["git", "ls-files", "-z", "--", *[str(Path(path)) for path in paths]],
+        cwd=root,
+    )
+    files = []
+    for raw in listed.split(b"\0"):
+        if not raw:
+            continue
+        path = root / raw.decode()
+        if path.is_file():
+            files.append(path)
+    return sorted(files, key=lambda item: item.relative_to(root).as_posix())
 
 
 def _source_fingerprint(paths: Sequence[str | Path], parameters: Mapping[str, Any]) -> str:
@@ -274,24 +307,25 @@ def workload_freeze_manifest(suite: WorkloadSuite) -> dict[str, Any]:
 
 
 def historical_artifact_manifest(root: str | Path = "results") -> dict[str, Any]:
+    """Fingerprint git-tracked historical artifacts only.
+
+    A working tree can contain gitignored local reruns. CI checkouts do not, so hashing
+    every file on disk made this check pass locally and fail in GitHub Actions. Text
+    files are hashed after newline normalization so Windows CRLF checkouts match Linux.
+    """
+    repo = _repository_root()
     base = Path(root)
+    if not base.is_absolute():
+        base = repo / base
     files = []
-    for milestone in (
-        "milestone_1_full_baseline",
-        "milestone_2",
-        "milestone_3",
-        "milestone_4",
-        "milestone_4_5",
-    ):
-        directory = base / milestone
-        for path in sorted(item for item in directory.rglob("*") if item.is_file()):
-            files.append(
-                {
-                    "path": path.as_posix(),
-                    "sha256": sha256_file(path),
-                    "bytes": path.stat().st_size,
-                }
-            )
+    for path in _git_tracked_files(*[base / milestone for milestone in HISTORICAL_MILESTONES]):
+        files.append(
+            {
+                "path": path.relative_to(repo).as_posix(),
+                "sha256": sha256_file(path, normalize_newlines=True),
+                "bytes": path.stat().st_size,
+            }
+        )
     return {
         "schema_version": "m46-historical-integrity-v1",
         "created_at": datetime.now(UTC).isoformat(),
@@ -299,6 +333,8 @@ def historical_artifact_manifest(root: str | Path = "results") -> dict[str, Any]
         "total_bytes": sum(item["bytes"] for item in files),
         "files": files,
         "aggregate_sha256": fingerprint_mapping({item["path"]: item["sha256"] for item in files}),
+        "git_tracked_only": True,
+        "newlines_normalized": True,
     }
 
 

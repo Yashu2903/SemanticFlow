@@ -181,7 +181,10 @@ def test_preflight_freezes_executable_and_dependencies() -> None:
 def test_historical_results_are_unchanged_and_m45_reproduces() -> None:
     stored = json.loads((PREFLIGHT / "historical_integrity.json").read_text(encoding="utf-8"))
     current = historical_artifact_manifest()
+    assert stored["git_tracked_only"] is True
     assert stored["aggregate_sha256"] == current["aggregate_sha256"]
+    assert current["file_count"] == stored["file_count"]
+    assert all(not Path(item["path"]).is_absolute() for item in current["files"])
     reproduction = canonical_m45_reproduction()
     assert reproduction["verified"] is True
     assert reproduction["reran_paid_inference"] is False

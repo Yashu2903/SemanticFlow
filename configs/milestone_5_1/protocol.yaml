@@ -1,0 +1,31 @@
+schema_version: m5.1-experimental-protocol-v1
+stage: A_offline_remediation
+model: jev-1.14.0
+cache: disabled
+concurrency: 4
+max_retries: 2
+operation: and
+threshold: 0.5
+production_default: existing_adaptive
+strategies: [fixed_separate, existing_adaptive, full_conjunctive_fusion, full_multi_decision_batch, fixed_hybrid, cost_only_hybrid, quality_constrained_hybrid, profiling_aware_hybrid]
+quality_gate:
+  minimum_records: 40
+  minimum_reference_positives: 3
+  minimum_agreement: 0.98
+  minimum_recall: 0.95
+  maximum_false_negative_rate: 0.05
+  maximum_changed_decision_rate: 0.02
+  require_real_fused_measurement: true
+  require_complete_plan_measurement: true
+quality_evidence_rule: Unknown, incomplete, enriched-only, or mock evidence cannot pass.
+reuse_horizons: [1, 5, 10, 25, 50, 100, 250, 1000]
+partitions:
+  development: prompt and infrastructure development; never final evidence
+  pilot: representative Stage B measurement and plan-selection input
+  selection: later Stage C plan selection only
+  evaluation: Stage D held-out only; inaccessible before plan freeze and separate authorization
+authorization:
+  stage_b_phrase: AUTHORIZE M5.1 STAGE B SMALL LIVE BATCHING PILOT
+  stage_d_phrase: AUTHORIZE M5.1 STAGE D INDEPENDENT HELD-OUT EVALUATION
+  stage_e_phrase: AUTHORIZE M5.1 STAGE E OPTIONAL REPLICATION
+  paid_stage_in_this_task: none

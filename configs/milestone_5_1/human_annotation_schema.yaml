@@ -1,0 +1,9 @@
+schema_version: m5.1-human-annotation-v1
+guideline_version: m5.1-annotation-guidelines-v1
+allowed_labels: [true, false, uncertain]
+required_fields: [dataset_id, record_id, predicate_id, annotator_id, label, annotation_timestamp]
+optional_fields: [rationale, adjudication_status]
+adjudication_statuses: [not_required, pending, resolved]
+query_conjunction_rule: true only if every underlying predicate label is true; uncertain if any required label is uncertain
+minimum_annotators_when_feasible: 2
+reference_warning: Separate Jev outputs may guide candidate enrichment but are not human ground truth.

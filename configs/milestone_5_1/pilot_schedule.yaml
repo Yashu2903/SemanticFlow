@@ -1,0 +1,37 @@
+schema_version: m5.1-batching-pilot-schedule-v1
+representative_partition: pilot
+representative_records_per_dataset: 30
+enriched_partition: development
+enriched_records_per_dataset: 10
+enrichment_method: deterministic lexical candidate ranking using preregistered predicate keywords; not ground truth and excluded from population-rate estimates
+datasets:
+  amazon_all_beauty:
+    ordered_core: [beauty_adverse_reaction, beauty_malfunction, beauty_poor_value, beauty_return_or_refund]
+    batch_groups:
+      - [beauty_malfunction, beauty_return_or_refund]
+      - [beauty_malfunction, beauty_poor_value, beauty_return_or_refund]
+      - [beauty_adverse_reaction, beauty_malfunction, beauty_poor_value, beauty_return_or_refund]
+    enriched_group: [beauty_malfunction, beauty_return_or_refund]
+  banking77_queries:
+    ordered_core: [banking_cash_withdrawal, banking_unauthorized_activity, banking_refund_or_reversal, banking_access_or_verification]
+    batch_groups:
+      - [banking_unauthorized_activity, banking_refund_or_reversal]
+      - [banking_unauthorized_activity, banking_refund_or_reversal, banking_access_or_verification]
+      - [banking_cash_withdrawal, banking_unauthorized_activity, banking_refund_or_reversal, banking_access_or_verification]
+    enriched_group: [banking_unauthorized_activity, banking_refund_or_reversal]
+  sms_spam:
+    ordered_core: [sms_account_security, sms_prize_or_reward, sms_urgency_pressure, sms_contact_action]
+    batch_groups:
+      - [sms_prize_or_reward, sms_contact_action]
+      - [sms_prize_or_reward, sms_urgency_pressure, sms_contact_action]
+      - [sms_account_security, sms_prize_or_reward, sms_urgency_pressure, sms_contact_action]
+    enriched_group: [sms_prize_or_reward, sms_contact_action]
+measurements:
+  representative_separate_reference: true
+  representative_batches: [2, 3, 4]
+  representative_full_conjunctive_binary: true
+  enriched_separate_and_batch: true
+logical_request_ceiling: 810
+retry_inclusive_http_attempt_ceiling: 2430
+output_directory: results/milestone_5_1/live_batching_pilot_stage_b
+authorization_phrase: AUTHORIZE M5.1 STAGE B SMALL LIVE BATCHING PILOT

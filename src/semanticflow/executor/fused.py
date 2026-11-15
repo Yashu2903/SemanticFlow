@@ -93,6 +93,18 @@ class FusedExecutionResult:
         return sum(group.provider_attempts for group in self.groups)
 
     @property
+    def named_question_evaluations(self) -> int:
+        return sum(
+            group.completed_group_decisions
+            * (len(group.predicate_ids) if group.fusion_mode == "multi_decision" else 1)
+            for group in self.groups
+        )
+
+    @property
+    def completed_physical_groups(self) -> int:
+        return sum(group.completed_group_decisions for group in self.groups)
+
+    @property
     def input_tokens(self) -> int:
         return sum(group.input_tokens for group in self.groups)
 

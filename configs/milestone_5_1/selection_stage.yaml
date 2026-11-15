@@ -1,0 +1,43 @@
+schema_version: m5.1-selection-stage-design-v1
+partition: selection
+records_per_dataset: 100
+requested_model: jev-1.14.0
+cache: disabled
+concurrency: 4
+max_retries: 2
+logical_measurement_roles:
+  individual_references: 1800
+  full_batches: 900
+  selected_remainder_batches: 600
+  total: 3300
+deduplication:
+  unique_physical_requests: 3000
+  shared_alias_roles: 300
+  rule: exact dataset, record, prompt, mode, model, threshold, schema, and settings match
+attempt_limits:
+  original_proposal_outer_ceiling: 9900
+  deduplicated_schedule_ceiling: 9000
+remainder_selection_version: m5.1-stage-b-only-remainder-selection-v1
+remainder_groups:
+  m51_beauty_reaction_packaging_refund:
+    first: beauty_adverse_reaction
+    remainder: [beauty_packaging_failure, beauty_return_or_refund]
+  m51_beauty_reaction_failure_value_return:
+    first: beauty_adverse_reaction
+    remainder: [beauty_malfunction, beauty_poor_value, beauty_return_or_refund]
+  m51_banking_card_unauthorized_refund:
+    first: banking_card_related
+    remainder: [banking_unauthorized_activity, banking_refund_or_reversal]
+  m51_banking_withdrawal_unauthorized_refund_access:
+    first: banking_access_or_verification
+    remainder: [banking_unauthorized_activity, banking_refund_or_reversal, banking_cash_withdrawal]
+  m51_sms_prize_urgency_contact:
+    first: sms_urgency_pressure
+    remainder: [sms_prize_or_reward, sms_contact_action]
+  m51_sms_security_prize_urgency_contact:
+    first: sms_account_security
+    remainder: [sms_prize_or_reward, sms_urgency_pressure, sms_contact_action]
+authorization_phrase: AUTHORIZE M5.1 SELECTION STAGE FROZEN MEASUREMENT MATRIX
+paid_calls_authorized: false
+output_directory: results/milestone_5_1/selection_stage_live
+

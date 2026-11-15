@@ -1,0 +1,32 @@
+schema_version: m5.1-dataset-config-v1
+raw_directory: data/raw/milestone_5
+output_directory: data/milestone_5_1
+partition_sizes:
+  development: 50
+  pilot: 40
+  selection: 100
+  evaluation: 400
+historical_text_datasets:
+  - data/processed/reviews_1000.parquet
+  - data/milestone_4_6/amazon_all_beauty.parquet
+  - data/milestone_4_6/banking77_queries.parquet
+  - data/milestone_5/amazon_all_beauty.parquet
+  - data/milestone_5/banking77_queries.parquet
+  - data/milestone_5/sms_spam.parquet
+datasets:
+  amazon_all_beauty:
+    sampling_seed: 51101
+    raw_url: https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/All_Beauty.jsonl.gz
+    source_page: https://amazon-reviews-2023.github.io/
+    usage_rights: Public research dataset; cite Hou et al. 2024 and McAuley Lab.
+  banking77_queries:
+    sampling_seed: 51102
+    train_url: https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data/train.csv
+    test_url: https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data/test.csv
+    source_page: https://github.com/PolyAI-LDN/task-specific-datasets/tree/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data
+    usage_rights: CC BY 4.0; cite Casanueva et al. 2020 and PolyAI.
+  sms_spam:
+    sampling_seed: 51103
+    raw_url: https://raw.githubusercontent.com/veermshah/cs6350-sms-spam-dataset/main/SMSSpamCollection
+    source_page: https://archive.ics.uci.edu/dataset/228/sms+spam+collection
+    usage_rights: CC BY 4.0; unmodified UCI mirror, cite Almeida and Hidalgo 2011 and UCI.

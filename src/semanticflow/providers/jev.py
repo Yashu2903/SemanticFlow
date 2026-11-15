@@ -236,6 +236,12 @@ class JevProvider(InferenceProvider):
                         answers = data["answers"]
                         if not isinstance(answers, dict):
                             raise TypeError("answers must be an object")
+                        if set(answers) != set(questions):
+                            missing = sorted(set(questions) - set(answers))
+                            extra = sorted(set(answers) - set(questions))
+                            raise KeyError(
+                                f"answer names differ; missing={missing}, extra={extra}"
+                            )
                         probabilities: dict[str, float] = {}
                         for question_name in questions:
                             answer = answers[question_name]

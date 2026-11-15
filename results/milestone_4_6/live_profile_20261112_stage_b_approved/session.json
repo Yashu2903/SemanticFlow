@@ -1,0 +1,7 @@
+{
+  "actual_http_attempts": 2400,
+  "authorization_phrase": "AUTHORIZE M4.6 STAGE B JEV PROFILING",
+  "authorized_http_attempts": 7200,
+  "schema_version": "m46-stage-b-session-v1",
+  "status": "complete"
+}

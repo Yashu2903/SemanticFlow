@@ -57,5 +57,14 @@ provider, tracing, and reporting layers remain the measurement substrate.
   default when the profiling-validation margin is insufficient
   ([Milestone 4.5 architecture](milestone_4_5_architecture.md),
   [calibration report](milestone_4_5_calibration_report.md)).
+- Milestone 4.6 adds independent public-data preparation, preregistered workload and strategy
+  freezes, shared full-matrix profiling, separately authorized live stages, ABBA scheduling,
+  generalization analysis, and fail-closed paid-provider guards. It reuses the frozen optimizer
+  and executor rather than adding an algorithm. Stage C hardening adds provider-free
+  early-rejection forecasting, compatible-decision cost ledgers, sparse-prefix diagnostics,
+  schedule-strength classification, and exact-scope launch validation before provider import
+  ([protocol](milestone_4_6_generalization_protocol.md),
+  [research report](milestone_4_6_research_report.md),
+  [Stage C preflight report](milestone_4_6_stage_c_preflight_report.md)).
 
 None of these layers changes executor semantics, and the offline analyses never call a provider.

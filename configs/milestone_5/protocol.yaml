@@ -1,0 +1,47 @@
+schema_version: m5-preregistered-protocol-v1
+study_id: semanticflow-m5-joint-ordering-fusion
+stage: offline_implementation
+dataset_config: configs/milestone_5/datasets.yaml
+workload_config: configs/milestone_5/workloads.yaml
+fusion_config: configs/milestone_5/fusion.yaml
+strategies:
+  - fixed_separate
+  - existing_adaptive_separate
+  - full_fusion
+  - naive_adjacent_partial_fusion
+  - cost_only_joint
+  - quality_constrained_joint
+  - profiling_aware_joint
+reuse_horizons: [1, 5, 10, 25, 50, 100, 250, 1000]
+pilot:
+  partition: pilot
+  records_per_dataset: 40
+  separate_reference_predicates_per_dataset: 6
+  conjunctive_groups_per_dataset: 4
+  multi_decision_smoke_groups_per_dataset: 1
+  multi_decision_smoke_records_per_group: 10
+  logical_requests: 1230
+  maximum_http_attempts: 3690
+  authorization_phrase: AUTHORIZE M5 STAGE B SMALL LIVE FUSION PILOT
+analysis:
+  primary_baseline: existing_adaptive_separate
+  workload_unit: workload
+  record_unit: record_within_workload
+  quality_reference: separate_predicate_conjunction
+  human_labels_available: false
+  interval_levels: [0.5, 0.8, 0.9, 0.95]
+  bootstrap_iterations: 2000
+  bootstrap_seed: 5201
+authorization:
+  stage_a_offline: authorized
+  stage_b_pilot: requires_separate_exact_phrase
+  stage_c_plan_freeze: offline_after_stage_b
+  stage_d_held_out: requires_separate_exact_phrase
+  stage_e_replication: requires_separate_exact_phrase
+  paid_calls_authorized_by_this_file: false
+interpretation:
+  mock_outputs: infrastructure_only
+  separate_reference: reproducible_llm_reference_not_human_truth
+  unmeasured_fusion: cannot_pass_quality_gate
+  globally_optimal: claim_only_among_measured_valid_alternatives
+  exposed_m46_evaluation: engineering_compatibility_only_not_independent_m5_evidence

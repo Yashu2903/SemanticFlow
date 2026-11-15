@@ -1,0 +1,34 @@
+schema_version: m5-fusion-config-v1
+planner_version: m5-ordered-set-partition-v1
+prompt_template_version: m5-conjunction-v1
+fusion_mode: conjunctive_binary
+maximum_group_size: 4
+fallback_strategy: existing_adaptive
+objective: minimum_cost_subject_to_quality
+reuse_horizon: 10
+quality_gate:
+  minimum_records: 40
+  minimum_reference_positives: 3
+  minimum_agreement: 0.98
+  minimum_recall: 0.95
+  maximum_false_negative_rate: 0.05
+  maximum_changed_decision_rate: 0.02
+  require_real_fused_measurement: true
+  require_complete_plan_measurement: true
+profiling_budget:
+  maximum_unique_groups: 12
+  maximum_records_per_group: 40
+  maximum_logical_requests: 480
+  maximum_http_attempts: 1440
+  maximum_estimated_expenditure_usd: 0.05
+  max_retries: 2
+provider:
+  name: jev
+  model: jev-1.14.0
+  api_url: https://api.typesafe.ai/v1/systemone
+  concurrency: 4
+  timeout_seconds: 30
+  max_retries: 2
+  cache_enabled: false
+  input_price_per_million_usd: 0.042
+  output_price_per_million_usd: 0.0

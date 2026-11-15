@@ -1,0 +1,60 @@
+{
+  "adaptive_checkpoints": [
+    25,
+    50,
+    100,
+    150,
+    200
+  ],
+  "candidate_order_counts": {
+    "banking_card_access": 2,
+    "banking_transfer_unauthorized_refund_access": 24,
+    "banking_unauthorized_card_refund": 6,
+    "banking_unauthorized_withdrawal_refund": 6,
+    "banking_withdrawal_access": 2,
+    "beauty_failure_usability_return": 6,
+    "beauty_packaging_value": 2,
+    "beauty_reaction_failure_value_return": 24,
+    "beauty_reaction_refund_packaging": 6,
+    "beauty_usability_packaging_return": 6
+  },
+  "category_counts": {
+    "different_inference_costs": 2,
+    "four_predicate": 2,
+    "near_tied_orders": 4,
+    "rare_event": 4,
+    "strong_correlation": 4,
+    "unfavorable_reordering": 3,
+    "weak_correlation": 3
+  },
+  "dataset_checks": {
+    "amazon_all_beauty": {
+      "dataset_fingerprint_sha256": "dcb6df57fb239160a111c9d34b2f0e02b9c252eadc071e1dc1b259f721b189a1",
+      "dataset_id": "amazon_all_beauty",
+      "evaluation_rows": 800,
+      "near_duplicate_cross_partition_pairs": 0,
+      "output_sha256": "758b3ebabf0c6d3d3e033e7b6c6e197cad51aff4d5a898ab75272b1b7cf7b2ce",
+      "profiling_rows": 200,
+      "rows": 1000,
+      "valid": true
+    },
+    "banking77_queries": {
+      "dataset_fingerprint_sha256": "2afaeb6717ba4fe205d9c6ac90c52e3349596af58e3874f382c2b4c8a56a849f",
+      "dataset_id": "banking77_queries",
+      "evaluation_rows": 800,
+      "near_duplicate_cross_partition_pairs": 0,
+      "output_sha256": "35f7ea9a2bcf2d371bb095dbd62b551be39634097535f23ec392a5522d71e655",
+      "profiling_rows": 200,
+      "rows": 1000,
+      "valid": true
+    }
+  },
+  "dataset_count": 2,
+  "historical_optimizer_behavior_available": true,
+  "live_jev_calls": 0,
+  "network_requests_made": 0,
+  "provider_initialized": false,
+  "risk_policy_unchanged": true,
+  "schema_version": "m46-offline-preflight-v1",
+  "workload_count": 10
+}

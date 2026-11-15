@@ -1,0 +1,43 @@
+{
+  "basis": "one shared full predicate matrix per dataset; token counts are preregistered character-based proxies, not Jev measurements",
+  "datasets": [
+    {
+      "dataset_id": "amazon_all_beauty",
+      "estimated_cost_usd": 0.0057912120000000004,
+      "estimated_input_tokens": 137886,
+      "estimated_output_tokens": 1200,
+      "logical_decisions": 1200,
+      "maximum_http_attempts": 3600,
+      "profiling_records": 200,
+      "retry_inclusive_cost_proxy_usd": 0.017373636,
+      "unique_predicates": 6
+    },
+    {
+      "dataset_id": "banking77_queries",
+      "estimated_cost_usd": 0.004346496,
+      "estimated_input_tokens": 103488,
+      "estimated_output_tokens": 1200,
+      "logical_decisions": 1200,
+      "maximum_http_attempts": 3600,
+      "profiling_records": 200,
+      "retry_inclusive_cost_proxy_usd": 0.013039488000000002,
+      "unique_predicates": 6
+    }
+  ],
+  "estimated_cost_usd": 0.010137708,
+  "estimated_input_tokens": 241374,
+  "estimated_output_tokens": 2400,
+  "logical_decisions": 2400,
+  "max_retries": 2,
+  "maximum_http_attempts": 7200,
+  "model": "jev-1.14.0",
+  "paid_calls_executed": 0,
+  "pricing": {
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost",
+    "verified_date": "2026-11-12"
+  },
+  "retry_inclusive_cost_proxy_usd": 0.030413124000000003,
+  "schema_version": "m46-stage-b-budget-v1"
+}

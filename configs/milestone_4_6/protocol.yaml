@@ -1,0 +1,93 @@
+schema_version: m46-preregistered-protocol-v1
+study_id: semanticflow-m46-independent-generalization
+frozen_at_stage: offline_preparation
+workload_config: configs/milestone_4_6/workloads.yaml
+datasets:
+  amazon_all_beauty:
+    profiling_size: 200
+    evaluation_size: 800
+    sampling_seed: 4601
+    raw_url: https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/All_Beauty.jsonl.gz
+    source_page: https://amazon-reviews-2023.github.io/
+    usage_rights: Public research dataset; cite Hou et al. 2024 and McAuley Lab. No private fields are exported.
+  banking77_queries:
+    profiling_size: 200
+    evaluation_size: 800
+    sampling_seed: 4602
+    train_url: https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data/train.csv
+    test_url: https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data/test.csv
+    source_page: https://github.com/PolyAI-LDN/task-specific-datasets/tree/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data
+    usage_rights: CC BY 4.0; cite Casanueva et al. 2020 and PolyAI.
+provider:
+  name: jev
+  model: jev-1.14.0
+  api_url: https://api.typesafe.ai/v1/systemone
+  concurrency: 4
+  timeout_seconds: 30
+  max_retries: 2
+  cache_enabled: false
+  pricing:
+    source: https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost
+    verified_date: '2026-11-12'
+    input_per_million_usd: 0.042
+    output_per_million_usd: 0.0
+strategies:
+  - fixed
+  - independent
+  - correlation_aware
+  - existing_adaptive
+  - confidence_aware
+  - risk_aware
+  - joint_adaptive_risk
+  - milestone_4_5_frozen
+strategy_sources:
+  milestone_4: configs/optimizer.milestone_4.yaml
+  milestone_4_5_frozen: configs/optimizer.milestone_4_5_frozen.yaml
+  expected_m45_parameter_fingerprint: c00fadea786bd2075739576501460f51f0997172caccb5e133a0d2f0db3447c7
+analysis:
+  primary_hypothesis: Adaptive profiling improves cold-start net cost versus fixed order at sufficiently large reuse horizons.
+  plan_selection_reuse_horizon: 10
+  reuse_horizons: [1, 5, 10, 25, 50, 100, 250, 1000]
+  interval_levels: [0.5, 0.8, 0.9, 0.95]
+  bootstrap_iterations: 2000
+  bootstrap_seed: 4611
+  workload_resampling_unit: workload
+  record_resampling_unit: record within workload
+  primary_estimand: cost-weighted aggregate cold-start net saving at each preregistered reuse horizon
+  secondary_estimands:
+    - workload-level fixed-minus-selected execution cost
+    - stage-cardinality MAE and signed bias
+    - pairwise plan-ranking concordance over executed orders
+    - observed selection regret relative to executed orders only
+    - interval coverage at 50, 80, 90, and 95 percent
+    - harmful reorderings accepted and beneficial reorderings rejected
+  paired_tests:
+    - paired workload bootstrap interval for execution-cost differences
+    - exact sign test over non-tied workload wins and losses
+    - cluster bootstrap by dataset then workload for aggregate sensitivity
+  success_criteria:
+    - positive cost-weighted cold-start net at one or more preregistered horizons without a negative median workload net
+    - no single workload accounts for more than 75 percent of aggregate positive saving
+    - results remain directionally stable in leave-one-workload-out analysis
+    - harmful reorderings and maximum downside are reported, not averaged away
+authorization:
+  stage_a_offline: authorized
+  stage_b_live_profiling: requires_separate_explicit_authorization
+  stage_c_held_out: requires_new_authorization_after_plans_are_frozen
+  stage_d_replication: requires_new_authorization
+  paid_calls_authorized_by_this_file: false
+incomplete_experiments:
+  stop_on_provider_error: true
+  stop_on_attempt_cap: true
+  exclude_partial_match_sets_from_performance_claims: true
+  preserve_partial_diagnostics: true
+  never_substitute_estimated_cost_for_missing_live_cost: true
+stopping_conditions:
+  profiling: Stop at the first incomplete dataset profile; do not select plans from an incomplete matrix.
+  held_out: Stop the workload session on an incomplete run or when its frozen session attempt ceiling is reached.
+  budget: Never exceed the authorized logical-decision or retry-inclusive HTTP-attempt ceiling.
+interpretation:
+  global_optimum: Claim only the cheapest among actually executed orders unless all permutations were measured.
+  semantic_quality: Match-set agreement is not an accuracy or recall guarantee without human labels.
+  mock_results: Infrastructure verification only; never semantic-inference evidence.
+  retuning: No optimizer or threshold changes are permitted after profiling or held-out outcomes are observed.

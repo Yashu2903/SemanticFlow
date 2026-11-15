@@ -1,0 +1,334 @@
+{
+  "created_at": "2026-11-12T14:37:05.984826+00:00",
+  "datasets": {
+    "amazon_all_beauty": {
+      "dataset_fingerprint_sha256": "dcb6df57fb239160a111c9d34b2f0e02b9c252eadc071e1dc1b259f721b189a1",
+      "evaluation_fingerprint_sha256": "1fedcad65af5cabbdf430a5884d362cc07282a400d3dfdc622a02eb4cf9aa30b",
+      "path": "data/milestone_4_6/amazon_all_beauty.parquet",
+      "predicates": {
+        "beauty_adverse_reaction": {
+          "instructions": "Does the reviewer report an adverse physical reaction such as irritation, rash, burning, pain, swelling, allergy, or other harm caused by the product?",
+          "prompt_sha256": "2939dba07005c211e8bace0ca594f4f93c1027b5ecdfccab6b4f0940ce8ea2be"
+        },
+        "beauty_hard_to_use": {
+          "instructions": "Does the reviewer describe substantial difficulty applying, operating, assembling, or understanding how to use the product, rather than a minor preference?",
+          "prompt_sha256": "40ab833d345895c8700a8360b8aedfc1cdea3225fc734119054d5d89e0a9523f"
+        },
+        "beauty_malfunction": {
+          "instructions": "Does the reviewer report that the product failed, broke, leaked, stopped working, or did not perform its intended function? Judge only what the review states.",
+          "prompt_sha256": "68b6d9e9e25965c350a1ec7b4b8f447820409dff6962266678a05b65730e1a0f"
+        },
+        "beauty_packaging_failure": {
+          "instructions": "Does the reviewer report damaged, leaking, broken, unsealed, contaminated, empty, or otherwise defective product packaging on arrival or during normal use?",
+          "prompt_sha256": "2120d6b6d82629653a3f7f391cf6251300bc5a747c626aecd993f1534689d9fc"
+        },
+        "beauty_poor_value": {
+          "instructions": "Does the reviewer explicitly characterize the product as overpriced, poor value, too little product for the price, or a waste of money?",
+          "prompt_sha256": "9ce64919ba22ed2c978ff3b3a3e3605df280901632a3dccfd2290b3edd87fe6b"
+        },
+        "beauty_return_or_refund": {
+          "instructions": "Does the reviewer say they returned the product, requested or received a refund or replacement, or clearly intend to return it because of the reported problem?",
+          "prompt_sha256": "c914f15a757873da61a18376ed5b5cf6683effdf85e304514e8db61ba2b5206b"
+        }
+      },
+      "profiling_fingerprint_sha256": "9fd0a2d9b4a25d070bf9d25db8bfdee2d2cef6176be74e4a8f83ae7a62078a49"
+    },
+    "banking77_queries": {
+      "dataset_fingerprint_sha256": "2afaeb6717ba4fe205d9c6ac90c52e3349596af58e3874f382c2b4c8a56a849f",
+      "evaluation_fingerprint_sha256": "4060c8fa094fa952dec1916ec515da8ffae1ed75b4936a853690d5f59f81d19b",
+      "path": "data/milestone_4_6/banking77_queries.parquet",
+      "predicates": {
+        "banking_access_or_verification": {
+          "instructions": "Is the customer's issue about accessing or securing the account, identity verification, a passcode, password, PIN, compromised credentials, or account lockout?",
+          "prompt_sha256": "b58d8d7a017040da1f7fe2c53c2828a4b4c0f76083f352791de3cbb3865de141"
+        },
+        "banking_card_related": {
+          "instructions": "Is the customer's issue specifically about a physical or virtual payment card, including delivery, activation, PIN, contactless use, card payment, loss, or theft?",
+          "prompt_sha256": "a08f581bbf96bb793e2f6e2b066d26abdd2f4d946f1e78970bc999b35db4757b"
+        },
+        "banking_cash_withdrawal": {
+          "instructions": "Is the customer's issue about withdrawing cash or an ATM event, including fees, an unrecognized withdrawal, cash not received, or a card retained by an ATM?",
+          "prompt_sha256": "6af749df0b2617522faff2e2f9055d8a0c1929b2506401a08f4f5d27e637bdf6"
+        },
+        "banking_refund_or_reversal": {
+          "instructions": "Is the customer asking about a refund, chargeback, cancellation, reversal, returned money, or why money from a reversed or refunded transaction has not arrived?",
+          "prompt_sha256": "d7497a77485b420cd945b84785b31d50ad6a4a704f9119f58d1a134e637617bb"
+        },
+        "banking_transfer_related": {
+          "instructions": "Is the customer asking about or reporting a bank transfer, international transfer, beneficiary transfer, recipient transfer, or cancellation or status of a transfer?",
+          "prompt_sha256": "5475131461877f428ceb1fb903e710bcc0fc1acf9758f2d612eb6f4b11229c20"
+        },
+        "banking_unauthorized_activity": {
+          "instructions": "Does the customer report or ask about a transaction, withdrawal, payment, transfer, account action, or card use that they did not authorize or do not recognize?",
+          "prompt_sha256": "2dbd9f2147ad3c0cee60d5f4bc3cfe2c85c7c166c82c9daab768e854c5a6ad4b"
+        }
+      },
+      "profiling_fingerprint_sha256": "54996e8cb2f96bdb364a7029c3e3080cd360e51ee4e156cffcac8937d0554e73"
+    }
+  },
+  "held_out_outcomes_observed": false,
+  "operation": "and",
+  "schema_version": "m46-workload-suite-v1",
+  "threshold": 0.5,
+  "workloads": [
+    {
+      "categories": [
+        "strong_correlation",
+        "unfavorable_reordering"
+      ],
+      "dataset": "amazon_all_beauty",
+      "hypothesis": "Malfunction and hard-to-use outcomes may be positively associated; return language should be conditionally enriched.",
+      "id": "beauty_failure_usability_return",
+      "original_order": [
+        "beauty_malfunction",
+        "beauty_hard_to_use",
+        "beauty_return_or_refund"
+      ],
+      "predicate_ids": [
+        "beauty_malfunction",
+        "beauty_hard_to_use",
+        "beauty_return_or_refund"
+      ],
+      "prompt_hashes": {
+        "beauty_hard_to_use": "40ab833d345895c8700a8360b8aedfc1cdea3225fc734119054d5d89e0a9523f",
+        "beauty_malfunction": "68b6d9e9e25965c350a1ec7b4b8f447820409dff6962266678a05b65730e1a0f",
+        "beauty_return_or_refund": "c914f15a757873da61a18376ed5b5cf6683effdf85e304514e8db61ba2b5206b"
+      },
+      "rationale": "Tests a natural failure-to-usability-to-remedy chain while retaining a plausible low-cost original.",
+      "workload_fingerprint_sha256": "1a37378344f998f8d71eb5625313a17fd693f34657f42f1feb4fbf70d5ce48b1"
+    },
+    {
+      "categories": [
+        "weak_correlation",
+        "near_tied_orders"
+      ],
+      "dataset": "amazon_all_beauty",
+      "hypothesis": "Packaging failure and poor-value language may be only weakly associated and have similar marginal filtering value.",
+      "id": "beauty_packaging_value",
+      "original_order": [
+        "beauty_packaging_failure",
+        "beauty_poor_value"
+      ],
+      "predicate_ids": [
+        "beauty_packaging_failure",
+        "beauty_poor_value"
+      ],
+      "prompt_hashes": {
+        "beauty_packaging_failure": "2120d6b6d82629653a3f7f391cf6251300bc5a747c626aecd993f1534689d9fc",
+        "beauty_poor_value": "9ce64919ba22ed2c978ff3b3a3e3605df280901632a3dccfd2290b3edd87fe6b"
+      },
+      "rationale": "Contrasts a concrete packaging event with a broader value judgment in a two-predicate conjunction.",
+      "workload_fingerprint_sha256": "8120b9cb9f8757ad7b3902fc8c9f6a04d1445facaf21d69bd952cd7f45360259"
+    },
+    {
+      "categories": [
+        "rare_event",
+        "unfavorable_reordering"
+      ],
+      "dataset": "amazon_all_beauty",
+      "hypothesis": "Adverse reactions should be rare; refund language may be enriched after a reaction while packaging may be largely unrelated.",
+      "id": "beauty_reaction_refund_packaging",
+      "original_order": [
+        "beauty_adverse_reaction",
+        "beauty_return_or_refund",
+        "beauty_packaging_failure"
+      ],
+      "predicate_ids": [
+        "beauty_adverse_reaction",
+        "beauty_return_or_refund",
+        "beauty_packaging_failure"
+      ],
+      "prompt_hashes": {
+        "beauty_adverse_reaction": "2939dba07005c211e8bace0ca594f4f93c1027b5ecdfccab6b4f0940ce8ea2be",
+        "beauty_packaging_failure": "2120d6b6d82629653a3f7f391cf6251300bc5a747c626aecd993f1534689d9fc",
+        "beauty_return_or_refund": "c914f15a757873da61a18376ed5b5cf6683effdf85e304514e8db61ba2b5206b"
+      },
+      "rationale": "Tests a sparse safety-related conjunction where the original rare predicate may already be a strong first filter.",
+      "workload_fingerprint_sha256": "6432b7f63db9bd46009789d0ed7b41cdca568ec843ca12f6e72c6b6dadda096d"
+    },
+    {
+      "categories": [
+        "near_tied_orders",
+        "weak_correlation"
+      ],
+      "dataset": "amazon_all_beauty",
+      "hypothesis": "Usability and packaging problems may be weakly related, with return intent conditionally enriched after either.",
+      "id": "beauty_usability_packaging_return",
+      "original_order": [
+        "beauty_hard_to_use",
+        "beauty_packaging_failure",
+        "beauty_return_or_refund"
+      ],
+      "predicate_ids": [
+        "beauty_hard_to_use",
+        "beauty_packaging_failure",
+        "beauty_return_or_refund"
+      ],
+      "prompt_hashes": {
+        "beauty_hard_to_use": "40ab833d345895c8700a8360b8aedfc1cdea3225fc734119054d5d89e0a9523f",
+        "beauty_packaging_failure": "2120d6b6d82629653a3f7f391cf6251300bc5a747c626aecd993f1534689d9fc",
+        "beauty_return_or_refund": "c914f15a757873da61a18376ed5b5cf6683effdf85e304514e8db61ba2b5206b"
+      },
+      "rationale": "Tests plan uncertainty among concrete complaint predicates with potentially similar selectivity.",
+      "workload_fingerprint_sha256": "e9a3f86b114494c763d441386ec3173b1d0751451d815a7fce8ef914a0f530cd"
+    },
+    {
+      "categories": [
+        "different_inference_costs",
+        "rare_event",
+        "four_predicate"
+      ],
+      "dataset": "amazon_all_beauty",
+      "hypothesis": "Reaction is rare, malfunction and poor value may correlate, and prompt lengths will produce genuine usage-cost differences.",
+      "id": "beauty_reaction_failure_value_return",
+      "original_order": [
+        "beauty_adverse_reaction",
+        "beauty_malfunction",
+        "beauty_poor_value",
+        "beauty_return_or_refund"
+      ],
+      "predicate_ids": [
+        "beauty_adverse_reaction",
+        "beauty_malfunction",
+        "beauty_poor_value",
+        "beauty_return_or_refund"
+      ],
+      "prompt_hashes": {
+        "beauty_adverse_reaction": "2939dba07005c211e8bace0ca594f4f93c1027b5ecdfccab6b4f0940ce8ea2be",
+        "beauty_malfunction": "68b6d9e9e25965c350a1ec7b4b8f447820409dff6962266678a05b65730e1a0f",
+        "beauty_poor_value": "9ce64919ba22ed2c978ff3b3a3e3605df280901632a3dccfd2290b3edd87fe6b",
+        "beauty_return_or_refund": "c914f15a757873da61a18376ed5b5cf6683effdf85e304514e8db61ba2b5206b"
+      },
+      "rationale": "Exercises four-predicate planning with a nuanced safety prompt and several shorter commercial judgments.",
+      "workload_fingerprint_sha256": "7e3637ea316349713b04a9fc916e0c5d020ef67d50553be1203f4153a1449471"
+    },
+    {
+      "categories": [
+        "strong_correlation"
+      ],
+      "dataset": "banking77_queries",
+      "hypothesis": "Unauthorized-activity queries should be enriched for card context and refund or reversal intent.",
+      "id": "banking_unauthorized_card_refund",
+      "original_order": [
+        "banking_unauthorized_activity",
+        "banking_card_related",
+        "banking_refund_or_reversal"
+      ],
+      "predicate_ids": [
+        "banking_unauthorized_activity",
+        "banking_card_related",
+        "banking_refund_or_reversal"
+      ],
+      "prompt_hashes": {
+        "banking_card_related": "a08f581bbf96bb793e2f6e2b066d26abdd2f4d946f1e78970bc999b35db4757b",
+        "banking_refund_or_reversal": "d7497a77485b420cd945b84785b31d50ad6a4a704f9119f58d1a134e637617bb",
+        "banking_unauthorized_activity": "2dbd9f2147ad3c0cee60d5f4bc3cfe2c85c7c166c82c9daab768e854c5a6ad4b"
+      },
+      "rationale": "Tests whether unrecognized card activity and requests for reversal form a strong support-query cluster.",
+      "workload_fingerprint_sha256": "7ca6ad23eddec9db8487b77f3c55e43dca25197339bb5fda334951f7491d0351"
+    },
+    {
+      "categories": [
+        "weak_correlation",
+        "rare_event",
+        "near_tied_orders"
+      ],
+      "dataset": "banking77_queries",
+      "hypothesis": "Both predicates may be selective and weakly associated, producing near-tied order estimates.",
+      "id": "banking_withdrawal_access",
+      "original_order": [
+        "banking_cash_withdrawal",
+        "banking_access_or_verification"
+      ],
+      "predicate_ids": [
+        "banking_cash_withdrawal",
+        "banking_access_or_verification"
+      ],
+      "prompt_hashes": {
+        "banking_access_or_verification": "b58d8d7a017040da1f7fe2c53c2828a4b4c0f76083f352791de3cbb3865de141",
+        "banking_cash_withdrawal": "6af749df0b2617522faff2e2f9055d8a0c1929b2506401a08f4f5d27e637bdf6"
+      },
+      "rationale": "Pairs an ATM/cash topic with an account-access topic that should usually arise independently.",
+      "workload_fingerprint_sha256": "57d0111026694d4a6590fe36a9270ee6dbf0683d75c8da442bc0da49ab160483"
+    },
+    {
+      "categories": [
+        "rare_event",
+        "unfavorable_reordering"
+      ],
+      "dataset": "banking77_queries",
+      "hypothesis": "The full conjunction should be rare; reversal language may be enriched after an unrecognized withdrawal.",
+      "id": "banking_unauthorized_withdrawal_refund",
+      "original_order": [
+        "banking_unauthorized_activity",
+        "banking_cash_withdrawal",
+        "banking_refund_or_reversal"
+      ],
+      "predicate_ids": [
+        "banking_unauthorized_activity",
+        "banking_cash_withdrawal",
+        "banking_refund_or_reversal"
+      ],
+      "prompt_hashes": {
+        "banking_cash_withdrawal": "6af749df0b2617522faff2e2f9055d8a0c1929b2506401a08f4f5d27e637bdf6",
+        "banking_refund_or_reversal": "d7497a77485b420cd945b84785b31d50ad6a4a704f9119f58d1a134e637617bb",
+        "banking_unauthorized_activity": "2dbd9f2147ad3c0cee60d5f4bc3cfe2c85c7c166c82c9daab768e854c5a6ad4b"
+      },
+      "rationale": "Targets the sparse unauthorized-cash-withdrawal case with an already plausible original filter.",
+      "workload_fingerprint_sha256": "523c139d7eb12cb2463a7becb13fad2fc7bbe1d0ea0abf7b33d3142d7fbe684b"
+    },
+    {
+      "categories": [
+        "near_tied_orders",
+        "strong_correlation"
+      ],
+      "dataset": "banking77_queries",
+      "hypothesis": "Card-related and access/security language may be positively associated with similar marginal prevalence.",
+      "id": "banking_card_access",
+      "original_order": [
+        "banking_card_related",
+        "banking_access_or_verification"
+      ],
+      "predicate_ids": [
+        "banking_card_related",
+        "banking_access_or_verification"
+      ],
+      "prompt_hashes": {
+        "banking_access_or_verification": "b58d8d7a017040da1f7fe2c53c2828a4b4c0f76083f352791de3cbb3865de141",
+        "banking_card_related": "a08f581bbf96bb793e2f6e2b066d26abdd2f4d946f1e78970bc999b35db4757b"
+      },
+      "rationale": "Tests two broad support attributes that overlap for PIN, activation, loss, and compromised-card queries.",
+      "workload_fingerprint_sha256": "eadfcebc59b633de4e3a4accf12e1bdd1d40d3f305f1c641d9b8b68048eee23b"
+    },
+    {
+      "categories": [
+        "four_predicate",
+        "different_inference_costs",
+        "strong_correlation"
+      ],
+      "dataset": "banking77_queries",
+      "hypothesis": "Unauthorized transfers may correlate with reversal requests, while access or verification language is a narrower conditional attribute.",
+      "id": "banking_transfer_unauthorized_refund_access",
+      "original_order": [
+        "banking_transfer_related",
+        "banking_unauthorized_activity",
+        "banking_refund_or_reversal",
+        "banking_access_or_verification"
+      ],
+      "predicate_ids": [
+        "banking_transfer_related",
+        "banking_unauthorized_activity",
+        "banking_refund_or_reversal",
+        "banking_access_or_verification"
+      ],
+      "prompt_hashes": {
+        "banking_access_or_verification": "b58d8d7a017040da1f7fe2c53c2828a4b4c0f76083f352791de3cbb3865de141",
+        "banking_refund_or_reversal": "d7497a77485b420cd945b84785b31d50ad6a4a704f9119f58d1a134e637617bb",
+        "banking_transfer_related": "5475131461877f428ceb1fb903e710bcc0fc1acf9758f2d612eb6f4b11229c20",
+        "banking_unauthorized_activity": "2dbd9f2147ad3c0cee60d5f4bc3cfe2c85c7c166c82c9daab768e854c5a6ad4b"
+      },
+      "rationale": "Exercises four-predicate planning across transaction type, authorization, remedy, and account security.",
+      "workload_fingerprint_sha256": "8a1e8cc6cbd4070a80ef7fc970d9e1aab26b6ee7c0d1566097ab0bef07076bf8"
+    }
+  ]
+}

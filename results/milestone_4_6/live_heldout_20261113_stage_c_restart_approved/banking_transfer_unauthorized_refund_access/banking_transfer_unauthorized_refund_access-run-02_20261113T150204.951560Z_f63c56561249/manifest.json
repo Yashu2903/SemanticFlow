@@ -1,0 +1,107 @@
+{
+  "cache_configuration": {
+    "enabled": false,
+    "scope": "per-run-memory"
+  },
+  "caching_enabled": false,
+  "completion_status": "complete",
+  "concurrency": 4,
+  "dataset_fingerprint": "sha256:35f7ea9a2bcf2d371bb095dbd62b551be39634097535f23ec392a5522d71e655",
+  "dataset_path": "data\\milestone_4_6\\banking77_queries.parquet",
+  "dataset_preparation_version": "m46-independent-dataset-v1",
+  "dataset_version": "2afaeb6717ba4fe205d9c6ac90c52e3349596af58e3874f382c2b4c8a56a849f",
+  "git_commit": "e595c882a5367514b74a773734d0e081d95ed14e",
+  "git_worktree_dirty": true,
+  "incomplete_reason": null,
+  "m46_plans_sha256": "06bbc304af7da38d2d9f717af68246e895262c32c1d77bb5c094d42300a2c26b",
+  "m46_schedule": {
+    "index": 2,
+    "order": [
+      "banking_unauthorized_activity",
+      "banking_transfer_related",
+      "banking_access_or_verification",
+      "banking_refund_or_reversal"
+    ],
+    "role": "abba_comparator_b",
+    "run_id": "banking_transfer_unauthorized_refund_access-run-02"
+  },
+  "max_calls": 9600,
+  "max_retries": 2,
+  "predicate_order": [
+    "banking_unauthorized_activity",
+    "banking_transfer_related",
+    "banking_access_or_verification",
+    "banking_refund_or_reversal"
+  ],
+  "pricing_configuration": {
+    "id": "jev-pricing-2026-11-12",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost",
+    "verified_date": "2026-11-12"
+  },
+  "pricing_configuration_id": "jev-pricing-2026-11-12",
+  "provider": "jev",
+  "query_definition": {
+    "config_id": "m46-workload-suite-v1",
+    "dataset_path": "data\\milestone_4_6\\banking77_queries.parquet",
+    "dataset_preparation_version": "m46-independent-dataset-v1",
+    "dataset_version": "2afaeb6717ba4fe205d9c6ac90c52e3349596af58e3874f382c2b4c8a56a849f",
+    "limit": 800,
+    "max_calls": 9600,
+    "operation": "and",
+    "predicates": [
+      {
+        "id": "banking_unauthorized_activity",
+        "instructions": "Does the customer report or ask about a transaction, withdrawal, payment, transfer, account action, or card use that they did not authorize or do not recognize?"
+      },
+      {
+        "id": "banking_transfer_related",
+        "instructions": "Is the customer asking about or reporting a bank transfer, international transfer, beneficiary transfer, recipient transfer, or cancellation or status of a transfer?"
+      },
+      {
+        "id": "banking_access_or_verification",
+        "instructions": "Is the customer's issue about accessing or securing the account, identity verification, a passcode, password, PIN, compromised credentials, or account lockout?"
+      },
+      {
+        "id": "banking_refund_or_reversal",
+        "instructions": "Is the customer asking about a refund, chargeback, cancellation, reversal, returned money, or why money from a reversed or refunded transaction has not arrived?"
+      }
+    ],
+    "query_id": "banking_transfer_unauthorized_refund_access-run-02",
+    "sample_seed": 4602,
+    "threshold": 0.5,
+    "workload_id": "banking_transfer_unauthorized_refund_access"
+  },
+  "query_id": "banking_transfer_unauthorized_refund_access-run-02",
+  "question_hashes": {
+    "banking_access_or_verification": "b58d8d7a017040da1f7fe2c53c2828a4b4c0f76083f352791de3cbb3865de141",
+    "banking_refund_or_reversal": "d7497a77485b420cd945b84785b31d50ad6a4a704f9119f58d1a134e637617bb",
+    "banking_transfer_related": "5475131461877f428ceb1fb903e710bcc0fc1acf9758f2d612eb6f4b11229c20",
+    "banking_unauthorized_activity": "2dbd9f2147ad3c0cee60d5f4bc3cfe2c85c7c166c82c9daab768e854c5a6ad4b"
+  },
+  "question_type": "noul",
+  "record_limit": 800,
+  "report_schema_version": "1.1.0",
+  "request_budget": {
+    "maximum": 9600,
+    "unit": "http_attempts"
+  },
+  "requested_model": "jev-1.14.0",
+  "resolved_model_versions": [
+    "jev-1.14.0"
+  ],
+  "run_id": "f63c56561249",
+  "sample_seed": 4602,
+  "sampling_configuration": {
+    "record_limit": 800,
+    "sample_seed": 4602,
+    "subset_selection_method": "stable-review-id-order-then-record-limit"
+  },
+  "semanticflow_version": "0.1.0",
+  "subset_selection_method": "stable-review-id-order-then-record-limit",
+  "threshold": 0.5,
+  "timeout_seconds": 30.0,
+  "timestamp": "20261113T150204.951560Z",
+  "workload_id": "banking_transfer_unauthorized_refund_access"
+}

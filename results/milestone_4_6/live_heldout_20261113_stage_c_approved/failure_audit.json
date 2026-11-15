@@ -1,0 +1,33 @@
+{
+  "affected_run": "beauty_reaction_refund_packaging-run-01",
+  "affected_run_artifacts": {
+    "decisions_jsonl": false,
+    "manifest_json": false,
+    "matches_jsonl": true,
+    "report_json": false
+  },
+  "cause": "Atomic-write temporary basename made the full decisions.jsonl temporary path 261 characters, exceeding the Windows path limit after inference completed.",
+  "complete_preserved_runs": 8,
+  "failed_session_path": "results/milestone_4_6/live_heldout_20261113_stage_c_approved",
+  "frozen_plans_changed": false,
+  "held_out_session_status": "incomplete",
+  "known_preserved_usage": {
+    "estimated_cost_usd": 0.099605058,
+    "http_attempts": 6920,
+    "input_tokens": 2371549,
+    "logical_decisions": 6920,
+    "output_tokens": 178253
+  },
+  "paid_calls_after_failure": 0,
+  "provider_attempts_reported_by_session": 7742,
+  "repair_scope": "storage-only temporary filename shortening; no optimizer, plan, prompt, partition, model, or schedule change",
+  "resume_permitted": false,
+  "schema_version": "m46-stage-c-failure-audit-v1",
+  "unpersisted_run": {
+    "cost_usd": null,
+    "http_attempts": 822,
+    "logical_decisions_inferred_from_zero-retry_attempt_delta": 822,
+    "provider_token_usage_recoverable": false,
+    "reason_cost_unknown": "decision traces and provider token counts were held only in process memory when artifact persistence failed"
+  }
+}

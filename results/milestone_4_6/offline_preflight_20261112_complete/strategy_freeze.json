@@ -1,0 +1,150 @@
+{
+  "created_at": "2026-11-12T14:54:44.165539+00:00",
+  "m45_parameter_fingerprint": {
+    "calculated": "c00fadea786bd2075739576501460f51f0997172caccb5e133a0d2f0db3447c7",
+    "declared": "c00fadea786bd2075739576501460f51f0997172caccb5e133a0d2f0db3447c7",
+    "full_config_sha256": "9470bdde8d8cd6b70e881a2ffc9a8fc5d1bf84f166301f9f6edad6e493f145e8",
+    "verified": true
+  },
+  "post_outcome_retuning_permitted": false,
+  "schema_version": "m46-strategy-freeze-v1",
+  "strategies": {
+    "confidence_aware": {
+      "config": "configs/optimizer.milestone_4.yaml",
+      "fingerprint_sha256": "4e12bcd754135307d4dc9ebae0d3214c6689140e384057f24223c1407b3ea9b8",
+      "overrides": {
+        "selection_policy": "confidence_aware"
+      },
+      "source_files": {
+        "configs/optimizer.milestone_4.yaml": "ac2f9a5966a379cace8b3322cdd13685035e8eb5918b5f1231aab9b2c3818a47",
+        "src/semanticflow/optimizer/adaptive.py": "6b325c469ac45a5d67166f63f2d5cdba014e9c93fff985fa7b48efb687f2dcc6",
+        "src/semanticflow/optimizer/bootstrap.py": "2be89e354325a6028263b5299bc02585994e97c93b4852f6e803023f2865f6d2",
+        "src/semanticflow/optimizer/cardinality.py": "7a5803bcc5032a937dc70a9acb194364cc62ceaa8b6df525a494488ccc3164b3",
+        "src/semanticflow/optimizer/cost_model.py": "1168c9c2234e2de340ccb30ffc8504d6d35504d5c213225146726db39942becd",
+        "src/semanticflow/optimizer/joint.py": "719abe28878e48e99482fd9288cb0b76c533366d4750a2ecd08b2c147f84efcb",
+        "src/semanticflow/optimizer/planner.py": "396c162f84c048a5b5dfc1bafa02c1420e843f30ab8e52e22710d21e31fcadb1",
+        "src/semanticflow/optimizer/risk.py": "e79dc0a2afdd6d520b4d33df808358e27bffd17539fc63e2bab22bcfdedf4eb9"
+      }
+    },
+    "correlation_aware": {
+      "config": "configs/optimizer.milestone_4.yaml",
+      "fingerprint_sha256": "cd0d6f6c0057415be815ee70acd1b4931ab8e24a1be92b936e98de355208edb3",
+      "overrides": {
+        "cardinality_estimator": "correlation_aware",
+        "selection_policy": "minimum_expected_objective"
+      },
+      "source_files": {
+        "configs/optimizer.milestone_4.yaml": "ac2f9a5966a379cace8b3322cdd13685035e8eb5918b5f1231aab9b2c3818a47",
+        "src/semanticflow/optimizer/adaptive.py": "6b325c469ac45a5d67166f63f2d5cdba014e9c93fff985fa7b48efb687f2dcc6",
+        "src/semanticflow/optimizer/bootstrap.py": "2be89e354325a6028263b5299bc02585994e97c93b4852f6e803023f2865f6d2",
+        "src/semanticflow/optimizer/cardinality.py": "7a5803bcc5032a937dc70a9acb194364cc62ceaa8b6df525a494488ccc3164b3",
+        "src/semanticflow/optimizer/cost_model.py": "1168c9c2234e2de340ccb30ffc8504d6d35504d5c213225146726db39942becd",
+        "src/semanticflow/optimizer/joint.py": "719abe28878e48e99482fd9288cb0b76c533366d4750a2ecd08b2c147f84efcb",
+        "src/semanticflow/optimizer/planner.py": "396c162f84c048a5b5dfc1bafa02c1420e843f30ab8e52e22710d21e31fcadb1",
+        "src/semanticflow/optimizer/risk.py": "e79dc0a2afdd6d520b4d33df808358e27bffd17539fc63e2bab22bcfdedf4eb9"
+      }
+    },
+    "existing_adaptive": {
+      "config": "configs/optimizer.milestone_4.yaml",
+      "fingerprint_sha256": "c939f088d5ca8db37b766debdc0c093d89946f519c002e8767ffbed177bd09e0",
+      "overrides": {
+        "controller": "simulate_adaptive_profiling"
+      },
+      "source_files": {
+        "configs/optimizer.milestone_4.yaml": "ac2f9a5966a379cace8b3322cdd13685035e8eb5918b5f1231aab9b2c3818a47",
+        "src/semanticflow/optimizer/adaptive.py": "6b325c469ac45a5d67166f63f2d5cdba014e9c93fff985fa7b48efb687f2dcc6",
+        "src/semanticflow/optimizer/bootstrap.py": "2be89e354325a6028263b5299bc02585994e97c93b4852f6e803023f2865f6d2",
+        "src/semanticflow/optimizer/cardinality.py": "7a5803bcc5032a937dc70a9acb194364cc62ceaa8b6df525a494488ccc3164b3",
+        "src/semanticflow/optimizer/cost_model.py": "1168c9c2234e2de340ccb30ffc8504d6d35504d5c213225146726db39942becd",
+        "src/semanticflow/optimizer/joint.py": "719abe28878e48e99482fd9288cb0b76c533366d4750a2ecd08b2c147f84efcb",
+        "src/semanticflow/optimizer/planner.py": "396c162f84c048a5b5dfc1bafa02c1420e843f30ab8e52e22710d21e31fcadb1",
+        "src/semanticflow/optimizer/risk.py": "e79dc0a2afdd6d520b4d33df808358e27bffd17539fc63e2bab22bcfdedf4eb9"
+      }
+    },
+    "fixed": {
+      "config": null,
+      "fingerprint_sha256": "65dba175710b85e92e732f1bcd00a7da8f8c320b97b9f57f585cb66eded97ac3",
+      "overrides": {
+        "policy": "original_order"
+      },
+      "source_files": {
+        "src/semanticflow/optimizer/adaptive.py": "6b325c469ac45a5d67166f63f2d5cdba014e9c93fff985fa7b48efb687f2dcc6",
+        "src/semanticflow/optimizer/bootstrap.py": "2be89e354325a6028263b5299bc02585994e97c93b4852f6e803023f2865f6d2",
+        "src/semanticflow/optimizer/cardinality.py": "7a5803bcc5032a937dc70a9acb194364cc62ceaa8b6df525a494488ccc3164b3",
+        "src/semanticflow/optimizer/cost_model.py": "1168c9c2234e2de340ccb30ffc8504d6d35504d5c213225146726db39942becd",
+        "src/semanticflow/optimizer/joint.py": "719abe28878e48e99482fd9288cb0b76c533366d4750a2ecd08b2c147f84efcb",
+        "src/semanticflow/optimizer/planner.py": "396c162f84c048a5b5dfc1bafa02c1420e843f30ab8e52e22710d21e31fcadb1",
+        "src/semanticflow/optimizer/risk.py": "e79dc0a2afdd6d520b4d33df808358e27bffd17539fc63e2bab22bcfdedf4eb9"
+      }
+    },
+    "independent": {
+      "config": "configs/optimizer.milestone_4.yaml",
+      "fingerprint_sha256": "91fcbabee5658806772a2d94955a36ac919427d9b4d28c6677c15d9b1640da07",
+      "overrides": {
+        "cardinality_estimator": "independent",
+        "selection_policy": "minimum_expected_objective"
+      },
+      "source_files": {
+        "configs/optimizer.milestone_4.yaml": "ac2f9a5966a379cace8b3322cdd13685035e8eb5918b5f1231aab9b2c3818a47",
+        "src/semanticflow/optimizer/adaptive.py": "6b325c469ac45a5d67166f63f2d5cdba014e9c93fff985fa7b48efb687f2dcc6",
+        "src/semanticflow/optimizer/bootstrap.py": "2be89e354325a6028263b5299bc02585994e97c93b4852f6e803023f2865f6d2",
+        "src/semanticflow/optimizer/cardinality.py": "7a5803bcc5032a937dc70a9acb194364cc62ceaa8b6df525a494488ccc3164b3",
+        "src/semanticflow/optimizer/cost_model.py": "1168c9c2234e2de340ccb30ffc8504d6d35504d5c213225146726db39942becd",
+        "src/semanticflow/optimizer/joint.py": "719abe28878e48e99482fd9288cb0b76c533366d4750a2ecd08b2c147f84efcb",
+        "src/semanticflow/optimizer/planner.py": "396c162f84c048a5b5dfc1bafa02c1420e843f30ab8e52e22710d21e31fcadb1",
+        "src/semanticflow/optimizer/risk.py": "e79dc0a2afdd6d520b4d33df808358e27bffd17539fc63e2bab22bcfdedf4eb9"
+      }
+    },
+    "joint_adaptive_risk": {
+      "config": "configs/optimizer.milestone_4.yaml",
+      "fingerprint_sha256": "8013c24075537dd0932e9c3600016219f2afff581a49988ecdfbf7cecf5804b2",
+      "overrides": {
+        "controller": "simulate_joint_adaptive_risk"
+      },
+      "source_files": {
+        "configs/optimizer.milestone_4.yaml": "ac2f9a5966a379cace8b3322cdd13685035e8eb5918b5f1231aab9b2c3818a47",
+        "src/semanticflow/optimizer/adaptive.py": "6b325c469ac45a5d67166f63f2d5cdba014e9c93fff985fa7b48efb687f2dcc6",
+        "src/semanticflow/optimizer/bootstrap.py": "2be89e354325a6028263b5299bc02585994e97c93b4852f6e803023f2865f6d2",
+        "src/semanticflow/optimizer/cardinality.py": "7a5803bcc5032a937dc70a9acb194364cc62ceaa8b6df525a494488ccc3164b3",
+        "src/semanticflow/optimizer/cost_model.py": "1168c9c2234e2de340ccb30ffc8504d6d35504d5c213225146726db39942becd",
+        "src/semanticflow/optimizer/joint.py": "719abe28878e48e99482fd9288cb0b76c533366d4750a2ecd08b2c147f84efcb",
+        "src/semanticflow/optimizer/planner.py": "396c162f84c048a5b5dfc1bafa02c1420e843f30ab8e52e22710d21e31fcadb1",
+        "src/semanticflow/optimizer/risk.py": "e79dc0a2afdd6d520b4d33df808358e27bffd17539fc63e2bab22bcfdedf4eb9"
+      }
+    },
+    "milestone_4_5_frozen": {
+      "config": "configs/optimizer.milestone_4_5_frozen.yaml",
+      "fingerprint_sha256": "1f78afa29628e281ea580270afb3750b976e1d17d2030043447ba1fc41dc400b",
+      "overrides": {
+        "controller": "simulate_joint_adaptive_risk"
+      },
+      "source_files": {
+        "configs/optimizer.milestone_4_5_frozen.yaml": "9470bdde8d8cd6b70e881a2ffc9a8fc5d1bf84f166301f9f6edad6e493f145e8",
+        "src/semanticflow/optimizer/adaptive.py": "6b325c469ac45a5d67166f63f2d5cdba014e9c93fff985fa7b48efb687f2dcc6",
+        "src/semanticflow/optimizer/bootstrap.py": "2be89e354325a6028263b5299bc02585994e97c93b4852f6e803023f2865f6d2",
+        "src/semanticflow/optimizer/cardinality.py": "7a5803bcc5032a937dc70a9acb194364cc62ceaa8b6df525a494488ccc3164b3",
+        "src/semanticflow/optimizer/cost_model.py": "1168c9c2234e2de340ccb30ffc8504d6d35504d5c213225146726db39942becd",
+        "src/semanticflow/optimizer/joint.py": "719abe28878e48e99482fd9288cb0b76c533366d4750a2ecd08b2c147f84efcb",
+        "src/semanticflow/optimizer/planner.py": "396c162f84c048a5b5dfc1bafa02c1420e843f30ab8e52e22710d21e31fcadb1",
+        "src/semanticflow/optimizer/risk.py": "e79dc0a2afdd6d520b4d33df808358e27bffd17539fc63e2bab22bcfdedf4eb9"
+      }
+    },
+    "risk_aware": {
+      "config": "configs/optimizer.milestone_4.yaml",
+      "fingerprint_sha256": "94b978ad4a6e18b5e7e2dd4f75caa7ebc00a39262ab1ca03eac84f719116bbe5",
+      "overrides": {
+        "selection_policy": "risk_aware"
+      },
+      "source_files": {
+        "configs/optimizer.milestone_4.yaml": "ac2f9a5966a379cace8b3322cdd13685035e8eb5918b5f1231aab9b2c3818a47",
+        "src/semanticflow/optimizer/adaptive.py": "6b325c469ac45a5d67166f63f2d5cdba014e9c93fff985fa7b48efb687f2dcc6",
+        "src/semanticflow/optimizer/bootstrap.py": "2be89e354325a6028263b5299bc02585994e97c93b4852f6e803023f2865f6d2",
+        "src/semanticflow/optimizer/cardinality.py": "7a5803bcc5032a937dc70a9acb194364cc62ceaa8b6df525a494488ccc3164b3",
+        "src/semanticflow/optimizer/cost_model.py": "1168c9c2234e2de340ccb30ffc8504d6d35504d5c213225146726db39942becd",
+        "src/semanticflow/optimizer/joint.py": "719abe28878e48e99482fd9288cb0b76c533366d4750a2ecd08b2c147f84efcb",
+        "src/semanticflow/optimizer/planner.py": "396c162f84c048a5b5dfc1bafa02c1420e843f30ab8e52e22710d21e31fcadb1",
+        "src/semanticflow/optimizer/risk.py": "e79dc0a2afdd6d520b4d33df808358e27bffd17539fc63e2bab22bcfdedf4eb9"
+      }
+    }
+  }
+}

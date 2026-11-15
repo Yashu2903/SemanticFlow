@@ -1,0 +1,9 @@
+{
+  "authorization_scope_sha256": "a1ae0472577389766e9814848cd40177e73746a1ac8a5d0528b075583bc66280",
+  "paid_calls_executed": 0,
+  "plans_sha256": "06bbc304af7da38d2d9f717af68246e895262c32c1d77bb5c094d42300a2c26b",
+  "provider_imported": false,
+  "provider_initialized": false,
+  "schedule_sha256": "f106430ec370243caceadaec0a35fa67e4e523cd079a4ddc5660d879b4f03e20",
+  "validated": true
+}

@@ -1,0 +1,100 @@
+{
+  "cache_configuration": {
+    "enabled": false,
+    "scope": "per-run-memory"
+  },
+  "caching_enabled": false,
+  "completion_status": "complete",
+  "concurrency": 4,
+  "dataset_fingerprint": "sha256:758b3ebabf0c6d3d3e033e7b6c6e197cad51aff4d5a898ab75272b1b7cf7b2ce",
+  "dataset_path": "data\\milestone_4_6\\amazon_all_beauty.parquet",
+  "dataset_preparation_version": "m46-independent-dataset-v1",
+  "dataset_version": "dcb6df57fb239160a111c9d34b2f0e02b9c252eadc071e1dc1b259f721b189a1",
+  "git_commit": "e595c882a5367514b74a773734d0e081d95ed14e",
+  "git_worktree_dirty": true,
+  "incomplete_reason": null,
+  "m46_plans_sha256": "06bbc304af7da38d2d9f717af68246e895262c32c1d77bb5c094d42300a2c26b",
+  "m46_schedule": {
+    "index": 3,
+    "order": [
+      "beauty_return_or_refund",
+      "beauty_hard_to_use",
+      "beauty_packaging_failure"
+    ],
+    "role": "abba_comparator_b",
+    "run_id": "beauty_usability_packaging_return-run-03"
+  },
+  "max_calls": 7200,
+  "max_retries": 2,
+  "predicate_order": [
+    "beauty_return_or_refund",
+    "beauty_hard_to_use",
+    "beauty_packaging_failure"
+  ],
+  "pricing_configuration": {
+    "id": "jev-pricing-2026-11-12",
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost",
+    "verified_date": "2026-11-12"
+  },
+  "pricing_configuration_id": "jev-pricing-2026-11-12",
+  "provider": "jev",
+  "query_definition": {
+    "config_id": "m46-workload-suite-v1",
+    "dataset_path": "data\\milestone_4_6\\amazon_all_beauty.parquet",
+    "dataset_preparation_version": "m46-independent-dataset-v1",
+    "dataset_version": "dcb6df57fb239160a111c9d34b2f0e02b9c252eadc071e1dc1b259f721b189a1",
+    "limit": 800,
+    "max_calls": 7200,
+    "operation": "and",
+    "predicates": [
+      {
+        "id": "beauty_return_or_refund",
+        "instructions": "Does the reviewer say they returned the product, requested or received a refund or replacement, or clearly intend to return it because of the reported problem?"
+      },
+      {
+        "id": "beauty_hard_to_use",
+        "instructions": "Does the reviewer describe substantial difficulty applying, operating, assembling, or understanding how to use the product, rather than a minor preference?"
+      },
+      {
+        "id": "beauty_packaging_failure",
+        "instructions": "Does the reviewer report damaged, leaking, broken, unsealed, contaminated, empty, or otherwise defective product packaging on arrival or during normal use?"
+      }
+    ],
+    "query_id": "beauty_usability_packaging_return-run-03",
+    "sample_seed": 4601,
+    "threshold": 0.5,
+    "workload_id": "beauty_usability_packaging_return"
+  },
+  "query_id": "beauty_usability_packaging_return-run-03",
+  "question_hashes": {
+    "beauty_hard_to_use": "40ab833d345895c8700a8360b8aedfc1cdea3225fc734119054d5d89e0a9523f",
+    "beauty_packaging_failure": "2120d6b6d82629653a3f7f391cf6251300bc5a747c626aecd993f1534689d9fc",
+    "beauty_return_or_refund": "c914f15a757873da61a18376ed5b5cf6683effdf85e304514e8db61ba2b5206b"
+  },
+  "question_type": "noul",
+  "record_limit": 800,
+  "report_schema_version": "1.1.0",
+  "request_budget": {
+    "maximum": 7200,
+    "unit": "http_attempts"
+  },
+  "requested_model": "jev-1.14.0",
+  "resolved_model_versions": [
+    "jev-1.14.0"
+  ],
+  "run_id": "0eb419c288ea",
+  "sample_seed": 4601,
+  "sampling_configuration": {
+    "record_limit": 800,
+    "sample_seed": 4601,
+    "subset_selection_method": "stable-review-id-order-then-record-limit"
+  },
+  "semanticflow_version": "0.1.0",
+  "subset_selection_method": "stable-review-id-order-then-record-limit",
+  "threshold": 0.5,
+  "timeout_seconds": 30.0,
+  "timestamp": "20261113T145012.835267Z",
+  "workload_id": "beauty_usability_packaging_return"
+}

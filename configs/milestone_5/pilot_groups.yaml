@@ -1,0 +1,24 @@
+schema_version: m5-pilot-groups-v1
+records_per_dataset: 40
+conjunctive_binary:
+  amazon_all_beauty:
+    - [beauty_malfunction, beauty_hard_to_use]
+    - [beauty_adverse_reaction, beauty_return_or_refund, beauty_packaging_failure]
+    - [beauty_adverse_reaction, beauty_malfunction, beauty_poor_value, beauty_return_or_refund]
+    - [beauty_malfunction, beauty_return_or_refund]
+  banking77_queries:
+    - [banking_cash_withdrawal, banking_access_or_verification]
+    - [banking_unauthorized_activity, banking_card_related, banking_refund_or_reversal]
+    - [banking_transfer_related, banking_unauthorized_activity, banking_refund_or_reversal, banking_access_or_verification]
+    - [banking_unauthorized_activity, banking_refund_or_reversal]
+  sms_spam:
+    - [sms_urgency_pressure, sms_account_security]
+    - [sms_prize_or_reward, sms_payment_or_fee, sms_contact_action]
+    - [sms_unsolicited_offer, sms_prize_or_reward, sms_urgency_pressure, sms_contact_action]
+    - [sms_prize_or_reward, sms_contact_action]
+multi_decision_smoke:
+  records_per_group: 10
+  groups:
+    amazon_all_beauty: [beauty_malfunction, beauty_hard_to_use]
+    banking77_queries: [banking_unauthorized_activity, banking_refund_or_reversal]
+    sms_spam: [sms_prize_or_reward, sms_contact_action]

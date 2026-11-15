@@ -1,0 +1,46 @@
+{
+  "authorized_http_attempts": 3600,
+  "authorized_logical_decisions": 1200,
+  "complete": true,
+  "decisions_sha256": "c50de37b7659783c4cc5739fd4e3a2ac46ac53a7477fb555c799eab306693cf8",
+  "query": {
+    "config_id": "m46-workload-suite-v1",
+    "dataset_path": "data\\milestone_4_6\\amazon_all_beauty.parquet",
+    "dataset_preparation_version": "m46-independent-dataset-v1",
+    "dataset_version": "dcb6df57fb239160a111c9d34b2f0e02b9c252eadc071e1dc1b259f721b189a1",
+    "limit": 200,
+    "max_calls": 3600,
+    "operation": "and",
+    "predicates": [
+      {
+        "id": "beauty_malfunction",
+        "instructions": "Does the reviewer report that the product failed, broke, leaked, stopped working, or did not perform its intended function? Judge only what the review states."
+      },
+      {
+        "id": "beauty_hard_to_use",
+        "instructions": "Does the reviewer describe substantial difficulty applying, operating, assembling, or understanding how to use the product, rather than a minor preference?"
+      },
+      {
+        "id": "beauty_adverse_reaction",
+        "instructions": "Does the reviewer report an adverse physical reaction such as irritation, rash, burning, pain, swelling, allergy, or other harm caused by the product?"
+      },
+      {
+        "id": "beauty_packaging_failure",
+        "instructions": "Does the reviewer report damaged, leaking, broken, unsealed, contaminated, empty, or otherwise defective product packaging on arrival or during normal use?"
+      },
+      {
+        "id": "beauty_return_or_refund",
+        "instructions": "Does the reviewer say they returned the product, requested or received a refund or replacement, or clearly intend to return it because of the reported problem?"
+      },
+      {
+        "id": "beauty_poor_value",
+        "instructions": "Does the reviewer explicitly characterize the product as overpriced, poor value, too little product for the price, or a waste of money?"
+      }
+    ],
+    "query_id": "m46-amazon_all_beauty-profiling",
+    "sample_seed": 4601,
+    "threshold": 0.5,
+    "workload_id": "m46-amazon_all_beauty-shared-matrix"
+  },
+  "schema_version": "m46-live-profile-v1"
+}

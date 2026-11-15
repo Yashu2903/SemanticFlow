@@ -8,6 +8,11 @@ from typing import Any
 import httpx
 from dotenv import load_dotenv
 
+from semanticflow.optimizer.fusion import (
+    FusedDecision,
+    FusedOperator,
+    ProviderFusionCapabilities,
+)
 from semanticflow.providers.base import (
     AuthenticationError,
     BudgetExceeded,
@@ -73,17 +78,104 @@ class JevProvider(InferenceProvider):
             "request_schema": "typesafe-systemone-v0.2.0",
         }
 
+    @property
+    def fusion_capabilities(self) -> ProviderFusionCapabilities:
+        return ProviderFusionCapabilities(
+            provider=self.name,
+            conjunctive_binary=True,
+            multi_decision=True,
+            maximum_questions_per_request=None,
+            evidence=(
+                "TypeSafe OpenAPI 0.2.0 documents one or more named questions in one "
+                "POST /v1/systemone request and name-matched answers"
+            ),
+            live_validated=False,
+        )
+
     async def decide(
         self, record_text: str, predicate: PredicateSpec, budget: RequestBudget
     ) -> Decision:
-        question_name = predicate.id
-        payload = {
-            "model": self._model,
-            "state": record_text,
-            "questions": {
-                question_name: {"type": self.question_type, "instructions": predicate.instructions}
+        probabilities, details = await self._request_questions(
+            record_text,
+            {
+                predicate.id: {
+                    "type": self.question_type,
+                    "instructions": predicate.instructions,
+                }
             },
-        }
+            budget,
+        )
+        return Decision(
+            probability=probabilities[predicate.id],
+            model_identifier=details["resolved_model"],
+            input_tokens=details["input_tokens"],
+            output_tokens=details["output_tokens"],
+            latency_seconds=details["latency_seconds"],
+            request_attempts=details["attempts"],
+            successful_requests=1,
+            failed_attempts=details["retries"],
+            retries=details["retries"],
+            metadata={
+                "question_name": predicate.id,
+                "question_type": self.question_type,
+                "http_status": details["http_status"],
+            },
+        )
+
+    async def decide_fused(
+        self,
+        record_text: str,
+        operator: FusedOperator,
+        budget: RequestBudget,
+    ) -> FusedDecision:
+        """Execute one real provider request for the entire physical group."""
+        if operator.requested_model != self._model:
+            raise ValueError("fused operator requested model does not match provider model")
+        if not self.fusion_capabilities.supports(
+            operator.fusion_mode, len(operator.predicate_ids)
+        ):
+            raise ValueError(f"Jev does not support fusion mode {operator.fusion_mode}")
+        questions = operator.provider_questions()
+        probabilities, details = await self._request_questions(record_text, questions, budget)
+        if operator.fusion_mode == "multi_decision":
+            group_probability = None
+            predicate_probabilities = probabilities
+        else:
+            group_probability = probabilities[operator.group_id]
+            predicate_probabilities = (
+                {operator.predicate_ids[0]: group_probability}
+                if operator.fusion_mode == "single"
+                else {}
+            )
+        return FusedDecision(
+            group_probability=group_probability,
+            predicate_probabilities=predicate_probabilities,
+            model_identifier=details["resolved_model"],
+            input_tokens=details["input_tokens"],
+            output_tokens=details["output_tokens"],
+            latency_seconds=details["latency_seconds"],
+            request_attempts=details["attempts"],
+            successful_requests=1,
+            failed_attempts=details["retries"],
+            retries=details["retries"],
+            metadata={
+                "question_names": list(questions),
+                "question_type": self.question_type,
+                "http_status": details["http_status"],
+                "fusion_mode": operator.fusion_mode,
+                "fusion_prompt_hash": operator.fusion_prompt_hash,
+            },
+        )
+
+    async def _request_questions(
+        self,
+        record_text: str,
+        questions: dict[str, dict[str, str]],
+        budget: RequestBudget,
+    ) -> tuple[dict[str, float], dict[str, Any]]:
+        if not questions:
+            raise ValueError("Jev requires at least one question")
+        payload = {"model": self._model, "state": record_text, "questions": questions}
         attempts = 0
         started = time.perf_counter()
         last_error = "request failed"
@@ -141,12 +233,18 @@ class JevProvider(InferenceProvider):
                 else:
                     try:
                         data = response.json()
-                        answer = data["answers"][question_name]
-                        if answer.get("type") != self.question_type:
-                            raise KeyError("unexpected answer type")
-                        probability = float(answer["noul"])
-                        if not 0.0 <= probability <= 1.0:
-                            raise ValueError("probability outside [0, 1]")
+                        answers = data["answers"]
+                        if not isinstance(answers, dict):
+                            raise TypeError("answers must be an object")
+                        probabilities: dict[str, float] = {}
+                        for question_name in questions:
+                            answer = answers[question_name]
+                            if answer.get("type") != self.question_type:
+                                raise KeyError("unexpected answer type")
+                            probability = float(answer["noul"])
+                            if not 0.0 <= probability <= 1.0:
+                                raise ValueError("probability outside [0, 1]")
+                            probabilities[question_name] = probability
                         usage = data.get("usage") or {}
                         input_tokens = usage.get("input_tokens")
                         output_tokens = usage.get("output_tokens")
@@ -168,22 +266,15 @@ class JevProvider(InferenceProvider):
                         ) from exc
                     self.stats.successful_requests += 1
                     retries = attempts - 1
-                    return Decision(
-                        probability=probability,
-                        model_identifier=resolved_model,
-                        input_tokens=input_tokens,
-                        output_tokens=output_tokens,
-                        latency_seconds=time.perf_counter() - started,
-                        request_attempts=attempts,
-                        successful_requests=1,
-                        failed_attempts=retries,
-                        retries=retries,
-                        metadata={
-                            "question_name": question_name,
-                            "question_type": self.question_type,
-                            "http_status": response.status_code,
-                        },
-                    )
+                    return probabilities, {
+                        "resolved_model": resolved_model,
+                        "input_tokens": input_tokens,
+                        "output_tokens": output_tokens,
+                        "latency_seconds": time.perf_counter() - started,
+                        "attempts": attempts,
+                        "retries": retries,
+                        "http_status": response.status_code,
+                    }
             if not retryable or retry_number >= self.max_retries:
                 break
             await asyncio.sleep(self.backoff_seconds * (2**retry_number))

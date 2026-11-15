@@ -5,10 +5,12 @@ import hashlib
 import json
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Generic, TypeVar
 
-from semanticflow.providers.base import Decision, InferenceProvider
+from semanticflow.providers.base import InferenceProvider
 from semanticflow.query.models import PredicateSpec
+
+CachedDecision = TypeVar("CachedDecision")
 
 
 def cache_key(
@@ -29,8 +31,8 @@ def cache_key(
 
 
 @dataclass(frozen=True, slots=True)
-class CacheResult:
-    decision: Decision
+class CacheResult(Generic[CachedDecision]):
+    decision: CachedDecision
     hit: bool
 
 
@@ -46,19 +48,19 @@ class CacheStats:
         return CacheStats(hits=self.hits - previous.hits, misses=self.misses - previous.misses)
 
 
-class RequestCache:
+class RequestCache(Generic[CachedDecision]):
     """Per-run memory cache with single-flight suppression for concurrent duplicates."""
 
     def __init__(self, enabled: bool = False) -> None:
         self.enabled = enabled
         self.stats = CacheStats()
-        self._values: dict[str, Decision] = {}
-        self._inflight: dict[str, asyncio.Future[Decision]] = {}
+        self._values: dict[str, CachedDecision] = {}
+        self._inflight: dict[str, asyncio.Future[CachedDecision]] = {}
         self._lock = asyncio.Lock()
 
     async def get_or_compute(
-        self, key: str, compute: Callable[[], Awaitable[Decision]]
-    ) -> CacheResult:
+        self, key: str, compute: Callable[[], Awaitable[CachedDecision]]
+    ) -> CacheResult[CachedDecision]:
         if not self.enabled:
             return CacheResult(await compute(), hit=False)
 
@@ -96,3 +98,4 @@ class RequestCache:
             self._inflight.pop(key, None)
             future.set_result(decision)
         return CacheResult(decision, hit=False)
+

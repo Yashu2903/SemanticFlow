@@ -1,0 +1,22 @@
+{
+  "git_commit": "e595c882a5367514b74a773734d0e081d95ed14e",
+  "git_worktree_dirty": true,
+  "packages": {
+    "PyYAML": "6.0.3",
+    "duckdb": "1.5.6",
+    "httpx": "0.28.1",
+    "pyarrow": "22.0.0",
+    "pydantic": "2.14.3",
+    "pytest": "9.2.0",
+    "pytest-asyncio": "1.4.1",
+    "python-dotenv": "1.2.4",
+    "ruff": "0.17.3",
+    "semanticflow": "0.1.0"
+  },
+  "platform": "Windows-10-10.0.26300-SP0",
+  "pyproject_sha256": "3e20036ee16e700dfdfa46c314097061b5b4857c4345a7c47f50cdaec371203b",
+  "python_executable": "C:\\Users\\flood\\Desktop\\SemanticFlow\\.venv\\Scripts\\python.exe",
+  "python_version": "3.11.16",
+  "schema_version": "m46-environment-freeze-v1",
+  "uv_lock_sha256": "bbd696a37b24b6c0971c29acffca27c3f373ffacbf3a5e9c0005fa5c21fad9f7"
+}

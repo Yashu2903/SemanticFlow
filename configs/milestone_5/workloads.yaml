@@ -1,0 +1,80 @@
+schema_version: m5-fusion-workloads-v1
+operation: and
+threshold: 0.5
+datasets:
+  amazon_all_beauty:
+    path: data/milestone_5/amazon_all_beauty.parquet
+    domain: Amazon Reviews'23 All Beauty reviews; fresh M5 records
+    predicates:
+      beauty_malfunction: Does the reviewer report that the product failed, broke, leaked, stopped working, or did not perform its intended function? Judge only what the review states.
+      beauty_hard_to_use: Does the reviewer describe substantial difficulty applying, operating, assembling, or understanding how to use the product, rather than a minor preference?
+      beauty_adverse_reaction: Does the reviewer report an adverse physical reaction such as irritation, rash, burning, pain, swelling, allergy, or other harm caused by the product?
+      beauty_packaging_failure: Does the reviewer report damaged, leaking, broken, unsealed, contaminated, empty, or otherwise defective product packaging on arrival or during normal use?
+      beauty_return_or_refund: Does the reviewer say they returned the product, requested or received a refund or replacement, or clearly intend to return it because of the reported problem?
+      beauty_poor_value: Does the reviewer explicitly characterize the product as overpriced, poor value, too little product for the price, or a waste of money?
+  banking77_queries:
+    path: data/milestone_5/banking77_queries.parquet
+    domain: Banking77 support queries; fresh M5 records
+    predicates:
+      banking_unauthorized_activity: Does the customer report or ask about a transaction, withdrawal, payment, transfer, account action, or card use that they did not authorize or do not recognize?
+      banking_card_related: Is the customer's issue specifically about a physical or virtual payment card, including delivery, activation, PIN, contactless use, card payment, loss, or theft?
+      banking_transfer_related: Is the customer asking about or reporting a bank transfer, international transfer, beneficiary transfer, recipient transfer, or cancellation or status of a transfer?
+      banking_cash_withdrawal: Is the customer's issue about withdrawing cash or an ATM event, including fees, an unrecognized withdrawal, cash not received, or a card retained by an ATM?
+      banking_refund_or_reversal: Is the customer asking about a refund, chargeback, cancellation, reversal, returned money, or why money from a reversed or refunded transaction has not arrived?
+      banking_access_or_verification: Is the customer's issue about accessing or securing the account, identity verification, a passcode, password, PIN, compromised credentials, or account lockout?
+  sms_spam:
+    path: data/milestone_5/sms_spam.parquet
+    domain: UCI SMS Spam Collection messages
+    predicates:
+      sms_unsolicited_offer: Does the message present an unsolicited commercial offer, promotion, discount, or marketing solicitation?
+      sms_prize_or_reward: Does the message claim that the recipient won, was selected for, or can claim a prize, reward, voucher, or gift?
+      sms_urgency_pressure: Does the message use urgency, a deadline, scarcity, or pressure to make the recipient act immediately?
+      sms_payment_or_fee: Does the message request payment, a fee, paid-rate interaction, or disclosure of financial details to proceed or claim something?
+      sms_contact_action: Does the message instruct the recipient to call, text, click, visit, or otherwise contact a specified destination?
+      sms_account_security: Does the message claim an account, credential, device, or financial service has a security, verification, suspension, or unauthorized-use problem?
+workloads:
+  - id: beauty_failure_usability
+    dataset: amazon_all_beauty
+    predicate_ids: [beauty_malfunction, beauty_hard_to_use]
+    original_order: [beauty_malfunction, beauty_hard_to_use]
+    characteristics: [two_predicate, correlated, similar_prompt_cost]
+  - id: beauty_reaction_refund_packaging
+    dataset: amazon_all_beauty
+    predicate_ids: [beauty_adverse_reaction, beauty_return_or_refund, beauty_packaging_failure]
+    original_order: [beauty_adverse_reaction, beauty_return_or_refund, beauty_packaging_failure]
+    characteristics: [three_predicate, rare_positive, selective]
+  - id: beauty_reaction_failure_value_return
+    dataset: amazon_all_beauty
+    predicate_ids: [beauty_adverse_reaction, beauty_malfunction, beauty_poor_value, beauty_return_or_refund]
+    original_order: [beauty_adverse_reaction, beauty_malfunction, beauty_poor_value, beauty_return_or_refund]
+    characteristics: [four_predicate, rare_positive, different_prompt_complexity]
+  - id: banking_withdrawal_access
+    dataset: banking77_queries
+    predicate_ids: [banking_cash_withdrawal, banking_access_or_verification]
+    original_order: [banking_cash_withdrawal, banking_access_or_verification]
+    characteristics: [two_predicate, weak_correlation, selective]
+  - id: banking_unauthorized_card_refund
+    dataset: banking77_queries
+    predicate_ids: [banking_unauthorized_activity, banking_card_related, banking_refund_or_reversal]
+    original_order: [banking_unauthorized_activity, banking_card_related, banking_refund_or_reversal]
+    characteristics: [three_predicate, correlated]
+  - id: banking_transfer_unauthorized_refund_access
+    dataset: banking77_queries
+    predicate_ids: [banking_transfer_related, banking_unauthorized_activity, banking_refund_or_reversal, banking_access_or_verification]
+    original_order: [banking_transfer_related, banking_unauthorized_activity, banking_refund_or_reversal, banking_access_or_verification]
+    characteristics: [four_predicate, correlated, different_prompt_complexity]
+  - id: sms_urgency_security
+    dataset: sms_spam
+    predicate_ids: [sms_urgency_pressure, sms_account_security]
+    original_order: [sms_urgency_pressure, sms_account_security]
+    characteristics: [two_predicate, weak_correlation, rare_positive]
+  - id: sms_prize_fee_contact
+    dataset: sms_spam
+    predicate_ids: [sms_prize_or_reward, sms_payment_or_fee, sms_contact_action]
+    original_order: [sms_prize_or_reward, sms_payment_or_fee, sms_contact_action]
+    characteristics: [three_predicate, correlated, selective]
+  - id: sms_offer_prize_urgency_contact
+    dataset: sms_spam
+    predicate_ids: [sms_unsolicited_offer, sms_prize_or_reward, sms_urgency_pressure, sms_contact_action]
+    original_order: [sms_unsolicited_offer, sms_prize_or_reward, sms_urgency_pressure, sms_contact_action]
+    characteristics: [four_predicate, correlated, full_fusion_may_be_expensive]

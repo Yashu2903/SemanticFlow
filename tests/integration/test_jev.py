@@ -3,6 +3,7 @@ import json
 import httpx
 import pytest
 
+from semanticflow.optimizer.fusion import build_fused_operator
 from semanticflow.providers.base import (
     AuthenticationError,
     ProviderError,
@@ -13,6 +14,70 @@ from semanticflow.providers.jev import JevProvider
 from semanticflow.query import PredicateSpec
 
 PREDICATE = PredicateSpec(id="quality", instructions="Is quality poor?")
+
+
+@pytest.mark.asyncio
+async def test_conjunctive_fusion_is_one_real_http_request() -> None:
+    operator = build_fused_operator(
+        [PREDICATE, PredicateSpec(id="value", instructions="Is value poor?")],
+        mode="conjunctive_binary",
+        requested_model="jev-latest",
+        threshold=0.5,
+    )
+    requests = 0
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        nonlocal requests
+        requests += 1
+        payload = json.loads(request.content)
+        assert list(payload["questions"]) == [operator.group_id]
+        return httpx.Response(
+            200,
+            json={
+                "model": "jev-1.14.0",
+                "answers": {
+                    operator.group_id: {"type": "noul", "noul": 0.8}
+                },
+                "usage": {"input_tokens": 20, "output_tokens": 2},
+            },
+        )
+
+    selected = provider(handler)
+    result = await selected.decide_fused("text", operator, RequestBudget(1))
+    assert requests == 1 and result.group_probability == 0.8
+    assert not result.predicate_probabilities
+    await selected.aclose()
+
+
+@pytest.mark.asyncio
+async def test_multi_decision_fusion_uses_named_answers_in_one_request() -> None:
+    operator = build_fused_operator(
+        [PREDICATE, PredicateSpec(id="value", instructions="Is value poor?")],
+        mode="multi_decision",
+        requested_model="jev-latest",
+        threshold=0.5,
+    )
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        payload = json.loads(request.content)
+        assert set(payload["questions"]) == {"quality", "value"}
+        return httpx.Response(
+            200,
+            json={
+                "answers": {
+                    "quality": {"type": "noul", "noul": 0.8},
+                    "value": {"type": "noul", "noul": 0.2},
+                },
+                "usage": {"input_tokens": 20, "output_tokens": 4},
+            },
+        )
+
+    selected = provider(handler)
+    result = await selected.decide_fused("text", operator, RequestBudget(1))
+    assert result.group_probability is None
+    assert result.predicate_probabilities == {"quality": 0.8, "value": 0.2}
+    assert result.passes(operator) is False
+    await selected.aclose()
 
 
 def provider(handler, retries=2):

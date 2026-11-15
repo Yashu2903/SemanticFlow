@@ -202,6 +202,16 @@ and the frozen experimental config are documented in the
 [calibration report](docs/milestone_4_5_calibration_report.md)
 (`configs/optimizer.milestone_4_5_frozen.yaml`).
 
+Milestone 4.6 prepares a preregistered independent validation on Amazon All Beauty and Banking77.
+Offline data preparation and mock preflight are provider-free; live profiling and held-out
+execution use separate exact authorization checkpoints. Stage B profiling is complete; Stage C
+held-out execution remains pending separate authorization. Stage C preflight now includes
+early-rejection cost forecasting, shared profiling ledgers, sparse-support diagnostics, exact
+schedule validation, and a hash-scoped launch manifest. See the
+[generalization protocol](docs/milestone_4_6_generalization_protocol.md) and
+[research report](docs/milestone_4_6_research_report.md), plus the
+[Stage C preflight report](docs/milestone_4_6_stage_c_preflight_report.md).
+
 The executed Milestone 1 real-data mock run (`product_quality`, seed 2026) loaded 1,000 reviews and
 produced stage counts `1000 -> 476 -> 234 -> 117`, 1,710 decisions/provider calls, and a complete
 four-artifact result directory. These deterministic mock outcomes validate plumbing, not semantic
@@ -287,10 +297,11 @@ Milestone 2 supplies the first cost-based ordering baseline. Milestone 3 adds co
 estimation, confidence-aware selection, profiling economics, and offline adaptive-profiling
 simulation. Milestone 4 adds uncertainty-aware selection on stored evidence. Milestone 4.5
 calibrates those methods on profiling-only folds without promoting fragile complexity by default.
-Still open:
+Milestone 4.6 freezes the optimizer and uses separately authorized independent public-dataset
+validation. Still open:
 
 - live sequential profiling;
-- an independent confirmatory workload set;
+- separately authorized independent held-out validation;
 - predicate fusion;
 - quality constraints from human labels;
 - adaptive execution.

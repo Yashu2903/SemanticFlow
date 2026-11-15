@@ -1,0 +1,10 @@
+{
+  "actual_http_attempts": 7742,
+  "authorization_phrase": "AUTHORIZE M4.6 STAGE C HELD-OUT JEV EVALUATION",
+  "authorized_http_attempts": 309600,
+  "failure": "FileNotFoundError: [Errno 2] No such file or directory: 'results\\\\milestone_4_6\\\\live_heldout_20261113_stage_c_approved\\\\beauty_reaction_refund_packaging\\\\beauty_reaction_refund_packaging-run-01_20261113T143416.459591Z_5013ec2a1727\\\\.decisions.jsonl.bb1d37e1ab3f4a3aa9a8e77172e27df6.part'",
+  "plans_sha256": "06bbc304af7da38d2d9f717af68246e895262c32c1d77bb5c094d42300a2c26b",
+  "resume_permitted": false,
+  "schema_version": "m46-stage-c-session-v1",
+  "status": "incomplete"
+}

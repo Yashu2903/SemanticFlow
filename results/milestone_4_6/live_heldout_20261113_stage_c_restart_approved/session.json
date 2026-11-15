@@ -1,0 +1,10 @@
+{
+  "actual_http_attempts": 36796,
+  "authorization_phrase": "AUTHORIZE M4.6 STAGE C FULL RESTART AFTER PATH FIX",
+  "authorized_http_attempts": 309600,
+  "failure": null,
+  "plans_sha256": "06bbc304af7da38d2d9f717af68246e895262c32c1d77bb5c094d42300a2c26b",
+  "resume_permitted": false,
+  "schema_version": "m46-stage-c-session-v1",
+  "status": "complete"
+}

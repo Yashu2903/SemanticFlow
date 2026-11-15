@@ -46,4 +46,13 @@ results/milestone_4/*
 results/milestone_4_5/*
 !results/milestone_4_5/calibration_*/
 !results/milestone_4_5/calibration_*/**
-
+!results/milestone_4_6/
+results/milestone_4_6/*
+!results/milestone_4_6/offline_preflight_*/
+!results/milestone_4_6/offline_preflight_*/**
+!results/milestone_4_6/live_profile_*/
+!results/milestone_4_6/live_profile_*/**
+!results/milestone_4_6/frozen_plans_*/
+!results/milestone_4_6/frozen_plans_*/**
+!results/milestone_4_6/live_heldout_*/
+!results/milestone_4_6/live_heldout_*/**

@@ -64,13 +64,27 @@ class ResultStore:
 
     @staticmethod
     def write_json(path: Path, payload: dict[str, Any]) -> None:
-        path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        # Keep the temporary basename short. Windows may enforce the legacy MAX_PATH limit,
+        # and Stage C run directories already contain descriptive, fingerprinted names.
+        temporary = path.with_name(f".sf-{uuid.uuid4().hex[:8]}.tmp")
+        try:
+            temporary.write_text(
+                json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+            )
+            temporary.replace(path)
+        finally:
+            temporary.unlink(missing_ok=True)
 
     @staticmethod
     def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
-        with path.open("w", encoding="utf-8", newline="\n") as handle:
-            for row in rows:
-                handle.write(json.dumps(row, sort_keys=True, ensure_ascii=False) + "\n")
+        temporary = path.with_name(f".sf-{uuid.uuid4().hex[:8]}.tmp")
+        try:
+            with temporary.open("w", encoding="utf-8", newline="\n") as handle:
+                for row in rows:
+                    handle.write(json.dumps(row, sort_keys=True, ensure_ascii=False) + "\n")
+            temporary.replace(path)
+        finally:
+            temporary.unlink(missing_ok=True)
 
     def write_artifacts(
         self,

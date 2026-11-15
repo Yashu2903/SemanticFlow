@@ -1,0 +1,935 @@
+{
+  "datasets": {
+    "amazon_all_beauty": {
+      "complete": true,
+      "completed_decisions": 1200,
+      "held_out_records_not_read_as_outcomes": 800,
+      "http_attempts": 0,
+      "matrix_complete": true,
+      "matrix_fingerprint_sha256": "sha256:4b7b8c2a2e41544bdade2aeda3f3f147183256d0fd785f73394a0b0fbf9fef0e",
+      "predicates": 6,
+      "profiling_records": 200,
+      "provider_attempts": 1200,
+      "synthetic_mock_only": true
+    },
+    "banking77_queries": {
+      "complete": true,
+      "completed_decisions": 1200,
+      "held_out_records_not_read_as_outcomes": 800,
+      "http_attempts": 0,
+      "matrix_complete": true,
+      "matrix_fingerprint_sha256": "sha256:bbd99252722ac66119da521c80e7011267f73f6d7ca8de53f2156166b2cedb31",
+      "predicates": 6,
+      "profiling_records": 200,
+      "provider_attempts": 1200,
+      "synthetic_mock_only": true
+    }
+  },
+  "interpretation": "infrastructure verification only; not semantic performance",
+  "jev_provider_initialized": false,
+  "live_jev_calls": 0,
+  "mock_plan_selection": {
+    "created_at": "2026-11-12T14:39:30.737113+00:00",
+    "held_out_outcomes_observed": false,
+    "post_selection_retuning_permitted": false,
+    "reuse_horizon": 10,
+    "schema_version": "m46-frozen-plan-selection-v1",
+    "workloads": {
+      "banking_card_access": {
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_card_related",
+          "banking_access_or_verification"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 300,
+            "selected_order": [
+              "banking_access_or_verification",
+              "banking_card_related"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 50,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 50,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "banking_transfer_unauthorized_refund_access": {
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_transfer_related",
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal",
+          "banking_access_or_verification"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_transfer_related",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_transfer_related",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification",
+              "banking_transfer_related"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "banking_unauthorized_card_refund": {
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_unauthorized_activity",
+          "banking_card_related",
+          "banking_refund_or_reversal"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 150,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 150,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "banking_unauthorized_withdrawal_refund": {
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_unauthorized_activity",
+          "banking_cash_withdrawal",
+          "banking_refund_or_reversal"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 450,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 300,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 300,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "banking_withdrawal_access": {
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_cash_withdrawal",
+          "banking_access_or_verification"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 200,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 100,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 100,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_failure_usability_return": {
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_malfunction",
+          "beauty_hard_to_use",
+          "beauty_return_or_refund"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_return_or_refund",
+              "beauty_malfunction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_return_or_refund",
+              "beauty_malfunction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_return_or_refund",
+              "beauty_malfunction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 450,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 300,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_packaging_value": {
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_packaging_failure",
+          "beauty_poor_value"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 100,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 50,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 50,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 400,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_reaction_failure_value_return": {
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_adverse_reaction",
+          "beauty_malfunction",
+          "beauty_poor_value",
+          "beauty_return_or_refund"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_poor_value",
+              "beauty_malfunction",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_poor_value",
+              "beauty_malfunction",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_poor_value",
+              "beauty_malfunction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 100,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 100,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_reaction_refund_packaging": {
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_adverse_reaction",
+          "beauty_return_or_refund",
+          "beauty_packaging_failure"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 150,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 300,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 300,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_usability_packaging_return": {
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_hard_to_use",
+          "beauty_packaging_failure",
+          "beauty_return_or_refund"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_decisions": 150,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_return_or_refund",
+              "beauty_hard_to_use"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 450,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 300,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      }
+    }
+  },
+  "network_requests_made": 0,
+  "provider": "mock",
+  "provider_initialized": true,
+  "schema_version": "m46-mock-preflight-v1"
+}

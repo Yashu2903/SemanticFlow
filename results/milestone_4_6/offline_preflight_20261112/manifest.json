@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "historical_integrity.json": "9bf1cbbc38a65f22fa455306c085537588c822ca8b5d4173c8cef1fddce14be2",
+    "input_validation.json": "7d4b618780e65961ee46fe3af06f7036770db342a7c7e6669744e1efb97ad736",
+    "m45_reproduction.json": "ba079e9e923abf5761ebe39485264002c85b84a4ac65b05258d7d79c08f2b1ff",
+    "mock_preflight.json": "81ae59805e252cfd2f94ce992cd5aa895b67fdbb6bc5e7c420f03f9bfd0e521c",
+    "stage_b_budget.json": "81b9b0a6362feb96282591057d803521ae568d3335a6e32a9264087800f06421",
+    "strategy_freeze.json": "767d8350f3a196023033f3b71acfba801ddd31d4232b56f9e91e52388091068d",
+    "workload_freeze.json": "06029358b2cf3c659aaefd7eb8f389fc6bb793a3b3bbfdeef100473d29e494bd"
+  },
+  "created_at": "20261112T143930.749115Z",
+  "held_out_outcomes_observed": false,
+  "paid_jev_calls": 0,
+  "protocol_sha256": "d48130d11d82c6ccba947327f012947658a701203dd308692da650268483ee58",
+  "schema_version": "m46-offline-preflight-run-v1",
+  "status": "complete",
+  "workloads_sha256": "31a9412957c9bf956cef5b6d61380b1f5be2b1ae9ad046a4729cf3863118260f"
+}

@@ -1,0 +1,1079 @@
+{
+  "conservative_input_token_ceiling": 43524345,
+  "conservative_no_retry_cost_proxy_usd": 1.8280224900000002,
+  "conservative_output_token_ceiling": 2672800,
+  "estimated_cost_ceiling_usd": 1.529269224,
+  "estimated_input_token_ceiling": 36411172,
+  "estimated_output_token_ceiling": 2672800,
+  "logical_decision_ceiling": 103200,
+  "max_retries": 2,
+  "maximum_http_attempts": 309600,
+  "model": "jev-1.14.0",
+  "paid_calls_executed": 0,
+  "pricing": {
+    "input_per_million_usd": 0.042,
+    "output_per_million_usd": 0.0,
+    "source": "https://help.typesafe.ai/articles/5187202169-how-much-does-jev-cost",
+    "verified_date": "2026-11-12"
+  },
+  "retry_inclusive_cost_proxy_usd": 5.48406747,
+  "schema_version": "m46-stage-c-budget-v1",
+  "token_estimation_basis": "Stage B per-predicate observed mean and maximum provider-token-to-character-proxy ratios applied to the frozen evaluation texts",
+  "workloads": [
+    {
+      "conservative_input_token_ceiling": 4550921,
+      "conservative_no_retry_cost_proxy_usd": 0.191138682,
+      "conservative_output_token_ceiling": 249600,
+      "dataset": "amazon_all_beauty",
+      "estimated_cost_ceiling_usd": 0.152267304,
+      "estimated_input_token_ceiling": 3625412,
+      "estimated_output_token_ceiling": 249600,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 9600,
+      "maximum_http_attempts": 28800,
+      "retry_inclusive_cost_proxy_usd": 0.5734160460000001,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_failure_usability_return-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_hard_to_use",
+              "beauty_malfunction"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_failure_usability_return-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_hard_to_use",
+              "beauty_malfunction"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_failure_usability_return-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_failure_usability_return-run-04"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_malfunction"
+          ],
+          "correlation_aware": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_malfunction"
+          ],
+          "existing_adaptive": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_malfunction"
+          ],
+          "fixed": [
+            "beauty_malfunction",
+            "beauty_hard_to_use",
+            "beauty_return_or_refund"
+          ],
+          "independent": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_malfunction"
+          ],
+          "joint_adaptive_risk": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_malfunction"
+          ],
+          "milestone_4_5_frozen": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_malfunction"
+          ],
+          "risk_aware": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_malfunction"
+          ]
+        },
+        "unique_execution_orders": 2,
+        "workload_id": "beauty_failure_usability_return"
+      },
+      "workload_id": "beauty_failure_usability_return"
+    },
+    {
+      "conservative_input_token_ceiling": 3077918,
+      "conservative_no_retry_cost_proxy_usd": 0.129272556,
+      "conservative_output_token_ceiling": 163200,
+      "dataset": "amazon_all_beauty",
+      "estimated_cost_ceiling_usd": 0.10220960400000001,
+      "estimated_input_token_ceiling": 2433562,
+      "estimated_output_token_ceiling": 163200,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 6400,
+      "maximum_http_attempts": 19200,
+      "retry_inclusive_cost_proxy_usd": 0.387817668,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_packaging_value-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "beauty_poor_value",
+              "beauty_packaging_failure"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_packaging_value-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "beauty_poor_value",
+              "beauty_packaging_failure"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_packaging_value-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_packaging_value-run-04"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "beauty_packaging_failure",
+            "beauty_poor_value"
+          ],
+          "correlation_aware": [
+            "beauty_packaging_failure",
+            "beauty_poor_value"
+          ],
+          "existing_adaptive": [
+            "beauty_poor_value",
+            "beauty_packaging_failure"
+          ],
+          "fixed": [
+            "beauty_packaging_failure",
+            "beauty_poor_value"
+          ],
+          "independent": [
+            "beauty_poor_value",
+            "beauty_packaging_failure"
+          ],
+          "joint_adaptive_risk": [
+            "beauty_poor_value",
+            "beauty_packaging_failure"
+          ],
+          "milestone_4_5_frozen": [
+            "beauty_poor_value",
+            "beauty_packaging_failure"
+          ],
+          "risk_aware": [
+            "beauty_packaging_failure",
+            "beauty_poor_value"
+          ]
+        },
+        "unique_execution_orders": 2,
+        "workload_id": "beauty_packaging_value"
+      },
+      "workload_id": "beauty_packaging_value"
+    },
+    {
+      "conservative_input_token_ceiling": 4580526,
+      "conservative_no_retry_cost_proxy_usd": 0.192382092,
+      "conservative_output_token_ceiling": 252800,
+      "dataset": "amazon_all_beauty",
+      "estimated_cost_ceiling_usd": 0.152918724,
+      "estimated_input_token_ceiling": 3640922,
+      "estimated_output_token_ceiling": 252800,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 9600,
+      "maximum_http_attempts": 28800,
+      "retry_inclusive_cost_proxy_usd": 0.5771462760000001,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_reaction_refund_packaging-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction",
+              "beauty_packaging_failure"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_reaction_refund_packaging-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction",
+              "beauty_packaging_failure"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_reaction_refund_packaging-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_reaction_refund_packaging-run-04"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "beauty_adverse_reaction",
+            "beauty_return_or_refund",
+            "beauty_packaging_failure"
+          ],
+          "correlation_aware": [
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_packaging_failure"
+          ],
+          "existing_adaptive": [
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_packaging_failure"
+          ],
+          "fixed": [
+            "beauty_adverse_reaction",
+            "beauty_return_or_refund",
+            "beauty_packaging_failure"
+          ],
+          "independent": [
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_packaging_failure"
+          ],
+          "joint_adaptive_risk": [
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_packaging_failure"
+          ],
+          "milestone_4_5_frozen": [
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_packaging_failure"
+          ],
+          "risk_aware": [
+            "beauty_adverse_reaction",
+            "beauty_return_or_refund",
+            "beauty_packaging_failure"
+          ]
+        },
+        "unique_execution_orders": 2,
+        "workload_id": "beauty_reaction_refund_packaging"
+      },
+      "workload_id": "beauty_reaction_refund_packaging"
+    },
+    {
+      "conservative_input_token_ceiling": 5676125,
+      "conservative_no_retry_cost_proxy_usd": 0.23839725000000003,
+      "conservative_output_token_ceiling": 312000,
+      "dataset": "amazon_all_beauty",
+      "estimated_cost_ceiling_usd": 0.19023177600000002,
+      "estimated_input_token_ceiling": 4529328,
+      "estimated_output_token_ceiling": 312000,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 12000,
+      "maximum_http_attempts": 36000,
+      "retry_inclusive_cost_proxy_usd": 0.71519175,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_usability_packaging_return-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_hard_to_use",
+              "beauty_packaging_failure"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_usability_packaging_return-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_hard_to_use",
+              "beauty_packaging_failure"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_usability_packaging_return-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_usability_packaging_return-run-04"
+          },
+          {
+            "index": 5,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_packaging_failure",
+              "beauty_hard_to_use"
+            ],
+            "role": "selected_order_coverage",
+            "run_id": "beauty_usability_packaging_return-run-05"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "beauty_return_or_refund",
+            "beauty_packaging_failure",
+            "beauty_hard_to_use"
+          ],
+          "correlation_aware": [
+            "beauty_return_or_refund",
+            "beauty_packaging_failure",
+            "beauty_hard_to_use"
+          ],
+          "existing_adaptive": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_packaging_failure"
+          ],
+          "fixed": [
+            "beauty_hard_to_use",
+            "beauty_packaging_failure",
+            "beauty_return_or_refund"
+          ],
+          "independent": [
+            "beauty_return_or_refund",
+            "beauty_packaging_failure",
+            "beauty_hard_to_use"
+          ],
+          "joint_adaptive_risk": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_packaging_failure"
+          ],
+          "milestone_4_5_frozen": [
+            "beauty_return_or_refund",
+            "beauty_hard_to_use",
+            "beauty_packaging_failure"
+          ],
+          "risk_aware": [
+            "beauty_return_or_refund",
+            "beauty_packaging_failure",
+            "beauty_hard_to_use"
+          ]
+        },
+        "unique_execution_orders": 3,
+        "workload_id": "beauty_usability_packaging_return"
+      },
+      "workload_id": "beauty_usability_packaging_return"
+    },
+    {
+      "conservative_input_token_ceiling": 10752143,
+      "conservative_no_retry_cost_proxy_usd": 0.45159000600000004,
+      "conservative_output_token_ceiling": 582400,
+      "dataset": "amazon_all_beauty",
+      "estimated_cost_ceiling_usd": 0.35733595800000006,
+      "estimated_input_token_ceiling": 8507999,
+      "estimated_output_token_ceiling": 582400,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 22400,
+      "maximum_http_attempts": 67200,
+      "retry_inclusive_cost_proxy_usd": 1.3547700180000002,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_reaction_failure_value_return-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "beauty_poor_value",
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction",
+              "beauty_malfunction"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_reaction_failure_value_return-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "beauty_poor_value",
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction",
+              "beauty_malfunction"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "beauty_reaction_failure_value_return-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "beauty_reaction_failure_value_return-run-04"
+          },
+          {
+            "index": 5,
+            "order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_poor_value",
+              "beauty_malfunction"
+            ],
+            "role": "selected_order_coverage",
+            "run_id": "beauty_reaction_failure_value_return-run-05"
+          },
+          {
+            "index": 6,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction",
+              "beauty_poor_value",
+              "beauty_malfunction"
+            ],
+            "role": "selected_order_coverage",
+            "run_id": "beauty_reaction_failure_value_return-run-06"
+          },
+          {
+            "index": 7,
+            "order": [
+              "beauty_return_or_refund",
+              "beauty_poor_value",
+              "beauty_adverse_reaction",
+              "beauty_malfunction"
+            ],
+            "role": "selected_order_coverage",
+            "run_id": "beauty_reaction_failure_value_return-run-07"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "beauty_adverse_reaction",
+            "beauty_return_or_refund",
+            "beauty_poor_value",
+            "beauty_malfunction"
+          ],
+          "correlation_aware": [
+            "beauty_return_or_refund",
+            "beauty_poor_value",
+            "beauty_adverse_reaction",
+            "beauty_malfunction"
+          ],
+          "existing_adaptive": [
+            "beauty_poor_value",
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_malfunction"
+          ],
+          "fixed": [
+            "beauty_adverse_reaction",
+            "beauty_malfunction",
+            "beauty_poor_value",
+            "beauty_return_or_refund"
+          ],
+          "independent": [
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_poor_value",
+            "beauty_malfunction"
+          ],
+          "joint_adaptive_risk": [
+            "beauty_poor_value",
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_malfunction"
+          ],
+          "milestone_4_5_frozen": [
+            "beauty_poor_value",
+            "beauty_return_or_refund",
+            "beauty_adverse_reaction",
+            "beauty_malfunction"
+          ],
+          "risk_aware": [
+            "beauty_adverse_reaction",
+            "beauty_return_or_refund",
+            "beauty_poor_value",
+            "beauty_malfunction"
+          ]
+        },
+        "unique_execution_orders": 5,
+        "workload_id": "beauty_reaction_failure_value_return"
+      },
+      "workload_id": "beauty_reaction_failure_value_return"
+    },
+    {
+      "conservative_input_token_ceiling": 3315433,
+      "conservative_no_retry_cost_proxy_usd": 0.13924818600000002,
+      "conservative_output_token_ceiling": 246400,
+      "dataset": "banking77_queries",
+      "estimated_cost_ceiling_usd": 0.12788601000000002,
+      "estimated_input_token_ceiling": 3044905,
+      "estimated_output_token_ceiling": 246400,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 9600,
+      "maximum_http_attempts": 28800,
+      "retry_inclusive_cost_proxy_usd": 0.41774455800000004,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "banking_unauthorized_card_refund-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_card_related"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "banking_unauthorized_card_refund-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_card_related"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "banking_unauthorized_card_refund-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "banking_unauthorized_card_refund-run-04"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "banking_unauthorized_activity",
+            "banking_card_related",
+            "banking_refund_or_reversal"
+          ],
+          "correlation_aware": [
+            "banking_unauthorized_activity",
+            "banking_card_related",
+            "banking_refund_or_reversal"
+          ],
+          "existing_adaptive": [
+            "banking_unauthorized_activity",
+            "banking_refund_or_reversal",
+            "banking_card_related"
+          ],
+          "fixed": [
+            "banking_unauthorized_activity",
+            "banking_card_related",
+            "banking_refund_or_reversal"
+          ],
+          "independent": [
+            "banking_unauthorized_activity",
+            "banking_refund_or_reversal",
+            "banking_card_related"
+          ],
+          "joint_adaptive_risk": [
+            "banking_unauthorized_activity",
+            "banking_card_related",
+            "banking_refund_or_reversal"
+          ],
+          "milestone_4_5_frozen": [
+            "banking_unauthorized_activity",
+            "banking_card_related",
+            "banking_refund_or_reversal"
+          ],
+          "risk_aware": [
+            "banking_unauthorized_activity",
+            "banking_card_related",
+            "banking_refund_or_reversal"
+          ]
+        },
+        "unique_execution_orders": 2,
+        "workload_id": "banking_unauthorized_card_refund"
+      },
+      "workload_id": "banking_unauthorized_card_refund"
+    },
+    {
+      "conservative_input_token_ceiling": 554072,
+      "conservative_no_retry_cost_proxy_usd": 0.023271024,
+      "conservative_output_token_ceiling": 41600,
+      "dataset": "banking77_queries",
+      "estimated_cost_ceiling_usd": 0.021342132,
+      "estimated_input_token_ceiling": 508146,
+      "estimated_output_token_ceiling": 41600,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 1600,
+      "maximum_http_attempts": 4800,
+      "retry_inclusive_cost_proxy_usd": 0.069813072,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "role": "fixed_only",
+            "run_id": "banking_withdrawal_access-run-01"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "banking_cash_withdrawal",
+            "banking_access_or_verification"
+          ],
+          "correlation_aware": [
+            "banking_cash_withdrawal",
+            "banking_access_or_verification"
+          ],
+          "existing_adaptive": [
+            "banking_cash_withdrawal",
+            "banking_access_or_verification"
+          ],
+          "fixed": [
+            "banking_cash_withdrawal",
+            "banking_access_or_verification"
+          ],
+          "independent": [
+            "banking_cash_withdrawal",
+            "banking_access_or_verification"
+          ],
+          "joint_adaptive_risk": [
+            "banking_cash_withdrawal",
+            "banking_access_or_verification"
+          ],
+          "milestone_4_5_frozen": [
+            "banking_cash_withdrawal",
+            "banking_access_or_verification"
+          ],
+          "risk_aware": [
+            "banking_cash_withdrawal",
+            "banking_access_or_verification"
+          ]
+        },
+        "unique_execution_orders": 1,
+        "workload_id": "banking_withdrawal_access"
+      },
+      "workload_id": "banking_withdrawal_access"
+    },
+    {
+      "conservative_input_token_ceiling": 3328545,
+      "conservative_no_retry_cost_proxy_usd": 0.13979889,
+      "conservative_output_token_ceiling": 256000,
+      "dataset": "banking77_queries",
+      "estimated_cost_ceiling_usd": 0.12805501800000002,
+      "estimated_input_token_ceiling": 3048929,
+      "estimated_output_token_ceiling": 256000,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 9600,
+      "maximum_http_attempts": 28800,
+      "retry_inclusive_cost_proxy_usd": 0.41939667,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "banking_unauthorized_withdrawal_refund-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "banking_cash_withdrawal",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "banking_unauthorized_withdrawal_refund-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "banking_cash_withdrawal",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "banking_unauthorized_withdrawal_refund-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "banking_unauthorized_withdrawal_refund-run-04"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "banking_unauthorized_activity",
+            "banking_cash_withdrawal",
+            "banking_refund_or_reversal"
+          ],
+          "correlation_aware": [
+            "banking_unauthorized_activity",
+            "banking_cash_withdrawal",
+            "banking_refund_or_reversal"
+          ],
+          "existing_adaptive": [
+            "banking_cash_withdrawal",
+            "banking_unauthorized_activity",
+            "banking_refund_or_reversal"
+          ],
+          "fixed": [
+            "banking_unauthorized_activity",
+            "banking_cash_withdrawal",
+            "banking_refund_or_reversal"
+          ],
+          "independent": [
+            "banking_unauthorized_activity",
+            "banking_cash_withdrawal",
+            "banking_refund_or_reversal"
+          ],
+          "joint_adaptive_risk": [
+            "banking_unauthorized_activity",
+            "banking_cash_withdrawal",
+            "banking_refund_or_reversal"
+          ],
+          "milestone_4_5_frozen": [
+            "banking_unauthorized_activity",
+            "banking_cash_withdrawal",
+            "banking_refund_or_reversal"
+          ],
+          "risk_aware": [
+            "banking_unauthorized_activity",
+            "banking_cash_withdrawal",
+            "banking_refund_or_reversal"
+          ]
+        },
+        "unique_execution_orders": 2,
+        "workload_id": "banking_unauthorized_withdrawal_refund"
+      },
+      "workload_id": "banking_unauthorized_withdrawal_refund"
+    },
+    {
+      "conservative_input_token_ceiling": 2203175,
+      "conservative_no_retry_cost_proxy_usd": 0.09253335,
+      "conservative_output_token_ceiling": 156800,
+      "dataset": "banking77_queries",
+      "estimated_cost_ceiling_usd": 0.08519947800000001,
+      "estimated_input_token_ceiling": 2028559,
+      "estimated_output_token_ceiling": 156800,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 6400,
+      "maximum_http_attempts": 19200,
+      "retry_inclusive_cost_proxy_usd": 0.27760005,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "banking_card_access-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "banking_access_or_verification",
+              "banking_card_related"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "banking_card_access-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "banking_access_or_verification",
+              "banking_card_related"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "banking_card_access-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "banking_card_access-run-04"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "banking_access_or_verification",
+            "banking_card_related"
+          ],
+          "correlation_aware": [
+            "banking_access_or_verification",
+            "banking_card_related"
+          ],
+          "existing_adaptive": [
+            "banking_access_or_verification",
+            "banking_card_related"
+          ],
+          "fixed": [
+            "banking_card_related",
+            "banking_access_or_verification"
+          ],
+          "independent": [
+            "banking_access_or_verification",
+            "banking_card_related"
+          ],
+          "joint_adaptive_risk": [
+            "banking_access_or_verification",
+            "banking_card_related"
+          ],
+          "milestone_4_5_frozen": [
+            "banking_access_or_verification",
+            "banking_card_related"
+          ],
+          "risk_aware": [
+            "banking_access_or_verification",
+            "banking_card_related"
+          ]
+        },
+        "unique_execution_orders": 2,
+        "workload_id": "banking_card_access"
+      },
+      "workload_id": "banking_card_access"
+    },
+    {
+      "conservative_input_token_ceiling": 5485487,
+      "conservative_no_retry_cost_proxy_usd": 0.23039045400000002,
+      "conservative_output_token_ceiling": 412000,
+      "dataset": "banking77_queries",
+      "estimated_cost_ceiling_usd": 0.21182322,
+      "estimated_input_token_ceiling": 5043410,
+      "estimated_output_token_ceiling": 412000,
+      "evaluation_records": 800,
+      "logical_decision_ceiling": 16000,
+      "maximum_http_attempts": 48000,
+      "retry_inclusive_cost_proxy_usd": 0.6911713620000001,
+      "schedule": {
+        "design": "ABBA fixed-versus-primary-comparator plus one execution of each other unique selected order",
+        "runs": [
+          {
+            "index": 1,
+            "order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "banking_transfer_unauthorized_refund_access-run-01"
+          },
+          {
+            "index": 2,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_transfer_related",
+              "banking_access_or_verification",
+              "banking_refund_or_reversal"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "banking_transfer_unauthorized_refund_access-run-02"
+          },
+          {
+            "index": 3,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_transfer_related",
+              "banking_access_or_verification",
+              "banking_refund_or_reversal"
+            ],
+            "role": "abba_comparator_b",
+            "run_id": "banking_transfer_unauthorized_refund_access-run-03"
+          },
+          {
+            "index": 4,
+            "order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "role": "abba_fixed_a",
+            "run_id": "banking_transfer_unauthorized_refund_access-run-04"
+          },
+          {
+            "index": 5,
+            "order": [
+              "banking_unauthorized_activity",
+              "banking_access_or_verification",
+              "banking_refund_or_reversal",
+              "banking_transfer_related"
+            ],
+            "role": "selected_order_coverage",
+            "run_id": "banking_transfer_unauthorized_refund_access-run-05"
+          }
+        ],
+        "schema_version": "m46-abba-schedule-v1",
+        "selected_orders": {
+          "confidence_aware": [
+            "banking_unauthorized_activity",
+            "banking_transfer_related",
+            "banking_access_or_verification",
+            "banking_refund_or_reversal"
+          ],
+          "correlation_aware": [
+            "banking_unauthorized_activity",
+            "banking_transfer_related",
+            "banking_access_or_verification",
+            "banking_refund_or_reversal"
+          ],
+          "existing_adaptive": [
+            "banking_unauthorized_activity",
+            "banking_transfer_related",
+            "banking_access_or_verification",
+            "banking_refund_or_reversal"
+          ],
+          "fixed": [
+            "banking_transfer_related",
+            "banking_unauthorized_activity",
+            "banking_refund_or_reversal",
+            "banking_access_or_verification"
+          ],
+          "independent": [
+            "banking_unauthorized_activity",
+            "banking_access_or_verification",
+            "banking_refund_or_reversal",
+            "banking_transfer_related"
+          ],
+          "joint_adaptive_risk": [
+            "banking_unauthorized_activity",
+            "banking_transfer_related",
+            "banking_access_or_verification",
+            "banking_refund_or_reversal"
+          ],
+          "milestone_4_5_frozen": [
+            "banking_transfer_related",
+            "banking_unauthorized_activity",
+            "banking_refund_or_reversal",
+            "banking_access_or_verification"
+          ],
+          "risk_aware": [
+            "banking_unauthorized_activity",
+            "banking_transfer_related",
+            "banking_access_or_verification",
+            "banking_refund_or_reversal"
+          ]
+        },
+        "unique_execution_orders": 3,
+        "workload_id": "banking_transfer_unauthorized_refund_access"
+      },
+      "workload_id": "banking_transfer_unauthorized_refund_access"
+    }
+  ]
+}

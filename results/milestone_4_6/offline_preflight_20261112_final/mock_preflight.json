@@ -1,0 +1,3763 @@
+{
+  "datasets": {
+    "amazon_all_beauty": {
+      "complete": true,
+      "completed_decisions": 1200,
+      "held_out_records_not_read_as_outcomes": 800,
+      "http_attempts": 0,
+      "matrix_complete": true,
+      "matrix_fingerprint_sha256": "sha256:4b7b8c2a2e41544bdade2aeda3f3f147183256d0fd785f73394a0b0fbf9fef0e",
+      "predicates": 6,
+      "profiling_records": 200,
+      "provider_attempts": 1200,
+      "synthetic_mock_only": true
+    },
+    "banking77_queries": {
+      "complete": true,
+      "completed_decisions": 1200,
+      "held_out_records_not_read_as_outcomes": 800,
+      "http_attempts": 0,
+      "matrix_complete": true,
+      "matrix_fingerprint_sha256": "sha256:bbd99252722ac66119da521c80e7011267f73f6d7ca8de53f2156166b2cedb31",
+      "predicates": 6,
+      "profiling_records": 200,
+      "provider_attempts": 1200,
+      "synthetic_mock_only": true
+    }
+  },
+  "interpretation": "infrastructure verification only; not semantic performance",
+  "jev_provider_initialized": false,
+  "live_jev_calls": 0,
+  "mock_plan_selection": {
+    "created_at": "2026-11-12T14:52:18.523826+00:00",
+    "held_out_outcomes_observed": false,
+    "post_selection_retuning_permitted": false,
+    "reuse_horizon": 10,
+    "schema_version": "m46-frozen-plan-selection-v1",
+    "workloads": {
+      "banking_card_access": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.005073432835820896,
+              "estimated_evaluations": 1207.960199004975,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751
+              ],
+              "order": [
+                "banking_card_related",
+                "banking_access_or_verification"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005090149253731344,
+              "estimated_evaluations": 1211.9402985074628,
+              "estimated_stage_input_records": [
+                800.0,
+                411.9402985074627
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_card_related"
+              ],
+              "rank": 2
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.0050736,
+              "estimated_evaluations": 1208.0,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0
+              ],
+              "order": [
+                "banking_card_related",
+                "banking_access_or_verification"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.0050904,
+              "estimated_evaluations": 1212.0,
+              "estimated_stage_input_records": [
+                800.0,
+                412.0
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_card_related"
+              ],
+              "rank": 2
+            }
+          ]
+        },
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_card_related",
+          "banking_access_or_verification"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0012599999999999983,
+            "profiling_decisions": 300,
+            "selected_order": [
+              "banking_access_or_verification",
+              "banking_card_related"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0002099999999999998,
+            "profiling_decisions": 50,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0002099999999999998,
+            "profiling_decisions": 50,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_card_related",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "banking_transfer_unauthorized_refund_access": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.0062000852545951385,
+              "estimated_evaluations": 1476.2107749036047,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                188.1787104479612,
+                95.9922634606185
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_transfer_related",
+                "banking_refund_or_reversal",
+                "banking_access_or_verification"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.006217197353552647,
+              "estimated_evaluations": 1480.285084179202,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                188.1787104479612,
+                100.06657273621573
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_transfer_related",
+                "banking_access_or_verification",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.006233183413028799,
+              "estimated_evaluations": 1484.091288816381,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                196.05930346258555,
+                95.99218435877046
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_transfer_related",
+                "banking_access_or_verification"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.006283404774576626,
+              "estimated_evaluations": 1496.0487558515779,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                196.05930346258555,
+                107.94965139396722
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_access_or_verification",
+                "banking_transfer_related"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.006284466485647877,
+              "estimated_evaluations": 1496.301544201875,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                196.13736370555085,
+                92.20398149134925
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_transfer_related",
+                "banking_access_or_verification",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.006299797754731872,
+              "estimated_evaluations": 1499.9518463647312,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                196.0191315076071,
+                95.97251585214904
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_transfer_related",
+                "banking_access_or_verification"
+              ],
+              "rank": 6
+            },
+            {
+              "estimated_cost_usd": 0.006299980006188123,
+              "estimated_evaluations": 1499.9952395686007,
+              "estimated_stage_input_records": [
+                800.0,
+                415.92039800995025,
+                188.11505137190147,
+                95.959790186749
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_access_or_verification"
+              ],
+              "rank": 7
+            },
+            {
+              "estimated_cost_usd": 0.006300304394659424,
+              "estimated_evaluations": 1500.07247491891,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                196.13736370555085,
+                95.97491220838425
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_transfer_related",
+                "banking_unauthorized_activity",
+                "banking_access_or_verification"
+              ],
+              "rank": 8
+            },
+            {
+              "estimated_cost_usd": 0.006317086316284572,
+              "estimated_evaluations": 1504.0681705439458,
+              "estimated_stage_input_records": [
+                800.0,
+                415.92039800995025,
+                188.11505137190147,
+                100.03272116209405
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_unauthorized_activity",
+                "banking_access_or_verification",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 9
+            },
+            {
+              "estimated_cost_usd": 0.006317768484057889,
+              "estimated_evaluations": 1504.2305914423546,
+              "estimated_stage_input_records": [
+                800.0,
+                415.92039800995025,
+                196.11617345633832,
+                92.1940199760659
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_refund_or_reversal",
+                "banking_access_or_verification",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 10
+            },
+            {
+              "estimated_cost_usd": 0.00633351569196322,
+              "estimated_evaluations": 1507.9799266579093,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                215.8789948943658,
+                100.06113076851864
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_access_or_verification",
+                "banking_transfer_related",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 11
+            },
+            {
+              "estimated_cost_usd": 0.006333604681976595,
+              "estimated_evaluations": 1508.001114756332,
+              "estimated_stage_input_records": [
+                800.0,
+                415.92039800995025,
+                196.11617345633832,
+                95.96454329004342
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_access_or_verification"
+              ],
+              "rank": 12
+            },
+            {
+              "estimated_cost_usd": 0.006334267480778071,
+              "estimated_evaluations": 1508.158923994779,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                207.9999942325757,
+                92.19873075722799
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_access_or_verification",
+                "banking_transfer_related",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 13
+            },
+            {
+              "estimated_cost_usd": 0.006350008826075462,
+              "estimated_evaluations": 1511.9068633513002,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                196.0191315076071,
+                107.9275328387181
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_access_or_verification",
+                "banking_transfer_related"
+              ],
+              "rank": 14
+            },
+            {
+              "estimated_cost_usd": 0.0063509235835501315,
+              "estimated_evaluations": 1512.1246627500311,
+              "estimated_stage_input_records": [
+                800.0,
+                411.9402985074627,
+                207.9900440392755,
+                92.19432020329286
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_refund_or_reversal",
+                "banking_transfer_related",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 15
+            },
+            {
+              "estimated_cost_usd": 0.006351083134699903,
+              "estimated_evaluations": 1512.1626511190245,
+              "estimated_stage_input_records": [
+                800.0,
+                411.9402985074627,
+                208.02945662045684,
+                92.19289599110485
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_transfer_related",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 16
+            },
+            {
+              "estimated_cost_usd": 0.006366647062003128,
+              "estimated_evaluations": 1515.868348095983,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                215.8789948943658,
+                107.94955220659214
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_access_or_verification",
+                "banking_refund_or_reversal",
+                "banking_transfer_related"
+              ],
+              "rank": 17
+            },
+            {
+              "estimated_cost_usd": 0.006367738114889267,
+              "estimated_evaluations": 1516.1281225926828,
+              "estimated_stage_input_records": [
+                800.0,
+                415.92039800995025,
+                208.01932059673206,
+                92.18840398600035
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_access_or_verification",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 18
+            },
+            {
+              "estimated_cost_usd": 0.006384050687052385,
+              "estimated_evaluations": 1520.012068345806,
+              "estimated_stage_input_records": [
+                800.0,
+                411.9402985074627,
+                208.02945662045684,
+                100.04231321788639
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_transfer_related",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 19
+            },
+            {
+              "estimated_cost_usd": 0.00640035406419211,
+              "estimated_evaluations": 1523.8938248076452,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                207.9999942325757,
+                107.9336315700943
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_access_or_verification",
+                "banking_unauthorized_activity",
+                "banking_transfer_related"
+              ],
+              "rank": 20
+            },
+            {
+              "estimated_cost_usd": 0.006400704060931286,
+              "estimated_evaluations": 1523.9771573645921,
+              "estimated_stage_input_records": [
+                800.0,
+                415.92039800995025,
+                208.01932059673206,
+                100.03743875790974
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_access_or_verification",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 21
+            },
+            {
+              "estimated_cost_usd": 0.006416815971446002,
+              "estimated_evaluations": 1527.8133265347624,
+              "estimated_stage_input_records": [
+                800.0,
+                411.9402985074627,
+                215.83314769436402,
+                100.03988033293551
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_unauthorized_activity",
+                "banking_transfer_related",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 22
+            },
+            {
+              "estimated_cost_usd": 0.006417007005549277,
+              "estimated_evaluations": 1527.8588108450658,
+              "estimated_stage_input_records": [
+                800.0,
+                411.9402985074627,
+                207.9900440392755,
+                107.92846829832752
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_transfer_related"
+              ],
+              "rank": 23
+            },
+            {
+              "estimated_cost_usd": 0.006449940305226782,
+              "estimated_evaluations": 1535.7000726730432,
+              "estimated_stage_input_records": [
+                800.0,
+                411.9402985074627,
+                215.83314769436402,
+                107.92662647121645
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_transfer_related"
+              ],
+              "rank": 24
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.006278490960000001,
+              "estimated_evaluations": 1494.8788000000002,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                199.92000000000002,
+                102.95880000000001
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_access_or_verification",
+                "banking_transfer_related"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.006282689280000001,
+              "estimated_evaluations": 1495.8784,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                199.92000000000002,
+                103.95840000000001
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_transfer_related",
+                "banking_access_or_verification"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.00628672296,
+              "estimated_evaluations": 1496.8388000000002,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                201.88000000000002,
+                102.95880000000001
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_access_or_verification",
+                "banking_refund_or_reversal",
+                "banking_transfer_related"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.00629520192,
+              "estimated_evaluations": 1498.8576,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                201.88000000000002,
+                104.97760000000001
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_access_or_verification",
+                "banking_transfer_related",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.006299153280000001,
+              "estimated_evaluations": 1499.7984000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                203.84000000000003,
+                103.95840000000001
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_transfer_related",
+                "banking_refund_or_reversal",
+                "banking_access_or_verification"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.0063034339200000004,
+              "estimated_evaluations": 1500.8176,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                203.84000000000003,
+                104.97760000000001
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_transfer_related",
+                "banking_access_or_verification",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 6
+            },
+            {
+              "estimated_cost_usd": 0.006345690960000001,
+              "estimated_evaluations": 1510.8788000000002,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                199.92000000000002,
+                102.95880000000001
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_access_or_verification",
+                "banking_transfer_related"
+              ],
+              "rank": 7
+            },
+            {
+              "estimated_cost_usd": 0.006349889280000001,
+              "estimated_evaluations": 1511.8784,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                199.92000000000002,
+                103.95840000000001
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_transfer_related",
+                "banking_access_or_verification"
+              ],
+              "rank": 8
+            },
+            {
+              "estimated_cost_usd": 0.00637072296,
+              "estimated_evaluations": 1516.8388000000002,
+              "estimated_stage_input_records": [
+                800.0,
+                412.0,
+                201.88000000000002,
+                102.95880000000001
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_transfer_related"
+              ],
+              "rank": 9
+            },
+            {
+              "estimated_cost_usd": 0.00637920192,
+              "estimated_evaluations": 1518.8576,
+              "estimated_stage_input_records": [
+                800.0,
+                412.0,
+                201.88000000000002,
+                104.97760000000001
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_unauthorized_activity",
+                "banking_transfer_related",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 10
+            },
+            {
+              "estimated_cost_usd": 0.00638853096,
+              "estimated_evaluations": 1521.0787999999998,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                210.12,
+                102.9588
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_access_or_verification",
+                "banking_unauthorized_activity",
+                "banking_transfer_related"
+              ],
+              "rank": 11
+            },
+            {
+              "estimated_cost_usd": 0.0063999532800000005,
+              "estimated_evaluations": 1523.7984000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                416.0,
+                203.84000000000003,
+                103.95840000000001
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_access_or_verification"
+              ],
+              "rank": 12
+            },
+            {
+              "estimated_cost_usd": 0.006401297280000001,
+              "estimated_evaluations": 1524.1184,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                212.16,
+                103.95839999999998
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_transfer_related",
+                "banking_unauthorized_activity",
+                "banking_access_or_verification"
+              ],
+              "rank": 13
+            },
+            {
+              "estimated_cost_usd": 0.00640423392,
+              "estimated_evaluations": 1524.8176,
+              "estimated_stage_input_records": [
+                800.0,
+                416.0,
+                203.84000000000003,
+                104.97760000000001
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_unauthorized_activity",
+                "banking_access_or_verification",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 14
+            },
+            {
+              "estimated_cost_usd": 0.00640533096,
+              "estimated_evaluations": 1525.0787999999998,
+              "estimated_stage_input_records": [
+                800.0,
+                412.0,
+                210.12,
+                102.9588
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_transfer_related"
+              ],
+              "rank": 15
+            },
+            {
+              "estimated_cost_usd": 0.0064150060800000006,
+              "estimated_evaluations": 1527.3824,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                210.12,
+                109.2624
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_access_or_verification",
+                "banking_transfer_related",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 16
+            },
+            {
+              "estimated_cost_usd": 0.006423574080000001,
+              "estimated_evaluations": 1529.4224000000002,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                212.16,
+                109.2624
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_transfer_related",
+                "banking_access_or_verification",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 17
+            },
+            {
+              "estimated_cost_usd": 0.00643111392,
+              "estimated_evaluations": 1531.2176,
+              "estimated_stage_input_records": [
+                800.0,
+                412.0,
+                214.24000000000004,
+                104.97760000000001
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_transfer_related",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 18
+            },
+            {
+              "estimated_cost_usd": 0.0064318060800000005,
+              "estimated_evaluations": 1531.3824,
+              "estimated_stage_input_records": [
+                800.0,
+                412.0,
+                210.12,
+                109.2624
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_refund_or_reversal",
+                "banking_transfer_related",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 19
+            },
+            {
+              "estimated_cost_usd": 0.006434897280000001,
+              "estimated_evaluations": 1532.1184,
+              "estimated_stage_input_records": [
+                800.0,
+                416.0,
+                212.16,
+                103.95839999999998
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_access_or_verification"
+              ],
+              "rank": 20
+            },
+            {
+              "estimated_cost_usd": 0.00644791392,
+              "estimated_evaluations": 1535.2176,
+              "estimated_stage_input_records": [
+                800.0,
+                416.0,
+                214.24000000000004,
+                104.97760000000001
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_access_or_verification",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 21
+            },
+            {
+              "estimated_cost_usd": 0.006449110080000001,
+              "estimated_evaluations": 1535.5024,
+              "estimated_stage_input_records": [
+                800.0,
+                412.0,
+                214.24000000000004,
+                109.26240000000003
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_transfer_related",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 22
+            },
+            {
+              "estimated_cost_usd": 0.006457174080000001,
+              "estimated_evaluations": 1537.4224000000002,
+              "estimated_stage_input_records": [
+                800.0,
+                416.0,
+                212.16,
+                109.2624
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_refund_or_reversal",
+                "banking_access_or_verification",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 23
+            },
+            {
+              "estimated_cost_usd": 0.006465910080000001,
+              "estimated_evaluations": 1539.5024,
+              "estimated_stage_input_records": [
+                800.0,
+                416.0,
+                214.24000000000004,
+                109.26240000000003
+              ],
+              "order": [
+                "banking_transfer_related",
+                "banking_access_or_verification",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 24
+            }
+          ]
+        },
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_transfer_related",
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal",
+          "banking_access_or_verification"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_transfer_related",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_transfer_related",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification",
+              "banking_transfer_related"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "banking_transfer_related",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "banking_unauthorized_card_refund": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.005730224289377776,
+              "estimated_evaluations": 1364.339116518518,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                172.29931552349314
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_card_related",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005796901566648716,
+              "estimated_evaluations": 1380.2146587258846,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                172.25445972090952
+              ],
+              "order": [
+                "banking_card_related",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.005830016238721964,
+              "estimated_evaluations": 1388.0991044576106,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                196.05930346258555
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_card_related"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.005896713188152846,
+              "estimated_evaluations": 1403.9793305125822,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                196.0191315076071
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_card_related"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.005897044238307088,
+              "estimated_evaluations": 1404.058151977878,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                196.09795297290293
+              ],
+              "order": [
+                "banking_card_related",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.005897044238307088,
+              "estimated_evaluations": 1404.058151977878,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                196.09795297290293
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_card_related",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 6
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.005846064000000001,
+              "estimated_evaluations": 1391.92,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                199.92000000000002
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_card_related",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005846064000000001,
+              "estimated_evaluations": 1391.92,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                199.92000000000002
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_card_related"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.0059132640000000005,
+              "estimated_evaluations": 1407.92,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                199.92000000000002
+              ],
+              "order": [
+                "banking_card_related",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.0059132640000000005,
+              "estimated_evaluations": 1407.92,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                199.92000000000002
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_card_related"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.005947536,
+              "estimated_evaluations": 1416.08,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                208.07999999999998
+              ],
+              "order": [
+                "banking_card_related",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.005947536,
+              "estimated_evaluations": 1416.08,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                208.07999999999998
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_card_related",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 6
+            }
+          ]
+        },
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_unauthorized_activity",
+          "banking_card_related",
+          "banking_refund_or_reversal"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0006299999999999992,
+            "profiling_decisions": 150,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0006299999999999992,
+            "profiling_decisions": 150,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_card_related",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "banking_unauthorized_withdrawal_refund": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.0056125990101407305,
+              "estimated_evaluations": 1336.333097652555,
+              "estimated_stage_input_records": [
+                800.0,
+                364.17910447761193,
+                172.15399317494294
+              ],
+              "order": [
+                "banking_cash_withdrawal",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.00569605770627718,
+              "estimated_evaluations": 1356.2042157802807,
+              "estimated_stage_input_records": [
+                800.0,
+                364.17910447761193,
+                192.02511130266896
+              ],
+              "order": [
+                "banking_cash_withdrawal",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.0057293140808845865,
+              "estimated_evaluations": 1364.122400210616,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                172.08259921559096
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_cash_withdrawal",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.005830016238721964,
+              "estimated_evaluations": 1388.0991044576106,
+              "estimated_stage_input_records": [
+                800.0,
+                392.03980099502485,
+                196.05930346258555
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_cash_withdrawal"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.005879498580132233,
+              "estimated_evaluations": 1399.8806143171983,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                191.9204153122231
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_cash_withdrawal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.005896713188152846,
+              "estimated_evaluations": 1403.9793305125822,
+              "estimated_stage_input_records": [
+                800.0,
+                407.9601990049751,
+                196.0191315076071
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_cash_withdrawal"
+              ],
+              "rank": 6
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.005637912,
+              "estimated_evaluations": 1342.3600000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                364.0,
+                178.36
+              ],
+              "order": [
+                "banking_cash_withdrawal",
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005668488000000001,
+              "estimated_evaluations": 1349.64,
+              "estimated_stage_input_records": [
+                800.0,
+                364.0,
+                185.64000000000001
+              ],
+              "order": [
+                "banking_cash_withdrawal",
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.005755512000000001,
+              "estimated_evaluations": 1370.3600000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                178.36
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_cash_withdrawal",
+                "banking_refund_or_reversal"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.005846064000000001,
+              "estimated_evaluations": 1391.92,
+              "estimated_stage_input_records": [
+                800.0,
+                392.0,
+                199.92000000000002
+              ],
+              "order": [
+                "banking_unauthorized_activity",
+                "banking_refund_or_reversal",
+                "banking_cash_withdrawal"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.005853288,
+              "estimated_evaluations": 1393.64,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                185.64000000000001
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_cash_withdrawal",
+                "banking_unauthorized_activity"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.0059132640000000005,
+              "estimated_evaluations": 1407.92,
+              "estimated_stage_input_records": [
+                800.0,
+                408.0,
+                199.92000000000002
+              ],
+              "order": [
+                "banking_refund_or_reversal",
+                "banking_unauthorized_activity",
+                "banking_cash_withdrawal"
+              ],
+              "rank": 6
+            }
+          ]
+        },
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_unauthorized_activity",
+          "banking_cash_withdrawal",
+          "banking_refund_or_reversal"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0018899999999999974,
+            "profiling_decisions": 450,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_unauthorized_activity",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0012599999999999983,
+            "profiling_decisions": 300,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0012599999999999983,
+            "profiling_decisions": 300,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "banking_unauthorized_activity",
+              "banking_cash_withdrawal",
+              "banking_refund_or_reversal"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "banking_withdrawal_access": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.00488955223880597,
+              "estimated_evaluations": 1164.1791044776119,
+              "estimated_stage_input_records": [
+                800.0,
+                364.17910447761193
+              ],
+              "order": [
+                "banking_cash_withdrawal",
+                "banking_access_or_verification"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005090149253731344,
+              "estimated_evaluations": 1211.9402985074628,
+              "estimated_stage_input_records": [
+                800.0,
+                411.9402985074627
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_cash_withdrawal"
+              ],
+              "rank": 2
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.0048888000000000004,
+              "estimated_evaluations": 1164.0,
+              "estimated_stage_input_records": [
+                800.0,
+                364.0
+              ],
+              "order": [
+                "banking_cash_withdrawal",
+                "banking_access_or_verification"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.0050904,
+              "estimated_evaluations": 1212.0,
+              "estimated_stage_input_records": [
+                800.0,
+                412.0
+              ],
+              "order": [
+                "banking_access_or_verification",
+                "banking_cash_withdrawal"
+              ],
+              "rank": 2
+            }
+          ]
+        },
+        "dataset": "banking77_queries",
+        "original_order": [
+          "banking_cash_withdrawal",
+          "banking_access_or_verification"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0008399999999999988,
+            "profiling_decisions": 200,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0004199999999999995,
+            "profiling_decisions": 100,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0004199999999999995,
+            "profiling_decisions": 100,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "banking_cash_withdrawal",
+              "banking_access_or_verification"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_failure_usability_return": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.005712675616419084,
+              "estimated_evaluations": 1360.1608610521625,
+              "estimated_stage_input_records": [
+                800.0,
+                376.11940298507466,
+                184.041458067088
+              ],
+              "order": [
+                "beauty_hard_to_use",
+                "beauty_return_or_refund",
+                "beauty_malfunction"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.00576270184259937,
+              "estimated_evaluations": 1372.0718672855644,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.01216579302695
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_hard_to_use",
+                "beauty_malfunction"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.0058301501447983965,
+              "estimated_evaluations": 1388.130986856761,
+              "estimated_stage_input_records": [
+                800.0,
+                376.11940298507466,
+                212.01158387168633
+              ],
+              "order": [
+                "beauty_hard_to_use",
+                "beauty_malfunction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.005897074754160965,
+              "estimated_evaluations": 1404.0654176573728,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                216.0057161648353
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_hard_to_use"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.006096967281382519,
+              "estimated_evaluations": 1451.6588765196473,
+              "estimated_stage_input_records": [
+                800.0,
+                439.80099502487565,
+                211.85788149477168
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_hard_to_use",
+                "beauty_return_or_refund"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.006113856775019618,
+              "estimated_evaluations": 1455.6801845284804,
+              "estimated_stage_input_records": [
+                800.0,
+                439.80099502487565,
+                215.87918950360478
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_hard_to_use"
+              ],
+              "rank": 6
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.005705112,
+              "estimated_evaluations": 1358.36,
+              "estimated_stage_input_records": [
+                800.0,
+                376.0,
+                182.35999999999999
+              ],
+              "order": [
+                "beauty_hard_to_use",
+                "beauty_return_or_refund",
+                "beauty_malfunction"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005755512,
+              "estimated_evaluations": 1370.36,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                182.35999999999999
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_hard_to_use",
+                "beauty_malfunction"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.00580776,
+              "estimated_evaluations": 1382.8,
+              "estimated_stage_input_records": [
+                800.0,
+                376.0,
+                206.8
+              ],
+              "order": [
+                "beauty_hard_to_use",
+                "beauty_malfunction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.0058858800000000005,
+              "estimated_evaluations": 1401.4,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                213.39999999999998
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_hard_to_use"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.006076560000000001,
+              "estimated_evaluations": 1446.8,
+              "estimated_stage_input_records": [
+                800.0,
+                440.00000000000006,
+                206.8
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_hard_to_use",
+                "beauty_return_or_refund"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.006104280000000001,
+              "estimated_evaluations": 1453.4,
+              "estimated_stage_input_records": [
+                800.0,
+                440.00000000000006,
+                213.39999999999998
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_hard_to_use"
+              ],
+              "rank": 6
+            }
+          ]
+        },
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_malfunction",
+          "beauty_hard_to_use",
+          "beauty_return_or_refund"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_return_or_refund",
+              "beauty_malfunction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_return_or_refund",
+              "beauty_malfunction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_return_or_refund",
+              "beauty_malfunction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0018899999999999974,
+            "profiling_decisions": 450,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0012599999999999983,
+            "profiling_decisions": 300,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_malfunction",
+              "beauty_hard_to_use",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_packaging_value": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.004989850746268657,
+              "estimated_evaluations": 1188.0597014925374,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_poor_value"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005023283582089553,
+              "estimated_evaluations": 1196.0199004975125,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0199004975125
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_packaging_failure"
+              ],
+              "rank": 2
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.0049896,
+              "estimated_evaluations": 1188.0,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_poor_value"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.0050232,
+              "estimated_evaluations": 1196.0,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_packaging_failure"
+              ],
+              "rank": 2
+            }
+          ]
+        },
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_packaging_failure",
+          "beauty_poor_value"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0004199999999999995,
+            "profiling_decisions": 100,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0002099999999999998,
+            "profiling_decisions": 50,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0002099999999999998,
+            "profiling_decisions": 50,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0016799999999999977,
+            "profiling_decisions": 400,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_poor_value"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_reaction_failure_value_return": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.0061172668546063715,
+              "estimated_evaluations": 1456.4921082396122,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.110668103285,
+                84.32173864378983
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_poor_value",
+                "beauty_malfunction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.006150574023455181,
+              "estimated_evaluations": 1464.422386536948,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0199004975125,
+                184.09014628350786,
+                84.3123397559276
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_adverse_reaction",
+                "beauty_malfunction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.006151373888085163,
+              "estimated_evaluations": 1464.6128304964675,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                192.2469589305983,
+                84.30617007333166
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_malfunction",
+                "beauty_poor_value",
+                "beauty_return_or_refund"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.00616577997004972,
+              "estimated_evaluations": 1468.0428500118383,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.07126717918177,
+                95.9118813401189
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_poor_value",
+                "beauty_malfunction"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.00616577997004972,
+              "estimated_evaluations": 1468.0428500118383,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.07126717918177,
+                95.9118813401189
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_poor_value",
+                "beauty_malfunction"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.006165948655566933,
+              "estimated_evaluations": 1468.0830132302224,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.110668103285,
+                95.91264363439988
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_poor_value",
+                "beauty_return_or_refund",
+                "beauty_malfunction"
+              ],
+              "rank": 6
+            },
+            {
+              "estimated_cost_usd": 0.006166376617150384,
+              "estimated_evaluations": 1468.1849088453298,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.07126717918177,
+                96.0539401736105
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_poor_value"
+              ],
+              "rank": 7
+            },
+            {
+              "estimated_cost_usd": 0.006166376617150384,
+              "estimated_evaluations": 1468.1849088453298,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.07126717918177,
+                96.0539401736105
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_malfunction",
+                "beauty_poor_value"
+              ],
+              "rank": 8
+            },
+            {
+              "estimated_cost_usd": 0.006199250398118854,
+              "estimated_evaluations": 1476.0119995521081,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0199004975125,
+                184.09014628350786,
+                95.90195277108766
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_malfunction"
+              ],
+              "rank": 9
+            },
+            {
+              "estimated_cost_usd": 0.0062007283632132155,
+              "estimated_evaluations": 1476.3638960031465,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                192.2469589305983,
+                96.05723558001077
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_poor_value"
+              ],
+              "rank": 10
+            },
+            {
+              "estimated_cost_usd": 0.006215855084831965,
+              "estimated_evaluations": 1479.9654963885632,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                195.99004672040346,
+                95.91574817562248
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_poor_value",
+                "beauty_adverse_reaction",
+                "beauty_malfunction"
+              ],
+              "rank": 11
+            },
+            {
+              "estimated_cost_usd": 0.006249167169219406,
+              "estimated_evaluations": 1487.8969450522393,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0199004975125,
+                195.97074329843323,
+                95.90630125629364
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_malfunction"
+              ],
+              "rank": 12
+            },
+            {
+              "estimated_cost_usd": 0.006266668843038008,
+              "estimated_evaluations": 1492.0640102471446,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                195.99004672040346,
+                108.01426203420384
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_poor_value",
+                "beauty_malfunction",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 13
+            },
+            {
+              "estimated_cost_usd": 0.006299975922684478,
+              "estimated_evaluations": 1499.9942673058279,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0199004975125,
+                195.97074329843323,
+                108.00362350988213
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 14
+            },
+            {
+              "estimated_cost_usd": 0.006300449498349764,
+              "estimated_evaluations": 1500.1070234166107,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                216.0057161648353,
+                96.04160575923781
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_adverse_reaction",
+                "beauty_poor_value"
+              ],
+              "rank": 15
+            },
+            {
+              "estimated_cost_usd": 0.0063011407415255235,
+              "estimated_evaluations": 1500.2716051251246,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0199004975125,
+                219.9880696022376,
+                84.26363502537444
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_malfunction",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 16
+            },
+            {
+              "estimated_cost_usd": 0.006350725409220405,
+              "estimated_evaluations": 1512.077478385811,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                216.0057161648353,
+                108.01206072843812
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_poor_value",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 17
+            },
+            {
+              "estimated_cost_usd": 0.006367836654527211,
+              "estimated_evaluations": 1516.1515844112407,
+              "estimated_stage_input_records": [
+                800.0,
+                439.80099502487565,
+                192.10616274550338,
+                84.24442664086168
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_adverse_reaction",
+                "beauty_poor_value",
+                "beauty_return_or_refund"
+              ],
+              "rank": 18
+            },
+            {
+              "estimated_cost_usd": 0.006400839225144614,
+              "estimated_evaluations": 1524.0093393201462,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0199004975125,
+                219.9880696022376,
+                108.00136922039603
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 19
+            },
+            {
+              "estimated_cost_usd": 0.006417154983846487,
+              "estimated_evaluations": 1527.894043772973,
+              "estimated_stage_input_records": [
+                800.0,
+                439.80099502487565,
+                192.10616274550338,
+                95.98688600259399
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_poor_value"
+              ],
+              "rank": 20
+            },
+            {
+              "estimated_cost_usd": 0.006484398149663034,
+              "estimated_evaluations": 1543.9043213483417,
+              "estimated_stage_input_records": [
+                800.0,
+                439.80099502487565,
+                219.88078521827688,
+                84.22254110518898
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_poor_value",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 21
+            },
+            {
+              "estimated_cost_usd": 0.006516995240000102,
+              "estimated_evaluations": 1551.6655333333574,
+              "estimated_stage_input_records": [
+                800.0,
+                439.80099502487565,
+                215.87918950360478,
+                95.98534880487712
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_poor_value"
+              ],
+              "rank": 22
+            },
+            {
+              "estimated_cost_usd": 0.00656724170145035,
+              "estimated_evaluations": 1563.6289765357974,
+              "estimated_stage_input_records": [
+                800.0,
+                439.80099502487565,
+                215.87918950360478,
+                107.94879200731702
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_poor_value",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 23
+            },
+            {
+              "estimated_cost_usd": 0.006584048012052727,
+              "estimated_evaluations": 1567.6304790601732,
+              "estimated_stage_input_records": [
+                800.0,
+                439.80099502487565,
+                219.88078521827688,
+                107.94869881702063
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_poor_value",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 24
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.00617118222,
+              "estimated_evaluations": 1469.3291000000002,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998,
+                93.14909999999999
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_poor_value",
+                "beauty_malfunction"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.00617118222,
+              "estimated_evaluations": 1469.3291000000002,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998,
+                93.14909999999999
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_poor_value",
+                "beauty_malfunction"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.00618747822,
+              "estimated_evaluations": 1473.2091,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                192.05999999999997,
+                93.14909999999999
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_poor_value",
+                "beauty_return_or_refund",
+                "beauty_malfunction"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.00618747822,
+              "estimated_evaluations": 1473.2091,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                192.05999999999997,
+                93.14909999999999
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_poor_value",
+                "beauty_adverse_reaction",
+                "beauty_malfunction"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.0062146518,
+              "estimated_evaluations": 1479.679,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998,
+                103.49900000000001
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_poor_value"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.0062146518,
+              "estimated_evaluations": 1479.679,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998,
+                103.49900000000001
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_malfunction",
+                "beauty_poor_value"
+              ],
+              "rank": 6
+            },
+            {
+              "estimated_cost_usd": 0.00622107822,
+              "estimated_evaluations": 1481.2091,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0,
+                192.05999999999997,
+                93.14909999999999
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_malfunction"
+              ],
+              "rank": 7
+            },
+            {
+              "estimated_cost_usd": 0.00622107822,
+              "estimated_evaluations": 1481.2091,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0,
+                192.05999999999997,
+                93.14909999999999
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_malfunction"
+              ],
+              "rank": 8
+            },
+            {
+              "estimated_cost_usd": 0.0062399106,
+              "estimated_evaluations": 1485.693,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                192.05999999999997,
+                105.633
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_poor_value",
+                "beauty_malfunction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 9
+            },
+            {
+              "estimated_cost_usd": 0.0062399106,
+              "estimated_evaluations": 1485.693,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                192.05999999999997,
+                105.633
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_poor_value",
+                "beauty_malfunction",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 10
+            },
+            {
+              "estimated_cost_usd": 0.0062735106,
+              "estimated_evaluations": 1493.693,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0,
+                192.05999999999997,
+                105.633
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_adverse_reaction",
+                "beauty_malfunction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 11
+            },
+            {
+              "estimated_cost_usd": 0.0062735106,
+              "estimated_evaluations": 1493.693,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0,
+                192.05999999999997,
+                105.633
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 12
+            },
+            {
+              "estimated_cost_usd": 0.0063205758,
+              "estimated_evaluations": 1504.8990000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                213.39999999999998,
+                103.49899999999998
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_poor_value"
+              ],
+              "rank": 13
+            },
+            {
+              "estimated_cost_usd": 0.0063205758,
+              "estimated_evaluations": 1504.8990000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                213.39999999999998,
+                103.49899999999998
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_adverse_reaction",
+                "beauty_poor_value"
+              ],
+              "rank": 14
+            },
+            {
+              "estimated_cost_usd": 0.0063295386,
+              "estimated_evaluations": 1507.0330000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                213.39999999999998,
+                105.633
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_malfunction",
+                "beauty_poor_value",
+                "beauty_return_or_refund"
+              ],
+              "rank": 15
+            },
+            {
+              "estimated_cost_usd": 0.0063295386,
+              "estimated_evaluations": 1507.0330000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                213.39999999999998,
+                105.633
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_malfunction",
+                "beauty_poor_value",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 16
+            },
+            {
+              "estimated_cost_usd": 0.0063816186,
+              "estimated_evaluations": 1519.433,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0,
+                217.79999999999998,
+                105.633
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_malfunction",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 17
+            },
+            {
+              "estimated_cost_usd": 0.0063816186,
+              "estimated_evaluations": 1519.433,
+              "estimated_stage_input_records": [
+                800.0,
+                396.0,
+                217.79999999999998,
+                105.633
+              ],
+              "order": [
+                "beauty_poor_value",
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 18
+            },
+            {
+              "estimated_cost_usd": 0.006538975800000001,
+              "estimated_evaluations": 1556.8990000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                440.00000000000006,
+                213.39999999999998,
+                103.49899999999998
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_poor_value"
+              ],
+              "rank": 19
+            },
+            {
+              "estimated_cost_usd": 0.006538975800000001,
+              "estimated_evaluations": 1556.8990000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                440.00000000000006,
+                213.39999999999998,
+                103.49899999999998
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_poor_value"
+              ],
+              "rank": 20
+            },
+            {
+              "estimated_cost_usd": 0.006547938600000001,
+              "estimated_evaluations": 1559.0330000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                440.00000000000006,
+                213.39999999999998,
+                105.633
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_adverse_reaction",
+                "beauty_poor_value",
+                "beauty_return_or_refund"
+              ],
+              "rank": 21
+            },
+            {
+              "estimated_cost_usd": 0.006547938600000001,
+              "estimated_evaluations": 1559.0330000000001,
+              "estimated_stage_input_records": [
+                800.0,
+                440.00000000000006,
+                213.39999999999998,
+                105.633
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_return_or_refund",
+                "beauty_poor_value",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 22
+            },
+            {
+              "estimated_cost_usd": 0.0065664186,
+              "estimated_evaluations": 1563.433,
+              "estimated_stage_input_records": [
+                800.0,
+                440.00000000000006,
+                217.79999999999998,
+                105.633
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_poor_value",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 23
+            },
+            {
+              "estimated_cost_usd": 0.0065664186,
+              "estimated_evaluations": 1563.433,
+              "estimated_stage_input_records": [
+                800.0,
+                440.00000000000006,
+                217.79999999999998,
+                105.633
+              ],
+              "order": [
+                "beauty_malfunction",
+                "beauty_poor_value",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 24
+            }
+          ]
+        },
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_adverse_reaction",
+          "beauty_malfunction",
+          "beauty_poor_value",
+          "beauty_return_or_refund"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_poor_value",
+              "beauty_malfunction",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_poor_value",
+              "beauty_malfunction",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_poor_value",
+              "beauty_malfunction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0004199999999999995,
+            "profiling_decisions": 100,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0004199999999999995,
+            "profiling_decisions": 100,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.003360000000000068,
+            "profiling_decisions": 800,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_malfunction",
+              "beauty_poor_value",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_reaction_refund_packaging": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.005663163288037425,
+              "estimated_evaluations": 1348.3722114374823,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                160.31250994494482
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005663163288037425,
+              "estimated_evaluations": 1348.3722114374823,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                160.31250994494482
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_packaging_failure",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.00576295006842122,
+              "estimated_evaluations": 1372.1309686717193,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.07126717918177
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_packaging_failure"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.00576295006842122,
+              "estimated_evaluations": 1372.1309686717193,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.07126717918177
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_packaging_failure"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.005796212328549152,
+              "estimated_evaluations": 1380.0505544164648,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                191.99085292392743
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_packaging_failure",
+                "beauty_return_or_refund"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.005796212328549152,
+              "estimated_evaluations": 1380.0505544164648,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                191.99085292392743
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 6
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.005779956,
+              "estimated_evaluations": 1376.18,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_packaging_failure",
+                "beauty_return_or_refund"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005779956,
+              "estimated_evaluations": 1376.18,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998
+              ],
+              "order": [
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund",
+                "beauty_packaging_failure"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.005779956,
+              "estimated_evaluations": 1376.18,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_adverse_reaction",
+                "beauty_return_or_refund"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.005779956,
+              "estimated_evaluations": 1376.18,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.005779956,
+              "estimated_evaluations": 1376.18,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_adverse_reaction",
+                "beauty_packaging_failure"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.005779956,
+              "estimated_evaluations": 1376.18,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_packaging_failure",
+                "beauty_adverse_reaction"
+              ],
+              "rank": 6
+            }
+          ]
+        },
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_adverse_reaction",
+          "beauty_return_or_refund",
+          "beauty_packaging_failure"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0006299999999999992,
+            "profiling_decisions": 150,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_return_or_refund",
+              "beauty_adverse_reaction"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0012599999999999983,
+            "profiling_decisions": 300,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0012599999999999983,
+            "profiling_decisions": 300,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_adverse_reaction",
+              "beauty_return_or_refund",
+              "beauty_packaging_failure"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      },
+      "beauty_usability_packaging_return": {
+        "candidate_predictions": {
+          "correlation_aware": [
+            {
+              "estimated_cost_usd": 0.00561290499583778,
+              "estimated_evaluations": 1336.4059513899474,
+              "estimated_stage_input_records": [
+                800.0,
+                376.11940298507466,
+                160.28654840487275
+              ],
+              "order": [
+                "beauty_hard_to_use",
+                "beauty_packaging_failure",
+                "beauty_return_or_refund"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005662915062215575,
+              "estimated_evaluations": 1348.3131100513274,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                160.25340855878997
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_hard_to_use",
+                "beauty_return_or_refund"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.005663163288037425,
+              "estimated_evaluations": 1348.3722114374823,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                160.31250994494482
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_return_or_refund",
+                "beauty_hard_to_use"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.005663163288037425,
+              "estimated_evaluations": 1348.3722114374823,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                160.31250994494482
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_packaging_failure",
+                "beauty_hard_to_use"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.005712675616419084,
+              "estimated_evaluations": 1360.1608610521625,
+              "estimated_stage_input_records": [
+                800.0,
+                376.11940298507466,
+                184.041458067088
+              ],
+              "order": [
+                "beauty_hard_to_use",
+                "beauty_return_or_refund",
+                "beauty_packaging_failure"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.00576270184259937,
+              "estimated_evaluations": 1372.0718672855644,
+              "estimated_stage_input_records": [
+                800.0,
+                388.05970149253733,
+                184.01216579302695
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_hard_to_use",
+                "beauty_packaging_failure"
+              ],
+              "rank": 6
+            }
+          ],
+          "independent": [
+            {
+              "estimated_cost_usd": 0.005705112,
+              "estimated_evaluations": 1358.36,
+              "estimated_stage_input_records": [
+                800.0,
+                376.0,
+                182.35999999999999
+              ],
+              "order": [
+                "beauty_hard_to_use",
+                "beauty_packaging_failure",
+                "beauty_return_or_refund"
+              ],
+              "rank": 1
+            },
+            {
+              "estimated_cost_usd": 0.005705112,
+              "estimated_evaluations": 1358.36,
+              "estimated_stage_input_records": [
+                800.0,
+                376.0,
+                182.35999999999999
+              ],
+              "order": [
+                "beauty_hard_to_use",
+                "beauty_return_or_refund",
+                "beauty_packaging_failure"
+              ],
+              "rank": 2
+            },
+            {
+              "estimated_cost_usd": 0.005755512,
+              "estimated_evaluations": 1370.36,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                182.35999999999999
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_hard_to_use",
+                "beauty_return_or_refund"
+              ],
+              "rank": 3
+            },
+            {
+              "estimated_cost_usd": 0.005755512,
+              "estimated_evaluations": 1370.36,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                182.35999999999999
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_hard_to_use",
+                "beauty_packaging_failure"
+              ],
+              "rank": 4
+            },
+            {
+              "estimated_cost_usd": 0.005779956,
+              "estimated_evaluations": 1376.18,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998
+              ],
+              "order": [
+                "beauty_packaging_failure",
+                "beauty_return_or_refund",
+                "beauty_hard_to_use"
+              ],
+              "rank": 5
+            },
+            {
+              "estimated_cost_usd": 0.005779956,
+              "estimated_evaluations": 1376.18,
+              "estimated_stage_input_records": [
+                800.0,
+                388.0,
+                188.17999999999998
+              ],
+              "order": [
+                "beauty_return_or_refund",
+                "beauty_packaging_failure",
+                "beauty_hard_to_use"
+              ],
+              "rank": 6
+            }
+          ]
+        },
+        "dataset": "amazon_all_beauty",
+        "original_order": [
+          "beauty_hard_to_use",
+          "beauty_packaging_failure",
+          "beauty_return_or_refund"
+        ],
+        "strategies": {
+          "confidence_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "correlation_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "existing_adaptive": {
+            "action": "ADOPT_REORDER",
+            "profiling_cost_usd": 0.0006299999999999992,
+            "profiling_decisions": 150,
+            "selected_order": [
+              "beauty_packaging_failure",
+              "beauty_return_or_refund",
+              "beauty_hard_to_use"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "fixed": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0,
+            "profiling_decisions": 0,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "independent": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "joint_adaptive_risk": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0018899999999999974,
+            "profiling_decisions": 450,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "milestone_4_5_frozen": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0012599999999999983,
+            "profiling_decisions": 300,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          },
+          "risk_aware": {
+            "action": "KEEP_ORIGINAL",
+            "profiling_cost_usd": 0.0025200000000000257,
+            "profiling_decisions": 600,
+            "selected_order": [
+              "beauty_hard_to_use",
+              "beauty_packaging_failure",
+              "beauty_return_or_refund"
+            ],
+            "selection_input": "profiling_partition_only"
+          }
+        }
+      }
+    }
+  },
+  "network_requests_made": 0,
+  "provider": "mock",
+  "provider_initialized": true,
+  "schema_version": "m46-mock-preflight-v1"
+}

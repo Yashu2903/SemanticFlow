@@ -5,6 +5,11 @@ import hashlib
 import time
 from collections.abc import Mapping
 
+from semanticflow.optimizer.fusion import (
+    FusedDecision,
+    FusedOperator,
+    ProviderFusionCapabilities,
+)
 from semanticflow.providers.base import Decision, InferenceProvider, RequestBudget
 from semanticflow.query.models import PredicateSpec
 
@@ -23,6 +28,7 @@ class MockProvider(InferenceProvider):
         input_tokens_per_evaluation: int | None = None,
         output_tokens_per_evaluation: int | None = None,
         usage_by_predicate: Mapping[str, tuple[int, int]] | None = None,
+        fused_probabilities: Mapping[tuple[str, str], float] | None = None,
     ) -> None:
         super().__init__()
         if input_tokens_per_evaluation is not None and input_tokens_per_evaluation < 0:
@@ -40,12 +46,23 @@ class MockProvider(InferenceProvider):
         self.input_tokens_per_evaluation = input_tokens_per_evaluation
         self.output_tokens_per_evaluation = output_tokens_per_evaluation
         self.usage_by_predicate = dict(usage_by_predicate or {})
+        self.fused_probabilities = dict(fused_probabilities or {})
         self.active_calls = 0
         self.max_active_calls = 0
 
     @property
     def model_identifier(self) -> str:
         return self._model
+
+    @property
+    def fusion_capabilities(self) -> ProviderFusionCapabilities:
+        return ProviderFusionCapabilities(
+            provider=self.name,
+            conjunctive_binary=True,
+            multi_decision=True,
+            evidence="deterministic infrastructure-only mock",
+            live_validated=False,
+        )
 
     def _probability(self, text: str, predicate: PredicateSpec) -> float:
         if (text, predicate.id) in self.probabilities:
@@ -87,5 +104,65 @@ class MockProvider(InferenceProvider):
                 and output_tokens is not None,
                 "synthetic_token_usage": input_tokens is not None
                 or output_tokens is not None,
+            },
+        )
+
+    async def decide_fused(
+        self,
+        record_text: str,
+        operator: FusedOperator,
+        budget: RequestBudget,
+    ) -> FusedDecision:
+        await budget.reserve()
+        self.stats.calls += 1
+        self.stats.attempts += 1
+        started = time.perf_counter()
+        self.active_calls += 1
+        self.max_active_calls = max(self.max_active_calls, self.active_calls)
+        try:
+            if self.delay_seconds:
+                await asyncio.sleep(self.delay_seconds)
+            predicate_probabilities = {
+                predicate_id: self._probability(
+                    record_text,
+                    PredicateSpec(id=predicate_id, instructions=instructions),
+                )
+                for predicate_id, instructions in zip(
+                    operator.predicate_ids, operator.source_instructions, strict=True
+                )
+            }
+            if operator.fusion_mode == "multi_decision":
+                group_probability = None
+            elif (record_text, operator.group_id) in self.fused_probabilities:
+                group_probability = float(
+                    self.fused_probabilities[(record_text, operator.group_id)]
+                )
+            elif operator.fusion_mode == "single":
+                group_probability = predicate_probabilities[operator.predicate_ids[0]]
+            else:
+                # Infrastructure-only default. This is never real fused evidence.
+                group_probability = min(predicate_probabilities.values())
+        finally:
+            self.active_calls -= 1
+        self.stats.successful_requests += 1
+        usage_key = operator.group_id
+        input_tokens, output_tokens = self.usage_by_predicate.get(
+            usage_key,
+            (self.input_tokens_per_evaluation, self.output_tokens_per_evaluation),
+        )
+        return FusedDecision(
+            group_probability=group_probability,
+            predicate_probabilities=(
+                predicate_probabilities if operator.fusion_mode == "multi_decision" else {}
+            ),
+            model_identifier=self._model,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            latency_seconds=time.perf_counter() - started,
+            metadata={
+                "mock": True,
+                "fusion_mode": operator.fusion_mode,
+                "synthetic_fused_outcome": True,
+                "not_research_evidence": True,
             },
         )

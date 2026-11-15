@@ -1,0 +1,16 @@
+{
+  "metrics": {
+    "adaptive_risk_r10_net_usd": 0.09651255600000004,
+    "bootstrap_95_coverage": 0.7708333333333333,
+    "correlation_concordance": 0.9208333333333334,
+    "correlation_regret_tokens": 37.9375,
+    "existing_adaptive_r10_net_usd": 0.10338711600000036,
+    "independence_concordance": 0.9041666666666668,
+    "independence_regret_tokens": 84.75,
+    "joint_adaptive_risk_r10_net_usd": 0.09694629000000032
+  },
+  "reran_paid_inference": false,
+  "source": "results/milestone_4_5/calibration_20261111/report.json",
+  "source_sha256": "664c94ec683e01adebf8390c951300f16470c47c3f93dc386ae37cd726208fba",
+  "verified": true
+}

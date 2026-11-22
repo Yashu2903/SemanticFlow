@@ -1,0 +1,43 @@
+{
+  "artifacts": {
+    "banking77_failure_replay.json": "7e86dcc185c61f2a7068e1f34697e202486adf10f0f1a3eeef99c7bb1899ef96",
+    "beauty_missed_opportunity_replay.json": "ce399329a6ad1ebead9ffd7b32e55275cd0cb6a05f6f83873775d43f2c168825",
+    "budget_sensitivity.csv": "d04c08b221963fbe4ce6bdf11efe6816a65091322b5fc4458a146dc73abd3b30",
+    "cost_prediction_provenance.json": "9392413efe44bbb6efc3af86275e5889ead640065f7c9ed3b3950373c53d4a88",
+    "future_evaluation_protocol.json": "4a988265a1b99675ee70330a5f0600acbcfedb6fc285e1e9237330b621b93211",
+    "future_pilot_budget.json": "eb6e46a5a05493e6944d2affe2dc2c25e57b90e1ee75ff1524a739ad00b0fab6",
+    "historical_integrity_audit.json": "3db921a5c96bef0a69b751b92ee3ac43a6d50bd48b024ec23e70450adf844fbc",
+    "m52_policy_configurations.json": "1c526c4e9546e92b4f9b0346def2011eb0794cd7921bd8c2c39c4da2d8d3c19f",
+    "missed_opportunity_analysis.json": "6d139457318508271ebc1c549f62f2b25dc2e3abc9b6a3a5744acd77de8ef267",
+    "policy_ablation_results.csv": "c1b22316b6a72ba6683ec503687d74eccacfaa81c8f70cfc16f7f43cf77dcff1",
+    "profiling_action_traces.json": "ff68963b3a7669a2e5997047d0a054d259e765a6e14ebcd0a0772865eeb77463",
+    "profiling_costs.csv": "c1b22316b6a72ba6683ec503687d74eccacfaa81c8f70cfc16f7f43cf77dcff1",
+    "quality_qualification_results.csv": "c1b22316b6a72ba6683ec503687d74eccacfaa81c8f70cfc16f7f43cf77dcff1",
+    "quality_uncertainty_validation.json": "7404812c4ab7aaf04f8c099a53555bf6b23201b33a118965985abb9760ba7e86",
+    "replay_limitations.json": "bf495ee9f6b9151d3b1b8005e3183c4f8e60b17dbacb26280b7356add7636cc7",
+    "reuse_horizon_analysis.csv": "0375dc7d0a77982575d0999cbcb3cf8ddfd4539ddb18af98db4d587d0d8e9bd2",
+    "sampling_strategy_comparison.csv": "640b22d261c6c0526d1db3200cd460c0e85bac5fbab652bcd9e8c39f08feca00",
+    "selection_regret.csv": "c1b22316b6a72ba6683ec503687d74eccacfaa81c8f70cfc16f7f43cf77dcff1",
+    "sequential_qualification_tests.json": "eca548ce6dcfa17688ad666ae11fca6416ae88bdd85c44fcfdbeaa30f65e4b85",
+    "sparse_positive_stress_tests.json": "7ce6aa21bdfd6aa8b4d9f2fd15a4b505efe55ad0a4bad8aa319a804a27a469cd",
+    "unsafe_selection_analysis.json": "9e3e6a037838c41ef8a8c35c06856f7323a022f393ef1a622d171d4dcc2bc5b3"
+  },
+  "documents": {
+    "milestone_5_2_live_pilot_proposal.md": "7427148a11db0619b4ba1abad660fae77eb6337dbc43c4e19259f953f4e47bc2",
+    "milestone_5_2_offline_results.md": "ae3918abde234c5b632215608dc516001676da6a515474af33299006b74b1f7f",
+    "milestone_5_2_statistical_protocol.md": "70107f0dded712e83dce0f82b5e9c3d118cbd90527841d07d1ea55c641cb7684",
+    "milestone_5_2_system_design.md": "49fda953cd623a32efd22825e9a4b1873c1cd72f6acbaa7aac40ee0e2fa69f3d"
+  },
+  "historical_m51_artifacts_modified": false,
+  "historical_source_fingerprints": {
+    "frozen_catalog_sha256": "cbf9c7a35863a30c1770c30ae331d7feeed3790c574e693a1812d83be97c7f1f",
+    "frozen_selections_sha256": "ee8a72b602e73980fb1520e5305ca81e041e223f266025979b198fe88474ec25",
+    "m51_final_audit_manifest_sha256": "e4100c663f7ee696d93b92b620ef7645f7676f29a3b08fa168048f02618756fc",
+    "protocol_sha256": "4b9dedcd2f889cdfcfdaf9852e1196e94434a0096a63b040781a4365a01ede35",
+    "stage_d_schedule_sha256": "08bfa895d5f0c6d2f110eb9564c44617da69dc0d1bcaa58ac465a1c2bdf03560",
+    "workloads_sha256": "548852e317048aece4e9139113c62ea99ded1eae2b2960e3078b132d16e330f9"
+  },
+  "new_jev_requests": 0,
+  "provider_initialized": false,
+  "schema_version": "m5.2-offline-artifact-integrity-v1"
+}

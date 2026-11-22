@@ -31,6 +31,8 @@ from semanticflow.optimizer.m51_stage_d_preflight import (
 
 pytestmark = pytest.mark.research_artifacts(
     "results/milestone_5_1/selection_stage_results/frozen_strategy_selections.json",
+    "results/milestone_5_1/selection_stage_results/stage_d_execution_schedule.json",
+    "results/milestone_5_1/selection_stage_results/stage_d_authorization_manifest.json",
 )
 
 

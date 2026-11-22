@@ -24,6 +24,11 @@ from semanticflow.optimizer.m52_replay import HistoricalReplayMatrix
 
 pytestmark = pytest.mark.research_artifacts(
     "results/milestone_5_1/selection_stage_results/frozen_strategy_selections.json",
+    "results/milestone_5_1/selection_stage_preflight/selection_schedule.json",
+    "results/milestone_5_1/selection_stage_preflight/physical_plan_catalog.json",
+    "results/milestone_5_1/selection_stage_live_v2/session.json",
+    "results/milestone_5_1/selection_stage_live_v2/operators/"
+    "banking77_queries/fusion_f9b70e5f0e90e392/decisions.jsonl",
 )
 
 

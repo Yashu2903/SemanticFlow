@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620">
+<rect width="100%" height="100%" fill="white"/>
+<text x="550.0" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold">Early rejection changes request counts</text>
+<text x="22" y="260.0" transform="rotate(-90 22 260.0)" text-anchor="middle" font-family="sans-serif" font-size="15">Physical requests per 400 records</text>
+<line x1="100" y1="450.0" x2="1060" y2="450.0" stroke="#ddd"/>
+<text x="92" y="455.0" text-anchor="end" font-family="monospace" font-size="12">-43.44</text>
+<line x1="100" y1="373.99999999999994" x2="1060" y2="373.99999999999994" stroke="#ddd"/>
+<text x="92" y="378.99999999999994" text-anchor="end" font-family="monospace" font-size="12">82.54</text>
+<line x1="100" y1="297.99999999999994" x2="1060" y2="297.99999999999994" stroke="#ddd"/>
+<text x="92" y="302.99999999999994" text-anchor="end" font-family="monospace" font-size="12">208.5</text>
+<line x1="100" y1="221.99999999999997" x2="1060" y2="221.99999999999997" stroke="#ddd"/>
+<text x="92" y="226.99999999999997" text-anchor="end" font-family="monospace" font-size="12">334.5</text>
+<line x1="100" y1="145.99999999999994" x2="1060" y2="145.99999999999994" stroke="#ddd"/>
+<text x="92" y="150.99999999999994" text-anchor="end" font-family="monospace" font-size="12">460.5</text>
+<line x1="100" y1="70.0" x2="1060" y2="70.0" stroke="#ddd"/>
+<text x="92" y="75.0" text-anchor="end" font-family="monospace" font-size="12">586.4</text>
+<line x1="100" y1="423.7931034482759" x2="1060" y2="423.7931034482759" stroke="#333" stroke-width="1.5"/>
+<rect x="114.93333333333334" y="146.88321585063824" width="34.56" height="276.90988759763763" fill="#475569"/>
+<rect x="153.33333333333334" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="153.33333333333334" y="464" transform="rotate(42 153.33333333333334 464)" text-anchor="start" font-family="sans-serif" font-size="12">beauty failure usability</text>
+<rect x="221.6" y="174.63453356194833" width="34.56" height="249.15856988632754" fill="#475569"/>
+<rect x="260.0" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="260.0" y="464" transform="rotate(42 260.0 464)" text-anchor="start" font-family="sans-serif" font-size="12">beauty reaction packaging refund</text>
+<rect x="328.2666666666667" y="171.61808598463202" width="34.56" height="252.17501746364385" fill="#475569"/>
+<rect x="366.6666666666667" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="366.6666666666667" y="464" transform="rotate(42 366.6666666666667 464)" text-anchor="start" font-family="sans-serif" font-size="12">beauty reaction failure value return</text>
+<rect x="434.9333333333334" y="166.7917698609259" width="34.56" height="257.00133358734996" fill="#475569"/>
+<rect x="473.33333333333337" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="473.33333333333337" y="464" transform="rotate(42 473.33333333333337 464)" text-anchor="start" font-family="sans-serif" font-size="12">banking unauthorized refund</text>
+<rect x="541.6" y="96.20689655172416" width="34.56" height="327.58620689655174" fill="#475569"/>
+<rect x="580.0" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="580.0" y="464" transform="rotate(42 580.0 464)" text-anchor="start" font-family="sans-serif" font-size="12">banking card unauthorized refund</text>
+<rect x="648.2666666666668" y="151.10624245888107" width="34.56" height="272.6868609893948" fill="#475569"/>
+<rect x="686.6666666666667" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="686.6666666666667" y="464" transform="rotate(42 686.6666666666667 464)" text-anchor="start" font-family="sans-serif" font-size="12">banking withdrawal unauthorized refund access</text>
+<rect x="754.9333333333334" y="168.6016384073157" width="34.56" height="255.19146504096017" fill="#475569"/>
+<rect x="793.3333333333334" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="793.3333333333334" y="464" transform="rotate(42 793.3333333333334 464)" text-anchor="start" font-family="sans-serif" font-size="12">sms prize contact</text>
+<rect x="861.6" y="161.9654537372198" width="34.56" height="261.8276497110561" fill="#475569"/>
+<rect x="900.0" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="900.0" y="464" transform="rotate(42 900.0 464)" text-anchor="start" font-family="sans-serif" font-size="12">sms prize urgency contact</text>
+<rect x="968.2666666666668" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#475569"/>
+<rect x="1006.6666666666667" y="182.47729726297072" width="34.56" height="241.31580618530515" fill="#f97316"/>
+<text x="1006.6666666666667" y="464" transform="rotate(42 1006.6666666666667 464)" text-anchor="start" font-family="sans-serif" font-size="12">sms security prize urgency contact</text>
+<rect x="100" y="592" width="14" height="14" fill="#475569"/>
+<text x="120" y="604" font-family="sans-serif" font-size="13">Adaptive requests</text>
+<rect x="285" y="592" width="14" height="14" fill="#f97316"/>
+<text x="305" y="604" font-family="sans-serif" font-size="13">Full-batch requests</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380.0" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold">Beauty counterexample: held-out admissible batching</text>
+<text x="22" y="210.0" transform="rotate(-90 22 210.0)" text-anchor="middle" font-family="sans-serif" font-size="15">Token-priced cost (USD)</text>
+<line x1="100" y1="350.0" x2="720" y2="350.0" stroke="#ddd"/>
+<text x="92" y="355.0" text-anchor="end" font-family="monospace" font-size="12">-0.0005332</text>
+<line x1="100" y1="294.0" x2="720" y2="294.0" stroke="#ddd"/>
+<text x="92" y="299.0" text-anchor="end" font-family="monospace" font-size="12">0.001013</text>
+<line x1="100" y1="238.0" x2="720" y2="238.0" stroke="#ddd"/>
+<text x="92" y="243.0" text-anchor="end" font-family="monospace" font-size="12">0.00256</text>
+<line x1="100" y1="182.0" x2="720" y2="182.0" stroke="#ddd"/>
+<text x="92" y="187.0" text-anchor="end" font-family="monospace" font-size="12">0.004106</text>
+<line x1="100" y1="126.0" x2="720" y2="126.0" stroke="#ddd"/>
+<text x="92" y="131.0" text-anchor="end" font-family="monospace" font-size="12">0.005652</text>
+<line x1="100" y1="70.0" x2="720" y2="70.0" stroke="#ddd"/>
+<text x="92" y="75.0" text-anchor="end" font-family="monospace" font-size="12">0.007199</text>
+<line x1="100" y1="330.6896551724138" x2="720" y2="330.6896551724138" stroke="#333" stroke-width="1.5"/>
+<rect x="143.4" y="89.3103448275862" width="200.88" height="241.37931034482756" fill="#2563eb"/>
+<text x="255.0" y="364" transform="rotate(42 255.0 364)" text-anchor="start" font-family="sans-serif" font-size="12">existing adaptive</text>
+<rect x="453.4" y="99.449124562803" width="200.88" height="231.2405306096108" fill="#2563eb"/>
+<text x="565.0" y="364" transform="rotate(42 565.0 364)" text-anchor="start" font-family="sans-serif" font-size="12">full batch</text>
+<rect x="100" y="492" width="14" height="14" fill="#2563eb"/>
+<text x="120" y="504" font-family="sans-serif" font-size="13">Cost</text>
+</svg>

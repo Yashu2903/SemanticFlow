@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="500.0" y="32" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold">Banking77 profiling economics (quality-inadmissible on held-out)</text>
+<text x="500.0" y="544" text-anchor="middle" font-family="sans-serif" font-size="15">Reuse executions (log scale)</text>
+<text x="22" y="270.0" transform="rotate(-90 22 270.0)" text-anchor="middle" font-family="sans-serif" font-size="15">Net benefit excluding unmetered optimization (USD)</text>
+<line x1="95" y1="442.692760962679" x2="960" y2="442.692760962679" stroke="#333"/>
+<line x1="95.0" y1="65" x2="95.0" y2="475" stroke="#eee"/>
+<text x="95.0" y="497" text-anchor="middle" font-family="monospace" font-size="12">1</text>
+<line x1="296.5363512502188" y1="65" x2="296.5363512502188" y2="475" stroke="#eee"/>
+<text x="296.5363512502188" y="497" text-anchor="middle" font-family="monospace" font-size="12">5</text>
+<line x1="383.3333333333333" y1="65" x2="383.3333333333333" y2="475" stroke="#eee"/>
+<text x="383.3333333333333" y="497" text-anchor="middle" font-family="monospace" font-size="12">10</text>
+<line x1="498.0727025004376" y1="65" x2="498.0727025004376" y2="475" stroke="#eee"/>
+<text x="498.0727025004376" y="497" text-anchor="middle" font-family="monospace" font-size="12">25</text>
+<line x1="584.869684583552" y1="65" x2="584.869684583552" y2="475" stroke="#eee"/>
+<text x="584.869684583552" y="497" text-anchor="middle" font-family="monospace" font-size="12">50</text>
+<line x1="671.6666666666666" y1="65" x2="671.6666666666666" y2="475" stroke="#eee"/>
+<text x="671.6666666666666" y="497" text-anchor="middle" font-family="monospace" font-size="12">100</text>
+<line x1="786.4060358337708" y1="65" x2="786.4060358337708" y2="475" stroke="#eee"/>
+<text x="786.4060358337708" y="497" text-anchor="middle" font-family="monospace" font-size="12">250</text>
+<line x1="960.0" y1="65" x2="960.0" y2="475" stroke="#eee"/>
+<text x="960.0" y="497" text-anchor="middle" font-family="monospace" font-size="12">1000</text>
+<line x1="95" y1="475.0" x2="960" y2="475.0" stroke="#eee"/>
+<text x="87" y="480.0" text-anchor="end" font-family="monospace" font-size="12">-0.05212</text>
+<line x1="95" y1="392.99999999999994" x2="960" y2="392.99999999999994" stroke="#eee"/>
+<text x="87" y="397.99999999999994" text-anchor="end" font-family="monospace" font-size="12">0.08016</text>
+<line x1="95" y1="310.99999999999994" x2="960" y2="310.99999999999994" stroke="#eee"/>
+<text x="87" y="315.99999999999994" text-anchor="end" font-family="monospace" font-size="12">0.2124</text>
+<line x1="95" y1="229.0" x2="960" y2="229.0" stroke="#eee"/>
+<text x="87" y="234.0" text-anchor="end" font-family="monospace" font-size="12">0.3447</text>
+<line x1="95" y1="147.0" x2="960" y2="147.0" stroke="#eee"/>
+<text x="87" y="152.0" text-anchor="end" font-family="monospace" font-size="12">0.477</text>
+<line x1="95" y1="65.0" x2="960" y2="65.0" stroke="#eee"/>
+<text x="87" y="70.0" text-anchor="end" font-family="monospace" font-size="12">0.6093</text>
+<polyline points="95.0,446.7241379310345 296.5363512502188,445.3264703354596 383.3333333333333,443.579385840991 498.0727025004376,438.3381323575853 584.869684583552,429.6027098852425 671.6666666666666,412.13186494055685 786.4060358337708,359.71933010649985 960.0,97.65665593621473" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="95.0" cy="446.7241379310345" r="4" fill="#dc2626"/>
+<circle cx="296.5363512502188" cy="445.3264703354596" r="4" fill="#dc2626"/>
+<circle cx="383.3333333333333" cy="443.579385840991" r="4" fill="#dc2626"/>
+<circle cx="498.0727025004376" cy="438.3381323575853" r="4" fill="#dc2626"/>
+<circle cx="584.869684583552" cy="429.6027098852425" r="4" fill="#dc2626"/>
+<circle cx="671.6666666666666" cy="412.13186494055685" r="4" fill="#dc2626"/>
+<circle cx="786.4060358337708" cy="359.71933010649985" r="4" fill="#dc2626"/>
+<circle cx="960.0" cy="97.65665593621473" r="4" fill="#dc2626"/>
+<line x1="95" y1="512" x2="119" y2="512" stroke="#dc2626" stroke-width="3"/>
+<text x="125" y="517" font-family="sans-serif" font-size="13">standalone cold start</text>
+<polyline points="95.0,444.1831395020703 296.5363512502188,442.78547190649545 383.3333333333333,441.0383874120269 498.0727025004376,435.7971339286212 584.869684583552,427.0617114562784 671.6666666666666,409.5908665115927 786.4060358337708,357.17833167753565 960.0,95.11565750725055" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="95.0" cy="444.1831395020703" r="4" fill="#2563eb"/>
+<circle cx="296.5363512502188" cy="442.78547190649545" r="4" fill="#2563eb"/>
+<circle cx="383.3333333333333" cy="441.0383874120269" r="4" fill="#2563eb"/>
+<circle cx="498.0727025004376" cy="435.7971339286212" r="4" fill="#2563eb"/>
+<circle cx="584.869684583552" cy="427.0617114562784" r="4" fill="#2563eb"/>
+<circle cx="671.6666666666666" cy="409.5908665115927" r="4" fill="#2563eb"/>
+<circle cx="786.4060358337708" cy="357.17833167753565" r="4" fill="#2563eb"/>
+<circle cx="960.0" cy="95.11565750725055" r="4" fill="#2563eb"/>
+<line x1="345" y1="512" x2="369" y2="512" stroke="#2563eb" stroke-width="3"/>
+<text x="375" y="517" font-family="sans-serif" font-size="13">shared statistics cold start</text>
+<polyline points="95.0,442.34334406378525 296.5363512502188,440.9456764682105 383.3333333333333,439.1985919737418 498.0727025004376,433.95733849033616 584.869684583552,425.2219160179933 671.6666666666666,407.7510710733077 786.4060358337708,355.33853623925063 960.0,93.27586206896552" fill="none" stroke="#16a34a" stroke-width="3"/>
+<circle cx="95.0" cy="442.34334406378525" r="4" fill="#16a34a"/>
+<circle cx="296.5363512502188" cy="440.9456764682105" r="4" fill="#16a34a"/>
+<circle cx="383.3333333333333" cy="439.1985919737418" r="4" fill="#16a34a"/>
+<circle cx="498.0727025004376" cy="433.95733849033616" r="4" fill="#16a34a"/>
+<circle cx="584.869684583552" cy="425.2219160179933" r="4" fill="#16a34a"/>
+<circle cx="671.6666666666666" cy="407.7510710733077" r="4" fill="#16a34a"/>
+<circle cx="786.4060358337708" cy="355.33853623925063" r="4" fill="#16a34a"/>
+<circle cx="960.0" cy="93.27586206896552" r="4" fill="#16a34a"/>
+<line x1="595" y1="512" x2="619" y2="512" stroke="#16a34a" stroke-width="3"/>
+<text x="625" y="517" font-family="sans-serif" font-size="13">warm start</text>
+</svg>

@@ -21,6 +21,11 @@ WORKLOADS = "configs/milestone_5_1/workloads.yaml"
 PROTOCOL = "configs/milestone_5_1/protocol.yaml"
 SCHEDULE = "configs/milestone_5_1/pilot_schedule.yaml"
 
+pytestmark = pytest.mark.research_artifacts(
+    "results/milestone_5/live_fusion_pilot_20261115_stage_b_approved/session.json",
+    "results/milestone_5_1/live_batching_pilot_stage_b/session.json",
+)
+
 
 def test_frozen_stage_b_is_reconciled_without_calls() -> None:
     audit = baseline_audit()

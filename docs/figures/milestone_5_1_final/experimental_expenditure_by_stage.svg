@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="600" viewBox="0 0 980 600">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490.0" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold">Completed live-experiment token-priced expenditure</text>
+<text x="22" y="250.0" transform="rotate(-90 22 250.0)" text-anchor="middle" font-family="sans-serif" font-size="15">Token-priced cost (USD)</text>
+<line x1="100" y1="430.0" x2="940" y2="430.0" stroke="#ddd"/>
+<text x="92" y="435.0" text-anchor="end" font-family="monospace" font-size="12">-0.01293</text>
+<line x1="100" y1="358.0" x2="940" y2="358.0" stroke="#ddd"/>
+<text x="92" y="363.0" text-anchor="end" font-family="monospace" font-size="12">0.02456</text>
+<line x1="100" y1="286.0" x2="940" y2="286.0" stroke="#ddd"/>
+<text x="92" y="291.0" text-anchor="end" font-family="monospace" font-size="12">0.06206</text>
+<line x1="100" y1="213.99999999999997" x2="940" y2="213.99999999999997" stroke="#ddd"/>
+<text x="92" y="218.99999999999997" text-anchor="end" font-family="monospace" font-size="12">0.09955</text>
+<line x1="100" y1="142.0" x2="940" y2="142.0" stroke="#ddd"/>
+<text x="92" y="147.0" text-anchor="end" font-family="monospace" font-size="12">0.137</text>
+<line x1="100" y1="70.0" x2="940" y2="70.0" stroke="#ddd"/>
+<text x="92" y="75.0" text-anchor="end" font-family="monospace" font-size="12">0.1745</text>
+<line x1="100" y1="405.17241379310343" x2="940" y2="405.17241379310343" stroke="#333" stroke-width="1.5"/>
+<rect x="129.4" y="368.80055785955716" width="136.07999999999998" height="36.37185593354627" fill="#7c3aed"/>
+<text x="205.0" y="444" transform="rotate(42 205.0 444)" text-anchor="start" font-family="sans-serif" font-size="12">M5 conjunctive-fusion live pilot</text>
+<rect x="339.4" y="381.02307330665644" width="136.07999999999998" height="24.149340486446988" fill="#7c3aed"/>
+<text x="415.0" y="444" transform="rotate(42 415.0 444)" text-anchor="start" font-family="sans-serif" font-size="12">M5.1 Stage B named-question batching pilot</text>
+<rect x="549.4" y="319.2863683092441" width="136.07999999999998" height="85.88604548385933" fill="#7c3aed"/>
+<text x="625.0" y="444" transform="rotate(42 625.0 444)" text-anchor="start" font-family="sans-serif" font-size="12">M5.1 selection stage</text>
+<rect x="759.4" y="94.82758620689657" width="136.07999999999998" height="310.34482758620686" fill="#7c3aed"/>
+<text x="835.0" y="444" transform="rotate(42 835.0 444)" text-anchor="start" font-family="sans-serif" font-size="12">M5.1 Stage D held-out matrix</text>
+<rect x="100" y="572" width="14" height="14" fill="#7c3aed"/>
+<text x="120" y="584" font-family="sans-serif" font-size="13">Cost</text>
+</svg>

@@ -25,6 +25,11 @@ from semanticflow.optimizer.m51_stage_c_analysis import (
 
 ROOT = Path("results/milestone_5_1/live_batching_pilot_stage_b")
 
+pytestmark = pytest.mark.research_artifacts(
+    "results/milestone_5_1/stage_a_preflight/stage_b_authorization_proposal_final.json",
+    "results/milestone_5_1/live_batching_pilot_stage_b/session.json",
+)
+
 
 @pytest.fixture(scope="module")
 def evidence() -> dict[str, object]:

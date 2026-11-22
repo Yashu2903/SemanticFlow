@@ -35,8 +35,8 @@ from semanticflow.optimizer.planner import predicate_hash
 
 STAGE_C_PREFLIGHT_SCHEMA = "m46-stage-c-preflight-hardening-v1"
 STAGE_C_RESTART_AUTHORIZATION = "AUTHORIZE M4.6 STAGE C FULL RESTART AFTER PATH FIX"
-DEFAULT_EXPECTED_PLANS_SHA256 = (
-    "06bbc304af7da38d2d9f717af68246e895262c32c1d77bb5c094d42300a2c26b"
+DEFAULT_EXPECTED_PLANS_CANONICAL_SHA256 = (
+    "69daad220c1cec5b87bb4539d4c26c77cd16fc265756652127d66bb8ec71c2e2"
 )
 
 
@@ -1012,7 +1012,7 @@ def validate_stage_c_launch(
         raise ValueError("Stage C budget or frozen run schedule differs from recomputation")
     if plans.get("held_out_outcomes_observed") is not False:
         raise ValueError("plans do not prove held-out concealment")
-    if expected["plans_sha256"] != DEFAULT_EXPECTED_PLANS_SHA256:
+    if _canonical_sha(plans) != DEFAULT_EXPECTED_PLANS_CANONICAL_SHA256:
         raise ValueError("frozen corrected plan artifact changed")
     if expected["model"] != "jev-1.14.0" or expected["cache_enabled"] is not False:
         raise ValueError("provider model/cache controls changed")
@@ -1063,7 +1063,9 @@ def baseline_integrity_audit(
         "schema_version": "m46-stage-c-baseline-verification-v1",
         "plans_sha256": sha256_file(plans_path),
         "budget_sha256": sha256_file(budget_path),
-        "plans_hash_expected": sha256_file(plans_path) == DEFAULT_EXPECTED_PLANS_SHA256,
+        "plans_hash_expected": (
+            _canonical_sha(plans) == DEFAULT_EXPECTED_PLANS_CANONICAL_SHA256
+        ),
         "strategy_fingerprints_verified": True,
         "matrix_fingerprints": {
             key: matrix.fingerprint() for key, matrix in matrices.items()

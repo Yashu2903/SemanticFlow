@@ -24,6 +24,11 @@ from semanticflow.optimizer.m51_selection_preflight import (
     validate_selection_launch,
 )
 
+pytestmark = pytest.mark.research_artifacts(
+    "results/milestone_5_1/live_batching_pilot_stage_b/session.json",
+    "results/milestone_5_1/stage_c_detailed_analysis/plan_ranking_analysis.json",
+)
+
 
 @pytest.fixture(scope="module")
 def config():

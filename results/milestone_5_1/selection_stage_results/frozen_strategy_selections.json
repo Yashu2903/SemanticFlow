@@ -1,0 +1,1592 @@
+{
+  "schema_version": "m5.1-selection-frozen-strategies-v1",
+  "selection_partition_only": true,
+  "strategies": [
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_malfunction"
+        ],
+        [
+          "beauty_hard_to_use"
+        ]
+      ],
+      "plan_fingerprint": "d1572e4176aa19745ecec3ab4235888d06f7adb9478041d39d2531ef365c35f8",
+      "plan_id": "m51selplan_d1572e4176aa19745ecec3ab",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00177374862,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0017690400000000008,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_malfunction"
+        ],
+        [
+          "beauty_hard_to_use"
+        ]
+      ],
+      "plan_fingerprint": "d1572e4176aa19745ecec3ab4235888d06f7adb9478041d39d2531ef365c35f8",
+      "plan_id": "m51selplan_d1572e4176aa19745ecec3ab",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00177374862,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0017690400000000008,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_malfunction",
+          "beauty_hard_to_use"
+        ]
+      ],
+      "plan_fingerprint": "380e432a3fa37511d27e0a1e541a6daf5db014c7bd01a8345441b3c6058d1444",
+      "plan_id": "m51selplan_380e432a3fa37511d27e0a1e",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.0016324980000000002,
+      "quality_eligible": false,
+      "quality_status": "failed",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0016324979999999994,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "plan_id": null,
+      "status": "unsupported_no_remainder_group_for_two_predicate_workload",
+      "strategy": "fixed_selective_first_hybrid",
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_malfunction",
+          "beauty_hard_to_use"
+        ]
+      ],
+      "plan_fingerprint": "380e432a3fa37511d27e0a1e541a6daf5db014c7bd01a8345441b3c6058d1444",
+      "plan_id": "m51selplan_380e432a3fa37511d27e0a1e",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.0016324980000000002,
+      "quality_eligible": false,
+      "quality_status": "failed",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0016324979999999994,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_malfunction"
+        ],
+        [
+          "beauty_hard_to_use"
+        ]
+      ],
+      "plan_fingerprint": "d1572e4176aa19745ecec3ab4235888d06f7adb9478041d39d2531ef365c35f8",
+      "plan_id": "m51selplan_d1572e4176aa19745ecec3ab",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00177374862,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0017690400000000008,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_malfunction"
+        ],
+        [
+          "beauty_hard_to_use"
+        ]
+      ],
+      "plan_fingerprint": "d1572e4176aa19745ecec3ab4235888d06f7adb9478041d39d2531ef365c35f8",
+      "plan_id": "m51selplan_d1572e4176aa19745ecec3ab",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00177374862,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0017690400000000008,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_packaging_failure"
+        ],
+        [
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "c7c4f8bf8e099559ff9092806acdc9a74b6f8492b3f19bf809eb0639c667b616",
+      "plan_id": "m51selplan_c7c4f8bf8e099559ff909280",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0015357258882,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0015420720000000007,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_packaging_refund"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_packaging_failure"
+        ],
+        [
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "c7c4f8bf8e099559ff9092806acdc9a74b6f8492b3f19bf809eb0639c667b616",
+      "plan_id": "m51selplan_c7c4f8bf8e099559ff909280",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0015357258882,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0015420720000000007,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_packaging_refund"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction",
+          "beauty_packaging_failure",
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "85a93bab153d39e9dc03a2e660a7a78d2c279bcb9a1e799280785323e8ab695d",
+      "plan_id": "m51selplan_85a93bab153d39e9dc03a2e6",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.0017962980000000002,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0017962980000000002,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_packaging_refund"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_packaging_failure",
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "8bbcea50734015c3688db7628e534d003aa4e53722d120e29b6e3611c78169c5",
+      "plan_id": "m51selplan_8bbcea50734015c3688db762",
+      "plan_kind": "selective_first_hybrid",
+      "predicted_cost_usd": 0.00153892494,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0015466080000000005,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_selective_first_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_packaging_refund"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_return_or_refund"
+        ],
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_packaging_failure"
+        ]
+      ],
+      "plan_fingerprint": "459fd219a0dfd1cbad8bff0cb76de94e98b578f1c07d64dfd57b46a79b9f1313",
+      "plan_id": "m51selplan_459fd219a0dfd1cbad8bff0c",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0015008418894,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0014994420000000006,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_packaging_refund"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_packaging_failure"
+        ],
+        [
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "c7c4f8bf8e099559ff9092806acdc9a74b6f8492b3f19bf809eb0639c667b616",
+      "plan_id": "m51selplan_c7c4f8bf8e099559ff909280",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0015357258882,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0015420720000000007,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_beauty_reaction_packaging_refund"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_packaging_failure"
+        ],
+        [
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "c7c4f8bf8e099559ff9092806acdc9a74b6f8492b3f19bf809eb0639c667b616",
+      "plan_id": "m51selplan_c7c4f8bf8e099559ff909280",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0015357258882,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0015420720000000007,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_beauty_reaction_packaging_refund"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_malfunction"
+        ],
+        [
+          "beauty_poor_value"
+        ],
+        [
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "c9b259bbcab3297242646a3004d52fb96b22bb7abfd20e7027b53d414a19f700",
+      "plan_id": "m51selplan_c9b259bbcab3297242646a30",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001543635725688,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.001606374000000001,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_failure_value_return"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_malfunction"
+        ],
+        [
+          "beauty_poor_value"
+        ],
+        [
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "c9b259bbcab3297242646a3004d52fb96b22bb7abfd20e7027b53d414a19f700",
+      "plan_id": "m51selplan_c9b259bbcab3297242646a30",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001543635725688,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.001606374000000001,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_failure_value_return"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction",
+          "beauty_malfunction",
+          "beauty_poor_value",
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "4e4dcecc80a733103ce2f3d677e8fe46efc72241121e12c4f6d308e2213882ae",
+      "plan_id": "m51selplan_4e4dcecc80a733103ce2f3d6",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.0019474980000000002,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0019474979999999991,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_failure_value_return"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_malfunction",
+          "beauty_poor_value",
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "1da909ec76b171c5051279d293d8ac16a54ebf9dfaf09d15d19509395cf2930a",
+      "plan_id": "m51selplan_1da909ec76b171c5051279d2",
+      "plan_kind": "selective_first_hybrid",
+      "predicted_cost_usd": 0.0015434609400000001,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0015511440000000008,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_selective_first_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_failure_value_return"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_return_or_refund"
+        ],
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_poor_value"
+        ],
+        [
+          "beauty_malfunction"
+        ]
+      ],
+      "plan_fingerprint": "766b699dd3b33cebc082cd156368c60b1a0d714443e78ef075404ba577e099cc",
+      "plan_id": "m51selplan_766b699dd3b33cebc082cd15",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0015008752229519998,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0014994420000000006,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_beauty_reaction_failure_value_return"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_malfunction"
+        ],
+        [
+          "beauty_poor_value"
+        ],
+        [
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "c9b259bbcab3297242646a3004d52fb96b22bb7abfd20e7027b53d414a19f700",
+      "plan_id": "m51selplan_c9b259bbcab3297242646a30",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001543635725688,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.001606374000000001,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_beauty_reaction_failure_value_return"
+    },
+    {
+      "dataset": "amazon_all_beauty",
+      "groups": [
+        [
+          "beauty_adverse_reaction"
+        ],
+        [
+          "beauty_malfunction"
+        ],
+        [
+          "beauty_poor_value"
+        ],
+        [
+          "beauty_return_or_refund"
+        ]
+      ],
+      "plan_fingerprint": "c9b259bbcab3297242646a3004d52fb96b22bb7abfd20e7027b53d414a19f700",
+      "plan_id": "m51selplan_c9b259bbcab3297242646a30",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001543635725688,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.001606374000000001,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_beauty_reaction_failure_value_return"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "330710722b4d97b2a056da04aa9536133adca29b950568767b5a1b80d8eb1f3c",
+      "plan_id": "m51selplan_330710722b4d97b2a056da04",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00139049316,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013918380000000003,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "330710722b4d97b2a056da04aa9536133adca29b950568767b5a1b80d8eb1f3c",
+      "plan_id": "m51selplan_330710722b4d97b2a056da04",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00139049316,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013918380000000003,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "b3f5fcaf4faf87eb08101f65c56f54ca16823bbc56162e9efcc6336f0cbc9258",
+      "plan_id": "m51selplan_b3f5fcaf4faf87eb08101f65",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.001475586,
+      "quality_eligible": true,
+      "quality_status": "passed",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0014755860000000018,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "plan_id": null,
+      "status": "unsupported_no_remainder_group_for_two_predicate_workload",
+      "strategy": "fixed_selective_first_hybrid",
+      "workload_id": "m51_banking_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "330710722b4d97b2a056da04aa9536133adca29b950568767b5a1b80d8eb1f3c",
+      "plan_id": "m51selplan_330710722b4d97b2a056da04",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00139049316,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013918380000000003,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "330710722b4d97b2a056da04aa9536133adca29b950568767b5a1b80d8eb1f3c",
+      "plan_id": "m51selplan_330710722b4d97b2a056da04",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00139049316,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013918380000000003,
+      "selection_reason": "quality_candidates_not_predicted_cheaper_than_existing_adaptive",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_banking_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "330710722b4d97b2a056da04aa9536133adca29b950568767b5a1b80d8eb1f3c",
+      "plan_id": "m51selplan_330710722b4d97b2a056da04",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.00139049316,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013918380000000003,
+      "selection_reason": "quality_candidates_not_predicted_cheaper_than_existing_adaptive",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_banking_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_card_related"
+        ],
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "181e9e5a536b08ab8d975d5a0babd8d11ef78b7ffb4aa1ac873d9f5490698cf2",
+      "plan_id": "m51selplan_181e9e5a536b08ab8d975d5a",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001737333948,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.00177828,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_card_related"
+        ],
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "181e9e5a536b08ab8d975d5a0babd8d11ef78b7ffb4aa1ac873d9f5490698cf2",
+      "plan_id": "m51selplan_181e9e5a536b08ab8d975d5a",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001737333948,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.00177828,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_card_related",
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "4e05511d49f2861f7dfb336183e349ed2c5b03c93e05a01cca2943431d91e1da",
+      "plan_id": "m51selplan_4e05511d49f2861f7dfb3361",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.001647786,
+      "quality_eligible": true,
+      "quality_status": "passed",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0016477860000000016,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_card_related"
+        ],
+        [
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "a692dd47d27a86fcac221b71f51db1736729c82003b8b549945a92a1e2c28b5b",
+      "plan_id": "m51selplan_a692dd47d27a86fcac221b71",
+      "plan_kind": "selective_first_hybrid",
+      "predicted_cost_usd": 0.0017628618000000002,
+      "quality_eligible": true,
+      "quality_status": "passed",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0017617319999999994,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_selective_first_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ],
+        [
+          "banking_card_related"
+        ]
+      ],
+      "plan_fingerprint": "96df451974391c552027ced74e60e3e88ffb0525b5b8e61a13f541fd9edd23d1",
+      "plan_id": "m51selplan_96df451974391c552027ced7",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013999984992,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0014319900000000002,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_card_related",
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "4e05511d49f2861f7dfb336183e349ed2c5b03c93e05a01cca2943431d91e1da",
+      "plan_id": "m51selplan_4e05511d49f2861f7dfb3361",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.001647786,
+      "quality_eligible": true,
+      "quality_status": "passed",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0016477860000000016,
+      "selection_reason": "cheapest_quality_eligible_batching_candidate",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_card_related",
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "4e05511d49f2861f7dfb336183e349ed2c5b03c93e05a01cca2943431d91e1da",
+      "plan_id": "m51selplan_4e05511d49f2861f7dfb3361",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.001647786,
+      "quality_eligible": true,
+      "quality_status": "passed",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0016477860000000016,
+      "selection_reason": "cheapest_quality_eligible_batching_candidate",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_cash_withdrawal"
+        ],
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ],
+        [
+          "banking_access_or_verification"
+        ]
+      ],
+      "plan_fingerprint": "9b4d88e47ca502dcd88f5f1ece02a2aa282a7024754054cabe08f98c7ac1875b",
+      "plan_id": "m51selplan_9b4d88e47ca502dcd88f5f1e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001408380466752,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.001420146,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_withdrawal_unauthorized_refund_access"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_cash_withdrawal"
+        ],
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ],
+        [
+          "banking_access_or_verification"
+        ]
+      ],
+      "plan_fingerprint": "9b4d88e47ca502dcd88f5f1ece02a2aa282a7024754054cabe08f98c7ac1875b",
+      "plan_id": "m51selplan_9b4d88e47ca502dcd88f5f1e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001408380466752,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.001420146,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_withdrawal_unauthorized_refund_access"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_cash_withdrawal",
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal",
+          "banking_access_or_verification"
+        ]
+      ],
+      "plan_fingerprint": "9af25992298615a222653a56cfd4afc66c5b6f8e7d5652763de3810bd9e3ba56",
+      "plan_id": "m51selplan_9af25992298615a222653a56",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.001811586,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0018115860000000022,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_withdrawal_unauthorized_refund_access"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_access_or_verification"
+        ],
+        [
+          "banking_unauthorized_activity",
+          "banking_refund_or_reversal",
+          "banking_cash_withdrawal"
+        ]
+      ],
+      "plan_fingerprint": "e8ec97774a90a7e131cf42e36b8733eb8fbee0c75598fda8770f24b06402df8e",
+      "plan_id": "m51selplan_e8ec97774a90a7e131cf42e3",
+      "plan_kind": "selective_first_hybrid",
+      "predicted_cost_usd": 0.00140670516,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0014068320000000007,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_selective_first_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_withdrawal_unauthorized_refund_access"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_access_or_verification"
+        ],
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_cash_withdrawal"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ]
+      ],
+      "plan_fingerprint": "8ad3798a0d0620832f6a7e9b435145e397ae26a0d213d999afcb65ae73fbeb1a",
+      "plan_id": "m51selplan_8ad3798a0d0620832f6a7e9b",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013913442953760002,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013864200000000006,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_banking_withdrawal_unauthorized_refund_access"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_cash_withdrawal"
+        ],
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ],
+        [
+          "banking_access_or_verification"
+        ]
+      ],
+      "plan_fingerprint": "9b4d88e47ca502dcd88f5f1ece02a2aa282a7024754054cabe08f98c7ac1875b",
+      "plan_id": "m51selplan_9b4d88e47ca502dcd88f5f1e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001408380466752,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.001420146,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_banking_withdrawal_unauthorized_refund_access"
+    },
+    {
+      "dataset": "banking77_queries",
+      "groups": [
+        [
+          "banking_cash_withdrawal"
+        ],
+        [
+          "banking_unauthorized_activity"
+        ],
+        [
+          "banking_refund_or_reversal"
+        ],
+        [
+          "banking_access_or_verification"
+        ]
+      ],
+      "plan_fingerprint": "9b4d88e47ca502dcd88f5f1ece02a2aa282a7024754054cabe08f98c7ac1875b",
+      "plan_id": "m51selplan_9b4d88e47ca502dcd88f5f1e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001408380466752,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.001420146,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_banking_withdrawal_unauthorized_refund_access"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "f361b7a31d31b68b86b5adb514eb89e49d68cc8f275ca38f622736778ff6ad92",
+      "plan_id": "m51selplan_f361b7a31d31b68b86b5adb5",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013585089000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013627739999999995,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "f361b7a31d31b68b86b5adb514eb89e49d68cc8f275ca38f622736778ff6ad92",
+      "plan_id": "m51selplan_f361b7a31d31b68b86b5adb5",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013585089000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013627739999999995,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward",
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "adc3298a549ec01ba995eb0649450774b86443a43683c5f73e7d7824120b24a3",
+      "plan_id": "m51selplan_adc3298a549ec01ba995eb06",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.0014412300000000002,
+      "quality_eligible": true,
+      "quality_status": "passed",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0014412300000000008,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "plan_id": null,
+      "status": "unsupported_no_remainder_group_for_two_predicate_workload",
+      "strategy": "fixed_selective_first_hybrid",
+      "workload_id": "m51_sms_prize_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "f361b7a31d31b68b86b5adb514eb89e49d68cc8f275ca38f622736778ff6ad92",
+      "plan_id": "m51selplan_f361b7a31d31b68b86b5adb5",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013585089000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013627739999999995,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "f361b7a31d31b68b86b5adb514eb89e49d68cc8f275ca38f622736778ff6ad92",
+      "plan_id": "m51selplan_f361b7a31d31b68b86b5adb5",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013585089000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013627739999999995,
+      "selection_reason": "quality_candidates_not_predicted_cheaper_than_existing_adaptive",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_sms_prize_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "f361b7a31d31b68b86b5adb514eb89e49d68cc8f275ca38f622736778ff6ad92",
+      "plan_id": "m51selplan_f361b7a31d31b68b86b5adb5",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013585089000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013627739999999995,
+      "selection_reason": "quality_candidates_not_predicted_cheaper_than_existing_adaptive",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_sms_prize_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "26acb5c1f363ff25040d456ecfba999d3f0f9a94d21721b86be72f6c8c2f4364",
+      "plan_id": "m51selplan_26acb5c1f363ff25040d456e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001360210845,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013922999999999995,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "26acb5c1f363ff25040d456ecfba999d3f0f9a94d21721b86be72f6c8c2f4364",
+      "plan_id": "m51selplan_26acb5c1f363ff25040d456e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001360210845,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013922999999999995,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward",
+          "sms_urgency_pressure",
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "251909b478dde15139f8280d5f7c9233234f66c84b259696d2e95d1ce93589ef",
+      "plan_id": "m51selplan_251909b478dde15139f8280d",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.00155463,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0015546299999999993,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_prize_or_reward",
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "c3f0fb3deb77072fedd6e947709e90002d4b201b1bf41b3966e88d5208e7a2f9",
+      "plan_id": "m51selplan_c3f0fb3deb77072fedd6e947",
+      "plan_kind": "selective_first_hybrid",
+      "predicted_cost_usd": 0.0013662915000000001,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013699139999999994,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_selective_first_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "26acb5c1f363ff25040d456ecfba999d3f0f9a94d21721b86be72f6c8c2f4364",
+      "plan_id": "m51selplan_26acb5c1f363ff25040d456e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001360210845,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013922999999999995,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "26acb5c1f363ff25040d456ecfba999d3f0f9a94d21721b86be72f6c8c2f4364",
+      "plan_id": "m51selplan_26acb5c1f363ff25040d456e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001360210845,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013922999999999995,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "26acb5c1f363ff25040d456ecfba999d3f0f9a94d21721b86be72f6c8c2f4364",
+      "plan_id": "m51selplan_26acb5c1f363ff25040d456e",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.001360210845,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013922999999999995,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_account_security"
+        ],
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "cc77e94c0413047269ff3b87e15e7499a2ccf8f1d8416fbb0cb3297923f96ee3",
+      "plan_id": "m51selplan_cc77e94c0413047269ff3b87",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013236300000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013236300000000001,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_separate",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_security_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_account_security"
+        ],
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "cc77e94c0413047269ff3b87e15e7499a2ccf8f1d8416fbb0cb3297923f96ee3",
+      "plan_id": "m51selplan_cc77e94c0413047269ff3b87",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013236300000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013236300000000001,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "existing_adaptive",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_security_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_account_security",
+          "sms_prize_or_reward",
+          "sms_urgency_pressure",
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "f211becd6580089f812b2ca8cfd4e1ca194c5b255f14f4cb3500ac819ff2f344",
+      "plan_id": "m51selplan_f211becd6580089f812b2ca8",
+      "plan_kind": "full_batch",
+      "predicted_cost_usd": 0.0016974300000000002,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0016974300000000002,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "full_multi_decision_batch",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_security_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_account_security"
+        ],
+        [
+          "sms_prize_or_reward",
+          "sms_urgency_pressure",
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "e3d9de8978cee5b7efc32588cdd058d7edf82367322e35cdcbc251550249b730",
+      "plan_id": "m51selplan_e3d9de8978cee5b7efc32588",
+      "plan_kind": "selective_first_hybrid",
+      "predicted_cost_usd": 0.0013236300000000001,
+      "quality_eligible": false,
+      "quality_status": "insufficient_positive_support",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013236300000000001,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "fixed_selective_first_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_security_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_account_security"
+        ],
+        [
+          "sms_contact_action"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_prize_or_reward"
+        ]
+      ],
+      "plan_fingerprint": "53d84cd3f2c254eeda72651c07a581d8fe202ed71f143e5df159bbda55738861",
+      "plan_id": "m51selplan_53d84cd3f2c254eeda72651c",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013236300000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013236300000000001,
+      "selection_reason": "frozen_strategy_rule",
+      "status": "selected",
+      "strategy": "cost_only_hybrid",
+      "used_existing_adaptive_fallback": false,
+      "workload_id": "m51_sms_security_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_account_security"
+        ],
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "cc77e94c0413047269ff3b87e15e7499a2ccf8f1d8416fbb0cb3297923f96ee3",
+      "plan_id": "m51selplan_cc77e94c0413047269ff3b87",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013236300000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013236300000000001,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "quality_constrained_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_sms_security_prize_urgency_contact"
+    },
+    {
+      "dataset": "sms_spam",
+      "groups": [
+        [
+          "sms_account_security"
+        ],
+        [
+          "sms_prize_or_reward"
+        ],
+        [
+          "sms_urgency_pressure"
+        ],
+        [
+          "sms_contact_action"
+        ]
+      ],
+      "plan_fingerprint": "cc77e94c0413047269ff3b87e15e7499a2ccf8f1d8416fbb0cb3297923f96ee3",
+      "plan_id": "m51selplan_cc77e94c0413047269ff3b87",
+      "plan_kind": "separate",
+      "predicted_cost_usd": 0.0013236300000000001,
+      "quality_eligible": true,
+      "quality_status": "reference_separate",
+      "selection_evidence_not_independent": true,
+      "selection_measured_cost_usd": 0.0013236300000000001,
+      "selection_reason": "no_batching_candidate_passed_quality_gate",
+      "status": "selected",
+      "strategy": "profiling_aware_hybrid",
+      "used_existing_adaptive_fallback": true,
+      "workload_id": "m51_sms_security_prize_urgency_contact"
+    }
+  ]
+}

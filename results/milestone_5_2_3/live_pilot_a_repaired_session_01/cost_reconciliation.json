@@ -1,0 +1,34 @@
+{
+  "actual": {
+    "followup_cost_proxy_usd": 1.6590000000000002e-05,
+    "http_attempts": 251,
+    "input_tokens": 84890,
+    "named_question_evaluations": 353,
+    "output_tokens": 10239,
+    "physical_requests": 251,
+    "retries": 0,
+    "screening_cost_proxy_usd": 0.00041731200000000003,
+    "token_priced_cost_proxy_usd": 0.0035653799999999956
+  },
+  "forecast_executed_actions": {
+    "cost_proxy_usd": 0.003584616000000003,
+    "input_tokens": 85348,
+    "output_tokens": 10419,
+    "physical_requests": 251
+  },
+  "forecast_full_action_universe": {
+    "conservative_cost_proxy_usd": 0.006708384375,
+    "cost_proxy_usd": 0.0040551,
+    "input_tokens": 96550,
+    "named_question_evaluations": 430,
+    "output_tokens": 12200,
+    "physical_requests": 280
+  },
+  "pricing_assumption": {
+    "input_usd_per_million": 0.042,
+    "output_usd": 0
+  },
+  "provider_billing_adjustments": "unknown; no independent invoice reconciliation",
+  "retry_related_exposure_usd": 0,
+  "schema_version": "m5.2.3-cost-reconciliation-v1"
+}

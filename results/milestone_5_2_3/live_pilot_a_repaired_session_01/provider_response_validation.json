@@ -1,0 +1,13 @@
+{
+  "duplicate_response_records": 0,
+  "invalid_responses": 0,
+  "models": {
+    "jev-1.14.0": 251
+  },
+  "provider_responses": 251,
+  "receipts": 251,
+  "response_before_receipt_for_every_action": true,
+  "responses_with_complete_usage": 251,
+  "responses_with_raw_payload": 251,
+  "schema_version": "m5.2.3-provider-response-validation-v1"
+}

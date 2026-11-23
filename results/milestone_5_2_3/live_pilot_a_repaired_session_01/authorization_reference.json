@@ -1,0 +1,23 @@
+{
+  "manifest": {
+    "action_universe_fingerprint": "33bcbf43db2cd6d926818616cf57171f06c8627170a88c9d4d39347775ccb2a7",
+    "authorization_method": "explicit_live_authorization_instruction",
+    "authorized_experiment_id": "semanticflow-m5.2.3-live-pilot-a-repaired-session-01",
+    "authorized_scope_fingerprint": "bc9145b834b326269f1fc4cc797c54d8a33606762d32910b92e9385b9109baeb",
+    "countersigned_by": null,
+    "experiment_id": "semanticflow-m5.2.3-live-pilot-a-repaired-session-01",
+    "historical_authorization_reuse_allowed": false,
+    "http_attempt_ceiling": 1080,
+    "model": "jev-1.14.0",
+    "output_directory": "results/milestone_5_2_3/live_pilot_a_repaired_session_01",
+    "paid_calls_authorized": true,
+    "physical_request_ceiling": 360,
+    "policy_fingerprint": "2d190356e5883f91342d31aeed02b816a7bf84a78b0a339364ab349f92dd1a7f",
+    "protocol_fingerprint": "a9d5218c478d217a007ed590e95c072d58e5bd319e02673781260c09e87f96f8",
+    "required_authorization_contract": "AUTHORIZE M5.2 SMALL LIVE PILOT bc9145b834b326269f1fc4cc797c54d8a33606762d32910b92e9385b9109baeb",
+    "schema_version": "m5.2.2-pilot-a-authorization-proposal-v1",
+    "scope_fingerprint": "bc9145b834b326269f1fc4cc797c54d8a33606762d32910b92e9385b9109baeb"
+  },
+  "manifest_path": "results/milestone_5_2_3/pilot_a_repaired_session_01_authorization/authorization_manifest_active.json",
+  "manifest_sha256": "a9bd138d15660a50d943de9ea3a8abc344a9905312f85d409fd28c4e4a051955"
+}

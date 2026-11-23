@@ -1,0 +1,17 @@
+{
+  "actions_avoided_vs_full_action_universe": 29,
+  "adaptive_profiling_worked_correctly": true,
+  "budget_driven_terminations": 0,
+  "diagnostic_followups": 1,
+  "discovery_screens": 30,
+  "early_terminations": 0,
+  "informative_screens": 1,
+  "real_response_branch_exercised": true,
+  "requests_below_hard_ceiling": 109,
+  "response_dependent_acquisition_decisions": 30,
+  "response_dependent_followup_decisions": 1,
+  "schema_version": "m5.2.3-adaptive-behavior-analysis-v1",
+  "session_status": "INSTRUMENTATION_COMPLETE",
+  "skipped_followups": 29,
+  "termination_reason": "instrumentation_objectives_complete_skipped_followups=29"
+}

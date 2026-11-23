@@ -1,0 +1,13 @@
+{
+  "discovery_records_in_representative_metrics": false,
+  "formal_quality_certification_permitted": false,
+  "historical_required_positive_references_for_recall": 153,
+  "historical_required_representative_records_for_agreement": 389,
+  "per_workload_representative_records": 20,
+  "population_level_semantic_accuracy_established": false,
+  "prospective_required_positive_references": 140,
+  "prospective_required_representative_records": 355,
+  "provider_invoice_independently_reconciled": false,
+  "schema_version": "m5.2.3-experiment-limitations-v1",
+  "separate_jev_is_human_ground_truth": false
+}

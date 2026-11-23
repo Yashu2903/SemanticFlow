@@ -1,0 +1,10 @@
+metric,value,unit
+informative_screens_per_screen,0.03333333333333333,ratio
+diagnostic_followups_per_screen,0.03333333333333333,ratio
+screen_vs_followup_disagreements_per_followup,0.0,ratio
+representative_query_disagreements_per_physical_request,0.0,ratio
+near_threshold_measurements_per_request,0.027888446215139442,ratio
+screening_input_tokens_per_informative_screen,9936.0,tokens
+screening_output_tokens_per_informative_screen,1050.0,tokens
+screening_cost_per_informative_screen,0.00041731200000000003,usd_proxy
+diagnostic_followup_cost,1.6590000000000002e-05,usd_proxy

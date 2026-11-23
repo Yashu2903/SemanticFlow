@@ -1,0 +1,94 @@
+{
+  "artifacts": {
+    "acquisition_trace.csv": {
+      "bytes": 108049,
+      "sha256": "08a9200b5bec6ed90f5e698c9f701b9cc2bc47944f8d1adb838578bd71309c79"
+    },
+    "adaptive_behavior_analysis.json": {
+      "bytes": 657,
+      "sha256": "23aa439ec60e338293d0b021cf3ca04e96b27c9f0007d07f554d9e1e66103af9"
+    },
+    "attempt_ledger.json": {
+      "bytes": 55798,
+      "sha256": "5aeb534a73333543200c16e6fcd793135b649ae85c94fc03431ab3960cabe812"
+    },
+    "authorization_reference.json": {
+      "bytes": 1489,
+      "sha256": "27127aa36f1259c041da88579f5bc40fd212b11d3db2fc3f53dff047477c1ec8"
+    },
+    "controller_decisions.jsonl": {
+      "bytes": 2735771,
+      "sha256": "fc2ab143597e3f9b30c1e16c85c6b846956fa0d7d721dde20cfdf12570133e5b"
+    },
+    "cost_forecast_errors.csv": {
+      "bytes": 2535,
+      "sha256": "dee3ae1ca20318278befefca228664fccdfdfeefff1b466e2cac5f8a6d4f487d"
+    },
+    "cost_reconciliation.json": {
+      "bytes": 1066,
+      "sha256": "4810d06ebb60afd88930afcd8375664feac3755d6783cda6ba3898721b1a79f3"
+    },
+    "discovery_measurements.csv": {
+      "bytes": 12006,
+      "sha256": "d476baad0463d93ffc8b7fa3f37be1323b2e945b350f036c3d8028024b54a766"
+    },
+    "execution_events.jsonl": {
+      "bytes": 8506384,
+      "sha256": "99b6dad118f2b446c1e0d3ae97a37bc262a565f10c77c5cb22ece13c92d77680"
+    },
+    "experiment_limitations.json": {
+      "bytes": 617,
+      "sha256": "53d29b778ce68425e08500502be86a5be1d67040fc191c04ebdaa0f7c9c0756f"
+    },
+    "frozen_protocol.json": {
+      "bytes": 1701,
+      "sha256": "164fcd854b2d2dfa81a17cf81c23f9770adf6fcd08f967b6061385f3425ea06a"
+    },
+    "information_efficiency.csv": {
+      "bytes": 582,
+      "sha256": "ab89644963e58fb01c24550b3f3689fd6bdac32bfbf220412943ee732b3529b7"
+    },
+    "per_workload_results.csv": {
+      "bytes": 925,
+      "sha256": "a4bcdb88e7af40e93c4f153326810006801df2994b80364aaf893826485f3202"
+    },
+    "provider_response_validation.json": {
+      "bytes": 357,
+      "sha256": "1297ff05190be16a9f4e25468c8a9c7542b33af6c5c41e1fd9e2269dc1e9d83c"
+    },
+    "representative_measurements.csv": {
+      "bytes": 96298,
+      "sha256": "12bd29a8df3ec8f6bba6fe1a64a4e13da0a076f499342f9a0bd7499843bb6a57"
+    },
+    "request_ledger.json": {
+      "bytes": 181907,
+      "sha256": "e470bf8de42e9ad3666da35e23e4587baeaaab0cc3d1f3c1cc580e82dc3b95c8"
+    },
+    "screening_followups.csv": {
+      "bytes": 6773,
+      "sha256": "722b444b936ebe790725281a171fe1ee4f44022b3580c5773c574add39fff757"
+    },
+    "semantic_disagreement_analysis.json": {
+      "bytes": 69481,
+      "sha256": "ca641779715715697ff9ced4c75815a4099023a4221b52583f463a8c542d8ced"
+    },
+    "session_reconciliation.json": {
+      "bytes": 871,
+      "sha256": "b84d14a402684f3d9f309e6cc7ee7470093db7b49e7c271ef3f8319ecf5d390a"
+    },
+    "session_state.json": {
+      "bytes": 3998527,
+      "sha256": "2760256e02d8e79486162960d12fc9afba4deff3114345a5cc742a8fa9e557bd"
+    },
+    "token_usage.csv": {
+      "bytes": 37522,
+      "sha256": "edadf77756d71b8b9e32050b0e7bfa13a15421c32395093e32374cf4339cac52"
+    }
+  },
+  "schema_version": "m5.2.3-artifact-integrity-manifest-v1",
+  "source_event_log": {
+    "events": 1511,
+    "path": "results/milestone_5_2_3/live_pilot_a_repaired_session_01/events.jsonl",
+    "sha256": "99b6dad118f2b446c1e0d3ae97a37bc262a565f10c77c5cb22ece13c92d77680"
+  }
+}

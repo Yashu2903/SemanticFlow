@@ -1,0 +1,2020 @@
+{
+  "all_representative_record_details": [
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.19,
+        "banking_refund_or_reversal": 0.05,
+        "banking_unauthorized_activity": 0.04
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": 0.010000000000000002,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:1575f1b6e2706fae3956e509",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.19,
+        "banking_refund_or_reversal": 0.04,
+        "banking_unauthorized_activity": 0.04
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.12,
+        "banking_refund_or_reversal": 0.8,
+        "banking_unauthorized_activity": 0.28
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": -0.04999999999999999
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:1e87d7e1b36eb2e9bca51859",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.12,
+        "banking_refund_or_reversal": 0.8,
+        "banking_unauthorized_activity": 0.33
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": true
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.96,
+        "banking_refund_or_reversal": 0.41,
+        "banking_unauthorized_activity": 0.98
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.010000000000000009,
+        "banking_refund_or_reversal": 0.009999999999999953,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:22644bc64e7eeaf1d12a9a0f",
+      "separate_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": true
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.95,
+        "banking_refund_or_reversal": 0.4,
+        "banking_unauthorized_activity": 0.98
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": true
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.78,
+        "banking_refund_or_reversal": 0.96,
+        "banking_unauthorized_activity": 0.96
+      },
+      "batch_query_decision": true,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": -0.030000000000000027,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:264a85aba52c5c44683c4835",
+      "separate_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": true
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.81,
+        "banking_refund_or_reversal": 0.96,
+        "banking_unauthorized_activity": 0.96
+      },
+      "separate_query_decision": true,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.09,
+        "banking_refund_or_reversal": 0.08,
+        "banking_unauthorized_activity": 0.07
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.009999999999999995,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:2bc175df4938590dda04a081",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.08,
+        "banking_refund_or_reversal": 0.08,
+        "banking_unauthorized_activity": 0.07
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.19,
+        "banking_refund_or_reversal": 0.21,
+        "banking_unauthorized_activity": 0.09
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": 0.009999999999999981,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:2f9a59b9e07f2b6b9c48144b",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.19,
+        "banking_refund_or_reversal": 0.2,
+        "banking_unauthorized_activity": 0.09
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.05,
+        "banking_refund_or_reversal": 0.97,
+        "banking_unauthorized_activity": 0.06
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": 0.009999999999999995
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:37d8d3cc6d3a3389a54d63fe",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.05,
+        "banking_refund_or_reversal": 0.97,
+        "banking_unauthorized_activity": 0.05
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.9,
+        "banking_refund_or_reversal": 0.04,
+        "banking_unauthorized_activity": 0.09
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": -0.010000000000000009
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:45ddd11ad4543dfff4e028fa",
+      "separate_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.9,
+        "banking_refund_or_reversal": 0.04,
+        "banking_unauthorized_activity": 0.1
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.21,
+        "banking_refund_or_reversal": 0.83,
+        "banking_unauthorized_activity": 0.19
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.03,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": -0.010000000000000009
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:476bbba3047540e7547ff219",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.18,
+        "banking_refund_or_reversal": 0.83,
+        "banking_unauthorized_activity": 0.2
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.07,
+        "banking_refund_or_reversal": 0.03,
+        "banking_unauthorized_activity": 0.04
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.010000000000000009,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:49cf7561a243e7608c6ab381",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.06,
+        "banking_refund_or_reversal": 0.03,
+        "banking_unauthorized_activity": 0.04
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": true
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.12,
+        "banking_refund_or_reversal": 0.29,
+        "banking_unauthorized_activity": 0.97
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": -0.010000000000000009,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:558a6a5e177e7c0993da2210",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": true
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.13,
+        "banking_refund_or_reversal": 0.29,
+        "banking_unauthorized_activity": 0.97
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.91,
+        "banking_refund_or_reversal": 0.04,
+        "banking_unauthorized_activity": 0.06
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": 0.009999999999999995
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:68a2d36d2cec5e6a73caf892",
+      "separate_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.91,
+        "banking_refund_or_reversal": 0.04,
+        "banking_unauthorized_activity": 0.05
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": true
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.29,
+        "banking_refund_or_reversal": 0.48,
+        "banking_unauthorized_activity": 0.96
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": true,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.009999999999999953,
+        "banking_refund_or_reversal": -0.010000000000000009,
+        "banking_unauthorized_activity": -0.010000000000000009
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:694036994c0ff126243c0b71",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": true
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.28,
+        "banking_refund_or_reversal": 0.49,
+        "banking_unauthorized_activity": 0.97
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.06,
+        "banking_refund_or_reversal": 0.98,
+        "banking_unauthorized_activity": 0.08
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": -0.010000000000000009,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": -0.009999999999999995
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:832abe059d76dec11fe2bf3d",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.07,
+        "banking_refund_or_reversal": 0.98,
+        "banking_unauthorized_activity": 0.09
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.93,
+        "banking_refund_or_reversal": 0.13,
+        "banking_unauthorized_activity": 0.08
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.010000000000000009,
+        "banking_refund_or_reversal": -0.010000000000000009,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:8332fe40d77b5d661bc14828",
+      "separate_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.92,
+        "banking_refund_or_reversal": 0.14,
+        "banking_unauthorized_activity": 0.08
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.88,
+        "banking_refund_or_reversal": 0.07,
+        "banking_unauthorized_activity": 0.07
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": -0.009999999999999995
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:83a56de658c43572ec1c6297",
+      "separate_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.88,
+        "banking_refund_or_reversal": 0.07,
+        "banking_unauthorized_activity": 0.08
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.08,
+        "banking_refund_or_reversal": 0.03,
+        "banking_unauthorized_activity": 0.14
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": -0.009999999999999995,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": -0.009999999999999981
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:851418879179eda2c18539c3",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.09,
+        "banking_refund_or_reversal": 0.03,
+        "banking_unauthorized_activity": 0.15
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.8,
+        "banking_refund_or_reversal": 0.03,
+        "banking_unauthorized_activity": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.040000000000000036,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:87aa7dc2e56a1160c68493b7",
+      "separate_decisions": {
+        "banking_card_related": true,
+        "banking_refund_or_reversal": false,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.76,
+        "banking_refund_or_reversal": 0.03,
+        "banking_unauthorized_activity": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.03,
+        "banking_refund_or_reversal": 0.5,
+        "banking_unauthorized_activity": 0.08
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": true,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": -0.06999999999999995,
+        "banking_unauthorized_activity": 0.009999999999999995
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:9482f37c9e0bf7cb7476e6c8",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": false
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.03,
+        "banking_refund_or_reversal": 0.57,
+        "banking_unauthorized_activity": 0.07
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": true
+      },
+      "batch_probabilities": {
+        "banking_card_related": 0.15,
+        "banking_refund_or_reversal": 0.54,
+        "banking_unauthorized_activity": 0.94
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": true,
+      "probability_differences_batch_minus_separate": {
+        "banking_card_related": 0.0,
+        "banking_refund_or_reversal": 0.0,
+        "banking_unauthorized_activity": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "banking77_queries:9d26abf1ef75b0dc4fcbdd3a",
+      "separate_decisions": {
+        "banking_card_related": false,
+        "banking_refund_or_reversal": true,
+        "banking_unauthorized_activity": true
+      },
+      "separate_probabilities": {
+        "banking_card_related": 0.15,
+        "banking_refund_or_reversal": 0.54,
+        "banking_unauthorized_activity": 0.94
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.03,
+        "beauty_malfunction": 0.02
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:0d8befb85176c9879de93dc9",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.03,
+        "beauty_malfunction": 0.02
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.44,
+        "beauty_malfunction": 0.98
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.010000000000000009,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:0d93939d844f166801701ba3",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.43,
+        "beauty_malfunction": 0.98
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": true,
+        "beauty_malfunction": true
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.94,
+        "beauty_malfunction": 0.98
+      },
+      "batch_query_decision": true,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": -0.010000000000000009
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:151bc8ae28b51531926c5881",
+      "separate_decisions": {
+        "beauty_hard_to_use": true,
+        "beauty_malfunction": true
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.94,
+        "beauty_malfunction": 0.99
+      },
+      "separate_query_decision": true,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.29,
+        "beauty_malfunction": 0.95
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": -0.010000000000000009,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:15683a0f277b9eb075de7958",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.3,
+        "beauty_malfunction": 0.95
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": true,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.81,
+        "beauty_malfunction": 0.2
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:18897f0e3530a968cd56ded8",
+      "separate_decisions": {
+        "beauty_hard_to_use": true,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.81,
+        "beauty_malfunction": 0.2
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.03,
+        "beauty_malfunction": 0.02
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:1b26c0b4a01dc7329d666e01",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.03,
+        "beauty_malfunction": 0.02
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.06,
+        "beauty_malfunction": 0.11
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.009999999999999995,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:27ccb8491e7655dc41246d2e",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.05,
+        "beauty_malfunction": 0.11
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.05,
+        "beauty_malfunction": 0.07
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:3a1c12a97f6967d982b97887",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.05,
+        "beauty_malfunction": 0.07
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.05,
+        "beauty_malfunction": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": -0.009999999999999995,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:4b021f60ecd6b36a418608f7",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.06,
+        "beauty_malfunction": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.04,
+        "beauty_malfunction": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:4bc339cdea651e7a7fd3647e",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.04,
+        "beauty_malfunction": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.03,
+        "beauty_malfunction": 0.02
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:4e234f7299402e70f8a1ff5a",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.03,
+        "beauty_malfunction": 0.02
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.05,
+        "beauty_malfunction": 0.07
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:5594f6802cca50dedfc05e3e",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.05,
+        "beauty_malfunction": 0.07
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.1,
+        "beauty_malfunction": 0.4
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": -0.009999999999999995,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:59d315c083ebcb7e055ec4d4",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.11,
+        "beauty_malfunction": 0.4
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.03,
+        "beauty_malfunction": 0.02
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:6603d55de2354d18cd03b39d",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.03,
+        "beauty_malfunction": 0.02
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.06,
+        "beauty_malfunction": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.009999999999999995,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:678b0b740aa468628c955539",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.05,
+        "beauty_malfunction": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.08,
+        "beauty_malfunction": 0.05
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": -0.009999999999999995
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:698dafbef70f642e955fb0a9",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.08,
+        "beauty_malfunction": 0.06
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.27,
+        "beauty_malfunction": 0.97
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": -0.010000000000000009,
+        "beauty_malfunction": -0.010000000000000009
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:6ae9de02a78335e343ae5495",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.28,
+        "beauty_malfunction": 0.98
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.08,
+        "beauty_malfunction": 0.65
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.010000000000000009
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:733868cffccb8224c6d7ab94",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.08,
+        "beauty_malfunction": 0.64
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.12,
+        "beauty_malfunction": 0.99
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.009999999999999995,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:78b84c5fa99eac457bca3dc7",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": true
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.11,
+        "beauty_malfunction": 0.99
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "batch_probabilities": {
+        "beauty_hard_to_use": 0.06,
+        "beauty_malfunction": 0.04
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "beauty_hard_to_use": 0.0,
+        "beauty_malfunction": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "amazon_all_beauty:7e2c24fc0130b3d079fd7d5b",
+      "separate_decisions": {
+        "beauty_hard_to_use": false,
+        "beauty_malfunction": false
+      },
+      "separate_probabilities": {
+        "beauty_hard_to_use": 0.06,
+        "beauty_malfunction": 0.04
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.08,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.08
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.020000000000000004,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": -0.020000000000000004
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:02fc384fc282ebed69ab0a30",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.06,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.1
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.009999999999999998,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:0b5be8d34d97d3e5c93938a8",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.03,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": true,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.77,
+        "sms_prize_or_reward": 0.03,
+        "sms_urgency_pressure": 0.08
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.020000000000000018,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": -0.009999999999999995
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:0d42acc7419fd0e4a2710371",
+      "separate_decisions": {
+        "sms_contact_action": true,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.79,
+        "sms_prize_or_reward": 0.03,
+        "sms_urgency_pressure": 0.09
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": true,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.58,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.07
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.030000000000000027,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:0eee14e886f8542828b6057f",
+      "separate_decisions": {
+        "sms_contact_action": true,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.61,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.07
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.02
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": -0.009999999999999998
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:1566130ac4596918725077c9",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": true
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.11,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.5
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": true,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.009999999999999995,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:1b1cd1ca760d905656d95568",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": true
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.12,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.5
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.13,
+        "sms_prize_or_reward": 0.09,
+        "sms_urgency_pressure": 0.24
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.03,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": -0.010000000000000009
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:1c9cf0d0bc878dd80d545726",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.16,
+        "sms_prize_or_reward": 0.09,
+        "sms_urgency_pressure": 0.25
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.1,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.05
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.009999999999999995,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:2754796f5ced9e6b9c879143",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.11,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.05
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.02,
+        "sms_urgency_pressure": 0.07
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": -0.009999999999999998,
+        "sms_urgency_pressure": 0.010000000000000009
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:282f499aa1814f880225c06c",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.03,
+        "sms_urgency_pressure": 0.06
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:29e195367bd462c84cff2fef",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.03,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.06
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:2b41054e925bf76bdac20dea",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.03,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.06
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:32a79d64cd5db67f10fda616",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": true,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": true
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.99,
+        "sms_prize_or_reward": 0.03,
+        "sms_urgency_pressure": 0.97
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:37e8415827e02871b7fa4516",
+      "separate_decisions": {
+        "sms_contact_action": true,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": true
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.99,
+        "sms_prize_or_reward": 0.03,
+        "sms_urgency_pressure": 0.97
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:4023a3d5cb0a7bb3889f088e",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": true
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.17,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.57
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.009999999999999981,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": -0.020000000000000018
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:4292ab6f3031dab6ef8aaaee",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": true
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.18,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.59
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.009999999999999998
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:4ac23ada47fade4668042bfd",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.02
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.01,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.15
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:4cba11cda96b37231c0c621e",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.01,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.15
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.02
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": 0.0,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": -0.009999999999999998
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:52aff9a9975c91de09c7a106",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.03
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.02,
+        "sms_prize_or_reward": 0.03,
+        "sms_urgency_pressure": 0.04
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.009999999999999998,
+        "sms_prize_or_reward": -0.010000000000000002,
+        "sms_urgency_pressure": 0.0
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:55a1bd39babb94ffeea40a34",
+      "separate_decisions": {
+        "sms_contact_action": false,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": false
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.03,
+        "sms_prize_or_reward": 0.04,
+        "sms_urgency_pressure": 0.04
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "batch_decisions": {
+        "sms_contact_action": true,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": true
+      },
+      "batch_probabilities": {
+        "sms_contact_action": 0.92,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.74
+      },
+      "batch_query_decision": false,
+      "changed_predicates": [],
+      "near_threshold_within_0_05": false,
+      "probability_differences_batch_minus_separate": {
+        "sms_contact_action": -0.010000000000000009,
+        "sms_prize_or_reward": 0.0,
+        "sms_urgency_pressure": 0.020000000000000018
+      },
+      "query_agreement": true,
+      "record_id": "sms_spam:605624c643fc8ff0dd895134",
+      "separate_decisions": {
+        "sms_contact_action": true,
+        "sms_prize_or_reward": false,
+        "sms_urgency_pressure": true
+      },
+      "separate_probabilities": {
+        "sms_contact_action": 0.93,
+        "sms_prize_or_reward": 0.01,
+        "sms_urgency_pressure": 0.72
+      },
+      "separate_query_decision": false,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    }
+  ],
+  "disagreement_records": [],
+  "discovery_screen_vs_followup_disagreements": 0,
+  "followups_with_mixed_predicate_decisions": 0,
+  "formal_quality_certified": false,
+  "near_threshold_representative_records_within_0_05": 4,
+  "per_workload": [
+    {
+      "batch_query_positives": 1,
+      "false_negative_rate_relative_to_separate": 0.0,
+      "false_negatives_relative_to_separate": 0,
+      "false_positives_relative_to_separate": 0,
+      "maximum_absolute_predicate_probability_difference": 0.06999999999999995,
+      "mcc_relative_to_separate": 1.0,
+      "mean_absolute_predicate_probability_difference": 0.007333333333333332,
+      "near_threshold_records_within_0_05": 3,
+      "precision_relative_to_separate": 1.0,
+      "predicate_decision_disagreements": 0,
+      "query_agreement_rate": 1.0,
+      "query_agreements": 20,
+      "query_disagreements": 0,
+      "recall_relative_to_separate": 1.0,
+      "representative_records": 20,
+      "separate_query_positives": 1,
+      "true_negatives_relative_to_separate": 19,
+      "true_positives_relative_to_separate": 1,
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_query_positives": 1,
+      "false_negative_rate_relative_to_separate": 0.0,
+      "false_negatives_relative_to_separate": 0,
+      "false_positives_relative_to_separate": 0,
+      "maximum_absolute_predicate_probability_difference": 0.010000000000000009,
+      "mcc_relative_to_separate": 1.0,
+      "mean_absolute_predicate_probability_difference": 0.0030000000000000005,
+      "near_threshold_records_within_0_05": 0,
+      "precision_relative_to_separate": 1.0,
+      "predicate_decision_disagreements": 0,
+      "query_agreement_rate": 1.0,
+      "query_agreements": 20,
+      "query_disagreements": 0,
+      "recall_relative_to_separate": 1.0,
+      "representative_records": 20,
+      "separate_query_positives": 1,
+      "true_negatives_relative_to_separate": 19,
+      "true_positives_relative_to_separate": 1,
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_query_positives": 0,
+      "false_negative_rate_relative_to_separate": null,
+      "false_negatives_relative_to_separate": 0,
+      "false_positives_relative_to_separate": 0,
+      "maximum_absolute_predicate_probability_difference": 0.030000000000000027,
+      "mcc_relative_to_separate": null,
+      "mean_absolute_predicate_probability_difference": 0.005000000000000002,
+      "near_threshold_records_within_0_05": 1,
+      "precision_relative_to_separate": null,
+      "predicate_decision_disagreements": 0,
+      "query_agreement_rate": 1.0,
+      "query_agreements": 20,
+      "query_disagreements": 0,
+      "recall_relative_to_separate": null,
+      "representative_records": 20,
+      "separate_query_positives": 0,
+      "true_negatives_relative_to_separate": 20,
+      "true_positives_relative_to_separate": 0,
+      "workload_id": "m51_sms_prize_urgency_contact"
+    }
+  ],
+  "population_accuracy_claimed": false,
+  "predicate_decision_disagreements": 0,
+  "query_level_disagreements": 0,
+  "reference_interpretation": "separate Jev decisions are comparison references, not human ground truth",
+  "representative_records": 60,
+  "schema_version": "m5.2.3-semantic-disagreement-analysis-v1"
+}

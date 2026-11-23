@@ -1,0 +1,38 @@
+{
+  "cache_enabled": false,
+  "concurrency": 1,
+  "conservative_cost_proxy_usd": 0.006708384375,
+  "discovery_records_per_workload": 10,
+  "expected_cost_proxy_usd": 0.0040551,
+  "expected_named_question_evaluations": 430,
+  "expected_physical_requests": 280,
+  "experiment_id": "semanticflow-m5.2.3-live-pilot-a-repaired-session-01",
+  "http_attempt_ceiling": 1080,
+  "maximum_retries": 2,
+  "model": "jev-1.14.0",
+  "near_threshold_margin": 0.15,
+  "objective": {
+    "objective": "RESEARCH_INSTRUMENTATION",
+    "permits_diagnostic_acquisition": true,
+    "permits_formal_certification": false,
+    "permits_production_deployment": false,
+    "requires_live_authorization": true,
+    "schema_version": "m5.2.2-experiment-objective-v1"
+  },
+  "output_directory": "results/milestone_5_2_3/live_pilot_a_repaired_session_01",
+  "physical_request_ceiling": 360,
+  "policy_version": "m5.2.2-cost-aware-instrumentation-v1",
+  "protocol_fingerprint": "a9d5218c478d217a007ed590e95c072d58e5bd319e02673781260c09e87f96f8",
+  "record_partition": "development",
+  "representative_records_per_workload": 20,
+  "schema_version": "m5.2.2-pilot-a-protocol-v1",
+  "scientific_objective": "Validate bounded response-adaptive acquisition, paid-screen accounting, evidence isolation, provider contracts, and restart reconciliation.",
+  "seed": 5221,
+  "statistical_non_certification_statement": "Twenty representative records per workload cannot formally qualify batching under M5.2 or M5.2.1 confidence requirements.",
+  "threshold": 0.5,
+  "workload_ids": [
+    "m51_banking_card_unauthorized_refund",
+    "m51_beauty_failure_usability",
+    "m51_sms_prize_urgency_contact"
+  ]
+}

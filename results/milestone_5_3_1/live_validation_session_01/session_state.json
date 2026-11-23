@@ -1,0 +1,17 @@
+{
+  "action_universe_fingerprint": "b1698eea0b72da520385dec80b1ed39e813bd1decafdf45868570cd325a5d242",
+  "completed_requests": 1100,
+  "configuration_fingerprint": "8e827116357621e6cdeb02553481b35b9839beff7271ddc855f1a2fdcf405dd7",
+  "event_count": 4403,
+  "event_log_head": "6a0ddbb79bb7eacf03a9abd2a8704c2e4ffbebc9f1ef9ea7b138d5f992b75d10",
+  "fully_paired_records": 300,
+  "http_attempts": 1100,
+  "independent_evaluation_complete": false,
+  "live_provider_execution_complete": true,
+  "missing_requests": 0,
+  "planned_requests": 1100,
+  "schema_version": "m5.3.1-provider-evidence-coverage-v1",
+  "selected_records": 300,
+  "status": "COMPLETE",
+  "token_priced_cost_usd": 0.016131612000000014
+}

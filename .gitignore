@@ -64,3 +64,5 @@ results/milestone_5_3/*
 results/milestone_5_3_1/*
 !results/milestone_5_3_1/preflight/
 !results/milestone_5_3_1/preflight/**
+!results/milestone_5_3_1/live_validation_session_01/
+!results/milestone_5_3_1/live_validation_session_01/**

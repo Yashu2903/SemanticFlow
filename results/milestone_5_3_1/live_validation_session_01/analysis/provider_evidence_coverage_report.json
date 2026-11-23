@@ -1,0 +1,10 @@
+{
+  "completed_requests": 1100,
+  "fully_paired_records": 300,
+  "http_attempts": 1100,
+  "partial_record_details": [],
+  "partial_records": 0,
+  "selected_records": 300,
+  "session_status": "COMPLETE",
+  "token_priced_cost_usd": 0.016131612000000014
+}

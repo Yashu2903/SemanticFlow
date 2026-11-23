@@ -1,0 +1,42 @@
+{
+  "artifacts": {
+    "authorized_action_universe.json": {
+      "bytes": 1216040,
+      "sha256": "5d968bb4c6124edacc87543eba66b846f3d4c2a458b46efd564a0899b7eb785d"
+    },
+    "dry_run_report.json": {
+      "bytes": 1091,
+      "sha256": "c105cfd85e16f061638fbba2464adb30af26d08d789c9c0cd8519464b8822ab7"
+    },
+    "execution_events.jsonl": {
+      "bytes": 3138740,
+      "sha256": "41aa7f2a88a89fa498183e0069d9e286893dadb7770c54fad28b101a496e454b"
+    },
+    "fresh_record_selection_manifest.csv": {
+      "bytes": 69960,
+      "sha256": "65730b8b97fd547ffed3a2771b74746e6258ab3e4d4446535bcf3f75decd568d"
+    },
+    "frozen_experiment_config.json": {
+      "bytes": 40117,
+      "sha256": "f7c0b194cfddf1397bf1cdaaf6df8cbec2826c69f0d4d8f950dbd203ef0824c8"
+    },
+    "per_request_execution_records.csv": {
+      "bytes": 381692,
+      "sha256": "baa1b5a300c4457f61eb29674fcfb82d175260c9af7b439b59a754f9a7a6096c"
+    },
+    "provider_evidence_coverage_report.json": {
+      "bytes": 403,
+      "sha256": "42903694ba984b047b214683fd9378c82a1b234a9e5030dfd1d46ba7ed0ae86c"
+    },
+    "request_plan.csv": {
+      "bytes": 333239,
+      "sha256": "4479b3dc18440737d20a1c17180b44623604e6b8e986c79e3112050424264d28"
+    },
+    "session_state.json": {
+      "bytes": 718,
+      "sha256": "fa812aa9c5c4e88c00924a9052c5f28f49ec74c784b9d957fa78c99cba2a81e1"
+    }
+  },
+  "configuration_fingerprint": "8e827116357621e6cdeb02553481b35b9839beff7271ddc855f1a2fdcf405dd7",
+  "schema_version": "m5.3.1-artifact-integrity-v1"
+}

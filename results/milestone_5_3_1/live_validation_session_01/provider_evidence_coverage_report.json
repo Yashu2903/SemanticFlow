@@ -1,0 +1,13 @@
+{
+  "completed_requests": 1100,
+  "fully_paired_records": 300,
+  "http_attempts": 1100,
+  "independent_evaluation_complete": false,
+  "live_provider_execution_complete": true,
+  "missing_requests": 0,
+  "planned_requests": 1100,
+  "schema_version": "m5.3.1-provider-evidence-coverage-v1",
+  "selected_records": 300,
+  "status": "COMPLETE",
+  "token_priced_cost_usd": 0.016131612000000014
+}

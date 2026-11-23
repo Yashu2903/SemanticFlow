@@ -1,0 +1,26 @@
+{
+  "coverage": {
+    "completed_requests": 1100,
+    "fully_paired_records": 300,
+    "http_attempts": 1100,
+    "partial_record_details": [],
+    "partial_records": 0,
+    "selected_records": 300,
+    "session_status": "COMPLETE",
+    "token_priced_cost_usd": 0.016131612000000014
+  },
+  "distinct_event_counts": {
+    "batching_false_negatives": 0,
+    "complete_query_disagreements": 2,
+    "predicate_disagreements": 8,
+    "separate_query_positives": 21
+  },
+  "human_review_required_for_genuine_semantic_error_claims": true,
+  "independent_records": 300,
+  "policy_selection_seeds": 50,
+  "provider_response_repetitions_per_record": 1,
+  "provider_response_variability_estimated": false,
+  "schema_version": "m5.3.1-independent-validation-analysis-v1",
+  "seed_interpretation": "repeated seeds estimate policy-selection variability, not independent provider observations",
+  "status": "INDEPENDENT_EVALUATION_COMPLETE"
+}

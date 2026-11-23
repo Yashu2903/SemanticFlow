@@ -1,0 +1,9 @@
+{
+  "cost_error": "not_applicable_no_estimated_costs_used",
+  "estimated_counterfactual_cost_usd": 0.0,
+  "free_screen_features_in_end_to_end_setting": false,
+  "http_attempts_equal_recorded_historical_attempts": true,
+  "pricing_basis": "persisted frozen Jev token-priced costs",
+  "screening_cost_tracked_separately": true,
+  "selected_action_cost_kind": "observed historical provider usage"
+}

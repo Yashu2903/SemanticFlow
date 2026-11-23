@@ -1,0 +1,121 @@
+{
+  "external_live_representative_records": 60,
+  "identifiable": {
+    "m523_discovery_counterfactual_policy_comparison": false,
+    "m523_representative_external_check": true,
+    "stage_d_exact_workload_policy_comparison": true
+  },
+  "m523_discovery_complete_counterfactual_records": 0,
+  "m523_discovery_records": 30,
+  "primary_records": 1200,
+  "summary": [
+    {
+      "complete_counterfactual_records": 100,
+      "completeness_rate": 1.0,
+      "partition": "historical_development",
+      "primary_evaluation_eligible": false,
+      "records": 100,
+      "source": "m51_selection_development",
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "complete_counterfactual_records": 100,
+      "completeness_rate": 1.0,
+      "partition": "historical_development",
+      "primary_evaluation_eligible": false,
+      "records": 100,
+      "source": "m51_selection_development",
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "complete_counterfactual_records": 100,
+      "completeness_rate": 1.0,
+      "partition": "historical_development",
+      "primary_evaluation_eligible": false,
+      "records": 100,
+      "source": "m51_selection_development",
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "complete_counterfactual_records": 400,
+      "completeness_rate": 1.0,
+      "partition": "historical_evaluation",
+      "primary_evaluation_eligible": true,
+      "records": 400,
+      "source": "m51_stage_d_evaluation",
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "complete_counterfactual_records": 400,
+      "completeness_rate": 1.0,
+      "partition": "historical_evaluation",
+      "primary_evaluation_eligible": true,
+      "records": 400,
+      "source": "m51_stage_d_evaluation",
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "complete_counterfactual_records": 400,
+      "completeness_rate": 1.0,
+      "partition": "historical_evaluation",
+      "primary_evaluation_eligible": true,
+      "records": 400,
+      "source": "m51_stage_d_evaluation",
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "complete_counterfactual_records": 0,
+      "completeness_rate": 0.0,
+      "partition": "discovery_enriched",
+      "primary_evaluation_eligible": false,
+      "records": 10,
+      "source": "m523_live_discovery",
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "complete_counterfactual_records": 0,
+      "completeness_rate": 0.0,
+      "partition": "discovery_enriched",
+      "primary_evaluation_eligible": false,
+      "records": 10,
+      "source": "m523_live_discovery",
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "complete_counterfactual_records": 0,
+      "completeness_rate": 0.0,
+      "partition": "discovery_enriched",
+      "primary_evaluation_eligible": false,
+      "records": 10,
+      "source": "m523_live_discovery",
+      "workload_id": "m51_sms_prize_urgency_contact"
+    },
+    {
+      "complete_counterfactual_records": 20,
+      "completeness_rate": 1.0,
+      "partition": "representative",
+      "primary_evaluation_eligible": false,
+      "records": 20,
+      "source": "m523_live_representative",
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "complete_counterfactual_records": 20,
+      "completeness_rate": 1.0,
+      "partition": "representative",
+      "primary_evaluation_eligible": false,
+      "records": 20,
+      "source": "m523_live_representative",
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "complete_counterfactual_records": 20,
+      "completeness_rate": 1.0,
+      "partition": "representative",
+      "primary_evaluation_eligible": false,
+      "records": 20,
+      "source": "m523_live_representative",
+      "workload_id": "m51_sms_prize_urgency_contact"
+    }
+  ]
+}

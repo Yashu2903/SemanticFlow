@@ -1,0 +1,148 @@
+{
+  "ablation_seeds": [
+    5301,
+    5302,
+    5303,
+    5304,
+    5305,
+    5306,
+    5307,
+    5308,
+    5309,
+    5310,
+    5311,
+    5312,
+    5313,
+    5314,
+    5315,
+    5316,
+    5317,
+    5318,
+    5319,
+    5320
+  ],
+  "configuration_fingerprint": "c46b3df6ae1d70d0c4be197bff044246328cb9b5b92531677bdf138dab614ac5",
+  "dollar_budgets": [
+    0.0001,
+    0.00025,
+    0.0005,
+    0.001,
+    0.0015
+  ],
+  "hybrid_weights": {
+    "positive_likelihood": 0.5,
+    "uncertainty": 0.5
+  },
+  "new_provider_requests": 0,
+  "pricing": "persisted frozen Jev token-priced costs",
+  "request_budgets": [
+    5,
+    10,
+    20,
+    30,
+    50,
+    100
+  ],
+  "schema_version": "m5.3-offline-evidence-acquisition-v1",
+  "screening_window": 5,
+  "seeds": [
+    5301,
+    5302,
+    5303,
+    5304,
+    5305,
+    5306,
+    5307,
+    5308,
+    5309,
+    5310,
+    5311,
+    5312,
+    5313,
+    5314,
+    5315,
+    5316,
+    5317,
+    5318,
+    5319,
+    5320,
+    5321,
+    5322,
+    5323,
+    5324,
+    5325,
+    5326,
+    5327,
+    5328,
+    5329,
+    5330,
+    5331,
+    5332,
+    5333,
+    5334,
+    5335,
+    5336,
+    5337,
+    5338,
+    5339,
+    5340,
+    5341,
+    5342,
+    5343,
+    5344,
+    5345,
+    5346,
+    5347,
+    5348,
+    5349,
+    5350
+  ],
+  "source_sha256": {
+    "results/milestone_5_1/final_research_audit/per_request_expenditure.csv": "01042bc8e8e4779ba020015ea971d5cf6d4841a7e402b1cbb935a10b2372766d",
+    "results/milestone_5_1/final_research_audit/query_quality_verified.csv": "bf6871586a0750ff4ff8e36a04bfceb28cded1657a3cfc9492c9daed8901f675",
+    "results/milestone_5_1/selection_stage_results/complete_measurement_matrix.csv": "ef4c84d84d82b3485d897097afadcd5a3a00fd13f17730c8f95ee34374c3855f",
+    "results/milestone_5_2_3/live_pilot_a_repaired_session_01/discovery_measurements.csv": "d476baad0463d93ffc8b7fa3f37be1323b2e945b350f036c3d8028024b54a766",
+    "results/milestone_5_2_3/live_pilot_a_repaired_session_01/representative_measurements.csv": "12bd29a8df3ec8f6bba6fe1a64a4e13da0a076f499342f9a0bd7499843bb6a57"
+  },
+  "threshold": 0.5,
+  "uncertainty_margins": [
+    0.05,
+    0.1,
+    0.15,
+    0.2
+  ],
+  "workloads": [
+    {
+      "batch_operator": "fusion_7a530d955e1a88eb",
+      "dataset": "banking77_queries",
+      "predicates": [
+        "banking_card_related",
+        "banking_unauthorized_activity",
+        "banking_refund_or_reversal"
+      ],
+      "screen_predicate": "banking_card_related",
+      "workload_id": "m51_banking_card_unauthorized_refund"
+    },
+    {
+      "batch_operator": "fusion_36f72d9213396451",
+      "dataset": "amazon_all_beauty",
+      "predicates": [
+        "beauty_malfunction",
+        "beauty_hard_to_use"
+      ],
+      "screen_predicate": "beauty_malfunction",
+      "workload_id": "m51_beauty_failure_usability"
+    },
+    {
+      "batch_operator": "fusion_3ac5aa84cc3217ed",
+      "dataset": "sms_spam",
+      "predicates": [
+        "sms_prize_or_reward",
+        "sms_urgency_pressure",
+        "sms_contact_action"
+      ],
+      "screen_predicate": "sms_prize_or_reward",
+      "workload_id": "m51_sms_prize_urgency_contact"
+    }
+  ]
+}

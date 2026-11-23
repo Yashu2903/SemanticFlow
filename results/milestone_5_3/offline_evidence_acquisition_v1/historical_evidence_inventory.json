@@ -1,0 +1,28 @@
+{
+  "m51_selection": {
+    "exact_fully_paired_development_records": 300,
+    "use": "development_only_not_primary_evaluation"
+  },
+  "m51_stage_c": {
+    "enriched_records": 30,
+    "physical_measurements": 810,
+    "representative_records": 90,
+    "unique_records": 120,
+    "use": "context_only_stage_d_is_larger_exact_evaluation_pool"
+  },
+  "m51_stage_d": {
+    "exact_fully_paired_evaluation_records": 1200,
+    "physical_measurements_for_exact_groups": 4400,
+    "use": "primary_offline_replay"
+  },
+  "m523": {
+    "complete_discovery_counterfactual_records": 0,
+    "discovery_screen_records": 30,
+    "fully_paired_representative_records": 60,
+    "use": "separate_external_check_and_incomplete_coverage_inventory"
+  },
+  "m52_m521_m522": {
+    "new_real_provider_measurements": 0,
+    "use": "derived_feasibility_controller_and_mock_context"
+  }
+}

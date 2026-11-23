@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="18">Predicate disagreement discovery</text>
+<line x1="90" y1="430" x2="830" y2="430" stroke="#333"/>
+<line x1="90" y1="60" x2="90" y2="430" stroke="#333"/>
+<text x="460.0" y="492" text-anchor="middle" font-family="sans-serif">Observed token-priced cost (USD)</text>
+<text x="20" y="245.0" transform="rotate(-90 20 245.0)" text-anchor="middle" font-family="sans-serif">Mean discovered</text>
+<text x="90.0" y="450" text-anchor="middle" font-family="sans-serif" font-size="11">0.00000</text>
+<text x="80" y="434.0" text-anchor="end" font-family="sans-serif" font-size="11">0.00</text>
+<text x="238.0" y="450" text-anchor="middle" font-family="sans-serif" font-size="11">0.00028</text>
+<text x="80" y="360.0" text-anchor="end" font-family="sans-serif" font-size="11">0.06</text>
+<text x="386.0" y="450" text-anchor="middle" font-family="sans-serif" font-size="11">0.00056</text>
+<text x="80" y="286.0" text-anchor="end" font-family="sans-serif" font-size="11">0.13</text>
+<text x="534.0" y="450" text-anchor="middle" font-family="sans-serif" font-size="11">0.00084</text>
+<text x="80" y="212.0" text-anchor="end" font-family="sans-serif" font-size="11">0.19</text>
+<text x="682.0" y="450" text-anchor="middle" font-family="sans-serif" font-size="11">0.00112</text>
+<text x="80" y="138.0" text-anchor="end" font-family="sans-serif" font-size="11">0.26</text>
+<text x="830.0" y="450" text-anchor="middle" font-family="sans-serif" font-size="11">0.00140</text>
+<text x="80" y="64.0" text-anchor="end" font-family="sans-serif" font-size="11">0.32</text>
+<polyline points="116.77,430.00 148.54,383.75 227.38,337.50 304.20,337.50 451.44,291.25 830.00,152.50" fill="none" stroke="#4C78A8" stroke-width="2.5"/>
+<line x1="650" y1="70" x2="675" y2="70" stroke="#4C78A8" stroke-width="3"/>
+<text x="682" y="74" font-family="sans-serif" font-size="12">random</text>
+<polyline points="125.92,430.00 162.84,406.88 236.29,406.88 302.07,360.62 456.78,291.25 820.12,175.62" fill="none" stroke="#F58518" stroke-width="2.5"/>
+<line x1="650" y1="94" x2="675" y2="94" stroke="#F58518" stroke-width="3"/>
+<text x="682" y="98" font-family="sans-serif" font-size="12">uncertainty_continuous</text>
+<polyline points="125.92,430.00 162.60,383.75 235.57,360.62 302.90,360.62 456.27,337.50 820.89,129.38" fill="none" stroke="#54A24B" stroke-width="2.5"/>
+<line x1="650" y1="118" x2="675" y2="118" stroke="#54A24B" stroke-width="3"/>
+<text x="682" y="122" font-family="sans-serif" font-size="12">positive_oriented</text>
+<polyline points="125.92,430.00 162.73,406.88 234.86,360.62 304.28,337.50 454.78,245.00 819.41,60.00" fill="none" stroke="#E45756" stroke-width="2.5"/>
+<line x1="650" y1="142" x2="675" y2="142" stroke="#E45756" stroke-width="3"/>
+<text x="682" y="146" font-family="sans-serif" font-size="12">hybrid_weighted</text>
+</svg>

@@ -1,3 +1,4 @@
 # Preserve byte-exact experimental evidence covered by SHA-256 integrity manifests.
 results/milestone_5_2_3/live_pilot_a_repaired_session_01/** -text whitespace=cr-at-eol
 results/milestone_5_2_3/pilot_a_repaired_session_01_authorization/** -text whitespace=cr-at-eol
+results/milestone_5_3/offline_evidence_acquisition_v1/** -text whitespace=cr-at-eol

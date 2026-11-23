@@ -1,0 +1,88 @@
+{
+  "artifacts": {
+    "ablation_results.csv": {
+      "bytes": 119780,
+      "sha256": "27717bf6dc2775c369f2878b89d79a58a1dc47512b8d57c774809795dd03d378"
+    },
+    "auc_summary.csv": {
+      "bytes": 4612,
+      "sha256": "1bc534b0a369358531e9bfe1b2648290d48083f854fa1b3acd2367d9fb8e573c"
+    },
+    "cost_accounting.json": {
+      "bytes": 405,
+      "sha256": "af53c22bc47b6b833ac1a2ef4f887f1a789f20cd83fc1574e1006730c04e661b"
+    },
+    "disagreement_discovery_curves.csv": {
+      "bytes": 303759,
+      "sha256": "3ab52f2647994258338b58a2952f7bd930f451a66b15221ab5ada39163fcde78"
+    },
+    "disagreement_discovery_vs_cost.svg": {
+      "bytes": 3059,
+      "sha256": "18a78d46d6a550b648a30e7bd3ad527dd0ea86ca5098773de4a5b84426dd33e7"
+    },
+    "evidence_coverage.md": {
+      "bytes": 770,
+      "sha256": "9c26ef95d54e8f3d1e46eaae38a8dece37fd19206a7ce941198dbe9546e19116"
+    },
+    "evidence_coverage_records.csv": {
+      "bytes": 325992,
+      "sha256": "74ec9d63d3224719e5040305a4ddba84a23854e8b9560f63254a6310a3328d5c"
+    },
+    "evidence_coverage_report.json": {
+      "bytes": 4028,
+      "sha256": "b07d5f20fe395fd14f22167a79ce085b935d00b78f122b700f5510dd48dbc33e"
+    },
+    "evidence_coverage_summary.csv": {
+      "bytes": 1216,
+      "sha256": "0cb6dc10a3e96b27ada4a6c0087af5104b9829f273d604b3a6eea95f4c4041a9"
+    },
+    "experimental_design.md": {
+      "bytes": 2290,
+      "sha256": "9c828d6a9dcf998696c86893ca928692f02352a64250c954805bf8ff464dce33"
+    },
+    "final_research_report.md": {
+      "bytes": 4456,
+      "sha256": "fa19e7d5418a94b0d8122939ccb396177e740c61fda33bfa72c7f44f62bf4ac8"
+    },
+    "frozen_experiment_config.json": {
+      "bytes": 3272,
+      "sha256": "7da62ad29b798a75b389200e0c80bfdf1455b88b4749b73a626f7f5f57b43541"
+    },
+    "historical_evidence_inventory.json": {
+      "bytes": 888,
+      "sha256": "1ee14e4a33ab3708bbaf131e1835b19f0c87cf8f806cedb7b86e5ab703549d48"
+    },
+    "information_efficiency.csv": {
+      "bytes": 148465,
+      "sha256": "86ead7169b684d985fb70fb76dab81eb2411af9f054a4a011cf6ba396a1f3420"
+    },
+    "paired_policy_comparisons.csv": {
+      "bytes": 105790,
+      "sha256": "26d445766c64daec949a0587b5ea994b6c78be1abc4888c1b1a54297762cb198"
+    },
+    "policy_comparison_results.csv": {
+      "bytes": 422237,
+      "sha256": "eb84a85acb69e3f0444548c2e9c8246c972d0292c151604fed1370f9080af54c"
+    },
+    "positive_discovery_curves.csv": {
+      "bytes": 303759,
+      "sha256": "3ab52f2647994258338b58a2952f7bd930f451a66b15221ab5ada39163fcde78"
+    },
+    "positive_discovery_vs_cost.svg": {
+      "bytes": 3060,
+      "sha256": "996d28b8d77e6c60d376dd78ad29a5b0ebc237d262c76e359829b6defe447da7"
+    },
+    "seed_level_results.csv": {
+      "bytes": 8186275,
+      "sha256": "e21abd53bbef8308cd89f771f0f2210f6e1cd1bcc1b1b8cc88bd5e0036caf57d"
+    },
+    "sparse_event_intervals.csv": {
+      "bytes": 3099,
+      "sha256": "ede87d130051f0e8d9b8a1e66b7f167ac5d6610a67e22371605ba8696478e992"
+    }
+  },
+  "configuration_fingerprint": "c46b3df6ae1d70d0c4be197bff044246328cb9b5b92531677bdf138dab614ac5",
+  "historical_artifacts_modified": false,
+  "new_jev_requests": 0,
+  "schema_version": "m5.3-artifact-integrity-v1"
+}

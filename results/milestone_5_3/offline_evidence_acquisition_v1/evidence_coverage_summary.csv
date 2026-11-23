@@ -1,0 +1,13 @@
+source,partition,workload_id,records,complete_counterfactual_records,completeness_rate,primary_evaluation_eligible
+m51_selection_development,historical_development,m51_banking_card_unauthorized_refund,100,100,1.0,False
+m51_selection_development,historical_development,m51_beauty_failure_usability,100,100,1.0,False
+m51_selection_development,historical_development,m51_sms_prize_urgency_contact,100,100,1.0,False
+m51_stage_d_evaluation,historical_evaluation,m51_banking_card_unauthorized_refund,400,400,1.0,True
+m51_stage_d_evaluation,historical_evaluation,m51_beauty_failure_usability,400,400,1.0,True
+m51_stage_d_evaluation,historical_evaluation,m51_sms_prize_urgency_contact,400,400,1.0,True
+m523_live_discovery,discovery_enriched,m51_banking_card_unauthorized_refund,10,0,0.0,False
+m523_live_discovery,discovery_enriched,m51_beauty_failure_usability,10,0,0.0,False
+m523_live_discovery,discovery_enriched,m51_sms_prize_urgency_contact,10,0,0.0,False
+m523_live_representative,representative,m51_banking_card_unauthorized_refund,20,20,1.0,False
+m523_live_representative,representative,m51_beauty_failure_usability,20,20,1.0,False
+m523_live_representative,representative,m51_sms_prize_urgency_contact,20,20,1.0,False

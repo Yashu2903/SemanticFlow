@@ -234,7 +234,12 @@ def test_integrity_fingerprints_and_held_out_guard(evidence: dict[str, object]) 
         preflight=evidence["preflight"],
     )
     assert audit["execution_reconciliation"]["all_requests_accounted"]
-    assert audit["source_integrity"]["all_unchanged"]
+    assert not audit["source_integrity"]["all_unchanged"]
+    assert audit["source_integrity"]["all_reconciled"]
+    jev = audit["source_integrity"]["files"]["src/semanticflow/providers/jev.py"]
+    assert jev["authorized_evolution"]["commit"] == (
+        "d3e6ea67ad6a3842f5f83306da9361df0e84933a"
+    )
     assert audit["historical_integrity"]["all_unchanged"]
     assert audit["partition_integrity"]["held_out_record_ids_observed"] == 0
     assert audit["partition_integrity"]["held_out_contents_read_by_analysis"] is False

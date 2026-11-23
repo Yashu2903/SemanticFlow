@@ -19,7 +19,7 @@ The table pools three distinct workload strata for an exploratory aggregate; wor
 
 - **H1 — inconclusive.** Continuous uncertainty found 0.22 predicate mismatches on average at 100 end-to-end requests versus 0.24 for random. Its paired difference crossed zero. Conditional uncertainty did concentrate three predicate mismatches in 37 confirmations, but none was a complete-query disagreement.
 - **H2 — supported on this fixed replay, not population-confirmed.** Positive-oriented sampling found 1.92 positives on average versus 0.80 for random. The paired seed difference was 1.12 (95% ordering-bootstrap interval 0.64 to 1.60).
-- **H3 — no universal hybrid win.** The weighted hybrid found 1.68 positives and 0.20 query disagreements, versus 0.80 and 0.04 for random. Its predicate-mismatch difference was 0.08 with interval -0.12 to 0.28, which crosses zero. Component ablations sometimes outperformed the full hybrid, so the fixed weighting is not justified as optimal.
+- **H3 — no universal hybrid win.** The weighted hybrid found 1.68 positives and 0.20 query disagreements, versus 0.80 and 0.04 for random. Its predicate-mismatch difference was 0.08 with interval -0.12 to 0.28, which crosses zero. The corrected matched-seed ablations do not show an ablation outperforming the full hybrid at the 100-request pooled checkpoint; the fixed weighting nevertheless remains unjustified as optimal because events are sparse and several paired intervals touch zero.
 - **H4 — screening is economically material.** At 100 requests, the hybrid spent 65.98 requests and $0.000900 on screens, leaving 12.68 confirmed records; direct random confirmed 27.16. Screening still improved positive and query-disagreement yield on the pooled fixed replay, but not predicate-mismatch yield.
 - Separate Jev is a comparison reference, not human truth. These results measure execution disagreement and reference-positive collection, not semantic accuracy.
 
@@ -33,7 +33,7 @@ The pooled apparent advantage is driven mainly by Beauty and SMS positive enrich
 
 ## Ablations
 
-Uncertainty margins were not monotonic: at 100 end-to-end requests, margins 0.05, 0.10, 0.15, and 0.20 found mean predicate-mismatch counts 0.05, 0.05, 0.16, and 0.00. Removing uncertainty increased positive yield from 1.68 to 2.35; removing cost awareness increased query-disagreement yield from 0.20 to 0.30 in the 20-seed ablation. These sparse differences do not support the full hybrid formulation.
+The original ablation prose compared a 50-seed hybrid aggregate with 20-seed ablation aggregates. The corrected analysis pairs identical seeds, workloads, settings, and budgets and excludes the 30 surplus hybrid seeds. At 100 pooled end-to-end requests, the matched 20-seed hybrid means were 0.30 predicate disagreements, 0.30 query disagreements, and 2.25 positives. Removing uncertainty produced 0.25, 0.25, and 2.35 respectively; its paired intervals touched or crossed zero. Removing cost awareness produced the same 0.30 disagreement means and 2.05 positives; the positive difference was -0.20 (paired 95% bootstrap interval -0.40 to -0.05). Removing the positive component reduced positives to 1.10 (difference -1.15, interval -1.60 to -0.75). Margin policies 0.05, 0.10, 0.15, and 0.20 all found fewer disagreements than the matched hybrid at this checkpoint, but they are different policy families and the rare-event counts preclude an optimal-margin claim. Full matched results are in `results/milestone_5_3/statistical_correction_v1/`.
 
 ## Statistical limits
 

@@ -1,0 +1,12 @@
+{
+  "schema_version": "semanticflow-source-integrity-evolution-v1",
+  "transitions": [
+    {
+      "path": "src/semanticflow/providers/jev.py",
+      "from_sha256": "2de69a404fea60ef4d86e8f0a6323cfefaa2468fbded9dad6714521e69e186ce",
+      "to_sha256": "1a23d2d1ed9a8f2a64b68b363a92e2a9b33927694df35e20e109761835382b50",
+      "commit": "d3e6ea67ad6a3842f5f83306da9361df0e84933a",
+      "reason": "M5.2.3 repair: accept the established Jev single-response probability shape while retaining strict validation. Historical provider evidence was not modified."
+    }
+  ]
+}

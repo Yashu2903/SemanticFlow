@@ -1,0 +1,29 @@
+{
+  "action_universe_fingerprint": "b1698eea0b72da520385dec80b1ed39e813bd1decafdf45868570cd325a5d242",
+  "configuration_fingerprint": "8e827116357621e6cdeb02553481b35b9839beff7271ddc855f1a2fdcf405dd7",
+  "default_hard_cost_usd": 0.025,
+  "estimated_token_priced_cost_usd": 0.0155,
+  "generated_at_utc": "2026-11-23T14:29:14.356040+00:00",
+  "independently_eligible_by_workload": {
+    "m51_banking_card_unauthorized_refund": 589,
+    "m51_beauty_failure_usability": 586,
+    "m51_sms_prize_urgency_contact": 588
+  },
+  "maximum_http_attempts": 3300,
+  "paid_provider_initialized": false,
+  "paid_requests": 0,
+  "planned_requests": 1100,
+  "planned_requests_by_operation": {
+    "complete_multi_predicate": 300,
+    "screen": 300,
+    "separate_predicate": 500
+  },
+  "planned_requests_by_workload": {
+    "m51_banking_card_unauthorized_refund": 400,
+    "m51_beauty_failure_usability": 300,
+    "m51_sms_prize_urgency_contact": 400
+  },
+  "selected_records": 300,
+  "status": "M531_DRY_RUN_VALIDATED",
+  "summed_action_cost_forecast_usd": 0.01579200000000011
+}

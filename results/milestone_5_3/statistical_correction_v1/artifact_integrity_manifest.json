@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "correction_summary.json": {
+      "bytes": 619,
+      "sha256": "7f86c59b2d14e7573b0adaf9e4aeecdb882d65c7e8b2f7988e5aff00f937d35b"
+    },
+    "matched_ablation_comparisons.csv": {
+      "bytes": 100751,
+      "sha256": "3add6e217a26242f846795ea8b584b8bee5b9b8cf7efb73f01465f092044f571"
+    }
+  },
+  "historical_results_modified": false,
+  "schema_version": "m5.3-statistical-correction-integrity-v1"
+}

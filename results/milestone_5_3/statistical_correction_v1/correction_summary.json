@@ -1,0 +1,15 @@
+{
+  "baseline_policy": "hybrid_weighted",
+  "comparisons": 394,
+  "interpretation": "Ablation effects are paired descriptive differences. A difference is marked supported only when its paired bootstrap interval excludes zero.",
+  "matching_keys": [
+    "setting",
+    "pool",
+    "budget_kind",
+    "budget_value",
+    "seed"
+  ],
+  "schema_version": "m5.3-matched-ablation-correction-v1",
+  "source_results": "C:/Users/flood/Desktop/SemanticFlow/results/milestone_5_3/offline_evidence_acquisition_v1",
+  "source_seed_results_sha256": "e21abd53bbef8308cd89f771f0f2210f6e1cd1bcc1b1b8cc88bd5e0036caf57d"
+}

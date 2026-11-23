@@ -1,0 +1,30 @@
+{
+  "artifacts": {
+    "authorized_action_universe.json": {
+      "bytes": 1216040,
+      "sha256": "5d968bb4c6124edacc87543eba66b846f3d4c2a458b46efd564a0899b7eb785d"
+    },
+    "dry_run_report.json": {
+      "bytes": 1091,
+      "sha256": "0bd0155bd2ff4a0a54696bd23931357e5ce703a8ce6ec5390b4099056181f302"
+    },
+    "fresh_record_selection_manifest.csv": {
+      "bytes": 69960,
+      "sha256": "65730b8b97fd547ffed3a2771b74746e6258ab3e4d4446535bcf3f75decd568d"
+    },
+    "frozen_experiment_config.json": {
+      "bytes": 40117,
+      "sha256": "f7c0b194cfddf1397bf1cdaaf6df8cbec2826c69f0d4d8f950dbd203ef0824c8"
+    },
+    "provider_evidence_coverage_report.json": {
+      "bytes": 340,
+      "sha256": "02a151d5829c3101b07418af8a79b7faebc19a5ae9795afb6d662037827fe976"
+    },
+    "request_plan.csv": {
+      "bytes": 333239,
+      "sha256": "4479b3dc18440737d20a1c17180b44623604e6b8e986c79e3112050424264d28"
+    }
+  },
+  "configuration_fingerprint": "8e827116357621e6cdeb02553481b35b9839beff7271ddc855f1a2fdcf405dd7",
+  "schema_version": "m5.3.1-artifact-integrity-v1"
+}

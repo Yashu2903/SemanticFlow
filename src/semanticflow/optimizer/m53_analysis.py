@@ -188,6 +188,108 @@ def _paired_comparisons(seed_rows: list[dict[str, Any]]) -> list[dict[str, Any]]
     return output
 
 
+def matched_ablation_comparisons(
+    seed_rows: list[dict[str, Any]], *, baseline_policy: str = "hybrid_weighted"
+) -> list[dict[str, Any]]:
+    """Compare ablations only with seed/configuration-identical baseline rows."""
+    ablations = {policy.name for policy in ablation_policies()} | {"uncertainty_margin_0.15"}
+    key_fields = ("setting", "pool", "budget_kind", "budget_value", "seed")
+    metric_fields = (
+        "predicate_disagreements",
+        "query_disagreements",
+        "false_negatives",
+        "positives",
+        "cost_usd",
+    )
+    baseline_rows = [row for row in seed_rows if row["policy"] == baseline_policy]
+    baseline_keys = {tuple(row[field] for field in key_fields): row for row in baseline_rows}
+    output: list[dict[str, Any]] = []
+    for policy in sorted(ablations & {str(row["policy"]) for row in seed_rows}):
+        candidate_rows = [row for row in seed_rows if row["policy"] == policy]
+        condition_fields = key_fields[:-1]
+        conditions = sorted(
+            {tuple(row[field] for field in condition_fields) for row in candidate_rows},
+            key=lambda value: tuple(map(str, value)),
+        )
+        for condition in conditions:
+            candidates = [
+                row
+                for row in candidate_rows
+                if tuple(row[field] for field in condition_fields) == condition
+            ]
+            pairs: list[tuple[dict[str, Any], dict[str, Any]]] = []
+            for candidate in candidates:
+                key = tuple(candidate[field] for field in key_fields)
+                baseline = baseline_keys.get(key)
+                if baseline is None:
+                    raise ValueError(f"unmatched M5.3 ablation row for {policy}: {key}")
+                pairs.append((baseline, candidate))
+            result = dict(zip(condition_fields, condition, strict=True))
+            available_baseline = sum(
+                tuple(row[field] for field in condition_fields) == condition
+                for row in baseline_rows
+            )
+            result.update(
+                {
+                    "policy": policy,
+                    "baseline": baseline_policy,
+                    "matched_seed_count": len(pairs),
+                    "baseline_seed_count": available_baseline,
+                    "unmatched_baseline_seeds_excluded": available_baseline - len(pairs),
+                    "matching_status": "exact",
+                }
+            )
+            for index, metric in enumerate(metric_fields):
+                differences = [
+                    float(candidate[metric]) - float(baseline[metric])
+                    for baseline, candidate in pairs
+                ]
+                low, high = _bootstrap_interval(differences, 531000 + index)
+                result[f"{metric}_difference_mean"] = mean(differences)
+                result[f"{metric}_difference_ci_low"] = low
+                result[f"{metric}_difference_ci_high"] = high
+                result[f"{metric}_supported_difference"] = low > 0 or high < 0
+            output.append(result)
+    return output
+
+
+def generate_statistical_correction(
+    *, source_directory: Path = DEFAULT_OUTPUT, output_directory: Path | None = None
+) -> dict[str, Any]:
+    output_directory = output_directory or source_directory.parent / "statistical_correction_v1"
+    output_directory.mkdir(parents=True, exist_ok=True)
+    with (source_directory / "seed_level_results.csv").open(encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    comparisons = matched_ablation_comparisons(rows)
+    _write_csv(output_directory / "matched_ablation_comparisons.csv", comparisons)
+    summary = {
+        "schema_version": "m5.3-matched-ablation-correction-v1",
+        "source_results": source_directory.as_posix(),
+        "source_seed_results_sha256": _sha256(source_directory / "seed_level_results.csv"),
+        "baseline_policy": "hybrid_weighted",
+        "matching_keys": ["setting", "pool", "budget_kind", "budget_value", "seed"],
+        "comparisons": len(comparisons),
+        "interpretation": (
+            "Ablation effects are paired descriptive differences. A difference is marked "
+            "supported only when its paired bootstrap interval excludes zero."
+        ),
+    }
+    _write_json(output_directory / "correction_summary.json", summary)
+    _write_json(
+        output_directory / "artifact_integrity_manifest.json",
+        {
+            "schema_version": "m5.3-statistical-correction-integrity-v1",
+            "historical_results_modified": False,
+            "artifacts": {
+                path.name: {"sha256": _sha256(path), "bytes": path.stat().st_size}
+                for path in sorted(output_directory.iterdir())
+                if path.is_file() and path.name != "artifact_integrity_manifest.json"
+            },
+        },
+    )
+    return summary
+
+
 def _wilson(successes: int, total: int, z: float = 1.959963984540054) -> tuple[float, float]:
     if total == 0:
         return math.nan, math.nan
@@ -435,7 +537,7 @@ def _report(
             "",
             "- **H1 — inconclusive.** Continuous uncertainty found 0.22 predicate mismatches on average at 100 end-to-end requests versus 0.24 for random. Its paired difference crossed zero. Conditional uncertainty did concentrate three predicate mismatches in 37 confirmations, but none was a complete-query disagreement.",
             f"- **H2 — supported on this fixed replay, not population-confirmed.** Positive-oriented sampling found 1.92 positives on average versus 0.80 for random. The paired seed difference was {positive['positives_difference_mean']:.2f} (95% ordering-bootstrap interval {positive['positives_difference_ci_low']:.2f} to {positive['positives_difference_ci_high']:.2f}).",
-            f"- **H3 — no universal hybrid win.** The weighted hybrid found 1.68 positives and 0.20 query disagreements, versus 0.80 and 0.04 for random. Its predicate-mismatch difference was {hybrid['predicate_disagreements_difference_mean']:.2f} with interval {hybrid['predicate_disagreements_difference_ci_low']:.2f} to {hybrid['predicate_disagreements_difference_ci_high']:.2f}, which crosses zero. Component ablations sometimes outperformed the full hybrid, so the fixed weighting is not justified as optimal.",
+            f"- **H3 — no universal hybrid win.** The weighted hybrid found 1.68 positives and 0.20 query disagreements, versus 0.80 and 0.04 for random. Its predicate-mismatch difference was {hybrid['predicate_disagreements_difference_mean']:.2f} with interval {hybrid['predicate_disagreements_difference_ci_low']:.2f} to {hybrid['predicate_disagreements_difference_ci_high']:.2f}, which crosses zero. Corrected seed-matched ablations do not establish that the fixed weighting is optimal.",
             f"- **H4 — screening is economically material.** At 100 requests, the hybrid spent {hybrid_aggregate['screening_requests_mean']:.2f} requests and ${hybrid_aggregate['screening_cost_usd_mean']:.6f} on screens, leaving {hybrid_aggregate['selected_records_mean']:.2f} confirmed records; direct random confirmed 27.16. Screening still improved positive and query-disagreement yield on the pooled fixed replay, but not predicate-mismatch yield.",
             "- Separate Jev is a comparison reference, not human truth. These results measure execution disagreement and reference-positive collection, not semantic accuracy.",
             "",
@@ -449,7 +551,7 @@ def _report(
             "",
             "## Ablations",
             "",
-            "Uncertainty margins were not monotonic: at 100 end-to-end requests, margins 0.05, 0.10, 0.15, and 0.20 found mean predicate-mismatch counts 0.05, 0.05, 0.16, and 0.00. Removing uncertainty increased positive yield from 1.68 to 2.35; removing cost awareness increased query-disagreement yield from 0.20 to 0.30 in the 20-seed ablation. These sparse differences do not support the full hybrid formulation.",
+            "Ablations must be interpreted through the matched-seed correction in `results/milestone_5_3/statistical_correction_v1/`. It compares identical seeds, workloads, settings, and budgets and explicitly excludes surplus baseline seeds. Sparse disagreement events remain insufficient to identify an optimal formulation.",
             "",
             "## Statistical limits",
             "",

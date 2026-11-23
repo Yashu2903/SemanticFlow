@@ -382,14 +382,23 @@ def build_integrity_audit(
         for name, digest in config_hashes.items()
     }
     source_before = preflight["baseline_audit"]["current_source_sha256"]
-    source_checks = {
-        path: {
-            "authorized_preflight_sha256": expected,
-            "current_sha256": sha256_file(path),
-            "unchanged_since_preflight": sha256_file(path) == expected,
-        }
-        for path, expected in source_before.items()
+    evolution_path = Path("configs/research_source_integrity_evolution.json")
+    evolution = read_json(evolution_path) if evolution_path.exists() else {"transitions": []}
+    transitions = {
+        (item["path"], item["from_sha256"], item["to_sha256"]): item
+        for item in evolution["transitions"]
     }
+    source_checks = {}
+    for path, expected in source_before.items():
+        current = sha256_file(path)
+        transition = transitions.get((path, expected, current))
+        source_checks[path] = {
+            "authorized_preflight_sha256": expected,
+            "current_sha256": current,
+            "unchanged_since_preflight": current == expected,
+            "reconciled": current == expected or transition is not None,
+            "authorized_evolution": transition,
+        }
     historical_checks = {
         path: {
             "preflight_sha256": expected,
@@ -444,6 +453,11 @@ def build_integrity_audit(
             "git_commit_at_preflight": preflight["baseline_audit"]["git_commit"],
             "files": source_checks,
             "all_unchanged": all(item["unchanged_since_preflight"] for item in source_checks.values()),
+            "all_reconciled": all(item["reconciled"] for item in source_checks.values()),
+            "evolution_ledger": evolution_path.as_posix(),
+            "evolution_ledger_sha256": (
+                sha256_file(evolution_path) if evolution_path.exists() else None
+            ),
         },
         "historical_integrity": {
             "files": historical_checks,

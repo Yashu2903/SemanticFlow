@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+from collections.abc import Callable
 from pathlib import Path
 from typing import Any
 
@@ -16,6 +17,7 @@ from semanticflow.optimizer.m522_preflight import generate
 from semanticflow.optimizer.m522_protocol import (
     PilotAAuthorizationManifest,
     PilotAProtocol,
+    activate_live_manifest,
     build_action_universe,
     build_authorization_proposal,
     build_protocol,
@@ -25,26 +27,31 @@ from semanticflow.optimizer.m522_protocol import (
     validate_live_manifest,
 )
 from semanticflow.optimizer.m522_reconciliation import reconcile_session
-from semanticflow.optimizer.m522_session import AppendOnlyEventLog, rebuild_session
+from semanticflow.optimizer.m522_session import AppendOnlyEventLog, SessionStatus, rebuild_session
 
 
 def _json(path: str | Path) -> Any:
     return json.loads(Path(path).read_text("utf-8"))
 
 
-def _scope() -> tuple[PilotAProtocol, Any]:
-    protocol = build_protocol()
+ProtocolBuilder = Callable[[], PilotAProtocol]
+
+
+def _scope(protocol_builder: ProtocolBuilder = build_protocol) -> tuple[PilotAProtocol, Any]:
+    protocol = protocol_builder()
     return protocol, build_action_universe(protocol)
 
 
-def _validate(args: argparse.Namespace) -> dict[str, Any]:
-    protocol, universe = _scope()
+def _validate(
+    args: argparse.Namespace, protocol_builder: ProtocolBuilder = build_protocol
+) -> dict[str, Any]:
+    protocol, universe = _scope(protocol_builder)
     manifest = PilotAAuthorizationManifest.model_validate(_json(args.manifest))
     validate_live_manifest(
         manifest,
         protocol=protocol,
         universe=universe,
-        supplied_authorization=args.authorization,
+        supplied_authorization=getattr(args, "authorization", None),
         output_directory=args.output,
     )
     output = Path(args.output)
@@ -71,6 +78,8 @@ def _validate(args: argparse.Namespace) -> dict[str, Any]:
         }
         if actual != expected or state.pending_action_ids or state.ambiguous_action_ids:
             raise PermissionError("existing live session requires safe reconciliation")
+        if state.status == SessionStatus.FAILED_CLOSED:
+            raise PermissionError("FAILED_CLOSED session cannot execute")
     return {
         "valid": True,
         "scope_fingerprint": manifest.scope_fingerprint,
@@ -78,8 +87,39 @@ def _validate(args: argparse.Namespace) -> dict[str, Any]:
     }
 
 
-async def _simulate(args: argparse.Namespace) -> dict[str, Any]:
-    protocol, universe = _scope()
+def _authorize(
+    args: argparse.Namespace, protocol_builder: ProtocolBuilder = build_protocol
+) -> dict[str, Any]:
+    protocol, universe = _scope(protocol_builder)
+    source = Path(args.manifest)
+    output = Path(args.output)
+    if source.resolve() == output.resolve():
+        raise PermissionError("active authorization must not overwrite the unsigned proposal")
+    if output.exists():
+        raise FileExistsError("active authorization manifest already exists")
+    proposal = PilotAAuthorizationManifest.model_validate(_json(source))
+    manifest = activate_live_manifest(
+        proposal,
+        protocol=protocol,
+        universe=universe,
+        named_experiment=args.experiment,
+    )
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("x", encoding="utf-8", newline="\n") as handle:
+        handle.write(manifest.model_dump_json(indent=2) + "\n")
+    return {
+        "authorized": True,
+        "experiment_id": manifest.authorized_experiment_id,
+        "scope_fingerprint": manifest.authorized_scope_fingerprint,
+        "manifest": output.as_posix(),
+        "provider_initialized": False,
+    }
+
+
+async def _simulate(
+    args: argparse.Namespace, protocol_builder: ProtocolBuilder = build_protocol
+) -> dict[str, Any]:
+    protocol, universe = _scope(protocol_builder)
     if args.scenario == "budget_pressure":
         payload = protocol.model_dump(mode="json", exclude={"protocol_fingerprint"})
         payload.update(
@@ -114,10 +154,12 @@ async def _simulate(args: argparse.Namespace) -> dict[str, Any]:
     return result.model_dump(mode="json")
 
 
-async def _execute(args: argparse.Namespace) -> dict[str, Any]:
+async def _execute(
+    args: argparse.Namespace, protocol_builder: ProtocolBuilder = build_protocol
+) -> dict[str, Any]:
     # Authorization and scope validation deliberately precede the paid-provider import.
-    validation = _validate(args)
-    protocol, universe = _scope()
+    validation = _validate(args, protocol_builder)
+    protocol, universe = _scope(protocol_builder)
     from semanticflow.optimizer.m522_jev_adapter import PilotAJevProvider
 
     provider = PilotAJevProvider.from_env(
@@ -146,8 +188,10 @@ def _status(args: argparse.Namespace) -> dict[str, Any]:
     return rebuild_session(log.read()).model_dump(mode="json")
 
 
-def _reconcile(args: argparse.Namespace) -> dict[str, Any]:
-    protocol, universe = _scope()
+def _reconcile(
+    args: argparse.Namespace, protocol_builder: ProtocolBuilder = build_protocol
+) -> dict[str, Any]:
+    protocol, universe = _scope(protocol_builder)
     manifest = build_authorization_proposal(protocol, universe)
     result = reconcile_session(
         event_log=AppendOnlyEventLog(Path(args.output) / "events.jsonl"),
@@ -163,8 +207,10 @@ def _reconcile(args: argparse.Namespace) -> dict[str, Any]:
     return result.model_dump(mode="json")
 
 
-def _analyze(args: argparse.Namespace) -> dict[str, Any]:
-    protocol = build_protocol()
+def _analyze(
+    args: argparse.Namespace, protocol_builder: ProtocolBuilder = build_protocol
+) -> dict[str, Any]:
+    protocol = protocol_builder()
     return analyze_session(
         AppendOnlyEventLog(Path(args.output) / "events.jsonl"),
         threshold=protocol.threshold,
@@ -175,6 +221,10 @@ def parser() -> argparse.ArgumentParser:
     value = argparse.ArgumentParser()
     commands = value.add_subparsers(dest="command", required=True)
     commands.add_parser("preflight")
+    authorize = commands.add_parser("authorize")
+    authorize.add_argument("--manifest", required=True)
+    authorize.add_argument("--output", required=True)
+    authorize.add_argument("--experiment", required=True)
     simulate = commands.add_parser("simulate")
     simulate.add_argument("--output", required=True)
     simulate.add_argument(
@@ -202,22 +252,28 @@ def parser() -> argparse.ArgumentParser:
     return value
 
 
-def main() -> int:
+def main(
+    *,
+    protocol_builder: ProtocolBuilder = build_protocol,
+    preflight_generator: Callable[[], dict[str, Any]] = generate,
+) -> int:
     args = parser().parse_args()
     if args.command == "preflight":
-        result = generate()
+        result = preflight_generator()
+    elif args.command == "authorize":
+        result = _authorize(args, protocol_builder)
     elif args.command == "simulate":
-        result = asyncio.run(_simulate(args))
+        result = asyncio.run(_simulate(args, protocol_builder))
     elif args.command == "validate":
-        result = _validate(args)
+        result = _validate(args, protocol_builder)
     elif args.command == "status":
         result = _status(args)
     elif args.command == "reconcile":
-        result = _reconcile(args)
+        result = _reconcile(args, protocol_builder)
     elif args.command == "analyze":
-        result = _analyze(args)
+        result = _analyze(args, protocol_builder)
     else:
-        result = asyncio.run(_execute(args))
+        result = asyncio.run(_execute(args, protocol_builder))
     print(json.dumps(result, indent=2, sort_keys=True))
     return 0
 

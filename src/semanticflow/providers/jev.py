@@ -164,6 +164,7 @@ class JevProvider(InferenceProvider):
                 "http_status": details["http_status"],
                 "fusion_mode": operator.fusion_mode,
                 "fusion_prompt_hash": operator.fusion_prompt_hash,
+                "raw_provider_response": details["raw_provider_response"],
             },
         )
 
@@ -280,6 +281,7 @@ class JevProvider(InferenceProvider):
                         "attempts": attempts,
                         "retries": retries,
                         "http_status": response.status_code,
+                        "raw_provider_response": data,
                     }
             if not retryable or retry_number >= self.max_retries:
                 break

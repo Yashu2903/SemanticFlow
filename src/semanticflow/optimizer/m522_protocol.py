@@ -100,6 +100,9 @@ class PilotAAuthorizationManifest(BaseModel):
     required_authorization_contract: str
     paid_calls_authorized: bool = False
     countersigned_by: str | None = None
+    authorization_method: str | None = None
+    authorized_experiment_id: str | None = None
+    authorized_scope_fingerprint: str | None = None
     historical_authorization_reuse_allowed: bool = False
     scope_fingerprint: str
 
@@ -108,7 +111,11 @@ def protocol_fingerprint(payload: dict[str, Any]) -> str:
     return canonical_hash(payload)
 
 
-def build_protocol() -> PilotAProtocol:
+def build_protocol(
+    *,
+    experiment_id: str = "semanticflow-m5.2.2-pilot-a-instrumentation",
+    output_directory: str = "results/milestone_5_2_2/pilot_a_live",
+) -> PilotAProtocol:
     payload: dict[str, Any] = {
         "objective": research_instrumentation_policy(),
         "scientific_objective": (
@@ -120,6 +127,8 @@ def build_protocol() -> PilotAProtocol:
             "M5.2 or M5.2.1 confidence requirements."
         ),
         "workload_ids": PILOT_WORKLOADS,
+        "experiment_id": experiment_id,
+        "output_directory": output_directory,
     }
     defaults = PilotAProtocol.model_construct(**payload, protocol_fingerprint="")
     full = defaults.model_dump(mode="json", exclude={"protocol_fingerprint"})
@@ -335,16 +344,11 @@ def build_authorization_proposal(
     )
 
 
-def validate_live_manifest(
+def _scope_mismatches(
     manifest: PilotAAuthorizationManifest,
-    *,
-    protocol: PilotAProtocol,
-    universe: AuthorizedActionUniverse,
-    supplied_authorization: str | None,
-    output_directory: str,
-) -> None:
-    expected = build_authorization_proposal(protocol, universe)
-    for field in (
+    expected: PilotAAuthorizationManifest,
+) -> tuple[str, ...]:
+    fields = (
         "experiment_id",
         "protocol_fingerprint",
         "action_universe_fingerprint",
@@ -355,14 +359,62 @@ def validate_live_manifest(
         "output_directory",
         "required_authorization_contract",
         "scope_fingerprint",
-    ):
-        if getattr(manifest, field) != getattr(expected, field):
-            raise PermissionError(f"authorization scope mismatch: {field}")
+    )
+    return tuple(field for field in fields if getattr(manifest, field) != getattr(expected, field))
+
+
+def activate_live_manifest(
+    manifest: PilotAAuthorizationManifest,
+    *,
+    protocol: PilotAProtocol,
+    universe: AuthorizedActionUniverse,
+    named_experiment: str,
+) -> PilotAAuthorizationManifest:
+    """Activate one exact scope after an explicit live-authorization instruction."""
+
+    expected = build_authorization_proposal(protocol, universe)
+    mismatches = _scope_mismatches(manifest, expected)
+    if mismatches:
+        raise PermissionError(f"authorization scope mismatch: {mismatches[0]}")
+    if named_experiment != expected.experiment_id:
+        raise PermissionError("named experiment differs from the frozen authorization scope")
+    if manifest.historical_authorization_reuse_allowed:
+        raise PermissionError("historical authorization reuse is forbidden")
+    if manifest.paid_calls_authorized:
+        raise PermissionError("authorization proposal is already active")
+    return manifest.model_copy(
+        update={
+            "paid_calls_authorized": True,
+            "countersigned_by": None,
+            "authorization_method": "explicit_live_authorization_instruction",
+            "authorized_experiment_id": expected.experiment_id,
+            "authorized_scope_fingerprint": expected.scope_fingerprint,
+        }
+    )
+
+
+def validate_live_manifest(
+    manifest: PilotAAuthorizationManifest,
+    *,
+    protocol: PilotAProtocol,
+    universe: AuthorizedActionUniverse,
+    supplied_authorization: str | None = None,
+    output_directory: str,
+) -> None:
+    del supplied_authorization  # Retained only for backward-compatible callers.
+    expected = build_authorization_proposal(protocol, universe)
+    mismatches = _scope_mismatches(manifest, expected)
+    if mismatches:
+        raise PermissionError(f"authorization scope mismatch: {mismatches[0]}")
     if output_directory != manifest.output_directory:
         raise PermissionError("live output directory differs from authorized scope")
     if manifest.historical_authorization_reuse_allowed:
         raise PermissionError("historical authorization reuse is forbidden")
-    if not manifest.paid_calls_authorized or not manifest.countersigned_by:
-        raise PermissionError("a countersigned live manifest is required")
-    if supplied_authorization != manifest.required_authorization_contract:
-        raise PermissionError("exact scoped authorization contract is required")
+    if not manifest.paid_calls_authorized:
+        raise PermissionError("an activated live manifest is required")
+    if manifest.authorization_method != "explicit_live_authorization_instruction":
+        raise PermissionError("explicit live authorization activation is required")
+    if manifest.authorized_experiment_id != expected.experiment_id:
+        raise PermissionError("authorization is not active for this named experiment")
+    if manifest.authorized_scope_fingerprint != expected.scope_fingerprint:
+        raise PermissionError("authorization is not active for this frozen scope")

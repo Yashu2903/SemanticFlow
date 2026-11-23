@@ -88,6 +88,84 @@ async def test_persisted_receipt_is_recovered_without_reissue(tmp_path: Path) ->
     assert after.budget.actual_http_attempts == 1
 
 
+@pytest.mark.asyncio
+async def test_persisted_raw_provider_response_is_validated_after_restart(
+    tmp_path: Path,
+) -> None:
+    item = make_controller(tmp_path)
+    state = item.initialize()
+    action, _ = item.choose_next(state)
+    assert action is not None
+    ledger = item._ledger(state)
+    snapshot = ledger.reserve_action(
+        action.action_id,
+        predicted_input_tokens=action.predicted_input_tokens,
+        predicted_cost_usd=action.predicted_cost_usd,
+    )
+    item.event_log.append(
+        "action_reserved",
+        {"action_id": action.action_id, "budget": snapshot.model_dump(mode="json")},
+    )
+    item.event_log.append("dispatch_started", {"action_id": action.action_id})
+    response = await item.adapter.dispatch(action, item.record_texts[action.record_id])
+    item.event_log.append(
+        "provider_response_persisted",
+        {"response": response.model_dump(mode="json")},
+    )
+
+    before = rebuild_session(item.event_log.read())
+    assert before.pending_action_ids == (action.action_id,)
+    assert len(before.provider_responses) == 1
+    result = reconcile(item, repair=True)
+
+    assert result.valid  # type: ignore[attr-defined]
+    assert result.recovered_provider_responses == 1  # type: ignore[attr-defined]
+    assert result.next_action_may_execute  # type: ignore[attr-defined]
+    after = rebuild_session(item.event_log.read())
+    assert action.action_id in after.completed_action_ids
+    assert after.budget.actual_http_attempts == response.http_attempts
+    assert after.budget.input_tokens == response.input_tokens
+    assert after.budget.output_tokens == response.output_tokens
+
+
+@pytest.mark.asyncio
+async def test_invalid_persisted_provider_response_recovers_failed_closed(
+    tmp_path: Path,
+) -> None:
+    item = make_controller(tmp_path)
+    state = item.initialize()
+    action, _ = item.choose_next(state)
+    assert action is not None
+    ledger = item._ledger(state)
+    snapshot = ledger.reserve_action(
+        action.action_id,
+        predicted_input_tokens=action.predicted_input_tokens,
+        predicted_cost_usd=action.predicted_cost_usd,
+    )
+    item.event_log.append(
+        "action_reserved",
+        {"action_id": action.action_id, "budget": snapshot.model_dump(mode="json")},
+    )
+    item.event_log.append("dispatch_started", {"action_id": action.action_id})
+    response = await item.adapter.dispatch(action, item.record_texts[action.record_id])
+    response = response.model_copy(update={"resolved_model": "unexpected-model"})
+    item.event_log.append(
+        "provider_response_persisted",
+        {"response": response.model_dump(mode="json")},
+    )
+
+    result = reconcile(item, repair=True)
+
+    assert result.valid  # type: ignore[attr-defined]
+    assert result.failed_provider_responses == 1  # type: ignore[attr-defined]
+    assert not result.next_action_may_execute  # type: ignore[attr-defined]
+    after = rebuild_session(item.event_log.read())
+    assert after.status == SessionStatus.FAILED_CLOSED
+    assert after.budget.actual_http_attempts == response.http_attempts
+    assert after.budget.input_tokens == response.input_tokens
+    assert after.budget.output_tokens == response.output_tokens
+
+
 def test_dispatch_without_receipt_becomes_ambiguous(tmp_path: Path) -> None:
     item = make_controller(tmp_path)
     state = item.initialize()
@@ -108,6 +186,34 @@ def test_dispatch_without_receipt_becomes_ambiguous(tmp_path: Path) -> None:
     assert not result.valid  # type: ignore[attr-defined]
     assert result.ambiguous_actions == 1  # type: ignore[attr-defined]
     assert not result.next_action_may_execute  # type: ignore[attr-defined]
+
+
+def test_reconciliation_cannot_reactivate_failed_closed_session(tmp_path: Path) -> None:
+    item = make_controller(tmp_path)
+    state = item.initialize()
+    action, _ = item.choose_next(state)
+    assert action is not None
+    ledger = item._ledger(state)
+    snapshot = ledger.reserve_action(
+        action.action_id,
+        predicted_input_tokens=action.predicted_input_tokens,
+        predicted_cost_usd=action.predicted_cost_usd,
+    )
+    item.event_log.append(
+        "action_reserved",
+        {"action_id": action.action_id, "budget": snapshot.model_dump(mode="json")},
+    )
+    item.event_log.append(
+        "status_changed",
+        {"status": SessionStatus.FAILED_CLOSED.value, "reason": "test"},
+    )
+
+    result = reconcile(item, repair=True)
+
+    assert result.valid  # type: ignore[attr-defined]
+    assert result.released_undispatched_reservations == 1  # type: ignore[attr-defined]
+    assert not result.next_action_may_execute  # type: ignore[attr-defined]
+    assert rebuild_session(item.event_log.read()).status == SessionStatus.FAILED_CLOSED
 
 
 @pytest.mark.asyncio
@@ -270,6 +376,12 @@ async def test_post_request_validation_failure_charges_all_attempts(tmp_path: Pa
                 successful_requests=1,
                 failed_attempts=2,
                 retries=2,
+                metadata={
+                    "raw_provider_response": {
+                        "answers": {"single": {"type": "noul", "noul": 0.5}},
+                        "usage": {"input_tokens": 10, "output_tokens": 1},
+                    }
+                },
             )
 
     item = make_controller(tmp_path)
@@ -277,7 +389,19 @@ async def test_post_request_validation_failure_charges_all_attempts(tmp_path: Pa
     state = await item.step()
     assert state.status == SessionStatus.FAILED_CLOSED
     assert state.budget.actual_http_attempts == 3
+    assert state.budget.input_tokens == 10
+    assert state.budget.output_tokens == 1
     assert len(state.budget.completed_action_ids) == 1
+    assert len(state.provider_responses) == 1
+    assert state.provider_responses[0]["raw_provider_response"]["usage"] == {
+        "input_tokens": 10,
+        "output_tokens": 1,
+    }
+    event_types = [event.event_type for event in item.event_log.read()]
+    assert event_types.index("provider_response_persisted") < event_types.index("action_failed")
+    result = reconcile(item, repair=False)
+    assert result.valid  # type: ignore[attr-defined]
+    assert not result.next_action_may_execute  # type: ignore[attr-defined]
 
 
 def test_budget_rejects_more_than_two_retries() -> None:

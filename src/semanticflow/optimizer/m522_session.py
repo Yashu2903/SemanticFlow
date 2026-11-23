@@ -57,6 +57,7 @@ class PersistentSessionState(BaseModel):
     representative_evidence_action_ids: tuple[str, ...] = ()
     discovery_evidence_action_ids: tuple[str, ...] = ()
     controller_decisions: tuple[dict[str, Any], ...] = ()
+    provider_responses: tuple[dict[str, Any], ...] = ()
     receipts: tuple[dict[str, Any], ...] = ()
     budget: BudgetSnapshot
     termination_reason: str | None = None
@@ -138,6 +139,7 @@ def rebuild_session(events: tuple[SessionEvent, ...]) -> PersistentSessionState:
     representative: set[str] = set()
     discovery: set[str] = set()
     decisions: list[dict[str, Any]] = []
+    provider_responses: list[dict[str, Any]] = []
     receipts: list[dict[str, Any]] = []
     budget = BudgetSnapshot.model_validate(creation["budget"])
     termination: str | None = None
@@ -153,6 +155,8 @@ def rebuild_session(events: tuple[SessionEvent, ...]) -> PersistentSessionState:
         elif event.event_type == "action_reserved":
             pending.add(payload["action_id"])
             budget = BudgetSnapshot.model_validate(payload["budget"])
+        elif event.event_type == "provider_response_persisted":
+            provider_responses.append(payload["response"])
         elif event.event_type == "receipt_persisted":
             receipts.append(payload["receipt"])
         elif event.event_type == "evidence_accepted":
@@ -194,6 +198,7 @@ def rebuild_session(events: tuple[SessionEvent, ...]) -> PersistentSessionState:
         representative_evidence_action_ids=tuple(sorted(representative)),
         discovery_evidence_action_ids=tuple(sorted(discovery)),
         controller_decisions=tuple(decisions),
+        provider_responses=tuple(provider_responses),
         receipts=tuple(receipts),
         budget=budget,
         termination_reason=termination,

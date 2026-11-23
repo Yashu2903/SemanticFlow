@@ -85,7 +85,7 @@ def test_unsigned_manifest_rejected_before_live_provider_factory() -> None:
         nonlocal initialized
         initialized = True
 
-    with pytest.raises(PermissionError):
+    with pytest.raises(PermissionError, match="activated"):
         validate_live_manifest(
             manifest,
             protocol=protocol,
@@ -244,7 +244,7 @@ async def test_execute_rejects_unsigned_manifest_before_jev_import(
         output=manifest.output_directory,
         maximum_steps=1,
     )
-    with pytest.raises(PermissionError, match="countersigned"):
+    with pytest.raises(PermissionError, match="activated"):
         await _execute(args)
     assert not imported
 

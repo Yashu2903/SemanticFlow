@@ -277,8 +277,16 @@ class LiveProfilingController:
             {"action_id": action.action_id, "budget": snapshot.model_dump(mode="json")},
         )
         self.event_log.append("dispatch_started", {"action_id": action.action_id})
+        provider_response = None
         try:
-            receipt = await self.adapter.acquire(action, self.record_texts[action.record_id])
+            provider_response = await self.adapter.dispatch(
+                action, self.record_texts[action.record_id]
+            )
+            self.event_log.append(
+                "provider_response_persisted",
+                {"response": provider_response.model_dump(mode="json")},
+            )
+            receipt = self.adapter.validate_response(action, provider_response)
         except AmbiguousDispatchError as exc:
             snapshot = ledger.mark_ambiguous(action.action_id, attempts=exc.attempts)
             self.event_log.append(
@@ -292,13 +300,27 @@ class LiveProfilingController:
             )
             return rebuild_session(self.event_log.read())
         except Exception as exc:
+            attempts = (
+                provider_response.http_attempts
+                if provider_response is not None
+                else max(1, int(getattr(exc, "attempts", 1)))
+            )
+            input_tokens = (
+                provider_response.input_tokens or 0 if provider_response is not None else 0
+            )
+            output_tokens = (
+                provider_response.output_tokens or 0 if provider_response is not None else 0
+            )
+            cost_proxy = (
+                provider_response.token_priced_cost_usd if provider_response is not None else 0
+            )
             snapshot = ledger.charge_receipt(
                 action.action_id,
-                attempts=max(1, int(getattr(exc, "attempts", 1))),
+                attempts=attempts,
                 named_question_evaluations=0,
-                input_tokens=0,
-                output_tokens=0,
-                cost_proxy_usd=0,
+                input_tokens=input_tokens,
+                output_tokens=output_tokens,
+                cost_proxy_usd=cost_proxy,
             )
             self.event_log.append(
                 "action_failed",
@@ -306,6 +328,12 @@ class LiveProfilingController:
                     "action_id": action.action_id,
                     "error_type": type(exc).__name__,
                     "error": str(exc),
+                    "provider_response_identity": (
+                        provider_response.response_identity
+                        if provider_response is not None
+                        else None
+                    ),
+                    "provider_usage_persisted": provider_response is not None,
                     "budget": snapshot.model_dump(mode="json"),
                 },
             )

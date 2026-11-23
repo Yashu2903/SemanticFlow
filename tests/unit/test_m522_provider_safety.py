@@ -5,7 +5,11 @@ import pytest
 
 from semanticflow.optimizer.fusion import build_fused_operator
 from semanticflow.optimizer.m522_jev_adapter import PilotAJevProvider
-from semanticflow.optimizer.m522_live_acquisition import AmbiguousDispatchError
+from semanticflow.optimizer.m522_live_acquisition import (
+    AmbiguousDispatchError,
+    LiveAcquisitionAdapter,
+)
+from semanticflow.optimizer.m522_protocol import build_action_universe, build_protocol
 from semanticflow.providers.base import (
     ProviderError,
     RequestBudget,
@@ -24,6 +28,45 @@ def operator() -> object:
         requested_model="m",
         threshold=0.5,
     )
+
+
+@pytest.mark.asyncio
+async def test_established_single_probability_shape_and_raw_usage_are_accepted() -> None:
+    protocol = build_protocol()
+    action = next(
+        action
+        for action in build_action_universe(protocol).actions
+        if action.physical_operator.value == "single"
+    )
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        payload = __import__("json").loads(request.content)
+        question_id = next(iter(payload["questions"]))
+        return httpx.Response(
+            200,
+            json={
+                "model": protocol.model,
+                "answers": {question_id: {"type": "noul", "noul": 0.73}},
+                "usage": {"input_tokens": 321, "output_tokens": 7},
+            },
+        )
+
+    provider = PilotAJevProvider(
+        "unused",
+        protocol.model,
+        client=httpx.AsyncClient(transport=httpx.MockTransport(handler)),
+    )
+    adapter = LiveAcquisitionAdapter(provider)
+    response = await adapter.dispatch(action, "record")
+    assert response.group_probability == 0.73
+    assert response.predicate_probabilities == {action.predicate_ids[0]: 0.73}
+    assert response.input_tokens == 321
+    assert response.output_tokens == 7
+    assert response.raw_provider_response is not None
+    receipt = adapter.validate_response(action, response)
+    assert receipt.probabilities == {action.predicate_ids[0]: 0.73}
+    assert receipt.input_tokens == 321
+    await provider.aclose()
 
 
 @pytest.mark.asyncio

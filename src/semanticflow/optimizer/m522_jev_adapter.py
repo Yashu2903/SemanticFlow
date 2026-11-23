@@ -141,6 +141,7 @@ class PilotAJevProvider(JevProvider):
                 "attempts": attempts,
                 "retries": attempts - 1,
                 "http_status": response.status_code,
+                "raw_provider_response": data,
             }
         raise ProviderError(
             last_error,
